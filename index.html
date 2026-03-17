@@ -59,11 +59,15 @@
             z-index: 101;
         }
 
-        /* 英雄区样式 */
+        /* 英雄区样式 - 已添加指定背景图 */
         .hero {
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.85), rgba(41, 128, 185, 0.85)), 
+                        url('https://raw.githubusercontent.com/Vanessa0750/ldmeting.github.io/main/images/1%20(4).jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
-            padding: 5rem 5%;
+            padding: 8rem 5%;
             text-align: center;
         }
         .hero h1 {
@@ -308,6 +312,9 @@
             .hero h1 {
                 font-size: 2rem;
             }
+            .hero {
+                padding: 6rem 5%;
+            }
             .section-title {
                 font-size: 1.8rem;
             }
@@ -338,18 +345,6 @@
         <div class="menu-toggle" aria-label="切换菜单">☰</div>
     </div>
 </header>
-
-<style>
-.hero {
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.85), rgba(41, 128, 185, 0.85)), 
-                url('https://raw.githubusercontent.com/Vanessa0750/ldmeting.github.io/main/images/1%20(4).jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 8rem 5%;
-    text-align: center;
-}
-</style>
 
 <section class="hero">
     <h1>LDmeting 专业会议音频系统</h1>
