@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会议音箱系列 - LDMETING</title>
+    <style>
+        /* 直接复制麦克风页面的<style>部分，样式完全复用 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 101;
+        }
+        .breadcrumb {
+            padding: 1rem 5%;
+            background-color: white;
+            font-size: 0.9rem;
+        }
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            color: #999;
+            margin: 0 0.5rem;
+        }
+        section {
+            padding: 3rem 5%;
+            margin: 1rem 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #3498db;
+            margin: 1rem auto;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .product-img {
+            width: 100%;
+            height: 200px;
+            background-color: #f8f9fa;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        .product-img::before {
+            content: "产品图片";
+            font-size: 1rem;
+        }
+        .product-info {
+            padding: 1.5rem;
+        }
+        .product-info h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .product-params {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 1rem 0;
+        }
+        footer {
+            background-color: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 3rem;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: opacity 0.3s, transform 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 99;
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links.mobile-open {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #2c3e50;
+                padding: 1rem 5%;
+                flex-direction: column;
+                gap: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav-container">
+        <div class="logo">LDMETING</div>
+        <nav class="nav-links">
+            <a href="index.html">返回首页</a>
+            <a href="index.html#profile">公司介绍</a>
+            <a href="index.html#products">产品中心</a>
+            <a href="index.html#articles">企业资讯</a>
+            <a href="index.html#contact">联系方式</a>
+        </nav>
+        <div class="menu-toggle">☰</div>
+    </div>
+</header>
+
+<div class="breadcrumb">
+    <a href="index.html">首页</a>
+    <span>></span>
+    <a href="index.html#products">产品中心</a>
+    <span>></span>
+    <span>会议音箱系列</span>
+</div>
+
+<section>
+    <h2 class="section-title">会议音箱系列</h2>
+    <div class="product-grid">
+        <!-- 产品1 -->
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/speaker1.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-SP1 专业会议音箱</h3>
+                <div class="product-params">
+                    <p>功率：60W-120W</p>
+                    <p>阻抗：8Ω</p>
+                    <p>频响：60Hz-20kHz</p>
+                </div>
+                <p>人声清晰饱满，适合会议室、培训室扩声。</p>
+            </div>
+        </div>
+        <!-- 产品2 -->
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/speaker2.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-SP2 壁挂式会议音箱</h3>
+                <div class="product-params">
+                    <p>功率：30W-60W</p>
+                    <p>安装方式：壁挂</p>
+                    <p>尺寸：200×150×100mm</p>
+                </div>
+                <p>体积小巧，安装便捷，适合小型会议室。</p>
+            </div>
+        </div>
+        <!-- 产品3-8（可扩展到30个） -->
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/speaker3.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-SP3 落地式会议音箱</h3>
+                <div class="product-params">
+                    <p>功率：80W-150W</p>
+                    <p>频响：50Hz-20kHz</p>
+                    <p>材质：木质箱体</p>
+                </div>
+                <p>音质浑厚，适合多功能厅、报告厅使用。</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/speaker4.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-SP4 吸顶式会议音箱</h3>
+                <div class="product-params">
+                    <p>功率：20W-40W</p>
+                    <p>开孔尺寸：180mm</p>
+                    <p>频响：80Hz-18kHz</p>
+                </div>
+                <p>隐藏式安装，不占空间，适配吊顶装修风格。</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/speaker5.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-SP5 防水会议音箱</h3>
+                <div class="product-params">
+                    <p>防护等级：IP65</p>
+                    <p>功率：50W-100W</p>
+                    <p>适用：户外会议室/露台</p>
+                </div>
+                <p>防水防尘，适合半开放或户外会议场景。</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/speaker6.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-SP6 有源会议音箱</h3>
+                <div class="product-params">
+                    <p>内置功放：2×50W</p>
+                    <p>接口：蓝牙/USB/AUX</p>
+                    <p>供电：220V/12V</p>
+                </div>
+                <p>无需额外功放，即插即用，简化布线。</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/speaker7.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-SP7 阵列式会议音箱</h3>
+                <div class="product-params">
+                    <p>单元数：8×2英寸</p>
+                    <p>覆盖角度：120°×30°</p>
+                    <p>功率：100W-200W</p>
+                </div>
+                <p>声音覆盖均匀，适合大型报告厅。</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/speaker8.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-SP8 便携会议音箱</h3>
+                <div class="product-params">
+                    <p>功率：30W</p>
+                    <p>供电：锂电池（续航6小时）</p>
+                    <p>尺寸：便携手提式</p>
+                </div>
+                <p>移动会议专用，无需布线，即开即用。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
+</footer>
+
+<div class="back-to-top">↑</div>
+
+<script>
+    // 复用JS逻辑
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
+    });
+    const backToTopBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+    document.querySelectorAll('.product-img').forEach(img => {
+        const imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
+        const testImg = new Image();
+        testImg.src = imgUrl;
+        testImg.onerror = () => {
+            img.style.backgroundImage = 'none';
+        };
+    });
+</script>
+</body>
+</html>
