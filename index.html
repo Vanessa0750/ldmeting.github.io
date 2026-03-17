@@ -16,6 +16,10 @@
             color: #333;
             line-height: 1.6;
         }
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
         /* 导航栏 */
         header {
             background-color: #2c3e50;
@@ -44,6 +48,12 @@
         .nav-links a:hover {
             color: #3498db;
         }
+        /* 移动端菜单按钮 */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
         /* 英雄区 */
         .hero {
             background: linear-gradient(135deg, #3498db, #2980b9);
@@ -68,10 +78,11 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
         .btn:hover {
             background-color: #c0392b;
+            transform: translateY(-2px);
         }
         /* 通用区块样式 */
         section {
@@ -109,6 +120,10 @@
         .profile-item {
             text-align: center;
             padding: 1rem;
+            transition: transform 0.3s;
+        }
+        .profile-item:hover {
+            transform: scale(1.05);
         }
         .profile-item h3 {
             color: #2980b9;
@@ -128,10 +143,11 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .product-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
         .product-img {
             width: 100%;
@@ -139,6 +155,10 @@
             background-color: #f8f9fa;
             background-size: cover;
             background-position: center;
+            transition: opacity 0.3s;
+        }
+        .product-card:hover .product-img {
+            opacity: 0.9;
         }
         .product-info {
             padding: 1.5rem;
@@ -169,6 +189,10 @@
             border-radius: 8px;
             padding: 1.5rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .article-card:hover {
+            transform: translateY(-3px);
         }
         .article-card h3 {
             color: #2c3e50;
@@ -197,6 +221,7 @@
         }
         .contact-item {
             text-align: center;
+            padding: 1rem;
         }
         .contact-item h3 {
             margin-bottom: 1rem;
@@ -214,11 +239,20 @@
             .nav-links {
                 display: none;
             }
+            .menu-toggle {
+                display: block;
+            }
             .hero h1 {
                 font-size: 2rem;
             }
             .section-title {
                 font-size: 1.8rem;
+            }
+            .company-profile {
+                padding: 2rem 1rem;
+            }
+            section {
+                padding: 3rem 5%;
             }
         }
     </style>
@@ -234,6 +268,7 @@
                 <a href="#articles">企业资讯</a>
                 <a href="#contact">联系方式</a>
             </div>
+            <div class="menu-toggle">☰</div>
         </div>
     </header>
 
@@ -375,5 +410,28 @@
         <p>&copy; 2026 LDmeting. 保留所有权利。</p>
         <p>沪ICP备12345678号-1</p>
     </footer>
+
+    <script>
+        // 简单的移动端菜单交互（可选）
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
+            // 移动端菜单样式适配
+            if (navLinks.style.display === 'block') {
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.backgroundColor = '#2c3e50';
+                navLinks.style.padding = '1rem 5%';
+                navLinks.style.boxShadow = '0 4px 5px rgba(0,0,0,0.1)';
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.gap = '1rem';
+            }
+        });
+    </script>
 </body>
 </html>
