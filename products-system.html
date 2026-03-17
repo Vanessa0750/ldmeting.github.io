@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字会议系统 - LDMETING</title>
+    <style>
+        /* 样式和麦克风页面完全一致，无需重复写，直接复制麦克风页面的<style>部分 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 101;
+        }
+        .breadcrumb {
+            padding: 1rem 5%;
+            background-color: white;
+            font-size: 0.9rem;
+        }
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            color: #999;
+            margin: 0 0.5rem;
+        }
+        section {
+            padding: 3rem 5%;
+            margin: 1rem 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #3498db;
+            margin: 1rem auto;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .product-img {
+            width: 100%;
+            height: 200px;
+            background-color: #f8f9fa;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        .product-img::before {
+            content: "产品图片";
+            font-size: 1rem;
+        }
+        .product-info {
+            padding: 1.5rem;
+        }
+        .product-info h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .product-params {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 1rem 0;
+        }
+        footer {
+            background-color: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 3rem;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: opacity 0.3s, transform 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 99;
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links.mobile-open {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #2c3e50;
+                padding: 1rem 5%;
+                flex-direction: column;
+                gap: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav-container">
+        <div class="logo">LDMETING</div>
+        <nav class="nav-links">
+            <a href="index.html">返回首页</a>
+            <a href="index.html#profile">公司介绍</a>
+            <a href="index.html#products">产品中心</a>
+            <a href="index.html#articles">企业资讯</a>
+            <a href="index.html#contact">联系方式</a>
+        </nav>
+        <div class="menu-toggle">☰</div>
+    </div>
+</header>
+
+<div class="breadcrumb">
+    <a href="index.html">首页</a>
+    <span>></span>
+    <a href="index.html#products">产品中心</a>
+    <span>></span>
+    <span>数字会议系统</span>
+</div>
+
+<section>
+    <h2 class="section-title">数字会议系统</h2>
+    <div class="product-grid">
+        <!-- 产品1 -->
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/system1.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-S1 数字会议主机</h3>
+                <div class="product-params">
+                    <p>支持：讨论/视像跟踪</p>
+                    <p>接口：RJ45/6.35/莲花</p>
+                    <p>控制：主席/代表模式</p>
+                </div>
+                <p>专业数字会议系统主机，支持多路麦克风管理。</p>
+            </div>
+        </div>
+        <!-- 产品2 -->
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/system2.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-S2 视像跟踪会议系统</h3>
+                <div class="product-params">
+                    <p>跟踪精度：±0.5°</p>
+                    <p>支持摄像头：SONY/海康</p>
+                    <p>协议：VISCA/Pelco-D</p>
+                </div>
+                <p>发言自动跟踪摄像，适配视频会议场景。</p>
+            </div>
+        </div>
+        <!-- 产品3-8（可扩展到30个） -->
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/system3.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-S3 讨论型会议系统</h3>
+                <div class="product-params">
+                    <p>最大单元数：128个</p>
+                    <p>连接方式：手拉手</p>
+                    <p>供电：DC 24V</p>
+                </div>
+                <p>适合中小型会议室，支持发言讨论/申请发言。</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/system4.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-S4 表决型会议系统</h3>
+                <div class="product-params">
+                    <p>表决功能：赞成/反对/弃权</p>
+                    <p>数据导出：Excel/CSV</p>
+                    <p>显示：LED屏实时统计</p>
+                </div>
+                <p>适配投票表决场景，结果实时统计展示。</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/system5.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-S5 同声传译会议系统</h3>
+                <div class="product-params">
+                    <p>语言通道：6路</p>
+                    <p>传输方式：有线/无线</p>
+                    <p>适配：国际会议</p>
+                </div>
+                <p>支持多语言同声传译，满足国际化会议需求。</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/system6.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-S6 无纸化会议系统</h3>
+                <div class="product-params">
+                    <p>终端：10.1寸触控屏</p>
+                    <p>功能：文件批注/投票/签到</p>
+                    <p>系统：Android 11</p>
+                </div>
+                <p>全数字化会议，告别纸质文件，节能环保。</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/system7.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-S7 会议系统控制软件</h3>
+                <div class="product-params">
+                    <p>兼容系统：Windows/Mac</p>
+                    <p>功能：远程控制/数据管理</p>
+                    <p>接口：TCP/IP</p>
+                </div>
+                <p>电脑端可视化控制，简化会议系统操作。</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('images/system8.jpg');"></div>
+            <div class="product-info">
+                <h3>LD-S8 会议签到系统</h3>
+                <div class="product-params">
+                    <p>签到方式：人脸识别/刷卡</p>
+                    <p>数据统计：实时人数</p>
+                    <p>导出：签到表自动生成</p>
+                </div>
+                <p>快速完成会议签到，提升会议效率。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
+</footer>
+
+<div class="back-to-top">↑</div>
+
+<script>
+    // 复用麦克风页面的JS逻辑
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
+    });
+    const backToTopBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+    document.querySelectorAll('.product-img').forEach(img => {
+        const imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
+        const testImg = new Image();
+        testImg.src = imgUrl;
+        testImg.onerror = () => {
+            img.style.backgroundImage = 'none';
+        };
+    });
+</script>
+</body>
+</html>
