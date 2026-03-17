@@ -142,59 +142,60 @@
             margin-bottom: 0.5rem;
         }
 
-        /* 产品展示样式 */
+        /* 产品大类目样式（核心修改） */
         .products {
             background-color: white;
         }
-        .product-grid {
+        .product-category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
-        .product-card {
+        .category-card {
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-        .product-img {
-            width: 100%;
-            height: 200px;
+            text-align: center;
+            padding: 2rem 1rem;
             background-color: #f8f9fa;
-            background-size: cover;
-            background-position: center;
-            transition: opacity 0.3s;
-            /* 图片加载失败兜底 */
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #999;
+            height: 100%;
         }
-        .product-img::before {
-            content: "产品图片";
-            font-size: 1rem;
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            background-color: #f0f7ff;
         }
-        .product-card:hover .product-img {
-            opacity: 0.9;
+        .category-icon {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 1.5rem;
         }
-        .product-info {
-            padding: 1.5rem;
-        }
-        .product-info h3 {
+        .category-card h3 {
             color: #2c3e50;
             margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
-        .product-params {
-            margin: 1rem 0;
-            font-size: 0.9rem;
+        .category-card p {
             color: #666;
+            margin-bottom: 1.5rem;
+            flex: 1;
         }
-        .product-params p {
-            margin: 0.5rem 0;
+        .category-link {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .category-link:hover {
+            background-color: #2980b9;
         }
 
         /* 文章资讯样式 */
@@ -328,6 +329,12 @@
                 bottom: 20px;
                 right: 20px;
             }
+            .category-icon {
+                font-size: 2.5rem;
+            }
+            .category-card h3 {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -378,97 +385,40 @@
     </div>
 </section>
 
+<!-- 产品大类目区域（核心修改） -->
 <section id="products" class="products">
     <h2 class="section-title">产品中心</h2>
-    <div class="product-grid">
-        <!-- 产品1 -->
-        <div class="product-card">
-            <div class="product-img" style="background-image: url('https://picsum.photos/seed/mic1/600x400');" aria-label="有线会议麦克风"></div>
-            <div class="product-info">
-                <h3>有线会议麦克风</h3>
-                <div class="product-params">
-                    <p>✅ 拾音距离：20-80cm</p>
-                    <p>✅ 频率响应：50Hz-18kHz</p>
-                    <p>✅ 灵敏度：-42dB±2dB</p>
-                    <p>✅ 适用：会议室、报告厅</p>
-                </div>
-                <p>拾音清晰稳定，抗干扰强，适合各类中小型会议使用。</p>
-            </div>
+    <div class="product-category-grid">
+        <!-- 类目1：会议麦克风系列 -->
+        <div class="category-card">
+            <div class="category-icon">🎤</div>
+            <h3>会议麦克风系列</h3>
+            <p>包含有线、无线、鹅颈式等多种类型麦克风，满足不同场景拾音需求</p>
+            <a href="products-microphone.html" class="category-link">查看详情</a>
         </div>
 
-        <!-- 产品2 -->
-        <div class="product-card">
-            <div class="product-img" style="background-image: url('https://picsum.photos/seed/wirelessmic/600x400');" aria-label="无线会议麦克风"></div>
-            <div class="product-info">
-                <h3>无线会议麦克风</h3>
-                <div class="product-params">
-                    <p>✅ 传输距离：30-50米</p>
-                    <p>✅ 信道：UHF高保真</p>
-                    <p>✅ 供电：锂电池</p>
-                    <p>✅ 抗干扰：多重频点</p>
-                </div>
-                <p>无线布置更简洁，安装方便，适合大型会议室、多功能厅。</p>
-            </div>
+        <!-- 类目2：数字会议系统 -->
+        <div class="category-card">
+            <div class="category-icon">🖥️</div>
+            <h3>数字会议系统</h3>
+            <p>专业会议主机、讨论/视像跟踪系统，适配政企高端会议场景</p>
+            <a href="products-system.html" class="category-link">查看详情</a>
         </div>
 
-        <!-- 产品3 -->
-        <div class="product-card">
-            <div class="product-img" style="background-image: url('https://picsum.photos/seed/console/600x400');" aria-label="数字会议主机"></div>
-            <div class="product-info">
-                <h3>数字会议主机</h3>
-                <div class="product-params">
-                    <p>✅ 支持：讨论/视像跟踪</p>
-                    <p>✅ 接口：RJ45/6.35/莲花</p>
-                    <p>✅ 控制：主席/代表模式</p>
-                    <p>✅ 适用：政企高端会议</p>
-                </div>
-                <p>专业数字会议系统主机，支持多路麦克风管理与摄像跟踪。</p>
-            </div>
+        <!-- 类目3：会议音箱系列 -->
+        <div class="category-card">
+            <div class="category-icon">🔊</div>
+            <h3>会议音箱系列</h3>
+            <p>壁挂式、落地式专业会议音箱，人声清晰饱满</p>
+            <a href="products-speaker.html" class="category-link">查看详情</a>
         </div>
 
-        <!-- 产品4 -->
-        <div class="product-card">
-            <div class="product-img" style="background-image: url('https://picsum.photos/seed/speaker1/600x400');" aria-label="专业会议音箱"></div>
-            <div class="product-info">
-                <h3>专业会议音箱</h3>
-                <div class="product-params">
-                    <p>✅ 功率：60W-120W</p>
-                    <p>✅ 阻抗：8Ω</p>
-                    <p>✅ 频响：60Hz-20kHz</p>
-                    <p>✅ 安装：壁挂/落地</p>
-                </div>
-                <p>人声清晰饱满，适合会议室、培训室、多功能厅扩声。</p>
-            </div>
-        </div>
-
-        <!-- 产品5 -->
-        <div class="product-card">
-            <div class="product-img" style="background-image: url('https://picsum.photos/seed/gooseneck/600x400');" aria-label="鹅颈式会议话筒"></div>
-            <div class="product-info">
-                <h3>鹅颈式会议话筒</h3>
-                <div class="product-params">
-                    <p>✅ 软管角度可调</p>
-                    <p>✅ 底座金属加固</p>
-                    <p>✅ 防干扰：强</p>
-                    <p>✅ 外观：简约商务</p>
-                </div>
-                <p>桌面式安装，造型稳重，适合政府、企业正式会议。</p>
-            </div>
-        </div>
-
-        <!-- 产品6 -->
-        <div class="product-card">
-            <div class="product-img" style="background-image: url('https://picsum.photos/seed/allset/600x400');" aria-label="会议系统整套方案"></div>
-            <div class="product-info">
-                <h3>会议系统整套方案</h3>
-                <div class="product-params">
-                    <p>✅ 包含：主机+话筒+音箱</p>
-                    <p>✅ 支持：10-100㎡会议室</p>
-                    <p>✅ 调试：简单便捷</p>
-                    <p>✅ 售后：技术支持</p>
-                </div>
-                <p>一站式会议音频解决方案，省心省力，工程商优选。</p>
-            </div>
+        <!-- 类目4：整体解决方案 -->
+        <div class="category-card">
+            <div class="category-icon">📦</div>
+            <h3>整体解决方案</h3>
+            <p>根据会议室面积、人数定制一站式音频解决方案</p>
+            <a href="products-solution.html" class="category-link">查看详情</a>
         </div>
     </div>
 </section>
@@ -561,17 +511,6 @@
             top: 0,
             behavior: 'smooth'
         });
-    });
-
-    // 图片加载失败处理
-    document.querySelectorAll('.product-img').forEach(img => {
-        // 检测背景图片加载失败
-        const imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
-        const testImg = new Image();
-        testImg.src = imgUrl;
-        testImg.onerror = () => {
-            img.style.backgroundImage = 'none';
-        };
     });
 </script>
 </body>
