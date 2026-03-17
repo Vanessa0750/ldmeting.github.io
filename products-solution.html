@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>整体解决方案 - LDMETING</title>
+    <style>
+        /* 复用样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 101;
+        }
+        .breadcrumb {
+            padding: 1rem 5%;
+            background-color: white;
+            font-size: 0.9rem;
+        }
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            color: #999;
+            margin: 0 0.5rem;
+        }
+        section {
+            padding: 3rem 5%;
+            margin: 1rem 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #3498db;
+            margin: 1rem auto;
+        }
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .solution-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .solution-img {
+            width: 100%;
+            height: 200px;
+            background-color: #f8f9fa;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        .solution-img::before {
+            content: "方案图片";
+            font-size: 1rem;
+        }
+        .solution-info {
+            padding: 1.5rem;
+        }
+        .solution-info h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .solution-params {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 1rem 0;
+        }
+        footer {
+            background-color: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 3rem;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: opacity 0.3s, transform 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 99;
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links.mobile-open {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #2c3e50;
+                padding: 1rem 5%;
+                flex-direction: column;
+                gap: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav-container">
+        <div class="logo">LDMETING</div>
+        <nav class="nav-links">
+            <a href="index.html">返回首页</a>
+            <a href="index.html#profile">公司介绍</a>
+            <a href="index.html#products">产品中心</a>
+            <a href="index.html#articles">企业资讯</a>
+            <a href="index.html#contact">联系方式</a>
+        </nav>
+        <div class="menu-toggle">☰</div>
+    </div>
+</header>
+
+<div class="breadcrumb">
+    <a href="index.html">首页</a>
+    <span>></span>
+    <a href="index.html#products">产品中心</a>
+    <span>></span>
+    <span>整体解决方案</span>
+</div>
+
+<section>
+    <h2 class="section-title">整体解决方案</h2>
+    <div class="solution-grid">
+        <!-- 方案1 -->
+        <div class="solution-card">
+            <div class="solution-img" style="background-image: url('images/solution1.jpg');"></div>
+            <div class="solution-info">
+                <h3>LD-SOL1 10-30㎡小型会议室方案</h3>
+                <div class="solution-params">
+                    <p>包含：4个有线麦克风 + 2个壁挂音箱 + 简易功放</p>
+                    <p>特点：成本低，安装快，即插即用</p>
+                    <p>适配：小型办公室、洽谈室</p>
+                </div>
+                <p>一站式解决小型会议扩声需求，性价比高。</p>
+            </div>
+        </div>
+        <!-- 方案2 -->
+        <div class="solution-card">
+            <div class="solution-img" style="background-image: url('images/solution2.jpg');"></div>
+            <div class="solution-info">
+                <h3>LD-SOL2 30-80㎡中型会议室方案</h3>
+                <div class="solution-params">
+                    <p>包含：8个无线麦克风 + 4个会议音箱 + 数字主机</p>
+                    <p>特点：无线布置，支持视像跟踪</p>
+                    <p>适配：企业会议室、培训室</p>
+                </div>
+                <p>满足多人会议发言、扩声、摄像跟踪需求。</p>
+            </div>
+        </div>
+        <!-- 方案3-8（可扩展） -->
+        <div class="solution-card">
+            <div class="solution-img" style="background-image: url('images/solution3.jpg');"></div>
+            <div class="solution-info">
+                <h3>LD-SOL3 80-200㎡大型报告厅方案</h3>
+                <div class="solution-params">
+                    <p>包含：16路会议系统 + 阵列音箱 + 调音台</p>
+                    <p>特点：覆盖广，音质均匀，支持直播</p>
+                    <p>适配：政府报告厅、学校礼堂</p>
+                </div>
+                <p>专业级扩声方案，满足大型集会发言需求。</p>
+            </div>
+        </div>
+        <div class="solution-card">
+            <div class="solution-img" style="background-image: url('images/solution4.jpg');"></div>
+            <div class="solution-info">
+                <h3>LD-SOL4 视频会议一体化方案</h3>
+                <div class="solution-params">
+                    <p>包含：会议音频 + 摄像头 + 投屏系统</p>
+                    <p>兼容：腾讯会议/Zoom/钉钉</p>
+                    <p>特点：音视频同步，操作简单</p>
+                </div>
+                <p>适配远程视频会议场景，音视频体验佳。</p>
+            </div>
+        </div>
+        <div class="solution-card">
+            <div class="solution-img" style="background-image: url('images/solution5.jpg');"></div>
+            <div class="solution-info">
+                <h3>LD-SOL5 圆桌会议解决方案</h3>
+                <div class="solution-params">
+                    <p>包含：阵列麦克风 + 环绕音箱 + 讨论系统</p>
+                    <p>适配：10-20人圆桌会议</p>
+                    <p>特点：360°拾音，无死角扩声</p>
+                </div>
+                <p>适合董事会、圆桌研讨会等场景。</p>
+            </div>
+        </div>
+        <div class="solution-card">
+            <div class="solution-img" style="background-image: url('images/solution6.jpg');"></div>
+            <div class="solution-info">
+                <h3>LD-SOL6 国际会议同声传译方案</h3>
+                <div class="solution-params">
+                    <p>包含：6路同声传译系统 + 无线接收耳机</p>
+                    <p>支持：多语言实时翻译</p>
+                    <p>适配：国际交流会议</p>
+                </div>
+                <p>满足国际化会议多语言沟通需求。</p>
+            </div>
+        </div>
+        <div class="solution-card">
+            <div class="solution-img" style="background-image: url('images/solution7.jpg');"></div>
+            <div class="solution-info">
+                <h3>LD-SOL7 无纸化会议解决方案</h3>
+                <div class="solution-params">
+                    <p>包含：触控终端 + 会议系统 + 云文档</p>
+                    <p>特点：无纸办公，环保高效</p>
+                    <p>适配：高端政企会议</p>
+                </div>
+                <p>全数字化会议流程，提升会议效率。</p>
+            </div>
+        </div>
+        <div class="solution-card">
+            <div class="solution-img" style="background-image: url('images/solution8.jpg');"></div>
+            <div class="solution-info">
+                <h3>LD-SOL8 移动会议解决方案</h3>
+                <div class="solution-params">
+                    <p>包含：便携音箱 + 无线麦克风 + 充电宝供电</p>
+                    <p>特点：全无线，免安装，即开即用</p>
+                    <p>适配：临时会议、户外集会</p>
+                </div>
+                <p>满足移动办公、临时会议的音频需求。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
+</footer>
+
+<div class="back-to-top">↑</div>
+
+<script>
+    // 复用JS逻辑
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
+    });
+    const backToTopBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+    document.querySelectorAll('.solution-img').forEach(img => {
+        const imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
+        const testImg = new Image();
+        testImg.src = imgUrl;
+        testImg.onerror = () => {
+            img.style.backgroundImage = 'none';
+        };
+    });
+</script>
+</body>
+</html>
