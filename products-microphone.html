@@ -112,10 +112,25 @@
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
-        .product-img {
+        
+        /* 新增：多图轮播容器样式 */
+        .product-img-slider {
+            position: relative;
             width: 100%;
             height: 200px;
             background-color: #f8f9fa;
+            overflow: hidden;
+        }
+        .slider-wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+        .slider-item {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
             display: flex;
@@ -123,10 +138,59 @@
             justify-content: center;
             color: #999;
         }
-        .product-img::before {
+        .slider-item::before {
             content: "产品图片";
             font-size: 1rem;
         }
+        /* 轮播控制按钮 */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .product-img-slider:hover .slider-btn {
+            opacity: 1;
+        }
+        .prev-btn {
+            left: 10px;
+        }
+        .next-btn {
+            right: 10px;
+        }
+        /* 轮播指示器 */
+        .slider-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+        .indicator-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .indicator-dot.active {
+            background-color: #3498db;
+        }
+
         .product-info {
             padding: 1.5rem;
         }
@@ -228,9 +292,23 @@
 <section>
     <h2 class="section-title">会议麦克风系列</h2>
     <div class="product-grid">
-        <!-- 产品1 -->
+        <!-- 产品1（多图示例） -->
         <div class="product-card">
-            <div class="product-img" style="background-image: url('images/mic1.jpg');"></div>
+            <!-- 替换为多图轮播容器 -->
+            <div class="product-img-slider" data-slider-id="1">
+                <div class="slider-wrapper">
+                    <div class="slider-item" style="background-image: url('images/mic1-1.jpg');"></div>
+                    <div class="slider-item" style="background-image: url('images/mic1-2.jpg');"></div>
+                    <div class="slider-item" style="background-image: url('images/mic1-3.jpg');"></div>
+                </div>
+                <button class="slider-btn prev-btn">‹</button>
+                <button class="slider-btn next-btn">›</button>
+                <div class="slider-indicators">
+                    <span class="indicator-dot active" data-index="0"></span>
+                    <span class="indicator-dot" data-index="1"></span>
+                    <span class="indicator-dot" data-index="2"></span>
+                </div>
+            </div>
             <div class="product-info">
                 <h3>LD-M1 有线会议麦克风</h3>
                 <div class="product-params">
@@ -241,9 +319,20 @@
                 <p>拾音清晰稳定，抗干扰强，适合中小型会议室。</p>
             </div>
         </div>
-        <!-- 产品2 -->
+        <!-- 产品2（多图示例） -->
         <div class="product-card">
-            <div class="product-img" style="background-image: url('images/mic2.jpg');"></div>
+            <div class="product-img-slider" data-slider-id="2">
+                <div class="slider-wrapper">
+                    <div class="slider-item" style="background-image: url('images/mic2-1.jpg');"></div>
+                    <div class="slider-item" style="background-image: url('images/mic2-2.jpg');"></div>
+                </div>
+                <button class="slider-btn prev-btn">‹</button>
+                <button class="slider-btn next-btn">›</button>
+                <div class="slider-indicators">
+                    <span class="indicator-dot active" data-index="0"></span>
+                    <span class="indicator-dot" data-index="1"></span>
+                </div>
+            </div>
             <div class="product-info">
                 <h3>LD-M2 无线会议麦克风</h3>
                 <div class="product-params">
@@ -254,9 +343,16 @@
                 <p>无线布置更简洁，安装方便，适合大型会议室。</p>
             </div>
         </div>
-        <!-- 产品3 -->
+        <!-- 产品3-8 可参考上述格式添加多图，以下保留单图示例 -->
         <div class="product-card">
-            <div class="product-img" style="background-image: url('images/mic3.jpg');"></div>
+            <div class="product-img-slider" data-slider-id="3">
+                <div class="slider-wrapper">
+                    <div class="slider-item" style="background-image: url('images/mic3.jpg');"></div>
+                </div>
+                <div class="slider-indicators">
+                    <span class="indicator-dot active" data-index="0"></span>
+                </div>
+            </div>
             <div class="product-info">
                 <h3>LD-M3 鹅颈式会议话筒</h3>
                 <div class="product-params">
@@ -267,9 +363,15 @@
                 <p>桌面式安装，造型稳重，适合政府正式会议。</p>
             </div>
         </div>
-        <!-- 产品4 -->
         <div class="product-card">
-            <div class="product-img" style="background-image: url('images/mic4.jpg');"></div>
+            <div class="product-img-slider" data-slider-id="4">
+                <div class="slider-wrapper">
+                    <div class="slider-item" style="background-image: url('images/mic4.jpg');"></div>
+                </div>
+                <div class="slider-indicators">
+                    <span class="indicator-dot active" data-index="0"></span>
+                </div>
+            </div>
             <div class="product-info">
                 <h3>LD-M4 阵列式会议麦克风</h3>
                 <div class="product-params">
@@ -280,9 +382,15 @@
                 <p>适合圆桌会议，单麦覆盖多人拾音。</p>
             </div>
         </div>
-        <!-- 产品5-8（示例，可复制扩展到30个） -->
         <div class="product-card">
-            <div class="product-img" style="background-image: url('images/mic5.jpg');"></div>
+            <div class="product-img-slider" data-slider-id="5">
+                <div class="slider-wrapper">
+                    <div class="slider-item" style="background-image: url('images/mic5.jpg');"></div>
+                </div>
+                <div class="slider-indicators">
+                    <span class="indicator-dot active" data-index="0"></span>
+                </div>
+            </div>
             <div class="product-info">
                 <h3>LD-M5 桌面式会议麦克风</h3>
                 <div class="product-params">
@@ -294,7 +402,14 @@
             </div>
         </div>
         <div class="product-card">
-            <div class="product-img" style="background-image: url('images/mic6.jpg');"></div>
+            <div class="product-img-slider" data-slider-id="6">
+                <div class="slider-wrapper">
+                    <div class="slider-item" style="background-image: url('images/mic6.jpg');"></div>
+                </div>
+                <div class="slider-indicators">
+                    <span class="indicator-dot active" data-index="0"></span>
+                </div>
+            </div>
             <div class="product-info">
                 <h3>LD-M6 一拖四无线麦克风</h3>
                 <div class="product-params">
@@ -306,7 +421,14 @@
             </div>
         </div>
         <div class="product-card">
-            <div class="product-img" style="background-image: url('images/mic7.jpg');"></div>
+            <div class="product-img-slider" data-slider-id="7">
+                <div class="slider-wrapper">
+                    <div class="slider-item" style="background-image: url('images/mic7.jpg');"></div>
+                </div>
+                <div class="slider-indicators">
+                    <span class="indicator-dot active" data-index="0"></span>
+                </div>
+            </div>
             <div class="product-info">
                 <h3>LD-M7 防风会议麦克风</h3>
                 <div class="product-params">
@@ -318,7 +440,14 @@
             </div>
         </div>
         <div class="product-card">
-            <div class="product-img" style="background-image: url('images/mic8.jpg');"></div>
+            <div class="product-img-slider" data-slider-id="8">
+                <div class="slider-wrapper">
+                    <div class="slider-item" style="background-image: url('images/mic8.jpg');"></div>
+                </div>
+                <div class="slider-indicators">
+                    <span class="indicator-dot active" data-index="0"></span>
+                </div>
+            </div>
             <div class="product-info">
                 <h3>LD-M8 智能降噪麦克风</h3>
                 <div class="product-params">
@@ -362,13 +491,70 @@
     });
 
     // 图片加载失败兜底
-    document.querySelectorAll('.product-img').forEach(img => {
+    document.querySelectorAll('.slider-item').forEach(img => {
         const imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
         const testImg = new Image();
         testImg.src = imgUrl;
         testImg.onerror = () => {
             img.style.backgroundImage = 'none';
         };
+    });
+
+    // 新增：多图轮播核心逻辑
+    document.querySelectorAll('.product-img-slider').forEach(slider => {
+        const sliderId = slider.dataset.sliderId;
+        const wrapper = slider.querySelector('.slider-wrapper');
+        const items = slider.querySelectorAll('.slider-item');
+        const prevBtn = slider.querySelector('.prev-btn');
+        const nextBtn = slider.querySelector('.next-btn');
+        const indicators = slider.querySelectorAll('.indicator-dot');
+        const totalItems = items.length;
+        let currentIndex = 0;
+
+        // 初始化：隐藏单图的控制按钮
+        if (totalItems === 1) {
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+        }
+
+        // 更新轮播位置和指示器
+        const updateSlider = () => {
+            wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+            // 更新指示器激活状态
+            indicators.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        };
+
+        // 下一张
+        const goToNext = () => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateSlider();
+        };
+
+        // 上一张
+        const goToPrev = () => {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateSlider();
+        };
+
+        // 点击指示器切换
+        indicators.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider();
+            });
+        });
+
+        // 绑定按钮事件
+        if (prevBtn) prevBtn.addEventListener('click', goToPrev);
+        if (nextBtn) nextBtn.addEventListener('click', goToNext);
+
+        // 可选：自动轮播（如需开启，取消注释）
+        // let autoPlay = setInterval(goToNext, 3000);
+        // // 鼠标悬停暂停自动轮播
+        // slider.addEventListener('mouseenter', () => clearInterval(autoPlay));
+        // slider.addEventListener('mouseleave', () => autoPlay = setInterval(goToNext, 3000));
     });
 </script>
 </body>
