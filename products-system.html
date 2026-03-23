@@ -490,16 +490,19 @@
     <p>&copy; 2026 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
 </footer>
 
+<!-- 返回顶部按钮 -->
 <div class="back-to-top">↑</div>
 
 <script>
-    // 复用麦克风页面的JS逻辑
+    // 移动端菜单切换
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('mobile-open');
         menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
     });
+
+    // 返回顶部
     const backToTopBtn = document.querySelector('.back-to-top');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
@@ -511,13 +514,72 @@
     backToTopBtn.addEventListener('click', () => {
         window.scrollTo({top: 0, behavior: 'smooth'});
     });
-    document.querySelectorAll('.product-img').forEach(img => {
+
+    // 图片加载失败兜底
+    document.querySelectorAll('.slider-item').forEach(img => {
         const imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
         const testImg = new Image();
         testImg.src = imgUrl;
         testImg.onerror = () => {
             img.style.backgroundImage = 'none';
         };
+    });
+
+    // 新增：多图轮播核心逻辑
+    document.querySelectorAll('.product-img-slider').forEach(slider => {
+        const sliderId = slider.dataset.sliderId;
+        const wrapper = slider.querySelector('.slider-wrapper');
+        const items = slider.querySelectorAll('.slider-item');
+        const prevBtn = slider.querySelector('.prev-btn');
+        const nextBtn = slider.querySelector('.next-btn');
+        const indicators = slider.querySelectorAll('.indicator-dot');
+        const totalItems = items.length;
+        let currentIndex = 0;
+
+        // 初始化：隐藏单图的控制按钮
+        if (totalItems === 1) {
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+        }
+
+        // 更新轮播位置和指示器
+        const updateSlider = () => {
+            wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+            // 更新指示器激活状态
+            indicators.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        };
+
+        // 下一张
+        const goToNext = () => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateSlider();
+        };
+
+        // 上一张
+        const goToPrev = () => {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateSlider();
+        };
+
+        // 点击指示器切换
+        indicators.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider();
+            });
+        });
+
+        // 绑定按钮事件
+        if (prevBtn) prevBtn.addEventListener('click', goToPrev);
+        if (nextBtn) nextBtn.addEventListener('click', goToNext);
+
+        // 可选：自动轮播（如需开启，取消注释）
+        // let autoPlay = setInterval(goToNext, 3000);
+        // // 鼠标悬停暂停自动轮播
+        // slider.addEventListener('mouseenter', () => clearInterval(autoPlay));
+        // slider.addEventListener('mouseleave', () => autoPlay = setInterval(goToNext, 3000));
     });
 </script>
 </body>
