@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>凌动邀您共聚羊城｜2025广州国际专业灯光音响展，2.1馆G50展位静待莅临 - LDMETING</title>
+    <style>
+        /* 基础样式复用 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.8;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 导航栏样式 */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        /* 面包屑导航 */
+        .breadcrumb {
+            padding: 1rem 5%;
+            background-color: white;
+            font-size: 0.9rem;
+        }
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb span {
+            margin: 0 0.5rem;
+            color: #999;
+        }
+
+        /* 文章详情样式 */
+        .article-detail {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+        .article-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        .article-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .article-meta {
+            color: #999;
+            font-size: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .article-content {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        .article-content h3 {
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+            font-size: 1.4rem;
+        }
+        .article-content img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        /* 相关推荐 */
+        .related-articles {
+            margin-top: 3rem;
+        }
+        .related-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+        }
+        .related-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .related-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .related-item h4 {
+            margin-bottom: 0.8rem;
+        }
+        .related-item h4 a {
+            color: #2c3e50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .related-item h4 a:hover {
+            color: #3498db;
+        }
+        .related-date {
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        /* 返回列表按钮 */
+        .back-to-list {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-to-list:hover {
+            background-color: #1a252f;
+        }
+
+        /* 页脚样式 */
+        footer {
+            background-color: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 3rem;
+        }
+
+        /* 响应式样式 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links.mobile-open {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #2c3e50;
+                padding: 1rem 5%;
+                flex-direction: column;
+                gap: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            .article-detail {
+                padding: 2rem 5%;
+            }
+            .article-title {
+                font-size: 1.6rem;
+            }
+            .article-content {
+                padding: 1.5rem;
+            }
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav-container">
+        <div class="logo">LDMETING</div>
+        <nav class="nav-links" aria-label="主导航">
+            <a href="index.html#profile">公司介绍</a>
+            <a href="index.html#products">产品中心</a>
+            <a href="articles-list.html">企业资讯</a>
+            <a href="index.html#contact">联系方式</a>
+        </nav>
+        <div class="menu-toggle" aria-label="切换菜单">☰</div>
+    </div>
+</header>
+
+<!-- 面包屑导航 -->
+<div class="breadcrumb">
+    <a href="index.html">首页</a>
+    <span>></span>
+    <a href="articles-list.html">企业资讯</a>
+    <span>></span>
+    <span>凌动邀您共聚羊城｜2025广州国际专业灯光音响展，2.1馆G50展位静待莅临</span>
+</div>
+
+<!-- 文章详情主体 -->
+<div class="article-detail">
+    <div class="article-header">
+        <h1 class="article-title">凌动邀您共聚羊城｜2025广州国际专业灯光音响展，2.1馆G50展位静待莅临</h1>
+        <div class="article-meta">
+            <span>发布时间：2025-02-05</span>
+            <span>分类：产品动态</span>
+            <span>阅读次数：178</span>
+        </div>
+    </div>
+
+    <div class="article-content">
+        <p>亚太地区极具规模与影响力的声光视听行业年度盛会——2025广州国际专业灯光、音响展览会，即将于5月27日至30日，在中国进出口商品交易会展馆盛大启幕。</p>
+
+        <p>作为行业内公认的商贸对接、技术交流与品牌展示核心平台，本届展会汇聚数千家国内外优质品牌，覆盖专业音响、会议系统、灯光设备及全产业链解决方案，吸引海内外经销商、系统集成商、政企采购方及行业同仁齐聚广州，共探行业新风向，共拓市场新机遇。</p>
+        
+        <h3>展会信息速览，诚邀如期赴约</h3>
+
+        <h3>展会名称：2025广州国际专业灯光、音响展览会</h3>
+        <h3>展会时间：2025年5月27日-5月30日</h3>
+        <h3>参展展位：2.1专业音响馆 G50展位</h3>
+        <h3>展会地点：中国进出口商品交易会展馆</h3>
+
+        <p>5月27日-30日，羊城相聚，共赏音频精品，共商合作大计。凌动始终深耕会议音频领域，坚持以技术创新为核心，以品质立足市场，致力于为全球客户提供稳定、高效、专业的会议音频产品与服务。此次亮相广州国际专业灯光音响展，既是品牌实力的集中展示，也是拓展海内外市场、深化行业交流的重要契机。</p>
+
+        <p>凌动在2.1专业音响馆G50展位，恭候各位新老伙伴莅临，不见不散！</p>
+    </div>
+
+    <!-- 相关推荐 -->
+    <div class="related-articles">
+        <h3 class="related-title">相关推荐</h3>
+        <div class="related-list">
+            <div class="related-item">
+                <h4><a href="article-detail-1.html">赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会</a></h4>
+                <div class="related-date">2026-01-10</div>
+            </div>
+            <div class="related-item">
+                <h4><a href="article-detail-2.html">无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务</a></h4>
+                <div class="related-date">2025-10-15</div>
+            </div>
+            <div class="related-item">
+                <h4><a href="article-detail-3.html">亮相羊城 聚力全球｜我司携全系列会议音频精品闪耀2025广州灯光音响展览会</a></h4>
+                <div class="related-date">2025-05-30</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 返回列表按钮 -->
+    <a href="articles-list.html" class="back-to-list">返回资讯列表</a>
+</div>
+
+<footer>
+    <p>&copy; 2026 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
+</footer>
+
+<script>
+    // 移动端菜单切换
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
+    });
+
+    // 点击导航链接关闭移动端菜单
+    const navAnchor = navLinks.querySelectorAll('a');
+    navAnchor.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('mobile-open');
+            menuToggle.textContent = '☰';
+        });
+    });
+</script>
+</body>
+</html>
