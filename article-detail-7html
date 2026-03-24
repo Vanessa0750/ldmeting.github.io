@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dante智造，音传无界｜专业音频设备研发生产厂家，打造全场景会议与拾音解决方案 - LDMETING</title>
+    <style>
+        /* 基础样式复用 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.8;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 导航栏样式 */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        /* 面包屑导航 */
+        .breadcrumb {
+            padding: 1rem 5%;
+            background-color: white;
+            font-size: 0.9rem;
+        }
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb span {
+            margin: 0 0.5rem;
+            color: #999;
+        }
+
+        /* 文章详情样式 */
+        .article-detail {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+        .article-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        .article-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .article-meta {
+            color: #999;
+            font-size: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .article-content {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        .article-content h3 {
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+            font-size: 1.4rem;
+        }
+        .article-content img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        /* 相关推荐 */
+        .related-articles {
+            margin-top: 3rem;
+        }
+        .related-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+        }
+        .related-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .related-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .related-item h4 {
+            margin-bottom: 0.8rem;
+        }
+        .related-item h4 a {
+            color: #2c3e50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .related-item h4 a:hover {
+            color: #3498db;
+        }
+        .related-date {
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        /* 返回列表按钮 */
+        .back-to-list {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-to-list:hover {
+            background-color: #1a252f;
+        }
+
+        /* 页脚样式 */
+        footer {
+            background-color: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 3rem;
+        }
+
+        /* 响应式样式 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links.mobile-open {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #2c3e50;
+                padding: 1rem 5%;
+                flex-direction: column;
+                gap: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            .article-detail {
+                padding: 2rem 5%;
+            }
+            .article-title {
+                font-size: 1.6rem;
+            }
+            .article-content {
+                padding: 1.5rem;
+            }
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav-container">
+        <div class="logo">LDMETING</div>
+        <nav class="nav-links" aria-label="主导航">
+            <a href="index.html#profile">公司介绍</a>
+            <a href="index.html#products">产品中心</a>
+            <a href="articles-list.html">企业资讯</a>
+            <a href="index.html#contact">联系方式</a>
+        </nav>
+        <div class="menu-toggle" aria-label="切换菜单">☰</div>
+    </div>
+</header>
+
+<!-- 面包屑导航 -->
+<div class="breadcrumb">
+    <a href="index.htm3">首页</a>
+    <span>></span>
+    <a href="articles-list.html">企业资讯</a>
+    <span>></span>
+    <span>Dante智造，音传无界｜专业音频设备研发生产厂家，打造全场景会议与拾音解决方案</span>
+</div>
+
+<!-- 文章详情主体 -->
+<div class="article-detail">
+    <div class="article-header">
+        <h1 class="article-title">Dante智造，音传无界｜专业音频设备研发生产厂家，打造全场景会议与拾音解决方案</h1>
+        <div class="article-meta">
+            <span>发布时间：2024-03-07</span>
+            <span>分类：产品动态</span>
+            <span>阅读次数：4858</span>
+        </div>
+    </div>
+
+    <div class="article-content">
+        <p>在政企会议、商务办公、教育培训、演播演出、工业指挥等多元场景中，清晰稳定、高效便捷的音频系统，是保障沟通流畅、信息精准传递的核心基础。作为集自主研发、规模生产、定制适配于一体的专业音频设备制造商，我们深耕麦克风与会议系统领域多年，聚焦用户核心需求，攻克音频传输、降噪处理、网络适配等关键技术，打造涵盖Dante协议麦克风、有线麦克风、无线麦克风、数字会议系统、音频处理器的全品类产品矩阵，以硬核研发实力与严苛生产标准，为全球客户提供高品质、高性价比、高适配性的音频设备与一站式解决方案。</p>
+        
+        <img src="https://raw.githubusercontent.com/Vanessa0750/ldmeting.github.io/main/images/mic/mic ld9600/mic ld9600-11.jpg" alt="自研智造，音传无界｜专业音频设备研发生产厂家，打造全场景会议与拾音解决方案">
+        
+        <h3>核心技术赋能：Dante协议麦克风，开启网络音频新时代</h3>
+        <p>顺应音频系统网络化、数字化、智能化的发展趋势，我们自主研发生产Dante协议系列麦克风，打破传统模拟音频传输的局限，实现高品质音频信号的高效无损传输，成为大型会议室、多功能报告厅、广电演播、体育场馆等场景的首选拾音设备。</p>
+
+        <h3>Dante协议麦克风核心优势，源自自研智造实力</h3>
+      
+        <p>无损低延迟传输，音质零损耗：内置专业Dante音频处理芯片，支持24bit/48-96kHz高采样率无损数字音频转换，采用IEEE 1588 PTP精准时钟同步技术，端到端传输延迟低于1ms，杜绝声音卡顿、失真、延迟问题，完美还原人声原声，保障会议发言、演讲朗诵、现场拾音的音质纯净度。</p>
+      
+        <p>PoE一线通，布线极简高效：支持标准PoE供电，一根普通网线即可同时完成音频传输、设备供电与信号控制，彻底摆脱传统模拟麦克风繁杂的XLR线缆与独立电源布线，大幅节省施工成本与时间，适配新旧场景快速改造，多设备级联更便捷。</p>
+      
+        <p>可视化管控，部署灵活易扩展：兼容Dante Controller专业管控软件，设备接入网络后自动识别发现，支持电脑端可视化音频路由调配，无需专业调试即可快速完成设备配对、通道切换、参数调节。单网络支持多通道麦克风同步接入，设备增减无需改线，完美适配从小型会议室到大型场馆的规模化扩展需求。</p>
+      
+        <p>全类型覆盖，适配多元场景：研发生产Dante鹅颈会议麦、边界界面麦、吊顶阵列麦、手持无线Dante麦等全类型产品，心形、超心形、全指向等多种拾音模式可选，兼顾桌面安装、嵌入式安装、吊顶吊装等多种安装方式，满足不同场景的拾音角度、距离与隐蔽性需求。</p>
+      
+        
+        <h3>全品类麦克风矩阵：有线+无线，满足全场景拾音需求</h3>
+        <p>除核心Dante协议麦克风外，我们同步打造高品质有线麦克风、无线麦克风产品线，依托自研声学技术与精密生产工艺，兼顾稳定性、耐用性与音质表现，覆盖会议发言、舞台演出、教育培训、直播录音、公共广播等全场景应用。</p>
+
+        <p>有线麦克风：稳定耐用，专业拾音</p>
+        <p>主打鹅颈会议麦、手持动圈麦、电容录音麦等品类，采用高保真驻极体咪芯与金属精工材质，抗干扰能力强、底噪极低，支持幻象供电，适配固定工位会议、演播室录音、舞台固定拾音等场景，长期使用稳定性拉满，无惧频繁插拔与长时间工作。</p>
+      
+        <p>无线麦克风：自由便捷，信号稳定</p>
+        <p>研发U段变频、真分集等多款无线麦克风产品，采用专业射频技术，有效规避信号干扰、断频、串频问题，传输距离远、续航持久，涵盖手持麦、领夹麦、头戴麦等类型，适配舞台演出、移动发言、教育培训、直播带货等需要灵活移动的场景，摆脱线缆束缚，拾音更自由。</p>
+        
+        <h3>一站式会议系统+音频处理器：构建完整智能音频生态</h3>
+        <p>我们并非单一设备生产商，更专注打造一体化智能会议音频解决方案，将麦克风、数字会议系统、音频处理器深度融合，实现从拾音、传输、处理到扩声的全流程优化，解决传统会议系统杂音多、调试难、管控乱、兼容性差等痛点。</p>
+
+        <p>数字会议系统：智能管控，高效协同</p>
+        <p>自主研发手拉手数字会议系统、无线会议系统、Dante网络会议系统，支持发言排队、主席优先、摄像跟踪、一键静音、同声传译等多功能拓展，单元之间采用网线或无线连接，安装便捷、扩容灵活，适配董事会会议室、政务会议厅、多功能报告厅、远程视频会议等场景，实现会议音频的智能化集中管控，提升会议效率与专业性。</p>
+
+        <p>专业音频处理器：硬核处理，音质优化</p>
+        <p>配套研发生产Dante协议音频处理器、数字混音器、降噪处理器、回声消除器等核心处理设备，内置高性能DSP芯片，具备自动混音、智能降噪、回声消除、均衡调节、增益控制、信号分配等强大功能，可对麦克风拾取的原始音频信号进行精细化优化处理，过滤环境噪音、抑制啸叫、优化人声清晰度，同时完美兼容Dante网络、有线、无线等全类型麦克风设备，实现整套音频系统的稳定运行与音质升级。</p>
+
+        <h3>研发+生产双轮驱动：硬核实力铸就品质标杆</h3>
+      
+        <p>自主研发，技术持续迭代</p>
+        <p>拥有专业音频研发团队，深耕声学技术、网络传输技术、数字信号处理技术多年，专注攻克Dante协议适配、抗干扰技术、降噪算法、低功耗设计等核心难题，拥有多项自主研发专利与技术成果。可根据客户特殊场景需求，提供产品功能定制、外观定制、接口定制、系统方案定制等个性化服务，精准匹配政企、教育、广电、工业等不同行业的专属音频需求。</p>
+
+        <p>规模化生产，品质严苛把控</p>
+        <p>自建标准化生产车间，配备精密生产、检测、老化测试设备，从原材料采购、元器件筛选、生产组装到成品检测，执行全流程严苛品控标准。每一款麦克风、会议系统及处理器，均经过多轮音质测试、信号稳定性测试、耐用性测试、兼容性测试，确保产品出厂即达标，长期使用稳定可靠，兼顾大批量量产能力与精细化品质管控，支持OEM/ODM合作，为客户提供高效、靠谱的生产代工服务。</p>
+
+        <h3>全场景应用落地，赋能各行各业音频升级</h3>
+        <p>凭借全品类产品、硬核技术与稳定品质，我们的音频设备已广泛应用于：
+          
+        <p>政企领域：政府机关会议室、董事会厅、政务服务中心、指挥调度中心</p>
+
+        <p>教育领域：学校阶梯教室、报告厅、录播教室、多媒体会议室</p>
+
+        <p>商用领域：企业多功能厅、酒店会议室、商务洽谈室、远程视频会议中心</p>
+
+        <p>专业领域：广电演播室、舞台演出场馆、体育场馆、广播电视台</p>
+
+        <p>公共领域：机场、车站、商场、医院等公共广播与应急指挥场景</p>
+
+        <h3>匠心铸音，合作共赢</h3>
+      
+        <p>以技术为核心，以品质为根本，以客户需求为导向，我们始终专注音频设备领域，持续优化产品性能、丰富产品矩阵、提升服务质量。无论是标准化Dante协议麦克风、有线无线麦克风，还是定制化会议系统与音频处理器，我们都坚持用自研实力与精工智造，为客户提供高品质、高适配、高性价比的音频产品与一站式解决方案。</p>
+        <p>未来，我们将继续深耕音频技术创新，助力各行各业实现音频系统数字化、网络化、智能化升级，用清晰纯净的声音，传递每一份重要信息，携手合作伙伴共拓音频市场新蓝海！</p>
+    </div>
+
+    <!-- 相关推荐 -->
+    <div class="related-articles">
+        <h3 class="related-title">相关推荐</h3>
+        <div class="related-list">
+            <div class="related-item">
+                <h4><a href="article-detail-1.html">赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会</a></h4>
+                <div class="related-date">2026-01-10</div>
+            </div>
+            <div class="related-item">
+                <h4><a href="article-detail-2.html">无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务</a></h4>
+                <div class="related-date">2025-10-15</div>
+            </div>
+            <div class="related-item">
+                <h4><a href="article-detail-4.html">凌动邀您共聚羊城｜2025广州国际专业灯光音响展，2.1馆G50展位静待莅临</a></h4>
+                <div class="related-date">2025-02-05</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 返回列表按钮 -->
+    <a href="articles-list.html" class="back-to-list">返回资讯列表</a>
+</div>
+
+<footer>
+    <p>&copy; 2026 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
+</footer>
+
+<script>
+    // 移动端菜单切换
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
+    });
+
+    // 点击导航链接关闭移动端菜单
+    const navAnchor = navLinks.querySelectorAll('a');
+    navAnchor.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('mobile-open');
+            menuToggle.textContent = '☰';
+        });
+    });
+</script>
+</body>
+</html>
