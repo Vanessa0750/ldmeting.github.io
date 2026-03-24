@@ -154,6 +154,7 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
         }
         .pagination a.active {
             background-color: #3498db;
@@ -236,88 +237,14 @@
 <!-- 资讯列表主体 -->
 <div class="articles-list">
     <h1 class="page-title">企业资讯</h1>
-
-    <!-- 资讯1 -->
-    <div class="article-item">
-        <h3><a href="article-detail-1.html">赴约羊城 声动未来</a></h3>
-        <div class="article-meta">
-            <span>发布时间：2026-01-10</span>
-            <span>分类：企业资讯</span>
-        </div>
-        <div class="article-excerpt">
-            我司重磅官宣参展2026广州国际专业灯光、音响展览会
-        </div>
-        <a href="article-detail-1.html" class="read-more">阅读全文</a>
-    </div>
-
-    <!-- 资讯2 -->
-    <div class="article-item">
-        <h3><a href="article-detail-2.html">无线六通道带表决带服务会议系统</a></h3>
-        <div class="article-meta">
-            <span>发布时间：2025-10-15</span>
-            <span>分类：企业动态</span>
-        </div>
-        <div class="article-excerpt">
-            重构高效会议生态，赋能全场景智慧会务
-        <a href="article-detail-2.html" class="read-more">阅读全文</a>
-    </div>
-
-    <!-- 资讯3 -->
-    <div class="article-item">
-        <h3><a href="article-detail-3.html">亮相羊城 聚力全球</a></h3>
-        <div class="article-meta">
-            <span>发布时间：2025-05-30</span>
-            <span>分类：企业动态</span>
-        </div>
-        <div class="article-excerpt">
-            我司携全系列会议音频精品闪耀2025广州灯光音响展览会
-        </div>
-        <a href="article-detail-3.html" class="read-more">阅读全文</a>
-    </div>
-
-    <!-- 新增更多资讯 -->
-    <div class="article-item">
-        <h3><a href="article-detail-4.html">凌动邀您共聚羊城</a></h3>
-        <div class="article-meta">
-            <span>发布时间：2025-02-05</span>
-            <span>分类：展会动态</span>
-        </div>
-        <div class="article-excerpt">
-            2025广州国际专业灯光音响展，2.1馆G50展位静待莅临
-        </div>
-        <a href="article-detail-4.html" class="read-more">阅读全文</a>
-    </div>
-
-    <div class="article-item">
-        <h3><a href="article-detail-5.html">精准增益可调，信号稳定无忧</a></h3>
-        <div class="article-meta">
-            <span>发布时间：2024-02-12</span>
-            <span>分类：使用教程</span>
-        </div>
-        <div class="article-excerpt">
-            工厂直供高品质带增益调节天线放大器，重塑信号接收新体验
-        </div>
-        <a href="article-detail-5.html" class="read-more">阅读全文</a>
-    </div>
-
-    <div class="article-item">
-        <h3><a href="article-detail-6.html">麦克风规范使用与日常保养全指南</a></h3>
-        <div class="article-meta">
-            <span>发布时间：2024-10-16</span>
-            <span>分类：使用教程</span>
-        </div>
-        <div class="article-excerpt">
-            科学的使用方法和系统的保养技巧，既能规避各类音频故障，又能让麦克风保持稳定性能，长期高效运转
-        </div>
-        <a href="article-detail-6.html" class="read-more">阅读全文</a>
-    </div>
+    <!-- 动态渲染的资讯列表容器 -->
+    <div id="articles-container"></div>
 
     <!-- 分页控件 -->
     <div class="pagination">
-        <a href="#" class="active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">下一页</a>
+        <a class="page-btn" data-page="1">1</a>
+        <a class="page-btn" data-page="2">2</a>
+        <a id="next-page" href="javascript:void(0)">下一页</a>
     </div>
 </div>
 
@@ -326,7 +253,127 @@
 </footer>
 
 <script>
-    // 移动端菜单切换
+    // 1. 定义所有资讯数据（只保留 1-7 条）
+    const articlesData = [
+        // 第一页（1-6条）
+        {
+            id: 1,
+            title: "赴约羊城 声动未来",
+            date: "2026-01-10",
+            category: "企业资讯",
+            excerpt: "我司重磅官宣参展2026广州国际专业灯光、音响展览会",
+            link: "article-detail-1.html"
+        },
+        {
+            id: 2,
+            title: "无线六通道带表决带服务会议系统",
+            date: "2025-10-15",
+            category: "企业动态",
+            excerpt: "重构高效会议生态，赋能全场景智慧会务",
+            link: "article-detail-2.html"
+        },
+        {
+            id: 3,
+            title: "亮相羊城 聚力全球",
+            date: "2025-05-30",
+            category: "企业动态",
+            excerpt: "我司携全系列会议音频精品闪耀2025广州灯光音响展览会",
+            link: "article-detail-3.html"
+        },
+        {
+            id: 4,
+            title: "凌动邀您共聚羊城",
+            date: "2025-02-05",
+            category: "展会动态",
+            excerpt: "2025广州国际专业灯光音响展，2.1馆G50展位静待莅临",
+            link: "article-detail-4.html"
+        },
+        {
+            id: 5,
+            title: "精准增益可调，信号稳定无忧",
+            date: "2024-02-12",
+            category: "使用教程",
+            excerpt: "工厂直供高品质带增益调节天线放大器，重塑信号接收新体验",
+            link: "article-detail-5.html"
+        },
+        {
+            id: 6,
+            title: "麦克风规范使用与日常保养全指南",
+            date: "2024-10-16",
+            category: "使用教程",
+            excerpt: "科学的使用方法和系统的保养技巧，既能规避各类音频故障，又能让麦克风保持稳定性能，长期高效运转",
+            link: "article-detail-6.html"
+        },
+        // 第二页（只有第7条）
+        {
+            id: 7,
+            title: "Dante智造，音传无界",
+            date: "2024-03-07",
+            category: "企业动态",
+            excerpt: "专业音频设备研发生产厂家，打造全场景会议与拾音解决方案",
+            link: "article-detail-7.html"
+        }
+    ];
+
+    // 2. 分页配置
+    const PAGE_SIZE = 6; // 每页显示6条
+    let currentPage = 1; // 当前页码，默认第一页
+    const totalPages = Math.ceil(articlesData.length / PAGE_SIZE); // 总页数
+
+    // 3. 渲染指定页码的资讯列表
+    function renderArticles(page) {
+        const container = document.getElementById('articles-container');
+        // 清空容器
+        container.innerHTML = '';
+        // 计算当前页的起始和结束索引
+        const startIndex = (page - 1) * PAGE_SIZE;
+        const endIndex = Math.min(startIndex + PAGE_SIZE, articlesData.length);
+        // 获取当前页的资讯数据
+        const currentArticles = articlesData.slice(startIndex, endIndex);
+
+        // 渲染每条资讯
+        currentArticles.forEach(article => {
+            const articleItem = document.createElement('div');
+            articleItem.className = 'article-item';
+            articleItem.innerHTML = `
+                <h3><a href="${article.link}">${article.title}</a></h3>
+                <div class="article-meta">
+                    <span>发布时间：${article.date}</span>
+                    <span>分类：${article.category}</span>
+                </div>
+                <div class="article-excerpt">${article.excerpt}</div>
+                <a href="${article.link}" class="read-more">阅读全文</a>
+            `;
+            container.appendChild(articleItem);
+        });
+
+        // 更新分页按钮样式
+        updatePaginationStyle(page);
+    }
+
+    // 4. 更新分页按钮的激活状态
+    function updatePaginationStyle(activePage) {
+        const pageBtns = document.querySelectorAll('.page-btn');
+        pageBtns.forEach(btn => {
+            const page = parseInt(btn.dataset.page);
+            if (page === activePage) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        // 控制下一页按钮状态
+        const nextBtn = document.getElementById('next-page');
+        if (activePage >= totalPages) {
+            nextBtn.style.opacity = '0.5';
+            nextBtn.style.pointerEvents = 'none';
+        } else {
+            nextBtn.style.opacity = '1';
+            nextBtn.style.pointerEvents = 'auto';
+        }
+    }
+
+    // 5. 移动端菜单切换
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     
@@ -343,6 +390,26 @@
             menuToggle.textContent = '☰';
         });
     });
+
+    // 6. 绑定分页按钮点击事件
+    document.querySelectorAll('.page-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const page = parseInt(btn.dataset.page);
+            currentPage = page;
+            renderArticles(page);
+        });
+    });
+
+    // 7. 绑定下一页按钮点击事件
+    document.getElementById('next-page').addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderArticles(currentPage);
+        }
+    });
+
+    // 初始化：渲染第一页资讯
+    renderArticles(1);
 </script>
 </body>
 </html>
