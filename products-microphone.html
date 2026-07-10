@@ -480,7 +480,7 @@
                     "images/mic-ur990/1.jpg",
                     "images/mic-ur990/2.jpg",
                     "images/mic-ur990/3.jpg",
-                    "images/mic-ur990/4.jpg"
+                    "images/mic-ur990/4.jpg",
                     "images/mic-ur990/5.jpg"
                 ]
             },
@@ -710,7 +710,7 @@
                     "images/mic-ur990/1.jpg",
                     "images/mic-ur990/2.jpg",
                     "images/mic-ur990/3.jpg",
-                    "images/mic-ur990/4.jpg"
+                    "images/mic-ur990/4.jpg",
                     "images/mic-ur990/5.jpg"
                 ]
             },
@@ -940,7 +940,7 @@
                     "images/mic-ur990/1.jpg",
                     "images/mic-ur990/2.jpg",
                     "images/mic-ur990/3.jpg",
-                    "images/mic-ur990/4.jpg"
+                    "images/mic-ur990/4.jpg",
                     "images/mic-ur990/5.jpg"
                 ]
             },
@@ -1119,7 +1119,7 @@
     };
 
     // ============================================================
-    // 5. 渲染产品
+    // 5. 渲染产品（已修复：加 encodeURI 编码图片路径）
     // ============================================================
     function renderProducts(lang) {
         const grid = document.getElementById('productGrid');
@@ -1141,7 +1141,8 @@
             product.images.forEach(function(img) {
                 const item = document.createElement('div');
                 item.className = 'slider-item';
-                item.style.backgroundImage = 'url(' + img + ')';
+                // ⭐ 关键修复：encodeURI 编码图片路径中的空格和特殊字符
+                item.style.backgroundImage = 'url(' + encodeURI(img) + ')';
                 wrapper.appendChild(item);
             });
 
