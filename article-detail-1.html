@@ -35,6 +35,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         .logo {
             font-size: 1.5rem;
@@ -42,6 +43,8 @@
         }
         .nav-links {
             display: flex;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .nav-links a {
             color: white;
@@ -57,6 +60,33 @@
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 101;
+        }
+
+        /* 语言切换器 */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            margin-left: 2rem;
+            gap: 0.2rem;
+        }
+        .lang-switcher a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.4rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .lang-switcher a:hover {
+            color: white;
+        }
+        .lang-switcher a.active {
+            color: #3498db;
+            font-weight: bold;
+        }
+        .lang-switcher .sep {
+            color: #555;
+            font-size: 0.8rem;
         }
 
         /* 面包屑导航 */
@@ -203,6 +233,10 @@
                 gap: 1rem;
                 box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             }
+            .nav-links.mobile-open .lang-switcher {
+                margin-left: 0;
+                justify-content: flex-start;
+            }
             .article-detail {
                 padding: 2rem 5%;
             }
@@ -224,10 +258,18 @@
     <div class="nav-container">
         <div class="logo">LDMETING</div>
         <nav class="nav-links" aria-label="主导航">
-            <a href="index.html#profile">公司介绍</a>
-            <a href="index.html#products">产品中心</a>
-            <a href="articles-list.html">企业资讯</a>
-            <a href="index.html#contact">联系方式</a>
+            <a href="index.html#profile" data-key="nav_profile">公司介绍</a>
+            <a href="index.html#products" data-key="nav_products">产品中心</a>
+            <a href="articles-list.html" data-key="nav_articles">企业资讯</a>
+            <a href="index.html#contact" data-key="nav_contact">联系方式</a>
+            <!-- 语言切换器 -->
+            <div class="lang-switcher">
+                <a href="#" data-lang="zh" class="active">中文</a>
+                <span class="sep">|</span>
+                <a href="#" data-lang="en">English</a>
+                <span class="sep">|</span>
+                <a href="#" data-lang="es">Español</a>
+            </div>
         </nav>
         <div class="menu-toggle" aria-label="切换菜单">☰</div>
     </div>
@@ -235,90 +277,241 @@
 
 <!-- 面包屑导航 -->
 <div class="breadcrumb">
-    <a href="index.html">首页</a>
+    <a href="index.html" data-key="bread_home">首页</a>
     <span>></span>
-    <a href="articles-list.html">企业资讯</a>
+    <a href="articles-list.html" data-key="bread_articles">企业资讯</a>
     <span>></span>
-    <span>赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会</span>
+    <span data-key="bread_current">赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会</span>
 </div>
 
 <!-- 文章详情主体 -->
 <div class="article-detail">
     <div class="article-header">
-        <h1 class="article-title">赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会</h1>
+        <h1 class="article-title" data-key="article_title">赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会</h1>
         <div class="article-meta">
-            <span>发布时间：2026-01-10</span>
-            <span>分类：产品动态</span>
-            <span>阅读次数：178</span>
+            <span data-key="meta_date">发布时间：2026-01-10</span>
+            <span data-key="meta_category">分类：产品动态</span>
+            <span data-key="meta_views">阅读次数：178</span>
         </div>
     </div>
 
     <div class="article-content">
-        <p>全球声光视听领域备受瞩目的行业盛会——2026广州国际专业灯光、音响展览会，将于2026年5月28日-31日，在中国进出口商品交易会展馆盛大启幕。</p>
-            
-        <p>作为亚太地区规模领先、专业性拉满的声光视听行业旗舰展会，本届展会展览面积超22万平方米，汇聚全球2200+行业领军品牌，预计吸引超11万名海内外专业客商、经销商、系统集成商及终端客户齐聚羊城，打造集前沿技术展示、精品体验、商贸对接、行业交流于一体的一站式高端平台，引领会议音频、专业声光领域的创新发展新风向。</p>
-            
-        <p>我司已正式确认参展本届盛会，届时将携全系列会议音频核心产品及全新研发成果重磅亮相，以匠心品质与前沿技术，向全球行业伙伴展示品牌实力与创新方案，诚邀各位新老客商、业内同仁莅临展台，共探商机、共话合作。</p>
-        
-        <h3>全矩阵精品重磅亮相 解锁智能会议音频新体验</h3>
-        <p>本次参展，我司将紧扣当下智慧办公、远程协同、高端会议、多功能报告厅等多元场景需求，精心打造沉浸式体验展台，全方位展出旗下核心会议音频产品矩阵，重点首发多款全新研发的智能会议系统、专业无线麦克风系列、数字音频处理器等新品。</p>
-        <p>此次展出的核心新品，凝聚了我司最新研发技术，主打智能降噪、远距离高清拾音、低延迟稳定传输、极简智能操控核心优势，针对性破解传统会议设备杂音干扰、连接不稳、操作繁琐、拾音盲区等行业痛点，兼顾专业性、实用性与高颜值设计，适配政企办公、企业会议室、远程视频会议、线下活动等各类场景，全面升级会议沟通效率与音频体验，为全球客户提供更智能、更高效、更稳定的会议音频选择。</p>
-        
-        <h3>聚焦全球商机 诚邀莅临共洽共赢</h3>
-        <p>广州国际专业灯光、音响展览会作为行业年度风向标，是拓展海内外市场、对接优质资源、提升品牌影响力的核心平台。本届展会，我司将依托这一优质商贸平台，全方位对接全球客商，深度沟通合作需求，全力拓展海内外经销渠道，进一步推动品牌国际化布局。</p>
+        <p data-key="p1">全球声光视听领域备受瞩目的行业盛会——2026广州国际专业灯光、音响展览会，将于2026年5月28日-31日，在中国进出口商品交易会展馆盛大启幕。</p>
 
-        <p>展会期间，我司专业销售与技术团队将全程驻守展台，为每一位莅临客商提供一对一产品讲解、方案定制、合作政策解读等专属服务，现场设置沉浸式产品体验区，可直观感受高清纯净音质与智能便捷操作，深度了解产品核心优势与应用场景。无论您是国内经销商、系统集成商，还是海外采购商、终端客户，均可莅临展台洽谈交流，共探行业发展新机遇，携手开拓更广阔的市场空间。</p>
-        
-        <h3>匠心深耕不止 共赴行业新程</h3>
-        <p>一直以来，我司始终深耕会议音频领域，坚持以技术创新为核心驱动力，以市场需求为导向，持续打磨产品品质，优化服务体系，致力于为全球客户提供高品质、高性价比的会议音频产品与解决方案。此次参展2026广州国际专业灯光、音响展览会，既是品牌实力的集中展示，也是我司深耕行业、拥抱全球化发展的重要举措。</p>
+        <p data-key="p2">作为亚太地区规模领先、专业性拉满的声光视听行业旗舰展会，本届展会展览面积超22万平方米，汇聚全球2200+行业领军品牌，预计吸引超11万名海内外专业客商、经销商、系统集成商及终端客户齐聚羊城，打造集前沿技术展示、精品体验、商贸对接、行业交流于一体的一站式高端平台，引领会议音频、专业声光领域的创新发展新风向。</p>
 
-        <p>2026年5月28日-31日，中国进出口商品交易会展馆，我司静待各位新老伙伴、业内同仁莅临品鉴，共赏精品、共商合作、共谋发展，携手以专业音频技术赋能高效会议场景，共筑声光视听行业高质量发展新未来！</p>
+        <p data-key="p3">我司已正式确认参展本届盛会，届时将携全系列会议音频核心产品及全新研发成果重磅亮相，以匠心品质与前沿技术，向全球行业伙伴展示品牌实力与创新方案，诚邀各位新老客商、业内同仁莅临展台，共探商机、共话合作。</p>
+
+        <h3 data-key="h1">全矩阵精品重磅亮相 解锁智能会议音频新体验</h3>
+        <p data-key="p4">本次参展，我司将紧扣当下智慧办公、远程协同、高端会议、多功能报告厅等多元场景需求，精心打造沉浸式体验展台，全方位展出旗下核心会议音频产品矩阵，重点首发多款全新研发的智能会议系统、专业无线麦克风系列、数字音频处理器等新品。</p>
+        <p data-key="p5">此次展出的核心新品，凝聚了我司最新研发技术，主打智能降噪、远距离高清拾音、低延迟稳定传输、极简智能操控核心优势，针对性破解传统会议设备杂音干扰、连接不稳、操作繁琐、拾音盲区等行业痛点，兼顾专业性、实用性与高颜值设计，适配政企办公、企业会议室、远程视频会议、线下活动等各类场景，全面升级会议沟通效率与音频体验，为全球客户提供更智能、更高效、更稳定的会议音频选择。</p>
+
+        <h3 data-key="h2">聚焦全球商机 诚邀莅临共洽共赢</h3>
+        <p data-key="p6">广州国际专业灯光、音响展览会作为行业年度风向标，是拓展海内外市场、对接优质资源、提升品牌影响力的核心平台。本届展会，我司将依托这一优质商贸平台，全方位对接全球客商，深度沟通合作需求，全力拓展海内外经销渠道，进一步推动品牌国际化布局。</p>
+
+        <p data-key="p7">展会期间，我司专业销售与技术团队将全程驻守展台，为每一位莅临客商提供一对一产品讲解、方案定制、合作政策解读等专属服务，现场设置沉浸式产品体验区，可直观感受高清纯净音质与智能便捷操作，深度了解产品核心优势与应用场景。无论您是国内经销商、系统集成商，还是海外采购商、终端客户，均可莅临展台洽谈交流，共探行业发展新机遇，携手开拓更广阔的市场空间。</p>
+
+        <h3 data-key="h3">匠心深耕不止 共赴行业新程</h3>
+        <p data-key="p8">一直以来，我司始终深耕会议音频领域，坚持以技术创新为核心驱动力，以市场需求为导向，持续打磨产品品质，优化服务体系，致力于为全球客户提供高品质、高性价比的会议音频产品与解决方案。此次参展2026广州国际专业灯光、音响展览会，既是品牌实力的集中展示，也是我司深耕行业、拥抱全球化发展的重要举措。</p>
+
+        <p data-key="p9">2026年5月28日-31日，中国进出口商品交易会展馆，我司静待各位新老伙伴、业内同仁莅临品鉴，共赏精品、共商合作、共谋发展，携手以专业音频技术赋能高效会议场景，共筑声光视听行业高质量发展新未来！</p>
     </div>
 
     <!-- 相关推荐 -->
     <div class="related-articles">
-        <h3 class="related-title">相关推荐</h3>
+        <h3 class="related-title" data-key="related_title">相关推荐</h3>
         <div class="related-list">
             <div class="related-item">
-                <h4><a href="article-detail-5.html">精准增益可调，信号稳定无忧｜工厂直供高品质带增益调节天线放大器，重塑信号接收新体验</a></h4>
+                <h4><a href="article-detail-5.html" data-key="related1_title">精准增益可调，信号稳定无忧｜工厂直供高品质带增益调节天线放大器，重塑信号接收新体验</a></h4>
                 <div class="related-date">2024-02-12</div>
             </div>
             <div class="related-item">
-                <h4><a href="article-detail-2.html">无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务</a></h4>
+                <h4><a href="article-detail-2.html" data-key="related2_title">无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务</a></h4>
                 <div class="related-date">2025-10-15</div>
             </div>
             <div class="related-item">
-                <h4><a href="article-detail-3.html">亮相羊城 聚力全球｜我司携全系列会议音频精品闪耀2025广州灯光音响展览会</a></h4>
+                <h4><a href="article-detail-3.html" data-key="related3_title">亮相羊城 聚力全球｜我司携全系列会议音频精品闪耀2025广州灯光音响展览会</a></h4>
                 <div class="related-date">2025-05-30</div>
             </div>
         </div>
     </div>
 
     <!-- 返回列表按钮 -->
-    <a href="articles-list.html" class="back-to-list">返回资讯列表</a>
+    <a href="articles-list.html" class="back-to-list" data-key="back_btn">返回资讯列表</a>
 </div>
 
 <footer>
-    <p>&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
+    <p data-key="footer_copyright">&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
 </footer>
 
 <script>
-    // 移动端菜单切换
+    // ============================================================
+    // 1. 移动端菜单切换
+    // ============================================================
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    
-    menuToggle.addEventListener('click', () => {
+
+    menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('mobile-open');
         menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
     });
 
-    // 点击导航链接关闭移动端菜单
-    const navAnchor = navLinks.querySelectorAll('a');
-    navAnchor.forEach(link => {
-        link.addEventListener('click', () => {
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+        link.addEventListener('click', function() {
             navLinks.classList.remove('mobile-open');
             menuToggle.textContent = '☰';
         });
+    });
+
+    // ============================================================
+    // 2. 多语言数据
+    // ============================================================
+    const translations = {
+        zh: {
+            // 导航
+            nav_profile: "公司介绍",
+            nav_products: "产品中心",
+            nav_articles: "企业资讯",
+            nav_contact: "联系方式",
+            // 面包屑
+            bread_home: "首页",
+            bread_articles: "企业资讯",
+            bread_current: "赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会",
+            // 文章信息
+            article_title: "赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会",
+            meta_date: "发布时间：2026-01-10",
+            meta_category: "分类：产品动态",
+            meta_views: "阅读次数：178",
+            // 文章正文
+            p1: "全球声光视听领域备受瞩目的行业盛会——2026广州国际专业灯光、音响展览会，将于2026年5月28日-31日，在中国进出口商品交易会展馆盛大启幕。",
+            p2: "作为亚太地区规模领先、专业性拉满的声光视听行业旗舰展会，本届展会展览面积超22万平方米，汇聚全球2200+行业领军品牌，预计吸引超11万名海内外专业客商、经销商、系统集成商及终端客户齐聚羊城，打造集前沿技术展示、精品体验、商贸对接、行业交流于一体的一站式高端平台，引领会议音频、专业声光领域的创新发展新风向。",
+            p3: "我司已正式确认参展本届盛会，届时将携全系列会议音频核心产品及全新研发成果重磅亮相，以匠心品质与前沿技术，向全球行业伙伴展示品牌实力与创新方案，诚邀各位新老客商、业内同仁莅临展台，共探商机、共话合作。",
+            h1: "全矩阵精品重磅亮相 解锁智能会议音频新体验",
+            p4: "本次参展，我司将紧扣当下智慧办公、远程协同、高端会议、多功能报告厅等多元场景需求，精心打造沉浸式体验展台，全方位展出旗下核心会议音频产品矩阵，重点首发多款全新研发的智能会议系统、专业无线麦克风系列、数字音频处理器等新品。",
+            p5: "此次展出的核心新品，凝聚了我司最新研发技术，主打智能降噪、远距离高清拾音、低延迟稳定传输、极简智能操控核心优势，针对性破解传统会议设备杂音干扰、连接不稳、操作繁琐、拾音盲区等行业痛点，兼顾专业性、实用性与高颜值设计，适配政企办公、企业会议室、远程视频会议、线下活动等各类场景，全面升级会议沟通效率与音频体验，为全球客户提供更智能、更高效、更稳定的会议音频选择。",
+            h2: "聚焦全球商机 诚邀莅临共洽共赢",
+            p6: "广州国际专业灯光、音响展览会作为行业年度风向标，是拓展海内外市场、对接优质资源、提升品牌影响力的核心平台。本届展会，我司将依托这一优质商贸平台，全方位对接全球客商，深度沟通合作需求，全力拓展海内外经销渠道，进一步推动品牌国际化布局。",
+            p7: "展会期间，我司专业销售与技术团队将全程驻守展台，为每一位莅临客商提供一对一产品讲解、方案定制、合作政策解读等专属服务，现场设置沉浸式产品体验区，可直观感受高清纯净音质与智能便捷操作，深度了解产品核心优势与应用场景。无论您是国内经销商、系统集成商，还是海外采购商、终端客户，均可莅临展台洽谈交流，共探行业发展新机遇，携手开拓更广阔的市场空间。",
+            h3: "匠心深耕不止 共赴行业新程",
+            p8: "一直以来，我司始终深耕会议音频领域，坚持以技术创新为核心驱动力，以市场需求为导向，持续打磨产品品质，优化服务体系，致力于为全球客户提供高品质、高性价比的会议音频产品与解决方案。此次参展2026广州国际专业灯光、音响展览会，既是品牌实力的集中展示，也是我司深耕行业、拥抱全球化发展的重要举措。",
+            p9: "2026年5月28日-31日，中国进出口商品交易会展馆，我司静待各位新老伙伴、业内同仁莅临品鉴，共赏精品、共商合作、共谋发展，携手以专业音频技术赋能高效会议场景，共筑声光视听行业高质量发展新未来！",
+            // 相关推荐
+            related_title: "相关推荐",
+            related1_title: "精准增益可调，信号稳定无忧｜工厂直供高品质带增益调节天线放大器，重塑信号接收新体验",
+            related2_title: "无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务",
+            related3_title: "亮相羊城 聚力全球｜我司携全系列会议音频精品闪耀2025广州灯光音响展览会",
+            // 返回按钮
+            back_btn: "返回资讯列表",
+            // 页脚
+            footer_copyright: "© 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。"
+        },
+        en: {
+            nav_profile: "About Us",
+            nav_products: "Products",
+            nav_articles: "News",
+            nav_contact: "Contact",
+            bread_home: "Home",
+            bread_articles: "News",
+            bread_current: "Meet in Guangzhou, Sound of the Future｜We Proudly Announce Participation in the 2026 Guangzhou International Pro Audio & Lighting Exhibition",
+            article_title: "Meet in Guangzhou, Sound of the Future｜We Proudly Announce Participation in the 2026 Guangzhou International Pro Audio & Lighting Exhibition",
+            meta_date: "Date: 2026-01-10",
+            meta_category: "Category: Product News",
+            meta_views: "Views: 178",
+            p1: "The highly anticipated industry event in the global audio-visual field – the 2026 Guangzhou International Professional Lighting and Sound Exhibition – will be held from May 28-31, 2026, at the China Import and Export Fair Complex.",
+            p2: "As the leading and most professional flagship exhibition in the Asia-Pacific region's audio-visual industry, this year's event covers over 220,000 square meters, bringing together 2,200+ leading global brands. It is expected to attract over 110,000 professional buyers, dealers, system integrators, and end customers from around the world, creating a one-stop platform for cutting-edge technology showcases, immersive experiences, business matching, and industry exchanges.",
+            p3: "We have officially confirmed our participation in this grand event, where we will present our full range of core conference audio products and new R&D achievements. With craftsmanship quality and advanced technology, we will demonstrate our brand strength and innovative solutions to global industry partners. We sincerely invite all new and existing customers and industry peers to visit our booth for business opportunities and collaboration.",
+            h1: "Full Product Portfolio Unveiling – Unlocking New Smart Conference Audio Experiences",
+            p4: "At this exhibition, we will focus on the diverse needs of smart offices, remote collaboration, high-end conferences, and multi-functional halls. We have carefully designed an immersive experience booth to showcase our core conference audio product portfolio, with a special focus on newly developed smart conference systems, professional wireless microphones, digital audio processors, and more.",
+            p5: "Our key new products incorporate our latest R&D technologies, featuring smart noise cancellation, long-distance HD pickup, low-latency stable transmission, and intuitive smart controls. These innovations address industry pain points such as interference, unstable connections, complex operations, and pickup blind spots. Combining professionalism, practicality, and elegant design, they are suitable for various scenarios including government and enterprise offices, corporate meeting rooms, remote video conferences, and offline events.",
+            h2: "Focusing on Global Opportunities – Welcome to Visit and Cooperate",
+            p6: "The Guangzhou International Pro Audio & Lighting Exhibition serves as the annual industry benchmark, providing a core platform for expanding domestic and international markets, connecting with quality resources, and enhancing brand influence. We will leverage this platform to engage with global buyers, discuss cooperation needs, expand distribution channels, and further drive our international expansion.",
+            p7: "Throughout the exhibition, our professional sales and technical teams will be present at the booth to provide one-on-one product demonstrations, customized solutions, and partnership policy explanations. Our immersive product experience zone allows visitors to experience high-definition audio quality and smart operations firsthand, gaining in-depth understanding of product advantages and applications. Whether you are a domestic dealer, system integrator, or international buyer, you are welcome to visit our booth for discussions.",
+            h3: "Commitment to Excellence – Embarking on a New Industry Journey",
+            p8: "We have always been deeply committed to the conference audio field, driven by technological innovation and market demands. We continuously refine product quality and optimize services, striving to provide high-quality, cost-effective conference audio products and solutions to global customers. Our participation in the 2026 Guangzhou International Pro Audio & Lighting Exhibition represents both a showcase of our brand strength and an important step in our globalization strategy.",
+            p9: "From May 28-31, 2026, at the China Import and Export Fair Complex, we look forward to welcoming all partners and industry peers to visit, appreciate our products, and explore cooperation opportunities. Together, we will empower efficient conference scenarios with professional audio technology and build a new future of high-quality development in the audio-visual industry!",
+            related_title: "Related Articles",
+            related1_title: "Precise Gain Adjustment, Stable Signal｜Factory Direct High-Quality Antenna Amplifier with Gain Control, Redefining Signal Reception",
+            related2_title: "Wireless 6-Channel Voting & Service Conference System｜Reconstructing Efficient Conference Ecosystems for Smart Meetings",
+            related3_title: "Shining in Guangzhou, Connecting the World｜Our Full Range of Conference Audio Products at the 2025 Guangzhou Lighting & Sound Exhibition",
+            back_btn: "Back to News List",
+            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. All rights reserved."
+        },
+        es: {
+            nav_profile: "Sobre Nosotros",
+            nav_products: "Productos",
+            nav_articles: "Noticias",
+            nav_contact: "Contacto",
+            bread_home: "Inicio",
+            bread_articles: "Noticias",
+            bread_current: "Encuentro en Guangzhou, Sonido del Futuro｜Anunciamos nuestra participación en la Exposición Internacional de Iluminación y Sonido Profesional de Guangzhou 2026",
+            article_title: "Encuentro en Guangzhou, Sonido del Futuro｜Anunciamos nuestra participación en la Exposición Internacional de Iluminación y Sonido Profesional de Guangzhou 2026",
+            meta_date: "Fecha: 2026-01-10",
+            meta_category: "Categoría: Novedades de Productos",
+            meta_views: "Visitas: 178",
+            p1: "El evento más esperado en el ámbito audiovisual global – la Exposición Internacional de Iluminación y Sonido Profesional de Guangzhou 2026 – se celebrará del 28 al 31 de mayo de 2026 en el Complejo de la Feria de Importación y Exportación de China.",
+            p2: "Como la exposición insignia más grande y profesional de la industria audiovisual en la región de Asia-Pacífico, este año el evento abarca más de 220,000 metros cuadrados, reuniendo a más de 2,200 marcas líderes mundiales. Se espera que atraiga a más de 110,000 compradores profesionales, distribuidores, integradores de sistemas y clientes finales de todo el mundo, creando una plataforma integral para la exhibición de tecnología de vanguardia, experiencias inmersivas, negocios e intercambios industriales.",
+            p3: "Hemos confirmado oficialmente nuestra participación en este gran evento, donde presentaremos nuestra gama completa de productos centrales de audio para conferencias y nuevos desarrollos. Con calidad artesanal y tecnología avanzada, demostraremos nuestra fortaleza de marca y soluciones innovadoras a socios globales. Invitamos cordialmente a todos los clientes y colegas de la industria a visitar nuestro stand para explorar oportunidades de negocio.",
+            h1: "Portafolio Completo de Productos – Desbloqueando Nuevas Experiencias de Audio para Conferencias Inteligentes",
+            p4: "En esta exposición, nos enfocaremos en las diversas necesidades de oficinas inteligentes, colaboración remota, conferencias de alto nivel y salas multifuncionales. Hemos diseñado cuidadosamente un stand de experiencia inmersiva para mostrar nuestro portafolio de productos de audio para conferencias, con especial énfasis en sistemas de conferencia inteligentes, micrófonos inalámbricos profesionales, procesadores de audio digital y más.",
+            p5: "Nuestros nuevos productos clave incorporan nuestras últimas tecnologías de I+D, con cancelación de ruido inteligente, captación de audio HD de larga distancia, transmisión estable de baja latencia y controles inteligentes intuitivos. Estas innovaciones abordan problemas como interferencias, conexiones inestables, operaciones complejas y puntos ciegos de captación. Combinando profesionalismo, practicidad y diseño elegante, son adecuados para diversos escenarios.",
+            h2: "Enfocados en Oportunidades Globales – Bienvenidos a Visitar y Colaborar",
+            p6: "La Exposición Internacional de Iluminación y Sonido de Guangzhou es el referente anual de la industria, proporcionando una plataforma para expandir mercados nacionales e internacionales, conectar con recursos de calidad y mejorar la influencia de marca. Aprovecharemos esta plataforma para interactuar con compradores globales, discutir necesidades de colaboración, expandir canales de distribución e impulsar nuestra expansión internacional.",
+            p7: "Durante la exposición, nuestros equipos de ventas y técnicos estarán presentes en el stand para ofrecer demostraciones personalizadas, soluciones a medida y explicaciones de políticas de cooperación. Nuestra zona de experiencia inmersiva permite a los visitantes experimentar la calidad de audio HD y las operaciones inteligentes de primera mano. Ya sea distribuidor nacional, integrador de sistemas o comprador internacional, todos son bienvenidos a visitar nuestro stand.",
+            h3: "Compromiso con la Excelencia – Emprendiendo un Nuevo Camino en la Industria",
+            p8: "Siempre hemos estado profundamente comprometidos con el campo del audio para conferencias, impulsados por la innovación tecnológica y las demandas del mercado. Mejoramos continuamente la calidad del producto y optimizamos los servicios, esforzándonos por ofrecer productos y soluciones de audio de alta calidad y rentables a clientes globales. Nuestra participación en la Exposición de Guangzhou 2026 representa tanto una muestra de nuestra fortaleza de marca como un paso importante en nuestra estrategia de globalización.",
+            p9: "Del 28 al 31 de mayo de 2026, en el Complejo de la Feria de Importación y Exportación de China, esperamos dar la bienvenida a todos los socios y colegas de la industria para visitarnos, conocer nuestros productos y explorar oportunidades de colaboración. ¡Juntos, potenciaremos escenarios de conferencias eficientes con tecnología de audio profesional y construiremos un nuevo futuro para la industria audiovisual!",
+            related_title: "Artículos Relacionados",
+            related1_title: "Ajuste de Ganancia Preciso, Señal Estable｜Amplificador de Antena de Alta Calidad con Control de Ganancia",
+            related2_title: "Sistema Inalámbrico de 6 Canales con Votación y Servicios｜Reconstruyendo Ecosistemas de Conferencias Eficientes",
+            related3_title: "Brillando en Guangzhou, Conectando el Mundo｜Nuestros Productos de Audio en la Exposición de Guangzhou 2025",
+            back_btn: "Volver a la Lista de Noticias",
+            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Todos los derechos reservados."
+        }
+    };
+
+    // ============================================================
+    // 3. 多语言核心逻辑
+    // ============================================================
+    let currentLang = localStorage.getItem('ldmeting-lang') || 'zh';
+
+    const translatableElements = document.querySelectorAll('[data-key]');
+
+    function updateTexts(lang) {
+        translatableElements.forEach(function(el) {
+            const key = el.getAttribute('data-key');
+            if (translations[lang] && translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
+        });
+    }
+
+    function switchLanguage(lang) {
+        if (!translations[lang]) return;
+        currentLang = lang;
+        updateTexts(lang);
+
+        document.querySelectorAll('.lang-switcher a').forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('data-lang') === lang) {
+                link.classList.add('active');
+            }
+        });
+
+        localStorage.setItem('ldmeting-lang', lang);
+    }
+
+    // ============================================================
+    // 4. 初始化
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.lang-switcher a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchLanguage(this.getAttribute('data-lang'));
+            });
+        });
+
+        switchLanguage(currentLang);
     });
 </script>
 </body>
