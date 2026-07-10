@@ -35,6 +35,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         .logo {
             font-size: 1.5rem;
@@ -42,6 +43,8 @@
         }
         .nav-links {
             display: flex;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .nav-links a {
             color: white;
@@ -57,6 +60,33 @@
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 101;
+        }
+
+        /* 语言切换器 */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            margin-left: 2rem;
+            gap: 0.2rem;
+        }
+        .lang-switcher a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.4rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .lang-switcher a:hover {
+            color: white;
+        }
+        .lang-switcher a.active {
+            color: #3498db;
+            font-weight: bold;
+        }
+        .lang-switcher .sep {
+            color: #555;
+            font-size: 0.8rem;
         }
 
         /* 面包屑导航 */
@@ -203,6 +233,10 @@
                 gap: 1rem;
                 box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             }
+            .nav-links.mobile-open .lang-switcher {
+                margin-left: 0;
+                justify-content: flex-start;
+            }
             .article-detail {
                 padding: 2rem 5%;
             }
@@ -224,10 +258,18 @@
     <div class="nav-container">
         <div class="logo">LDMETING</div>
         <nav class="nav-links" aria-label="主导航">
-            <a href="index.html#profile">公司介绍</a>
-            <a href="index.html#products">产品中心</a>
-            <a href="articles-list.html">企业资讯</a>
-            <a href="index.html#contact">联系方式</a>
+            <a href="index.html#profile" data-key="nav_profile">公司介绍</a>
+            <a href="index.html#products" data-key="nav_products">产品中心</a>
+            <a href="articles-list.html" data-key="nav_articles">企业资讯</a>
+            <a href="index.html#contact" data-key="nav_contact">联系方式</a>
+            <!-- 语言切换器 -->
+            <div class="lang-switcher">
+                <a href="#" data-lang="zh" class="active">中文</a>
+                <span class="sep">|</span>
+                <a href="#" data-lang="en">English</a>
+                <span class="sep">|</span>
+                <a href="#" data-lang="es">Español</a>
+            </div>
         </nav>
         <div class="menu-toggle" aria-label="切换菜单">☰</div>
     </div>
@@ -235,103 +277,265 @@
 
 <!-- 面包屑导航 -->
 <div class="breadcrumb">
-    <a href="index.htm3">首页</a>
+    <a href="index.html" data-key="bread_home">首页</a>
     <span>></span>
-    <a href="articles-list.html">企业资讯</a>
+    <a href="articles-list.html" data-key="bread_articles">企业资讯</a>
     <span>></span>
-    <span>无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务</span>
+    <span data-key="bread_current">无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务</span>
 </div>
 
 <!-- 文章详情主体 -->
 <div class="article-detail">
     <div class="article-header">
-        <h1 class="article-title">无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务</h1>
+        <h1 class="article-title" data-key="article_title">无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务</h1>
         <div class="article-meta">
-            <span>发布时间：2025-10-15</span>
-            <span>分类：产品动态</span>
-            <span>阅读次数：1380</span>
+            <span data-key="meta_date">发布时间：2025-10-15</span>
+            <span data-key="meta_category">分类：产品动态</span>
+            <span data-key="meta_views">阅读次数：1380</span>
         </div>
     </div>
 
     <div class="article-content">
-        <p>在政务研讨、企业决策、学术论坛、商务峰会等各类会务场景中，传统会议模式的弊端日益凸显：有线布线繁琐杂乱、会场布局受限、表决流程耗时低效、参会服务响应滞后、多通道音频传输干扰频发……一场高质量的会议，不仅需要流畅的沟通秩序、精准的决策流程，更需要便捷高效的硬件支撑与贴心周全的服务保障。</p>
+        <p data-key="p1">在政务研讨、企业决策、学术论坛、商务峰会等各类会务场景中，传统会议模式的弊端日益凸显：有线布线繁琐杂乱、会场布局受限、表决流程耗时低效、参会服务响应滞后、多通道音频传输干扰频发……一场高质量的会议，不仅需要流畅的沟通秩序、精准的决策流程，更需要便捷高效的硬件支撑与贴心周全的服务保障。</p>
 
-        <p>全新推出的无线六通道带表决带服务会议系统，打破传统会务桎梏，融合无线数字通信、六通道独立传输、智能表决统计、一键呼叫服务四大核心技术，集便捷性、稳定性、专业性、人性化于一体，彻底告别有线束缚，简化会务流程，提升会议效率，全方位打造现代化、智能化、规范化的会议体验，成为政企单位、高端酒店、学术机构、大型企业升级会务系统的首选方案。</p>
-        
-        <img src="https://raw.githubusercontent.com/Vanessa0750/ldmeting.github.io/main/images/bm8800m/system bm8800m-1.jpg" alt="无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务">
-        
-        <h3>六通道无线传输，稳定抗扰，音质清晰无损耗</h3>
-        <p>系统采用先进的无线通信技术，搭载六通道音频传输模块，支持多组发言单元同时稳定运行，通道间互不干扰、信号隔离清晰，彻底解决传统无线会议串频、杂音、断连等问题。能实现高保真、零延迟的音质输出，保障会场每一个角落都能清晰收听发言内容。</p>
+        <p data-key="p2">全新推出的无线六通道带表决带服务会议系统，打破传统会务桎梏，融合无线数字通信、六通道独立传输、智能表决统计、一键呼叫服务四大核心技术，集便捷性、稳定性、专业性、人性化于一体，彻底告别有线束缚，简化会务流程，提升会议效率，全方位打造现代化、智能化、规范化的会议体验，成为政企单位、高端酒店、学术机构、大型企业升级会务系统的首选方案。</p>
 
-        <p>相较于单通道、双通道常规会议系统，六通道设计具备更强的兼容性和扩展性，可灵活适配大型圆桌会议、阶梯式报告厅、多功能会议厅等不同场地布局，满足多组别、多议题、多语种会议的专业需求。无线信号覆盖范围广，有效传输距离可达百米以内，穿透性强，会场布局自由灵活，可随时调整座位排布，适配临时会议、流动会场、多场地复用等多种场景，大幅提升场地利用率。</p>
-        
-        <h3>智能表决系统，一键发起，精准高效更规范</h3>
-        <p>针对政务决策、民主评议、项目评审、选举投票等核心会务需求，系统内置专业化智能表决模块，支持赞成、反对、弃权、多选、评分等多种表决模式，可根据会议议题灵活设置，全程数字化操作，替代传统举手、纸质投票等低效方式，彻底规避人工统计误差、投票不透明、耗时过长等问题。</p>
+        <img src="https://raw.githubusercontent.com/Vanessa0750/ldmeting.github.io/main/images/bm8800m/system%20bm8800m-1.jpg" alt="无线六通道带表决带服务会议系统">
 
-        <p>参会人员通过桌面发言表决单元，一键完成投票操作，数据实时加密传输至主机，后台系统自动统计、实时生成表决结果，可同步投射至会场大屏、投影仪，全程公开透明、可追溯。主席单元拥有全权管控权限，可随时发起表决、暂停表决、锁定结果、查看明细，支持表决数据导出、存档、打印，满足会议归档、纪检核查、档案留存的规范化要求，让民主决策、投票表决更高效、更公正、更权威。</p>
-      
-        <h3>一键呼叫服务，贴心便捷，提升参会体验感</h3>
-        <p>高端会议的核心竞争力，不仅在于流程高效，更在于服务贴心。系统独家搭载参会人员一键服务呼叫功能，每个发言单元均设置专属服务呼叫按钮，参会人员在会议过程中，可按需呼叫茶水、技术支持、会务协助、资料传递等服务，无需离场、无需打断会议流程，一键触发，后台实时接收呼叫信息，快速响应需求。</p>
+        <h3 data-key="h1">六通道无线传输，稳定抗扰，音质清晰无损耗</h3>
+        <p data-key="p3">系统采用先进的无线通信技术，搭载六通道音频传输模块，支持多组发言单元同时稳定运行，通道间互不干扰、信号隔离清晰，彻底解决传统无线会议串频、杂音、断连等问题。能实现高保真、零延迟的音质输出，保障会场每一个角落都能清晰收听发言内容。</p>
 
-        <p>服务端配备专属管控界面，可清晰查看呼叫席位、呼叫类型、呼叫时间，精准定位服务对象，避免服务混乱与响应滞后，全方位提升参会人员的体验感与舒适度。无论是长时间的研讨会议，还是高规格的商务峰会，都能实现会务服务与会议流程的无缝衔接，彰显会场的专业性与人性化，打造高端、舒心的会务环境。</p>
-        
-        <h3>全无线轻量化设计，安装便捷，适配全场景</h3>
-        <p>彻底摒弃传统有线会议系统繁琐的布线工程，无需凿墙布线、无需提前搭建线路，主机与发言单元全无线连接，开箱即可快速组网，开机即用，大幅缩短会议筹备时间，节省人工与安装成本。设备采用轻量化、便携化设计，发言单元体积小巧、外观简约，可适配各类会议桌面，不占空间、美观大方，兼顾实用性与颜值。</p>
+        <p data-key="p4">相较于单通道、双通道常规会议系统，六通道设计具备更强的兼容性和扩展性，可灵活适配大型圆桌会议、阶梯式报告厅、多功能会议厅等不同场地布局，满足多组别、多议题、多语种会议的专业需求。无线信号覆盖范围广，有效传输距离可达百米以内，穿透性强，会场布局自由灵活，可随时调整座位排布，适配临时会议、流动会场、多场地复用等多种场景，大幅提升场地利用率。</p>
 
-        <p>系统兼容性极强，可无缝对接会场中控系统、音响系统、大屏显示系统、摄像跟踪系统，实现会议全程智能化管控。支持大容量发言单元扩展，可满足数十人至数百人的大型会议需求，广泛适用于政府机关会议室、企事业单位多功能厅、高端酒店会议中心、学术报告厅、行业峰会论坛、项目评审会等全场景会务需求，无论是固定会场还是临时流动会场，都能轻松适配。</p>
+        <h3 data-key="h2">智能表决系统，一键发起，精准高效更规范</h3>
+        <p data-key="p5">针对政务决策、民主评议、项目评审、选举投票等核心会务需求，系统内置专业化智能表决模块，支持赞成、反对、弃权、多选、评分等多种表决模式，可根据会议议题灵活设置，全程数字化操作，替代传统举手、纸质投票等低效方式，彻底规避人工统计误差、投票不透明、耗时过长等问题。</p>
 
-        <h3>安全可靠，易操作，降低运维成本</h3>
-        <p>系统采用数据加密传输技术，表决数据、音频信号全程安全防护，防止信息泄露与干扰，保障会议信息安全。主机界面简洁直观，操作无需专业技术培训，会务人员快速上手，参会人员一键操作，零门槛适配各年龄段、各行业使用人群。</p>
+        <p data-key="p6">参会人员通过桌面发言表决单元，一键完成投票操作，数据实时加密传输至主机，后台系统自动统计、实时生成表决结果，可同步投射至会场大屏、投影仪，全程公开透明、可追溯。主席单元拥有全权管控权限，可随时发起表决、暂停表决、锁定结果、查看明细，支持表决数据导出、存档、打印，满足会议归档、纪检核查、档案留存的规范化要求，让民主决策、投票表决更高效、更公正、更权威。</p>
 
-        <p>设备采用高性能低功耗芯片，续航持久，稳定性强，日常无需复杂维护，故障率低，长期使用成本远低于传统有线会议系统。同时，系统具备故障自检、信号预警功能，实时监控运行状态，保障会议全程稳定不间断，杜绝会议中途故障卡顿的尴尬情况。</p>
+        <h3 data-key="h3">一键呼叫服务，贴心便捷，提升参会体验感</h3>
+        <p data-key="p7">高端会议的核心竞争力，不仅在于流程高效，更在于服务贴心。系统独家搭载参会人员一键服务呼叫功能，每个发言单元均设置专属服务呼叫按钮，参会人员在会议过程中，可按需呼叫茶水、技术支持、会务协助、资料传递等服务，无需离场、无需打断会议流程，一键触发，后台实时接收呼叫信息，快速响应需求。</p>
 
-        <h3>无线六通道带表决带服务会议系统，以“无线便捷+稳定传输+智能表决+贴心服务”四大核心优势，真正实现了会议流程的高效化、决策流程的规范化、会务服务的人性化。一次投入，长期受益，全面升级会议体验，简化会务管理，助力各类机构打造现代化智慧会务新标杆！</h3>
+        <p data-key="p8">服务端配备专属管控界面，可清晰查看呼叫席位、呼叫类型、呼叫时间，精准定位服务对象，避免服务混乱与响应滞后，全方位提升参会人员的体验感与舒适度。无论是长时间的研讨会议，还是高规格的商务峰会，都能实现会务服务与会议流程的无缝衔接，彰显会场的专业性与人性化，打造高端、舒心的会务环境。</p>
+
+        <h3 data-key="h4">全无线轻量化设计，安装便捷，适配全场景</h3>
+        <p data-key="p9">彻底摒弃传统有线会议系统繁琐的布线工程，无需凿墙布线、无需提前搭建线路，主机与发言单元全无线连接，开箱即可快速组网，开机即用，大幅缩短会议筹备时间，节省人工与安装成本。设备采用轻量化、便携化设计，发言单元体积小巧、外观简约，可适配各类会议桌面，不占空间、美观大方，兼顾实用性与颜值。</p>
+
+        <p data-key="p10">系统兼容性极强，可无缝对接会场中控系统、音响系统、大屏显示系统、摄像跟踪系统，实现会议全程智能化管控。支持大容量发言单元扩展，可满足数十人至数百人的大型会议需求，广泛适用于政府机关会议室、企事业单位多功能厅、高端酒店会议中心、学术报告厅、行业峰会论坛、项目评审会等全场景会务需求，无论是固定会场还是临时流动会场，都能轻松适配。</p>
+
+        <h3 data-key="h5">安全可靠，易操作，降低运维成本</h3>
+        <p data-key="p11">系统采用数据加密传输技术，表决数据、音频信号全程安全防护，防止信息泄露与干扰，保障会议信息安全。主机界面简洁直观，操作无需专业技术培训，会务人员快速上手，参会人员一键操作，零门槛适配各年龄段、各行业使用人群。</p>
+
+        <p data-key="p12">设备采用高性能低功耗芯片，续航持久，稳定性强，日常无需复杂维护，故障率低，长期使用成本远低于传统有线会议系统。同时，系统具备故障自检、信号预警功能，实时监控运行状态，保障会议全程稳定不间断，杜绝会议中途故障卡顿的尴尬情况。</p>
+
+        <p data-key="p13"><strong>无线六通道带表决带服务会议系统，以"无线便捷+稳定传输+智能表决+贴心服务"四大核心优势，真正实现了会议流程的高效化、决策流程的规范化、会务服务的人性化。一次投入，长期受益，全面升级会议体验，简化会务管理，助力各类机构打造现代化智慧会务新标杆！</strong></p>
     </div>
 
     <!-- 相关推荐 -->
     <div class="related-articles">
-        <h3 class="related-title">相关推荐</h3>
+        <h3 class="related-title" data-key="related_title">相关推荐</h3>
         <div class="related-list">
             <div class="related-item">
-                <h4><a href="article-detail-1.html">赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会</a></h4>
+                <h4><a href="article-detail-1.html" data-key="related1_title">赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会</a></h4>
                 <div class="related-date">2026-01-10</div>
             </div>
             <div class="related-item">
-                <h4><a href="article-detail-5.html">精准增益可调，信号稳定无忧｜工厂直供高品质带增益调节天线放大器，重塑信号接收新体验</a></h4>
+                <h4><a href="article-detail-5.html" data-key="related2_title">精准增益可调，信号稳定无忧｜工厂直供高品质带增益调节天线放大器，重塑信号接收新体验</a></h4>
                 <div class="related-date">2024-12-02</div>
             </div>
             <div class="related-item">
-                <h4><a href="article-detail-3.html">亮相羊城 聚力全球｜我司携全系列会议音频精品闪耀2025广州灯光音响展览会</a></h4>
+                <h4><a href="article-detail-3.html" data-key="related3_title">亮相羊城 聚力全球｜我司携全系列会议音频精品闪耀2025广州灯光音响展览会</a></h4>
                 <div class="related-date">2025-05-30</div>
             </div>
         </div>
     </div>
 
     <!-- 返回列表按钮 -->
-    <a href="articles-list.html" class="back-to-list">返回资讯列表</a>
+    <a href="articles-list.html" class="back-to-list" data-key="back_btn">返回资讯列表</a>
 </div>
 
 <footer>
-    <p>&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
+    <p data-key="footer_copyright">&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
 </footer>
 
 <script>
-    // 移动端菜单切换
+    // ============================================================
+    // 1. 移动端菜单切换
+    // ============================================================
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    
-    menuToggle.addEventListener('click', () => {
+
+    menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('mobile-open');
         menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
     });
 
-    // 点击导航链接关闭移动端菜单
-    const navAnchor = navLinks.querySelectorAll('a');
-    navAnchor.forEach(link => {
-        link.addEventListener('click', () => {
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+        link.addEventListener('click', function() {
             navLinks.classList.remove('mobile-open');
             menuToggle.textContent = '☰';
         });
+    });
+
+    // ============================================================
+    // 2. 多语言数据
+    // ============================================================
+    const translations = {
+        zh: {
+            nav_profile: "公司介绍",
+            nav_products: "产品中心",
+            nav_articles: "企业资讯",
+            nav_contact: "联系方式",
+            bread_home: "首页",
+            bread_articles: "企业资讯",
+            bread_current: "无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务",
+            article_title: "无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务",
+            meta_date: "发布时间：2025-10-15",
+            meta_category: "分类：产品动态",
+            meta_views: "阅读次数：1380",
+            p1: "在政务研讨、企业决策、学术论坛、商务峰会等各类会务场景中，传统会议模式的弊端日益凸显：有线布线繁琐杂乱、会场布局受限、表决流程耗时低效、参会服务响应滞后、多通道音频传输干扰频发……一场高质量的会议，不仅需要流畅的沟通秩序、精准的决策流程，更需要便捷高效的硬件支撑与贴心周全的服务保障。",
+            p2: "全新推出的无线六通道带表决带服务会议系统，打破传统会务桎梏，融合无线数字通信、六通道独立传输、智能表决统计、一键呼叫服务四大核心技术，集便捷性、稳定性、专业性、人性化于一体，彻底告别有线束缚，简化会务流程，提升会议效率，全方位打造现代化、智能化、规范化的会议体验，成为政企单位、高端酒店、学术机构、大型企业升级会务系统的首选方案。",
+            h1: "六通道无线传输，稳定抗扰，音质清晰无损耗",
+            p3: "系统采用先进的无线通信技术，搭载六通道音频传输模块，支持多组发言单元同时稳定运行，通道间互不干扰、信号隔离清晰，彻底解决传统无线会议串频、杂音、断连等问题。能实现高保真、零延迟的音质输出，保障会场每一个角落都能清晰收听发言内容。",
+            p4: "相较于单通道、双通道常规会议系统，六通道设计具备更强的兼容性和扩展性，可灵活适配大型圆桌会议、阶梯式报告厅、多功能会议厅等不同场地布局，满足多组别、多议题、多语种会议的专业需求。无线信号覆盖范围广，有效传输距离可达百米以内，穿透性强，会场布局自由灵活，可随时调整座位排布，适配临时会议、流动会场、多场地复用等多种场景，大幅提升场地利用率。",
+            h2: "智能表决系统，一键发起，精准高效更规范",
+            p5: "针对政务决策、民主评议、项目评审、选举投票等核心会务需求，系统内置专业化智能表决模块，支持赞成、反对、弃权、多选、评分等多种表决模式，可根据会议议题灵活设置，全程数字化操作，替代传统举手、纸质投票等低效方式，彻底规避人工统计误差、投票不透明、耗时过长等问题。",
+            p6: "参会人员通过桌面发言表决单元，一键完成投票操作，数据实时加密传输至主机，后台系统自动统计、实时生成表决结果，可同步投射至会场大屏、投影仪，全程公开透明、可追溯。主席单元拥有全权管控权限，可随时发起表决、暂停表决、锁定结果、查看明细，支持表决数据导出、存档、打印，满足会议归档、纪检核查、档案留存的规范化要求，让民主决策、投票表决更高效、更公正、更权威。",
+            h3: "一键呼叫服务，贴心便捷，提升参会体验感",
+            p7: "高端会议的核心竞争力，不仅在于流程高效，更在于服务贴心。系统独家搭载参会人员一键服务呼叫功能，每个发言单元均设置专属服务呼叫按钮，参会人员在会议过程中，可按需呼叫茶水、技术支持、会务协助、资料传递等服务，无需离场、无需打断会议流程，一键触发，后台实时接收呼叫信息，快速响应需求。",
+            p8: "服务端配备专属管控界面，可清晰查看呼叫席位、呼叫类型、呼叫时间，精准定位服务对象，避免服务混乱与响应滞后，全方位提升参会人员的体验感与舒适度。无论是长时间的研讨会议，还是高规格的商务峰会，都能实现会务服务与会议流程的无缝衔接，彰显会场的专业性与人性化，打造高端、舒心的会务环境。",
+            h4: "全无线轻量化设计，安装便捷，适配全场景",
+            p9: "彻底摒弃传统有线会议系统繁琐的布线工程，无需凿墙布线、无需提前搭建线路，主机与发言单元全无线连接，开箱即可快速组网，开机即用，大幅缩短会议筹备时间，节省人工与安装成本。设备采用轻量化、便携化设计，发言单元体积小巧、外观简约，可适配各类会议桌面，不占空间、美观大方，兼顾实用性与颜值。",
+            p10: "系统兼容性极强，可无缝对接会场中控系统、音响系统、大屏显示系统、摄像跟踪系统，实现会议全程智能化管控。支持大容量发言单元扩展，可满足数十人至数百人的大型会议需求，广泛适用于政府机关会议室、企事业单位多功能厅、高端酒店会议中心、学术报告厅、行业峰会论坛、项目评审会等全场景会务需求，无论是固定会场还是临时流动会场，都能轻松适配。",
+            h5: "安全可靠，易操作，降低运维成本",
+            p11: "系统采用数据加密传输技术，表决数据、音频信号全程安全防护，防止信息泄露与干扰，保障会议信息安全。主机界面简洁直观，操作无需专业技术培训，会务人员快速上手，参会人员一键操作，零门槛适配各年龄段、各行业使用人群。",
+            p12: "设备采用高性能低功耗芯片，续航持久，稳定性强，日常无需复杂维护，故障率低，长期使用成本远低于传统有线会议系统。同时，系统具备故障自检、信号预警功能，实时监控运行状态，保障会议全程稳定不间断，杜绝会议中途故障卡顿的尴尬情况。",
+            p13: "无线六通道带表决带服务会议系统，以\"无线便捷+稳定传输+智能表决+贴心服务\"四大核心优势，真正实现了会议流程的高效化、决策流程的规范化、会务服务的人性化。一次投入，长期受益，全面升级会议体验，简化会务管理，助力各类机构打造现代化智慧会务新标杆！",
+            related_title: "相关推荐",
+            related1_title: "赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会",
+            related2_title: "精准增益可调，信号稳定无忧｜工厂直供高品质带增益调节天线放大器，重塑信号接收新体验",
+            related3_title: "亮相羊城 聚力全球｜我司携全系列会议音频精品闪耀2025广州灯光音响展览会",
+            back_btn: "返回资讯列表",
+            footer_copyright: "© 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。"
+        },
+        en: {
+            nav_profile: "About Us",
+            nav_products: "Products",
+            nav_articles: "News",
+            nav_contact: "Contact",
+            bread_home: "Home",
+            bread_articles: "News",
+            bread_current: "Wireless 6-Channel Voting & Service Conference System｜Reconstructing Efficient Conference Ecosystems for Smart Meetings",
+            article_title: "Wireless 6-Channel Voting & Service Conference System｜Reconstructing Efficient Conference Ecosystems for Smart Meetings",
+            meta_date: "Date: 2025-10-15",
+            meta_category: "Category: Product News",
+            meta_views: "Views: 1380",
+            p1: "In various meeting scenarios such as government seminars, corporate decision-making, academic forums, and business summits, the drawbacks of traditional conference models are becoming increasingly apparent: cumbersome wired cabling, restricted venue layouts, time-consuming and inefficient voting processes, lagging attendee services, and frequent interference in multi-channel audio transmission... A high-quality meeting requires not only smooth communication order and precise decision-making processes, but also convenient and efficient hardware support and thoughtful service guarantees.",
+            p2: "The newly launched Wireless 6-Channel Voting & Service Conference System breaks the shackles of traditional meetings, integrating four core technologies: wireless digital communication, 6-channel independent transmission, intelligent voting statistics, and one-touch service calling. Combining convenience, stability, professionalism, and user-friendliness, it completely eliminates wired constraints, simplifies meeting processes, and enhances meeting efficiency.",
+            h1: "6-Channel Wireless Transmission – Stable, Anti-Interference, Clear Audio Quality",
+            p3: "The system adopts advanced wireless communication technology with a 6-channel audio transmission module, supporting multiple speaking units to operate simultaneously and stably. Channels are completely interference-free with clear signal isolation, thoroughly solving traditional wireless conference issues like frequency interference, noise, and disconnection. It delivers high-fidelity, zero-latency audio output, ensuring clear reception of speech content in every corner of the venue.",
+            p4: "Compared to single-channel or dual-channel conventional systems, the 6-channel design offers stronger compatibility and scalability, flexibly adapting to different venue layouts including large round-table meetings, tiered auditoriums, and multi-function halls. It meets the professional needs of multi-group, multi-topic, and multi-lingual conferences. With a wide wireless signal coverage of up to 100 meters and strong penetration, venue layouts are flexible and can be adjusted at any time.",
+            h2: "Intelligent Voting System – One-Touch Initiation, Precise and Efficient",
+            p5: "Addressing core meeting needs such as government decision-making, democratic evaluation, project review, and election voting, the system features a professional intelligent voting module supporting various voting modes including approval, opposition, abstention, multiple choice, and rating. It can be flexibly configured according to meeting agendas, replacing traditional inefficient methods like show of hands and paper ballots.",
+            p6: "Participants complete voting with one touch through desktop speaking and voting units. Data is encrypted and transmitted to the host in real-time, with automatic statistics and instant result generation. Results can be simultaneously displayed on venue screens and projectors, ensuring transparency and traceability throughout the process.",
+            h3: "One-Touch Service Calling – Thoughtful and Convenient",
+            p7: "The core competitiveness of high-end meetings lies not only in efficient processes but also in attentive services. The system features a one-touch service call function, with each speaking unit equipped with a dedicated service button. Participants can request tea, technical support, meeting assistance, document delivery, and other services without leaving their seats or interrupting the meeting flow.",
+            p8: "The service terminal features a dedicated management interface clearly displaying call positions, types, and times, precisely locating service recipients to avoid confusion and delays, comprehensively enhancing attendee experience and comfort.",
+            h4: "Fully Wireless Lightweight Design – Easy Installation, Adapts to All Scenarios",
+            p9: "Completely eliminating the cumbersome cabling of traditional wired systems, no wall drilling or pre-cabling is required. The host and speaking units connect wirelessly – open the box, set up the network, and start using immediately, greatly reducing meeting preparation time and saving labor and installation costs.",
+            p10: "The system offers strong compatibility, seamlessly integrating with venue control systems, audio systems, large-screen displays, and camera tracking systems for full intelligent meeting management. It supports expansion with large-capacity speaking units, accommodating meetings from dozens to hundreds of participants.",
+            h5: "Secure, Reliable, Easy to Operate – Reduced Maintenance Costs",
+            p11: "The system employs data encryption transmission technology, ensuring full security for voting data and audio signals, preventing information leakage and interference. The host interface is clean and intuitive, requiring no professional technical training for operation.",
+            p12: "With high-performance, low-power chips, the devices offer long battery life and strong stability. Daily maintenance is minimal with low failure rates, and long-term operating costs are far lower than traditional wired systems. The system also features fault self-diagnosis and signal warning functions.",
+            p13: "The Wireless 6-Channel Voting & Service Conference System, with its four core advantages of 'wireless convenience + stable transmission + intelligent voting + thoughtful service,' truly achieves efficient meeting processes, standardized decision-making procedures, and humanized meeting services. One investment, long-term benefits!",
+            related_title: "Related Articles",
+            related1_title: "Meet in Guangzhou, Sound of the Future｜Our Participation in the 2026 Guangzhou International Pro Audio & Lighting Exhibition",
+            related2_title: "Precise Gain Adjustment, Stable Signal｜Factory Direct High-Quality Antenna Amplifier with Gain Control",
+            related3_title: "Shining in Guangzhou, Connecting the World｜Our Full Range of Conference Audio Products at the 2025 Guangzhou Exhibition",
+            back_btn: "Back to News List",
+            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. All rights reserved."
+        },
+        es: {
+            nav_profile: "Sobre Nosotros",
+            nav_products: "Productos",
+            nav_articles: "Noticias",
+            nav_contact: "Contacto",
+            bread_home: "Inicio",
+            bread_articles: "Noticias",
+            bread_current: "Sistema Inalámbrico de 6 Canales con Votación y Servicios｜Reconstruyendo Ecosistemas de Conferencias Eficientes",
+            article_title: "Sistema Inalámbrico de 6 Canales con Votación y Servicios｜Reconstruyendo Ecosistemas de Conferencias Eficientes",
+            meta_date: "Fecha: 2025-10-15",
+            meta_category: "Categoría: Novedades de Productos",
+            meta_views: "Visitas: 1380",
+            p1: "En diversos escenarios de reuniones como seminarios gubernamentales, toma de decisiones corporativas, foros académicos y cumbres empresariales, las desventajas de los modelos tradicionales son cada vez más evidentes: cableado engorroso, distribución restringida, procesos de votación lentos, servicios rezagados e interferencias en la transmisión de audio multicanal...",
+            p2: "El nuevo Sistema Inalámbrico de 6 Canales con Votación y Servicios rompe las limitaciones tradicionales, integrando comunicación digital inalámbrica, transmisión independiente de 6 canales, estadísticas de votación inteligentes y llamada de servicio con un solo toque.",
+            h1: "Transmisión Inalámbrica de 6 Canales – Estable, Antinterferencias, Audio Claro",
+            p3: "El sistema utiliza tecnología de comunicación inalámbrica avanzada con un módulo de transmisión de audio de 6 canales, permitiendo que múltiples unidades de orador operen de manera simultánea y estable, sin interferencias entre canales.",
+            p4: "El diseño de 6 canales ofrece mayor compatibilidad y escalabilidad, adaptándose a diferentes configuraciones como mesas redondas grandes, auditorios escalonados y salas multifuncionales.",
+            h2: "Sistema de Votación Inteligente – Iniciación con un Toque, Precisa y Eficiente",
+            p5: "El sistema cuenta con un módulo de votación inteligente que soporta múltiples modos: aprobación, oposición, abstención, opción múltiple y calificación, reemplazando métodos tradicionales ineficientes.",
+            p6: "Los participantes completan la votación con un solo toque a través de las unidades de orador y votación. Los datos se transmiten cifrados al host, con estadísticas automáticas y generación instantánea de resultados.",
+            h3: "Llamada de Servicio con un Toque – Atención Personalizada y Conveniente",
+            p7: "Cada unidad de orador cuenta con un botón de servicio dedicado. Los participantes pueden solicitar té, soporte técnico, asistencia y entrega de documentos sin levantarse de sus asientos.",
+            p8: "La terminal de servicio cuenta con una interfaz de gestión dedicada que muestra claramente la posición, tipo y hora de cada llamada, evitando confusiones y retrasos.",
+            h4: "Diseño Totalmente Inalámbrico y Ligero – Fácil Instalación, Adaptable a Todos los Escenarios",
+            p9: "Elimina completamente el cableado engorroso de los sistemas tradicionales. El host y las unidades de orador se conectan de forma inalámbrica – abra la caja, configure la red y comience a usar inmediatamente.",
+            p10: "El sistema es altamente compatible, integrándose con sistemas de control, audio, pantallas grandes y seguimiento de cámaras para una gestión inteligente completa.",
+            h5: "Seguro, Confiable, Fácil de Operar – Reducción de Costos de Mantenimiento",
+            p11: "El sistema utiliza tecnología de cifrado de datos para garantizar la seguridad de los datos de votación y señales de audio, previniendo fugas de información e interferencias.",
+            p12: "Con chips de alto rendimiento y bajo consumo, los dispositivos ofrecen larga duración de batería y alta estabilidad. El mantenimiento diario es mínimo con baja tasa de fallos.",
+            p13: "¡El Sistema Inalámbrico de 6 Canales con Votación y Servicios, con sus cuatro ventajas principales de 'comodidad inalámbrica + transmisión estable + votación inteligente + servicio atento', logra procesos de reunión eficientes, procedimientos de decisión estandarizados y servicios humanizados!",
+            related_title: "Artículos Relacionados",
+            related1_title: "Encuentro en Guangzhou, Sonido del Futuro｜Participación en la Exposición de Guangzhou 2026",
+            related2_title: "Ajuste de Ganancia Preciso, Señal Estable｜Amplificador de Antena de Alta Calidad",
+            related3_title: "Brillando en Guangzhou, Conectando el Mundo｜Productos de Audio en la Exposición de Guangzhou 2025",
+            back_btn: "Volver a la Lista de Noticias",
+            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Todos los derechos reservados."
+        }
+    };
+
+    // ============================================================
+    // 3. 多语言核心逻辑
+    // ============================================================
+    let currentLang = localStorage.getItem('ldmeting-lang') || 'zh';
+
+    const translatableElements = document.querySelectorAll('[data-key]');
+
+    function updateTexts(lang) {
+        translatableElements.forEach(function(el) {
+            const key = el.getAttribute('data-key');
+            if (translations[lang] && translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
+        });
+    }
+
+    function switchLanguage(lang) {
+        if (!translations[lang]) return;
+        currentLang = lang;
+        updateTexts(lang);
+
+        document.querySelectorAll('.lang-switcher a').forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('data-lang') === lang) {
+                link.classList.add('active');
+            }
+        });
+
+        localStorage.setItem('ldmeting-lang', lang);
+    }
+
+    // ============================================================
+    // 4. 初始化
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.lang-switcher a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchLanguage(this.getAttribute('data-lang'));
+            });
+        });
+
+        switchLanguage(currentLang);
     });
 </script>
 </body>
