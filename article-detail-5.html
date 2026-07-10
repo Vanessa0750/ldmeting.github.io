@@ -35,6 +35,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         .logo {
             font-size: 1.5rem;
@@ -42,6 +43,8 @@
         }
         .nav-links {
             display: flex;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .nav-links a {
             color: white;
@@ -57,6 +60,33 @@
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 101;
+        }
+
+        /* 语言切换器 */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            margin-left: 2rem;
+            gap: 0.2rem;
+        }
+        .lang-switcher a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.4rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .lang-switcher a:hover {
+            color: white;
+        }
+        .lang-switcher a.active {
+            color: #3498db;
+            font-weight: bold;
+        }
+        .lang-switcher .sep {
+            color: #555;
+            font-size: 0.8rem;
         }
 
         /* 面包屑导航 */
@@ -203,6 +233,10 @@
                 gap: 1rem;
                 box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             }
+            .nav-links.mobile-open .lang-switcher {
+                margin-left: 0;
+                justify-content: flex-start;
+            }
             .article-detail {
                 padding: 2rem 5%;
             }
@@ -224,10 +258,18 @@
     <div class="nav-container">
         <div class="logo">LDMETING</div>
         <nav class="nav-links" aria-label="主导航">
-            <a href="index.html#profile">公司介绍</a>
-            <a href="index.html#products">产品中心</a>
-            <a href="articles-list.html">企业资讯</a>
-            <a href="index.html#contact">联系方式</a>
+            <a href="index.html#profile" data-key="nav_profile">公司介绍</a>
+            <a href="index.html#products" data-key="nav_products">产品中心</a>
+            <a href="articles-list.html" data-key="nav_articles">企业资讯</a>
+            <a href="index.html#contact" data-key="nav_contact">联系方式</a>
+            <!-- 语言切换器 -->
+            <div class="lang-switcher">
+                <a href="#" data-lang="zh" class="active">中文</a>
+                <span class="sep">|</span>
+                <a href="#" data-lang="en">English</a>
+                <span class="sep">|</span>
+                <a href="#" data-lang="es">Español</a>
+            </div>
         </nav>
         <div class="menu-toggle" aria-label="切换菜单">☰</div>
     </div>
@@ -235,102 +277,267 @@
 
 <!-- 面包屑导航 -->
 <div class="breadcrumb">
-    <a href="index.htm3">首页</a>
+    <a href="index.html" data-key="bread_home">首页</a>
     <span>></span>
-    <a href="articles-list.html">企业资讯</a>
+    <a href="articles-list.html" data-key="bread_articles">企业资讯</a>
     <span>></span>
-    <span>精准增益可调，信号稳定无忧｜工厂直供高品质带增益调节天线放大器，重塑信号接收新体验</span>
+    <span data-key="bread_current">精准增益可调，信号稳定无忧｜工厂直供高品质带增益调节天线放大器，重塑信号接收新体验</span>
 </div>
 
 <!-- 文章详情主体 -->
 <div class="article-detail">
     <div class="article-header">
-        <h1 class="article-title">精准增益可调，信号稳定无忧｜工厂直供高品质带增益调节天线放大器，重塑信号接收新体验</h1>
+        <h1 class="article-title" data-key="article_title">精准增益可调，信号稳定无忧｜工厂直供高品质带增益调节天线放大器，重塑信号接收新体验</h1>
         <div class="article-meta">
-            <span>发布时间：2024-12-02</span>
-            <span>分类：产品动态</span>
-            <span>阅读次数：2168</span>
+            <span data-key="meta_date">发布时间：2024-12-02</span>
+            <span data-key="meta_category">分类：产品动态</span>
+            <span data-key="meta_views">阅读次数：2168</span>
         </div>
     </div>
 
     <div class="article-content">
-        <p>在地面波电视、无线通信、广播接收、专业音频、业余无线电等众多场景中，信号强弱不均、远距离传输损耗、环境干扰、信号过载失真等问题，一直是困扰用户和工程商的核心痛点。普通天线放大器要么增益固定，弱信号场景无力提升，强信号环境极易过载；要么噪声系数高，放大信号的同时放大干扰，最终影响接收效果和设备稳定性。</p>
+        <p data-key="p1">在地面波电视、无线通信、广播接收、专业音频、业余无线电等众多场景中，信号强弱不均、远距离传输损耗、环境干扰、信号过载失真等问题，一直是困扰用户和工程商的核心痛点。普通天线放大器要么增益固定，弱信号场景无力提升，强信号环境极易过载；要么噪声系数高，放大信号的同时放大干扰，最终影响接收效果和设备稳定性。</p>
 
-        <p>我厂深耕射频通信设备生产多年，专注打造高性能、高适配性的天线放大设备，重磅推出带增益调节功能的专业天线放大器，依托成熟的生产工艺、严苛的品控标准和精准的电路设计，打破传统放大器的使用局限，实现弱信号强效放大、强信号精准抑制、干扰信号有效屏蔽，全方位满足不同场景、不同距离、不同环境的信号接收需求，成为工程配套、批量采购、终端升级的优选产品！</p>
-        
-        <img src="https://raw.githubusercontent.com/Vanessa0750/ldmeting.github.io/main/images/1-5/tf1100-2.jpg" alt="精准增益可调，信号稳定无忧｜工厂直供高品质带增益调节天线放大器，重塑信号接收新体验">
-        
-        <h3>核心核心优势：可调增益+低噪放大，告别信号短板，适配全场景</h3>
-        <h3>精准增益可调，灵活应对各类信号环境</h3>
-        <p>区别于市面上固定增益的普通天线放大器，我厂产品搭载手动连续可调/多档拨档可调增益模块，增益范围覆盖常用10-40dB区间，可根据实际使用场景精准微调放大倍数，真正做到“按需放大”。远距离接收、长馈线传输、弱信号覆盖区域，调高增益快速补足信号损耗，解决雪花、卡顿、丢台、断连问题；近距离强信号、多设备叠加、电磁干扰密集区域，调低增益避免信号过载、饱和失真、杂波窜扰，无需反复更换设备，一台搞定全场景适配。</p>
+        <p data-key="p2">我厂深耕射频通信设备生产多年，专注打造高性能、高适配性的天线放大设备，重磅推出带增益调节功能的专业天线放大器，依托成熟的生产工艺、严苛的品控标准和精准的电路设计，打破传统放大器的使用局限，实现弱信号强效放大、强信号精准抑制、干扰信号有效屏蔽，全方位满足不同场景、不同距离、不同环境的信号接收需求，成为工程配套、批量采购、终端升级的优选产品！</p>
 
-        <p>同时支持可选配AGC自动增益控制版本，内置高精度信号检测电路，实时监测输入信号强度，自动动态调节增益大小，无需人工手动操作，信号强时自动降压，信号弱时自动升压，全程保持输出信号平稳均衡，尤其适合移动接收、环境复杂、信号波动大的场景，彻底解放人工调试，实现24小时稳定运行。</p>
-        
-        <h3>内置专业滤波，强效抵御5G/LTE/电磁干扰</h3>
-        <p>针对当下5G基站、移动通信、家电电磁辐射带来的信号干扰问题，产品内置专业频段滤波电路，精准屏蔽4G/5G、FM等异频干扰信号，疏通信号传输通道，杜绝杂波串扰导致的信号异常。同时采用全金属密封外壳，具备超强屏蔽性能，有效阻隔外界电磁干扰，避免设备间信号串扰，保证信号传输纯净度，适配城市、工业区、居民区等高干扰环境稳定使用。</p>
-      
-        <h3>工业级品质制造，耐用稳定适配长期运行</h3>
-        <p>作为源头工厂，我们坚持用料扎实、工艺严苛，所有产品均采用工业级元器件，经过高温老化、防水防尘、抗干扰、阻抗匹配等多项严苛测试，品质达标后批量出厂。产品支持50Ω/75Ω双阻抗可选，完美匹配各类天线、馈线、接收机设备，杜绝阻抗不匹配导致的信号衰减；接口采用加厚镀金/镀锡工艺，接触牢固、传输损耗低、抗氧化耐腐蚀，长期使用不松动、不生锈；供电方式灵活，支持直流供电、同轴馈电（PoC），安装布线便捷，适配室内外多种安装场景，耐高温、抗严寒，使用寿命远超普通民用级放大器。</p>
+        <img src="https://raw.githubusercontent.com/Vanessa0750/ldmeting.github.io/main/images/1-5/tf1100-2.jpg" alt="精准增益可调天线放大器">
 
-        <h3>安装调试极简，新手也能快速上手</h3>
+        <h3 data-key="h1">核心优势：可调增益+低噪放大，告别信号短板，适配全场景</h3>
+        <h3 data-key="h2">精准增益可调，灵活应对各类信号环境</h3>
+        <p data-key="p3">区别于市面上固定增益的普通天线放大器，我厂产品搭载手动连续可调/多档拨档可调增益模块，增益范围覆盖常用10-40dB区间，可根据实际使用场景精准微调放大倍数，真正做到"按需放大"。远距离接收、长馈线传输、弱信号覆盖区域，调高增益快速补足信号损耗，解决雪花、卡顿、丢台、断连问题；近距离强信号、多设备叠加、电磁干扰密集区域，调低增益避免信号过载、饱和失真、杂波窜扰，无需反复更换设备，一台搞定全场景适配。</p>
 
-        <p>地面波电视接收：家用/商用DTMB电视信号放大，解决远距离、长馈线、楼层遮挡导致的信号弱、台数少、画面卡顿问题，增益可调避免信号过载，台数更多、画面更清晰。</p>
-        <p>专业无线音频系统：无线话筒、演出音响、会议系统信号增强，延长接收距离，避免断频、杂音，多设备同时使用无串扰，舞台演出、大型会议、户外直播稳定可靠。</p>
-        <p>广播与业余无线电：AM/FM/DAB广播接收、对讲机、业余电台信号放大，提升接收灵敏度，过滤干扰，远距离通信更清晰、更稳定。</p>
-        <p>工程与安防通信：安防监控、数据传输、物联网设备信号补强，适配长距离布线、复杂工程环境，保证信号传输不间断，设备运行更稳定。</p>
+        <p data-key="p4">同时支持可选配AGC自动增益控制版本，内置高精度信号检测电路，实时监测输入信号强度，自动动态调节增益大小，无需人工手动操作，信号强时自动降压，信号弱时自动升压，全程保持输出信号平稳均衡，尤其适合移动接收、环境复杂、信号波动大的场景，彻底解放人工调试，实现24小时稳定运行。</p>
 
-        <h3>源头工厂直供，实力保障更放心</h3>
-        <p>作为专业射频设备生产厂家，我们拥有标准化生产车间、成熟的研发生产团队和完善的品控体系，可实现批量现货供应、支持定制化生产（增益范围、频段、接口、功能模块均可按需定制），省去中间环节，性价比拉满，适合经销商、工程商、企业客户批量采购。</p>
+        <h3 data-key="h3">内置专业滤波，强效抵御5G/LTE/电磁干扰</h3>
+        <p data-key="p5">针对当下5G基站、移动通信、家电电磁辐射带来的信号干扰问题，产品内置专业频段滤波电路，精准屏蔽4G/5G、FM等异频干扰信号，疏通信号传输通道，杜绝杂波串扰导致的信号异常。同时采用全金属密封外壳，具备超强屏蔽性能，有效阻隔外界电磁干扰，避免设备间信号串扰，保证信号传输纯净度，适配城市、工业区、居民区等高干扰环境稳定使用。</p>
 
-        <p>我们始终坚持“品质为先、客户至上”，所有产品均经过严格出厂检测，提供完善的售后保障，从产品选型、技术支持到售后维护，全程一对一服务，解决客户的后顾之忧。</p>
+        <h3 data-key="h4">工业级品质制造，耐用稳定适配长期运行</h3>
+        <p data-key="p6">作为源头工厂，我们坚持用料扎实、工艺严苛，所有产品均采用工业级元器件，经过高温老化、防水防尘、抗干扰、阻抗匹配等多项严苛测试，品质达标后批量出厂。产品支持50Ω/75Ω双阻抗可选，完美匹配各类天线、馈线、接收机设备，杜绝阻抗不匹配导致的信号衰减；接口采用加厚镀金/镀锡工艺，接触牢固、传输损耗低、抗氧化耐腐蚀，长期使用不松动、不生锈；供电方式灵活，支持直流供电、同轴馈电（PoC），安装布线便捷，适配室内外多种安装场景，耐高温、抗严寒，使用寿命远超普通民用级放大器。</p>
 
-        <h3>选择我们的带增益调节天线放大器，就是选择稳定、精准、高效的信号解决方案！告别固定增益的局限，告别信号干扰与失真，用专业品质，为你的信号接收保驾护航。</h3>
+        <h3 data-key="h5">安装调试极简，新手也能快速上手</h3>
+
+        <p data-key="p7"><strong>地面波电视接收：</strong>家用/商用DTMB电视信号放大，解决远距离、长馈线、楼层遮挡导致的信号弱、台数少、画面卡顿问题，增益可调避免信号过载，台数更多、画面更清晰。</p>
+        <p data-key="p8"><strong>专业无线音频系统：</strong>无线话筒、演出音响、会议系统信号增强，延长接收距离，避免断频、杂音，多设备同时使用无串扰，舞台演出、大型会议、户外直播稳定可靠。</p>
+        <p data-key="p9"><strong>广播与业余无线电：</strong>AM/FM/DAB广播接收、对讲机、业余电台信号放大，提升接收灵敏度，过滤干扰，远距离通信更清晰、更稳定。</p>
+        <p data-key="p10"><strong>工程与安防通信：</strong>安防监控、数据传输、物联网设备信号补强，适配长距离布线、复杂工程环境，保证信号传输不间断，设备运行更稳定。</p>
+
+        <h3 data-key="h6">源头工厂直供，实力保障更放心</h3>
+        <p data-key="p11">作为专业射频设备生产厂家，我们拥有标准化生产车间、成熟的研发生产团队和完善的品控体系，可实现批量现货供应、支持定制化生产（增益范围、频段、接口、功能模块均可按需定制），省去中间环节，性价比拉满，适合经销商、工程商、企业客户批量采购。</p>
+
+        <p data-key="p12">我们始终坚持"品质为先、客户至上"，所有产品均经过严格出厂检测，提供完善的售后保障，从产品选型、技术支持到售后维护，全程一对一服务，解决客户的后顾之忧。</p>
+
+        <p data-key="p13"><strong>选择我们的带增益调节天线放大器，就是选择稳定、精准、高效的信号解决方案！告别固定增益的局限，告别信号干扰与失真，用专业品质，为你的信号接收保驾护航。</strong></p>
     </div>
 
     <!-- 相关推荐 -->
     <div class="related-articles">
-        <h3 class="related-title">相关推荐</h3>
+        <h3 class="related-title" data-key="related_title">相关推荐</h3>
         <div class="related-list">
             <div class="related-item">
-                <h4><a href="article-detail-1.html">赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会</a></h4>
+                <h4><a href="article-detail-1.html" data-key="related1_title">赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会</a></h4>
                 <div class="related-date">2026-01-10</div>
             </div>
             <div class="related-item">
-                <h4><a href="article-detail-2.html">无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务</a></h4>
+                <h4><a href="article-detail-2.html" data-key="related2_title">无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务</a></h4>
                 <div class="related-date">2025-10-15</div>
             </div>
             <div class="related-item">
-                <h4><a href="article-detail-3.html">亮相羊城 聚力全球｜我司携全系列会议音频精品闪耀2025广州灯光音响展览会</a></h4>
+                <h4><a href="article-detail-3.html" data-key="related3_title">亮相羊城 聚力全球｜我司携全系列会议音频精品闪耀2025广州灯光音响展览会</a></h4>
                 <div class="related-date">2025-05-30</div>
             </div>
         </div>
     </div>
 
     <!-- 返回列表按钮 -->
-    <a href="articles-list.html" class="back-to-list">返回资讯列表</a>
+    <a href="articles-list.html" class="back-to-list" data-key="back_btn">返回资讯列表</a>
 </div>
 
 <footer>
-    <p>&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
+    <p data-key="footer_copyright">&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
 </footer>
 
 <script>
-    // 移动端菜单切换
+    // ============================================================
+    // 1. 移动端菜单切换
+    // ============================================================
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    
-    menuToggle.addEventListener('click', () => {
+
+    menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('mobile-open');
         menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
     });
 
-    // 点击导航链接关闭移动端菜单
-    const navAnchor = navLinks.querySelectorAll('a');
-    navAnchor.forEach(link => {
-        link.addEventListener('click', () => {
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+        link.addEventListener('click', function() {
             navLinks.classList.remove('mobile-open');
             menuToggle.textContent = '☰';
         });
+    });
+
+    // ============================================================
+    // 2. 多语言数据
+    // ============================================================
+    const translations = {
+        zh: {
+            nav_profile: "公司介绍",
+            nav_products: "产品中心",
+            nav_articles: "企业资讯",
+            nav_contact: "联系方式",
+            bread_home: "首页",
+            bread_articles: "企业资讯",
+            bread_current: "精准增益可调，信号稳定无忧｜工厂直供高品质带增益调节天线放大器，重塑信号接收新体验",
+            article_title: "精准增益可调，信号稳定无忧｜工厂直供高品质带增益调节天线放大器，重塑信号接收新体验",
+            meta_date: "发布时间：2024-12-02",
+            meta_category: "分类：产品动态",
+            meta_views: "阅读次数：2168",
+            p1: "在地面波电视、无线通信、广播接收、专业音频、业余无线电等众多场景中，信号强弱不均、远距离传输损耗、环境干扰、信号过载失真等问题，一直是困扰用户和工程商的核心痛点。普通天线放大器要么增益固定，弱信号场景无力提升，强信号环境极易过载；要么噪声系数高，放大信号的同时放大干扰，最终影响接收效果和设备稳定性。",
+            p2: "我厂深耕射频通信设备生产多年，专注打造高性能、高适配性的天线放大设备，重磅推出带增益调节功能的专业天线放大器，依托成熟的生产工艺、严苛的品控标准和精准的电路设计，打破传统放大器的使用局限，实现弱信号强效放大、强信号精准抑制、干扰信号有效屏蔽，全方位满足不同场景、不同距离、不同环境的信号接收需求，成为工程配套、批量采购、终端升级的优选产品！",
+            h1: "核心优势：可调增益+低噪放大，告别信号短板，适配全场景",
+            h2: "精准增益可调，灵活应对各类信号环境",
+            p3: "区别于市面上固定增益的普通天线放大器，我厂产品搭载手动连续可调/多档拨档可调增益模块，增益范围覆盖常用10-40dB区间，可根据实际使用场景精准微调放大倍数，真正做到'按需放大'。远距离接收、长馈线传输、弱信号覆盖区域，调高增益快速补足信号损耗，解决雪花、卡顿、丢台、断连问题；近距离强信号、多设备叠加、电磁干扰密集区域，调低增益避免信号过载、饱和失真、杂波窜扰，无需反复更换设备，一台搞定全场景适配。",
+            p4: "同时支持可选配AGC自动增益控制版本，内置高精度信号检测电路，实时监测输入信号强度，自动动态调节增益大小，无需人工手动操作，信号强时自动降压，信号弱时自动升压，全程保持输出信号平稳均衡，尤其适合移动接收、环境复杂、信号波动大的场景，彻底解放人工调试，实现24小时稳定运行。",
+            h3: "内置专业滤波，强效抵御5G/LTE/电磁干扰",
+            p5: "针对当下5G基站、移动通信、家电电磁辐射带来的信号干扰问题，产品内置专业频段滤波电路，精准屏蔽4G/5G、FM等异频干扰信号，疏通信号传输通道，杜绝杂波串扰导致的信号异常。同时采用全金属密封外壳，具备超强屏蔽性能，有效阻隔外界电磁干扰，避免设备间信号串扰，保证信号传输纯净度，适配城市、工业区、居民区等高干扰环境稳定使用。",
+            h4: "工业级品质制造，耐用稳定适配长期运行",
+            p6: "作为源头工厂，我们坚持用料扎实、工艺严苛，所有产品均采用工业级元器件，经过高温老化、防水防尘、抗干扰、阻抗匹配等多项严苛测试，品质达标后批量出厂。产品支持50Ω/75Ω双阻抗可选，完美匹配各类天线、馈线、接收机设备，杜绝阻抗不匹配导致的信号衰减；接口采用加厚镀金/镀锡工艺，接触牢固、传输损耗低、抗氧化耐腐蚀，长期使用不松动、不生锈；供电方式灵活，支持直流供电、同轴馈电（PoC），安装布线便捷，适配室内外多种安装场景，耐高温、抗严寒，使用寿命远超普通民用级放大器。",
+            h5: "安装调试极简，新手也能快速上手",
+            p7: "地面波电视接收：家用/商用DTMB电视信号放大，解决远距离、长馈线、楼层遮挡导致的信号弱、台数少、画面卡顿问题，增益可调避免信号过载，台数更多、画面更清晰。",
+            p8: "专业无线音频系统：无线话筒、演出音响、会议系统信号增强，延长接收距离，避免断频、杂音，多设备同时使用无串扰，舞台演出、大型会议、户外直播稳定可靠。",
+            p9: "广播与业余无线电：AM/FM/DAB广播接收、对讲机、业余电台信号放大，提升接收灵敏度，过滤干扰，远距离通信更清晰、更稳定。",
+            p10: "工程与安防通信：安防监控、数据传输、物联网设备信号补强，适配长距离布线、复杂工程环境，保证信号传输不间断，设备运行更稳定。",
+            h6: "源头工厂直供，实力保障更放心",
+            p11: "作为专业射频设备生产厂家，我们拥有标准化生产车间、成熟的研发生产团队和完善的品控体系，可实现批量现货供应、支持定制化生产（增益范围、频段、接口、功能模块均可按需定制），省去中间环节，性价比拉满，适合经销商、工程商、企业客户批量采购。",
+            p12: "我们始终坚持'品质为先、客户至上'，所有产品均经过严格出厂检测，提供完善的售后保障，从产品选型、技术支持到售后维护，全程一对一服务，解决客户的后顾之忧。",
+            p13: "选择我们的带增益调节天线放大器，就是选择稳定、精准、高效的信号解决方案！告别固定增益的局限，告别信号干扰与失真，用专业品质，为你的信号接收保驾护航。",
+            related_title: "相关推荐",
+            related1_title: "赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会",
+            related2_title: "无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务",
+            related3_title: "亮相羊城 聚力全球｜我司携全系列会议音频精品闪耀2025广州灯光音响展览会",
+            back_btn: "返回资讯列表",
+            footer_copyright: "© 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。"
+        },
+        en: {
+            nav_profile: "About Us",
+            nav_products: "Products",
+            nav_articles: "News",
+            nav_contact: "Contact",
+            bread_home: "Home",
+            bread_articles: "News",
+            bread_current: "Precise Gain Adjustment, Stable Signal｜Factory Direct High-Quality Antenna Amplifier with Gain Control, Redefining Signal Reception",
+            article_title: "Precise Gain Adjustment, Stable Signal｜Factory Direct High-Quality Antenna Amplifier with Gain Control, Redefining Signal Reception",
+            meta_date: "Date: 2024-12-02",
+            meta_category: "Category: Product News",
+            meta_views: "Views: 2168",
+            p1: "In terrestrial TV, wireless communications, broadcast reception, professional audio, amateur radio, and many other scenarios, issues such as uneven signal strength, long-distance transmission loss, environmental interference, and signal overload distortion have long been core pain points for users and engineers. Ordinary antenna amplifiers either have fixed gain, failing to boost weak signals while easily overloading in strong signal environments, or have high noise figures that amplify interference along with the signal.",
+            p2: "Our factory has been deeply engaged in RF communication equipment manufacturing for many years, focusing on high-performance, highly adaptable antenna amplification devices. We proudly introduce our professional antenna amplifier with gain adjustment functionality, leveraging mature production processes, strict quality control standards, and precision circuit design.",
+            h1: "Core Advantages: Adjustable Gain + Low-Noise Amplification – Eliminating Signal Weaknesses, Adapting to All Scenarios",
+            h2: "Precise Gain Adjustment for Various Signal Environments",
+            p3: "Unlike ordinary fixed-gain antenna amplifiers on the market, our products feature manually continuously adjustable/multi-step gain modules covering the common 10-40dB range, allowing precise fine-tuning of amplification according to actual usage scenarios.",
+            p4: "An optional AGC automatic gain control version is also available, featuring a built-in high-precision signal detection circuit that monitors input signal strength in real-time and automatically adjusts gain dynamically.",
+            h3: "Built-in Professional Filtering – Effective 5G/LTE/EMI Interference Suppression",
+            p5: "To address signal interference from 5G base stations, mobile communications, and household electromagnetic radiation, our products feature built-in professional band filtering circuits that precisely block 4G/5G, FM and other out-of-band interference signals.",
+            h4: "Industrial-Grade Quality – Durable and Stable for Long-Term Operation",
+            p6: "As the source factory, we insist on solid materials and strict processes. All products use industrial-grade components and undergo rigorous testing including high-temperature aging, waterproofing, dustproofing, interference resistance, and impedance matching.",
+            h5: "Simple Installation and Debugging – Easy for Beginners",
+            p7: "Terrestrial TV Reception: DTMB signal amplification for home/commercial use, solving weak signal, channel shortage, and picture freezing issues caused by long distances, long feeder lines, and floor obstructions.",
+            p8: "Professional Wireless Audio Systems: Signal enhancement for wireless microphones, performance audio, and conference systems, extending reception range and avoiding frequency dropout and noise.",
+            p9: "Broadcast and Amateur Radio: AM/FM/DAB broadcast reception, walkie-talkies, and amateur radio signal amplification, improving reception sensitivity and filtering interference.",
+            p10: "Engineering and Security Communications: Signal enhancement for security monitoring, data transmission, and IoT devices, adapting to long-distance cabling and complex engineering environments.",
+            h6: "Direct Factory Supply – Reliable Quality Assurance",
+            p11: "As a professional RF equipment manufacturer, we have standardized production facilities, mature R&D and production teams, and comprehensive quality control systems, enabling bulk stock supply and customized production.",
+            p12: "We always adhere to 'Quality First, Customer First'. All products undergo strict factory testing and come with comprehensive after-sales support.",
+            p13: "Choose our gain-adjustable antenna amplifier for a stable, precise, and efficient signal solution! Leave behind the limitations of fixed gain and signal interference with professional quality protecting your signal reception.",
+            related_title: "Related Articles",
+            related1_title: "Meet in Guangzhou, Sound of the Future｜Our Participation in the 2026 Guangzhou Exhibition",
+            related2_title: "Wireless 6-Channel Voting & Service Conference System｜Reconstructing Efficient Meeting Ecosystems",
+            related3_title: "Shining in Guangzhou, Connecting the World｜Our Full Range of Conference Audio Products at the 2025 Exhibition",
+            back_btn: "Back to News List",
+            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. All rights reserved."
+        },
+        es: {
+            nav_profile: "Sobre Nosotros",
+            nav_products: "Productos",
+            nav_articles: "Noticias",
+            nav_contact: "Contacto",
+            bread_home: "Inicio",
+            bread_articles: "Noticias",
+            bread_current: "Ajuste de Ganancia Preciso, Señal Estable｜Amplificador de Antena de Alta Calidad con Control de Ganancia",
+            article_title: "Ajuste de Ganancia Preciso, Señal Estable｜Amplificador de Antena de Alta Calidad con Control de Ganancia",
+            meta_date: "Fecha: 2024-12-02",
+            meta_category: "Categoría: Novedades de Productos",
+            meta_views: "Visitas: 2168",
+            p1: "En TV terrestre, comunicaciones inalámbricas, recepción de radio, audio profesional, radioaficionados y muchos otros escenarios, problemas como intensidad de señal desigual, pérdida por transmisión a larga distancia, interferencia ambiental y distorsión por sobrecarga han sido desafíos constantes.",
+            p2: "Nuestra fábrica ha estado profundamente comprometida con la fabricación de equipos de RF durante muchos años, enfocándonos en dispositivos de amplificación de antena de alto rendimiento y alta adaptabilidad.",
+            h1: "Ventajas Principales: Ganancia Ajustable + Amplificación de Bajo Ruido",
+            h2: "Ajuste Preciso de Ganancia para Todo Tipo de Entornos de Señal",
+            p3: "A diferencia de los amplificadores de antena comunes de ganancia fija, nuestros productos cuentan con módulos de ganancia ajustable manual continua/múltiples pasos que cubren el rango común de 10-40dB.",
+            p4: "También está disponible una versión opcional con control automático de ganancia AGC, con un circuito de detección de señal de alta precisión.",
+            h3: "Filtrado Profesional Integrado – Supresión de Interferencias 5G/LTE/EMI",
+            p5: "Para abordar la interferencia de señales de estaciones 5G, comunicaciones móviles y radiación electromagnética doméstica, nuestros productos cuentan con circuitos de filtrado de banda profesional.",
+            h4: "Calidad de Grado Industrial – Duradero y Estable para Operación a Largo Plazo",
+            p6: "Como fábrica de origen, insistimos en materiales sólidos y procesos estrictos. Todos los productos utilizan componentes de grado industrial y pasan rigurosas pruebas.",
+            h5: "Instalación y Configuración Sencillas – Fáciles para Principiantes",
+            p7: "Recepción de TV Terrestre: Amplificación de señal DTMB para uso doméstico/comercial, resolviendo problemas de señal débil y congelamiento de imagen.",
+            p8: "Sistemas de Audio Inalámbricos Profesionales: Mejora de señal para micrófonos inalámbricos, audio de espectáculos y sistemas de conferencia.",
+            p9: "Radio y Radioaficionados: Amplificación de señal para recepción AM/FM/DAB, walkie-talkies y estaciones de radioaficionado.",
+            p10: "Comunicaciones de Ingeniería y Seguridad: Mejora de señal para monitoreo de seguridad, transmisión de datos y dispositivos IoT.",
+            h6: "Suministro Directo de Fábrica – Garantía de Calidad Confiable",
+            p11: "Como fabricante profesional de equipos de RF, contamos con instalaciones de producción estandarizadas y sistemas integrales de control de calidad.",
+            p12: "Siempre nos adherimos a 'Calidad Primero, Cliente Primero'. Todos los productos pasan pruebas estrictas y cuentan con soporte postventa completo.",
+            p13: "¡Elija nuestro amplificador de antena con ganancia ajustable para una solución de señal estable, precisa y eficiente!",
+            related_title: "Artículos Relacionados",
+            related1_title: "Encuentro en Guangzhou, Sonido del Futuro｜Participación en la Exposición de Guangzhou 2026",
+            related2_title: "Sistema Inalámbrico de 6 Canales con Votación y Servicios",
+            related3_title: "Brillando en Guangzhou, Conectando el Mundo｜Productos de Audio en la Exposición de Guangzhou 2025",
+            back_btn: "Volver a la Lista de Noticias",
+            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Todos los derechos reservados."
+        }
+    };
+
+    // ============================================================
+    // 3. 多语言核心逻辑
+    // ============================================================
+    let currentLang = localStorage.getItem('ldmeting-lang') || 'zh';
+
+    const translatableElements = document.querySelectorAll('[data-key]');
+
+    function updateTexts(lang) {
+        translatableElements.forEach(function(el) {
+            const key = el.getAttribute('data-key');
+            if (translations[lang] && translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
+        });
+    }
+
+    function switchLanguage(lang) {
+        if (!translations[lang]) return;
+        currentLang = lang;
+        updateTexts(lang);
+
+        document.querySelectorAll('.lang-switcher a').forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('data-lang') === lang) {
+                link.classList.add('active');
+            }
+        });
+
+        localStorage.setItem('ldmeting-lang', lang);
+    }
+
+    // ============================================================
+    // 4. 初始化
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.lang-switcher a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchLanguage(this.getAttribute('data-lang'));
+            });
+        });
+
+        switchLanguage(currentLang);
     });
 </script>
 </body>
