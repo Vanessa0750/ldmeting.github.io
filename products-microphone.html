@@ -35,6 +35,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         .logo {
             font-size: 1.5rem;
@@ -42,6 +43,8 @@
         }
         .nav-links {
             display: flex;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .nav-links a {
             color: white;
@@ -57,6 +60,33 @@
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 101;
+        }
+
+        /* 语言切换器 */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            margin-left: 2rem;
+            gap: 0.2rem;
+        }
+        .lang-switcher a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.4rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .lang-switcher a:hover {
+            color: white;
+        }
+        .lang-switcher a.active {
+            color: #3498db;
+            font-weight: bold;
+        }
+        .lang-switcher .sep {
+            color: #555;
+            font-size: 0.8rem;
         }
 
         /* 面包屑导航 */
@@ -95,7 +125,7 @@
             margin: 1rem auto;
         }
 
-        /* 产品列表样式（可放30个产品） */
+        /* 产品列表样式 */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -112,8 +142,8 @@
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
-        
-        /* 新增：多图轮播容器样式 */
+
+        /* 多图轮播容器样式 */
         .product-img-slider {
             position: relative;
             width: 100%;
@@ -199,6 +229,9 @@
             color: #666;
             margin: 1rem 0;
         }
+        .product-params p {
+            margin-bottom: 4px;
+        }
 
         /* 页脚 */
         footer {
@@ -254,6 +287,10 @@
                 gap: 1rem;
                 box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             }
+            .nav-links.mobile-open .lang-switcher {
+                margin-left: 0;
+                justify-content: flex-start;
+            }
             .section-title {
                 font-size: 1.8rem;
             }
@@ -265,11 +302,19 @@
     <div class="nav-container">
         <div class="logo">LDMETING</div>
         <nav class="nav-links">
-            <a href="index.html">返回首页</a>
-            <a href="index.html#profile">公司介绍</a>
-            <a href="index.html#products">产品中心</a>
-            <a href="index.html#articles">企业资讯</a>
-            <a href="index.html#contact">联系方式</a>
+            <a href="index.html" data-key="nav_home">返回首页</a>
+            <a href="index.html#profile" data-key="nav_profile">公司介绍</a>
+            <a href="index.html#products" data-key="nav_products">产品中心</a>
+            <a href="index.html#articles" data-key="nav_articles">企业资讯</a>
+            <a href="index.html#contact" data-key="nav_contact">联系方式</a>
+            <!-- 语言切换器 -->
+            <div class="lang-switcher">
+                <a href="#" data-lang="zh" class="active">中文</a>
+                <span class="sep">|</span>
+                <a href="#" data-lang="en">English</a>
+                <span class="sep">|</span>
+                <a href="#" data-lang="es">Español</a>
+            </div>
         </nav>
         <div class="menu-toggle">☰</div>
     </div>
@@ -277,649 +322,888 @@
 
 <!-- 面包屑导航 -->
 <div class="breadcrumb">
-    <a href="index.html">首页</a>
+    <a href="index.html" data-key="bread_home">首页</a>
     <span>></span>
-    <a href="index.html#products">产品中心</a>
+    <a href="index.html#products" data-key="bread_products">产品中心</a>
     <span>></span>
-    <span>麦克风系列</span>
+    <span data-key="bread_current">麦克风系列</span>
 </div>
 
 <!-- 产品列表 -->
 <section>
-    <h2 class="section-title">麦克风系列</h2>
-    <div class="product-grid">
-
-        <!-- 产品1：LD-9200 -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="1">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic/mic ld9200-1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic/mic ld9200-2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic/mic ld9200-3.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic/mic ld9200-4.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic/mic ld9200-5.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic/mic ld9200-6.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic/mic ld9200-7.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic/mic ld9200-8.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic/mic ld9200-9.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic/mic ld9200-10.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                    <span class="indicator-dot" data-index="3"></span>
-                    <span class="indicator-dot" data-index="4"></span>
-                    <span class="indicator-dot" data-index="5"></span>
-                    <span class="indicator-dot" data-index="6"></span>
-                    <span class="indicator-dot" data-index="7"></span>
-                    <span class="indicator-dot" data-index="8"></span>
-                    <span class="indicator-dot" data-index="9"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>LD-9200 无线一拖二麦克风</h3>
-                <div class="product-params">
-                    <p>十组预设频率</p>
-                    <p>快速搜索干净频率</p>
-                    <p>会议底座可充电</p>
-                </div>
-                <p>拾音清晰稳定，抗干扰强，适合中小型会议室。</p>
-            </div>
-        </div>
-
-        <!-- 产品2：LD-9600 -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="2">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic ld9600/mic ld9600-1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9600/mic ld9600-2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9600/mic ld9600-3.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9600/mic ld9600-4.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9600/mic ld9600-5.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9600/mic ld9600-6.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9600/mic ld9600-7.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9600/mic ld9600-8.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9600/mic ld9600-9.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9600/mic ld9600-10.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9600/mic ld9600-11.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9600/mic ld9600-12.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                    <span class="indicator-dot" data-index="3"></span>
-                    <span class="indicator-dot" data-index="4"></span>
-                    <span class="indicator-dot" data-index="5"></span>
-                    <span class="indicator-dot" data-index="6"></span>
-                    <span class="indicator-dot" data-index="7"></span>
-                    <span class="indicator-dot" data-index="8"></span>
-                    <span class="indicator-dot" data-index="9"></span>
-                    <span class="indicator-dot" data-index="10"></span>
-                    <span class="indicator-dot" data-index="11"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>LD-9600 无线一拖四麦克风</h3>
-                <div class="product-params">
-                    <p>十组预设频率</p>
-                    <p>快速搜索干净频率</p>
-                    <p>会议底座可充电</p>
-                </div>
-                <p>无线布置更简洁，安装方便，适合大型会议室。</p>
-            </div>
-        </div>
-
-        <!-- 产品3：LD-9800 -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="3">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic ld9800/mic ld9800-1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9800/mic ld9800-2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9800/mic ld9800-3.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9800/mic ld9800-4.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9800/mic ld9800-5.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9800/mic ld9800-6.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9800/mic ld9800-7.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9800/mic ld9800-8.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9800/mic ld9800-9.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ld9800/mic ld9800-10.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                    <span class="indicator-dot" data-index="3"></span>
-                    <span class="indicator-dot" data-index="4"></span>
-                    <span class="indicator-dot" data-index="5"></span>
-                    <span class="indicator-dot" data-index="6"></span>
-                    <span class="indicator-dot" data-index="7"></span>
-                    <span class="indicator-dot" data-index="8"></span>
-                    <span class="indicator-dot" data-index="9"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>LD-9800 无线一拖八麦克风</h3>
-                <div class="product-params">
-                    <p>十组预设频率</p>
-                    <p>快速搜索干净频率</p>
-                    <p>会议底座可充电</p>
-                </div>
-                <p>桌面式安装，造型稳重，适合政府正式会议。</p>
-            </div>
-        </div>
-
-        <!-- 产品4：m2200 -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="4">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic m2200/mic m2200.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic m2200/mic m2200-1.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>M-2000 无线全金属一拖四麦克风</h3>
-                <div class="product-params">
-                    <p>真分集远距离线路</p>
-                    <p>会议底座可充电</p>
-                    <p>工作有效距离100米</p>
-                </div>
-                <p>桌面式安装，造型稳重，适合政府正式会议。</p>
-            </div>
-        </div>
-
-        <!-- 产品5：UR-880 -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="5">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic ur880/mic ur880-1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur880/mic ur880-2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur880/mic ur880-3.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>UR-880互通联调无线一拖二真分集</h3>
-                <div class="product-params">
-                    <p>可通过RJ45网线连接组成联调系统</p>
-                    <p>组频、扫频、频谱仪、EQ、SQ、ID身份</p>
-                    <p>手持带增益、功率、语言、静音、复位、锁定功能</p>
-                </div>
-                <p>多控标点，超强接收，使用距离可达300米。</p>
-            </div>
-        </div>
-
-        <!-- 产品6：UR-910（已修复） -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="6">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic ur910/mic ur910-1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur910/mic ur910-2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur910/mic ur910-3.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur910/mic ur910-4.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                    <span class="indicator-dot" data-index="3"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>UR-910无线一拖一真分集</h3>
-                <div class="product-params">
-                    <p>真分集PLL锁相环线路</p>
-                    <p>手持及腰包按键切换</p>
-                    <p>工作有效距离200米</p>
-                </div>
-                <p>高配置线路与专供动圈咪芯搭配调节，使整体话筒噪底清净，音质通透直至达到完美的效果。</p>
-            </div>
-        </div>
-
-        <!-- 产品7：UR-990 -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="7">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic ur990/mic ur990-1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur990/mic ur990-2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur990/mic ur990-3.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur990/mic ur990-4.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur990/mic ur990-5.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                    <span class="indicator-dot" data-index="3"></span>
-                    <span class="indicator-dot" data-index="4"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>UR-990无线一拖二真分集</h3>
-                <div class="product-params">
-                    <p>真分集PLL锁相环线路</p>
-                    <p>手持及腰包按键切换</p>
-                    <p>工作有效距离200米</p>
-                </div>
-                <p>高亮度全视角显示，演出级别的相位锁定线路，四天线超强接收。</p>
-            </div>
-        </div>
-
-        <!-- 产品8：UR-1000 -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="8">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic ur1000/mic ur1000-1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur1000/mic ur1000-2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur1000/mic ur1000-3.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>UR-1000无线一拖二真分集</h3>
-                <div class="product-params">
-                    <p>真分集PLL锁相环线路</p>
-                    <p>手持及腰包按键切换</p>
-                    <p>工作有效距离200米</p>
-                </div>
-                <p>高配置线路与专供动圈咪芯搭配调节，使整体话筒噪底清净，音质通透直至达到完美的效果。</p>
-            </div>
-        </div>
-
-        <!-- 产品9：UR-2400 -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="9">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic ur2400/mic ur2400-1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur2400/mic ur2400-2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur2400/mic ur2400-3.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur2400/mic ur2400-4.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur2400/mic ur2400-5.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur2400/mic ur2400-6.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur2400/mic ur2400-7.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ur2400/mic ur2400-8.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                    <span class="indicator-dot" data-index="3"></span>
-                    <span class="indicator-dot" data-index="4"></span>
-                    <span class="indicator-dot" data-index="5"></span>
-                    <span class="indicator-dot" data-index="6"></span>
-                    <span class="indicator-dot" data-index="7"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>UR-2400无线一拖四真分集</h3>
-                <div class="product-params">
-                    <p>真分集PLL锁相环线路</p>
-                    <p>手持及腰包按键切换</p>
-                    <p>工作有效距离200米</p>
-                </div>
-                <p>高亮度全视角显示，演出级别的相位锁定线路，四天线超强接收。</p>
-            </div>
-        </div>
-
-        <!-- 产品10：CT系列 -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="10">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic ct/mic ct-2-1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ct/mic ct-2-2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ct/mic ct-2-3.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ct/mic ct-4-1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ct/mic ct-4-2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ct/mic ct-4-3.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ct/mic ct-8-1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ct/mic ct-8-2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ct/mic ct-8-3.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ct/mic ct-8-4.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                    <span class="indicator-dot" data-index="3"></span>
-                    <span class="indicator-dot" data-index="4"></span>
-                    <span class="indicator-dot" data-index="5"></span>
-                    <span class="indicator-dot" data-index="6"></span>
-                    <span class="indicator-dot" data-index="7"></span>
-                    <span class="indicator-dot" data-index="8"></span>
-                    <span class="indicator-dot" data-index="9"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>CT跳频系列无线一拖二四八麦克风</h3>
-                <div class="product-params">
-                    <p>工作频率UHF600-690 MHz（可选）</p>
-                    <p>发射器中会议/手持/领夹可以混搭使用</p>
-                    <p>音量音频独立可控</p>
-                </div>
-                <p>专业级别的相位锁定电路，配合杂讯锁定静噪控制，保证了对干扰信号的有效阻隔。</p>
-            </div>
-        </div>
-        
-        <!-- 产品11：CT-128无线麦克风（多图） -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="11">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic ct128/mic ct128-1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic ct128/mic ct128-2.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>CT-128高性价比无线一拖二麦克风</h3>
-                <div class="product-params">
-                    <p>PLL频率合成技术</p>
-                    <p>80米传输距离</p>
-                    <p>专供动圈咪芯搭配调节噪底清净</p>
-                </div>
-                <p>抗干扰能力强,能有效抑制由外部带来的噪音干扰及同频干扰。</p>
-            </div>
-        </div>
-        
-        <!-- 产品12：FG充电系列无线麦克风（多图） -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="12">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic fc/mic fc-1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic fc/mic fc-2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic fc/mic fc-3.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>FG充电系列无线二四八通道麦克风</h3>
-                <div class="product-params">
-                    <p>PLL频率合成技术</p>
-                    <p>80米传输距离</p>
-                    <p>麦克风可充电使用时长12小时</p>
-                </div>
-                <p>专业级别的相位锁定电路，配合杂讯锁定静噪控制，保证了对干扰信号的有效阻隔。</p>
-            </div>
-        </div>
-        
-        <!-- 产品13：D90有线麦克风（多图） -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="13">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 1--1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 1--2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 1--3.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>D90有线麦克风</h3>
-                <div class="product-params">
-                    <p>换能方式电容式咪芯</p>
-                    <p>多种供电选择</p>
-                    <p>音频线长度、配置可定制</p>
-                </div>
-                <p>高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。</p>
-            </div>
-        </div>
-
-        <!-- 产品14：D80有线麦克风（少图） -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="14">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 2--1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 2--2.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 2--3.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>D80有线麦克风</h3>
-                <div class="product-params">
-                    <p>换能方式电容式咪芯</p>
-                    <p>供电选择：48V幻象/电池</p>
-                    <p>音频线长度、配置可定制</p>
-                </div>
-                <p>高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。</p>
-            </div>
-        </div>
-        
-        <!-- 产品15：BM-38有线麦克风（多图） -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="15">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 1.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 2.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>BM-38有线麦克风</h3>
-                <div class="product-params">
-                    <p>换能方式电容式咪芯</p>
-                    <p>多种供电选择</p>
-                    <p>音频线长度、配置可定制</p>
-                </div>
-                <p>高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。</p>
-            </div>
-        </div>
-        
-        <!-- 产品16：BM-960有线麦克风（多图） -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="16">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 3.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>BM-960有线麦克风</h3>
-                <div class="product-params">
-                    <p>换能方式电容式咪芯</p>
-                    <p>多种供电选择</p>
-                    <p>音频线长度、配置可定制</p>
-                </div>
-                <p>高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。</p>
-            </div>
-        </div>
-        
-        <!-- 产品17：BM系列有线麦克风（多图） -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="17">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 4.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 5.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 6.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 7.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 8.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 9.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                    <span class="indicator-dot" data-index="3"></span>
-                    <span class="indicator-dot" data-index="4"></span>
-                    <span class="indicator-dot" data-index="5"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>BM系列有线麦克风</h3>
-                <div class="product-params">
-                    <p>换能方式电容式咪芯</p>
-                    <p>多种供电选择</p>
-                    <p>音频线长度、配置可定制</p>
-                </div>
-                <p>高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。</p>
-            </div>
-        </div>
-
-        <!-- 产品18：BM带显示系列有线麦克风（多图） -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="18">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 10.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 11.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 12.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 13.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 14.jpg');"></div>
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 15.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                    <span class="indicator-dot" data-index="1"></span>
-                    <span class="indicator-dot" data-index="2"></span>
-                    <span class="indicator-dot" data-index="3"></span>
-                    <span class="indicator-dot" data-index="4"></span>
-                    <span class="indicator-dot" data-index="5"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>BM带显示系列有线麦克风</h3>
-                <div class="product-params">
-                    <p>换能方式电容式咪芯</p>
-                    <p>多种供电选择</p>
-                    <p>音频线长度、配置可定制</p>
-                </div>
-                <p>高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。</p>
-            </div>
-        </div>
-        
-        <!-- 产品19：收音有线麦克风（多图） -->
-        <div class="product-card">
-            <div class="product-img-slider" data-slider-id="19">
-                <div class="slider-wrapper">
-                    <div class="slider-item" style="background-image: url('images/mic wried/mic wried 17.jpg');"></div>
-                </div>
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
-                <div class="slider-indicators">
-                    <span class="indicator-dot active" data-index="0"></span>
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>收音有线麦克风</h3>
-                <div class="product-params">
-                    <p>换能方式电容式咪芯</p>
-                    <p>多种供电选择</p>
-                    <p>音频线长度、配置可定制</p>
-                </div>
-                <p>高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。</p>
-            </div>
-        </div>
-        
+    <h2 class="section-title" data-key="page_title">麦克风系列</h2>
+    <div class="product-grid" id="productGrid">
+        <!-- 产品由 JavaScript 动态生成 -->
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
+    <p data-key="footer_copyright">&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
 </footer>
 
 <!-- 返回顶部按钮 -->
 <div class="back-to-top">↑</div>
 
 <script>
-    // 移动端菜单切换
+    // ============================================================
+    // 1. 移动端菜单切换
+    // ============================================================
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('mobile-open');
         menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
     });
 
-    // 返回顶部
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            navLinks.classList.remove('mobile-open');
+            menuToggle.textContent = '☰';
+        });
+    });
+
+    // ============================================================
+    // 2. 返回顶部
+    // ============================================================
     const backToTopBtn = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
             backToTopBtn.classList.add('show');
         } else {
             backToTopBtn.classList.remove('show');
         }
     });
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({top: 0, behavior: 'smooth'});
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // 图片加载失败兜底
-    document.querySelectorAll('.slider-item').forEach(img => {
-        const imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
-        const testImg = new Image();
-        testImg.src = imgUrl;
-        testImg.onerror = () => {
-            img.style.backgroundImage = 'none';
-        };
-    });
+    // ============================================================
+    // 3. 多语言产品数据
+    // ============================================================
+    const productData = {
+        zh: [
+            {
+                id: 1,
+                name: "LD-9200 无线一拖二麦克风",
+                params: ["十组预设频率", "快速搜索干净频率", "会议底座可充电"],
+                desc: "拾音清晰稳定，抗干扰强，适合中小型会议室。",
+                images: [
+                    "images/mic/mic ld9200-1.jpg",
+                    "images/mic/mic ld9200-2.jpg",
+                    "images/mic/mic ld9200-3.jpg",
+                    "images/mic/mic ld9200-4.jpg",
+                    "images/mic/mic ld9200-5.jpg",
+                    "images/mic/mic ld9200-6.jpg",
+                    "images/mic/mic ld9200-7.jpg",
+                    "images/mic/mic ld9200-8.jpg",
+                    "images/mic/mic ld9200-9.jpg",
+                    "images/mic/mic ld9200-10.jpg"
+                ]
+            },
+            {
+                id: 2,
+                name: "LD-9600 无线一拖四麦克风",
+                params: ["十组预设频率", "快速搜索干净频率", "会议底座可充电"],
+                desc: "无线布置更简洁，安装方便，适合大型会议室。",
+                images: [
+                    "images/mic ld9600/mic ld9600-1.jpg",
+                    "images/mic ld9600/mic ld9600-2.jpg",
+                    "images/mic ld9600/mic ld9600-3.jpg",
+                    "images/mic ld9600/mic ld9600-4.jpg",
+                    "images/mic ld9600/mic ld9600-5.jpg",
+                    "images/mic ld9600/mic ld9600-6.jpg",
+                    "images/mic ld9600/mic ld9600-7.jpg",
+                    "images/mic ld9600/mic ld9600-8.jpg",
+                    "images/mic ld9600/mic ld9600-9.jpg",
+                    "images/mic ld9600/mic ld9600-10.jpg",
+                    "images/mic ld9600/mic ld9600-11.jpg",
+                    "images/mic ld9600/mic ld9600-12.jpg"
+                ]
+            },
+            {
+                id: 3,
+                name: "LD-9800 无线一拖八麦克风",
+                params: ["十组预设频率", "快速搜索干净频率", "会议底座可充电"],
+                desc: "桌面式安装，造型稳重，适合政府正式会议。",
+                images: [
+                    "images/mic ld9800/mic ld9800-1.jpg",
+                    "images/mic ld9800/mic ld9800-2.jpg",
+                    "images/mic ld9800/mic ld9800-3.jpg",
+                    "images/mic ld9800/mic ld9800-4.jpg",
+                    "images/mic ld9800/mic ld9800-5.jpg",
+                    "images/mic ld9800/mic ld9800-6.jpg",
+                    "images/mic ld9800/mic ld9800-7.jpg",
+                    "images/mic ld9800/mic ld9800-8.jpg",
+                    "images/mic ld9800/mic ld9800-9.jpg",
+                    "images/mic ld9800/mic ld9800-10.jpg"
+                ]
+            },
+            {
+                id: 4,
+                name: "M-2000 无线全金属一拖四麦克风",
+                params: ["真分集远距离线路", "会议底座可充电", "工作有效距离100米"],
+                desc: "桌面式安装，造型稳重，适合政府正式会议。",
+                images: ["images/mic m2200/mic m2200.jpg", "images/mic m2200/mic m2200-1.jpg"]
+            },
+            {
+                id: 5,
+                name: "UR-880互通联调无线一拖二真分集",
+                params: ["可通过RJ45网线连接组成联调系统", "组频、扫频、频谱仪、EQ、SQ、ID身份", "手持带增益、功率、语言、静音、复位、锁定功能"],
+                desc: "多控标点，超强接收，使用距离可达300米。",
+                images: [
+                    "images/mic ur880/mic ur880-1.jpg",
+                    "images/mic ur880/mic ur880-2.jpg",
+                    "images/mic ur880/mic ur880-3.jpg"
+                ]
+            },
+            {
+                id: 6,
+                name: "UR-910无线一拖一真分集",
+                params: ["真分集PLL锁相环线路", "手持及腰包按键切换", "工作有效距离200米"],
+                desc: "高配置线路与专供动圈咪芯搭配调节，使整体话筒噪底清净，音质通透直至达到完美的效果。",
+                images: [
+                    "images/mic ur910/mic ur910-1.jpg",
+                    "images/mic ur910/mic ur910-2.jpg",
+                    "images/mic ur910/mic ur910-3.jpg",
+                    "images/mic ur910/mic ur910-4.jpg"
+                ]
+            },
+            {
+                id: 7,
+                name: "UR-990无线一拖二真分集",
+                params: ["真分集PLL锁相环线路", "手持及腰包按键切换", "工作有效距离200米"],
+                desc: "高亮度全视角显示，演出级别的相位锁定线路，四天线超强接收。",
+                images: [
+                    "images/mic ur990/mic ur990-1.jpg",
+                    "images/mic ur990/mic ur990-2.jpg",
+                    "images/mic ur990/mic ur990-3.jpg",
+                    "images/mic ur990/mic ur990-4.jpg",
+                    "images/mic ur990/mic ur990-5.jpg"
+                ]
+            },
+            {
+                id: 8,
+                name: "UR-1000无线一拖二真分集",
+                params: ["真分集PLL锁相环线路", "手持及腰包按键切换", "工作有效距离200米"],
+                desc: "高配置线路与专供动圈咪芯搭配调节，使整体话筒噪底清净，音质通透直至达到完美的效果。",
+                images: [
+                    "images/mic ur1000/mic ur1000-1.jpg",
+                    "images/mic ur1000/mic ur1000-2.jpg",
+                    "images/mic ur1000/mic ur1000-3.jpg"
+                ]
+            },
+            {
+                id: 9,
+                name: "UR-2400无线一拖四真分集",
+                params: ["真分集PLL锁相环线路", "手持及腰包按键切换", "工作有效距离200米"],
+                desc: "高亮度全视角显示，演出级别的相位锁定线路，四天线超强接收。",
+                images: [
+                    "images/mic ur2400/mic ur2400-1.jpg",
+                    "images/mic ur2400/mic ur2400-2.jpg",
+                    "images/mic ur2400/mic ur2400-3.jpg",
+                    "images/mic ur2400/mic ur2400-4.jpg",
+                    "images/mic ur2400/mic ur2400-5.jpg",
+                    "images/mic ur2400/mic ur2400-6.jpg",
+                    "images/mic ur2400/mic ur2400-7.jpg",
+                    "images/mic ur2400/mic ur2400-8.jpg"
+                ]
+            },
+            {
+                id: 10,
+                name: "CT跳频系列无线一拖二四八麦克风",
+                params: ["工作频率UHF600-690 MHz（可选）", "发射器中会议/手持/领夹可以混搭使用", "音量音频独立可控"],
+                desc: "专业级别的相位锁定电路，配合杂讯锁定静噪控制，保证了对干扰信号的有效阻隔。",
+                images: [
+                    "images/mic ct/mic ct-2-1.jpg",
+                    "images/mic ct/mic ct-2-2.jpg",
+                    "images/mic ct/mic ct-2-3.jpg",
+                    "images/mic ct/mic ct-4-1.jpg",
+                    "images/mic ct/mic ct-4-2.jpg",
+                    "images/mic ct/mic ct-4-3.jpg",
+                    "images/mic ct/mic ct-8-1.jpg",
+                    "images/mic ct/mic ct-8-2.jpg",
+                    "images/mic ct/mic ct-8-3.jpg",
+                    "images/mic ct/mic ct-8-4.jpg"
+                ]
+            },
+            {
+                id: 11,
+                name: "CT-128高性价比无线一拖二麦克风",
+                params: ["PLL频率合成技术", "80米传输距离", "专供动圈咪芯搭配调节噪底清净"],
+                desc: "抗干扰能力强,能有效抑制由外部带来的噪音干扰及同频干扰。",
+                images: ["images/mic ct128/mic ct128-1.jpg", "images/mic ct128/mic ct128-2.jpg"]
+            },
+            {
+                id: 12,
+                name: "FG充电系列无线二四八通道麦克风",
+                params: ["PLL频率合成技术", "80米传输距离", "麦克风可充电使用时长12小时"],
+                desc: "专业级别的相位锁定电路，配合杂讯锁定静噪控制，保证了对干扰信号的有效阻隔。",
+                images: ["images/mic fc/mic fc-1.jpg", "images/mic fc/mic fc-2.jpg", "images/mic fc/mic fc-3.jpg"]
+            },
+            {
+                id: 13,
+                name: "D90有线麦克风",
+                params: ["换能方式电容式咪芯", "多种供电选择", "音频线长度、配置可定制"],
+                desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。",
+                images: [
+                    "images/mic wried/mic wried 1--1.jpg",
+                    "images/mic wried/mic wried 1--2.jpg",
+                    "images/mic wried/mic wried 1--3.jpg"
+                ]
+            },
+            {
+                id: 14,
+                name: "D80有线麦克风",
+                params: ["换能方式电容式咪芯", "供电选择：48V幻象/电池", "音频线长度、配置可定制"],
+                desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。",
+                images: [
+                    "images/mic wried/mic wried 2--1.jpg",
+                    "images/mic wried/mic wried 2--2.jpg",
+                    "images/mic wried/mic wried 2--3.jpg"
+                ]
+            },
+            {
+                id: 15,
+                name: "BM-38有线麦克风",
+                params: ["换能方式电容式咪芯", "多种供电选择", "音频线长度、配置可定制"],
+                desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。",
+                images: ["images/mic wried/mic wried 1.jpg", "images/mic wried/mic wried 2.jpg"]
+            },
+            {
+                id: 16,
+                name: "BM-960有线麦克风",
+                params: ["换能方式电容式咪芯", "多种供电选择", "音频线长度、配置可定制"],
+                desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。",
+                images: ["images/mic wried/mic wried 3.jpg"]
+            },
+            {
+                id: 17,
+                name: "BM系列有线麦克风",
+                params: ["换能方式电容式咪芯", "多种供电选择", "音频线长度、配置可定制"],
+                desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。",
+                images: [
+                    "images/mic wried/mic wried 4.jpg",
+                    "images/mic wried/mic wried 5.jpg",
+                    "images/mic wried/mic wried 6.jpg",
+                    "images/mic wried/mic wried 7.jpg",
+                    "images/mic wried/mic wried 8.jpg",
+                    "images/mic wried/mic wried 9.jpg"
+                ]
+            },
+            {
+                id: 18,
+                name: "BM带显示系列有线麦克风",
+                params: ["换能方式电容式咪芯", "多种供电选择", "音频线长度、配置可定制"],
+                desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。",
+                images: [
+                    "images/mic wried/mic wried 10.jpg",
+                    "images/mic wried/mic wried 11.jpg",
+                    "images/mic wried/mic wried 12.jpg",
+                    "images/mic wried/mic wried 13.jpg",
+                    "images/mic wried/mic wried 14.jpg",
+                    "images/mic wried/mic wried 15.jpg"
+                ]
+            },
+            {
+                id: 19,
+                name: "收音有线麦克风",
+                params: ["换能方式电容式咪芯", "多种供电选择", "音频线长度、配置可定制"],
+                desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。",
+                images: ["images/mic wried/mic wried 17.jpg"]
+            }
+        ],
+        en: [
+            {
+                id: 1,
+                name: "LD-9200 Wireless 1-to-2 Microphone",
+                params: ["10 Preset Frequencies", "Fast Clean Frequency Search", "Rechargeable Conference Base"],
+                desc: "Clear and stable pickup, strong anti-interference, suitable for small and medium-sized meeting rooms.",
+                images: [
+                    "images/mic/mic ld9200-1.jpg",
+                    "images/mic/mic ld9200-2.jpg",
+                    "images/mic/mic ld9200-3.jpg",
+                    "images/mic/mic ld9200-4.jpg",
+                    "images/mic/mic ld9200-5.jpg",
+                    "images/mic/mic ld9200-6.jpg",
+                    "images/mic/mic ld9200-7.jpg",
+                    "images/mic/mic ld9200-8.jpg",
+                    "images/mic/mic ld9200-9.jpg",
+                    "images/mic/mic ld9200-10.jpg"
+                ]
+            },
+            {
+                id: 2,
+                name: "LD-9600 Wireless 1-to-4 Microphone",
+                params: ["10 Preset Frequencies", "Fast Clean Frequency Search", "Rechargeable Conference Base"],
+                desc: "Wireless setup is more concise, easy to install, suitable for large meeting rooms.",
+                images: [
+                    "images/mic ld9600/mic ld9600-1.jpg",
+                    "images/mic ld9600/mic ld9600-2.jpg",
+                    "images/mic ld9600/mic ld9600-3.jpg",
+                    "images/mic ld9600/mic ld9600-4.jpg",
+                    "images/mic ld9600/mic ld9600-5.jpg",
+                    "images/mic ld9600/mic ld9600-6.jpg",
+                    "images/mic ld9600/mic ld9600-7.jpg",
+                    "images/mic ld9600/mic ld9600-8.jpg",
+                    "images/mic ld9600/mic ld9600-9.jpg",
+                    "images/mic ld9600/mic ld9600-10.jpg",
+                    "images/mic ld9600/mic ld9600-11.jpg",
+                    "images/mic ld9600/mic ld9600-12.jpg"
+                ]
+            },
+            {
+                id: 3,
+                name: "LD-9800 Wireless 1-to-8 Microphone",
+                params: ["10 Preset Frequencies", "Fast Clean Frequency Search", "Rechargeable Conference Base"],
+                desc: "Desktop installation, stable design, suitable for formal government meetings.",
+                images: [
+                    "images/mic ld9800/mic ld9800-1.jpg",
+                    "images/mic ld9800/mic ld9800-2.jpg",
+                    "images/mic ld9800/mic ld9800-3.jpg",
+                    "images/mic ld9800/mic ld9800-4.jpg",
+                    "images/mic ld9800/mic ld9800-5.jpg",
+                    "images/mic ld9800/mic ld9800-6.jpg",
+                    "images/mic ld9800/mic ld9800-7.jpg",
+                    "images/mic ld9800/mic ld9800-8.jpg",
+                    "images/mic ld9800/mic ld9800-9.jpg",
+                    "images/mic ld9800/mic ld9800-10.jpg"
+                ]
+            },
+            {
+                id: 4,
+                name: "M-2000 Wireless All-Metal 1-to-4 Microphone",
+                params: ["True Diversity Long-Distance Circuit", "Rechargeable Conference Base", "Working Range up to 100m"],
+                desc: "Desktop installation, stable design, suitable for formal government meetings.",
+                images: ["images/mic m2200/mic m2200.jpg", "images/mic m2200/mic m2200-1.jpg"]
+            },
+            {
+                id: 5,
+                name: "UR-880 Interconnection Tuning Wireless 1-to-2 True Diversity",
+                params: ["RJ45 Network Connection for Tuning System", "Group Frequency, Sweep, Spectrum, EQ, SQ, ID", "Handheld with Gain, Power, Language, Mute, Reset, Lock"],
+                desc: "Multi-control markers, super strong reception, range up to 300 meters.",
+                images: [
+                    "images/mic ur880/mic ur880-1.jpg",
+                    "images/mic ur880/mic ur880-2.jpg",
+                    "images/mic ur880/mic ur880-3.jpg"
+                ]
+            },
+            {
+                id: 6,
+                name: "UR-910 Wireless 1-to-1 True Diversity",
+                params: ["True Diversity PLL Phase-Locked Loop", "Handheld & Bodypack Switch", "Working Range up to 200m"],
+                desc: "High-end circuitry with dedicated dynamic capsule for clear, transparent sound quality.",
+                images: [
+                    "images/mic ur910/mic ur910-1.jpg",
+                    "images/mic ur910/mic ur910-2.jpg",
+                    "images/mic ur910/mic ur910-3.jpg",
+                    "images/mic ur910/mic ur910-4.jpg"
+                ]
+            },
+            {
+                id: 7,
+                name: "UR-990 Wireless 1-to-2 True Diversity",
+                params: ["True Diversity PLL Phase-Locked Loop", "Handheld & Bodypack Switch", "Working Range up to 200m"],
+                desc: "High-brightness full-view display, performance-grade phase-locked circuitry, 4-antenna super reception.",
+                images: [
+                    "images/mic ur990/mic ur990-1.jpg",
+                    "images/mic ur990/mic ur990-2.jpg",
+                    "images/mic ur990/mic ur990-3.jpg",
+                    "images/mic ur990/mic ur990-4.jpg",
+                    "images/mic ur990/mic ur990-5.jpg"
+                ]
+            },
+            {
+                id: 8,
+                name: "UR-1000 Wireless 1-to-2 True Diversity",
+                params: ["True Diversity PLL Phase-Locked Loop", "Handheld & Bodypack Switch", "Working Range up to 200m"],
+                desc: "High-end circuitry with dedicated dynamic capsule for clear, transparent sound quality.",
+                images: [
+                    "images/mic ur1000/mic ur1000-1.jpg",
+                    "images/mic ur1000/mic ur1000-2.jpg",
+                    "images/mic ur1000/mic ur1000-3.jpg"
+                ]
+            },
+            {
+                id: 9,
+                name: "UR-2400 Wireless 1-to-4 True Diversity",
+                params: ["True Diversity PLL Phase-Locked Loop", "Handheld & Bodypack Switch", "Working Range up to 200m"],
+                desc: "High-brightness full-view display, performance-grade phase-locked circuitry, 4-antenna super reception.",
+                images: [
+                    "images/mic ur2400/mic ur2400-1.jpg",
+                    "images/mic ur2400/mic ur2400-2.jpg",
+                    "images/mic ur2400/mic ur2400-3.jpg",
+                    "images/mic ur2400/mic ur2400-4.jpg",
+                    "images/mic ur2400/mic ur2400-5.jpg",
+                    "images/mic ur2400/mic ur2400-6.jpg",
+                    "images/mic ur2400/mic ur2400-7.jpg",
+                    "images/mic ur2400/mic ur2400-8.jpg"
+                ]
+            },
+            {
+                id: 10,
+                name: "CT Frequency-Hopping Series Wireless 1-to-2/4/8 Microphone",
+                params: ["Frequency UHF600-690 MHz (Optional)", "Conference/Handheld/Lavalier Mixable", "Independent Volume Control"],
+                desc: "Professional phase-locked circuitry with noise-lock squelch control for effective interference rejection.",
+                images: [
+                    "images/mic ct/mic ct-2-1.jpg",
+                    "images/mic ct/mic ct-2-2.jpg",
+                    "images/mic ct/mic ct-2-3.jpg",
+                    "images/mic ct/mic ct-4-1.jpg",
+                    "images/mic ct/mic ct-4-2.jpg",
+                    "images/mic ct/mic ct-4-3.jpg",
+                    "images/mic ct/mic ct-8-1.jpg",
+                    "images/mic ct/mic ct-8-2.jpg",
+                    "images/mic ct/mic ct-8-3.jpg",
+                    "images/mic ct/mic ct-8-4.jpg"
+                ]
+            },
+            {
+                id: 11,
+                name: "CT-128 High Cost-Effective Wireless 1-to-2 Microphone",
+                params: ["PLL Frequency Synthesis", "80m Transmission Range", "Dedicated Dynamic Capsule for Clean Sound"],
+                desc: "Strong anti-interference capability, effectively suppresses external noise and co-channel interference.",
+                images: ["images/mic ct128/mic ct128-1.jpg", "images/mic ct128/mic ct128-2.jpg"]
+            },
+            {
+                id: 12,
+                name: "FG Rechargeable Series Wireless 2/4/8-Channel Microphone",
+                params: ["PLL Frequency Synthesis", "80m Transmission Range", "12-Hour Rechargeable Battery Life"],
+                desc: "Professional phase-locked circuitry with noise-lock squelch control for effective interference rejection.",
+                images: ["images/mic fc/mic fc-1.jpg", "images/mic fc/mic fc-2.jpg", "images/mic fc/mic fc-3.jpg"]
+            },
+            {
+                id: 13,
+                name: "D90 Wired Microphone",
+                params: ["Condenser Capsule", "Multiple Power Options", "Customizable Cable Length & Configuration"],
+                desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.",
+                images: [
+                    "images/mic wried/mic wried 1--1.jpg",
+                    "images/mic wried/mic wried 1--2.jpg",
+                    "images/mic wried/mic wried 1--3.jpg"
+                ]
+            },
+            {
+                id: 14,
+                name: "D80 Wired Microphone",
+                params: ["Condenser Capsule", "Power: 48V Phantom/Battery", "Customizable Cable Length & Configuration"],
+                desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.",
+                images: [
+                    "images/mic wried/mic wried 2--1.jpg",
+                    "images/mic wried/mic wried 2--2.jpg",
+                    "images/mic wried/mic wried 2--3.jpg"
+                ]
+            },
+            {
+                id: 15,
+                name: "BM-38 Wired Microphone",
+                params: ["Condenser Capsule", "Multiple Power Options", "Customizable Cable Length & Configuration"],
+                desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.",
+                images: ["images/mic wried/mic wried 1.jpg", "images/mic wried/mic wried 2.jpg"]
+            },
+            {
+                id: 16,
+                name: "BM-960 Wired Microphone",
+                params: ["Condenser Capsule", "Multiple Power Options", "Customizable Cable Length & Configuration"],
+                desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.",
+                images: ["images/mic wried/mic wried 3.jpg"]
+            },
+            {
+                id: 17,
+                name: "BM Series Wired Microphone",
+                params: ["Condenser Capsule", "Multiple Power Options", "Customizable Cable Length & Configuration"],
+                desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.",
+                images: [
+                    "images/mic wried/mic wried 4.jpg",
+                    "images/mic wried/mic wried 5.jpg",
+                    "images/mic wried/mic wried 6.jpg",
+                    "images/mic wried/mic wried 7.jpg",
+                    "images/mic wried/mic wried 8.jpg",
+                    "images/mic wried/mic wried 9.jpg"
+                ]
+            },
+            {
+                id: 18,
+                name: "BM Series with Display Wired Microphone",
+                params: ["Condenser Capsule", "Multiple Power Options", "Customizable Cable Length & Configuration"],
+                desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.",
+                images: [
+                    "images/mic wried/mic wried 10.jpg",
+                    "images/mic wried/mic wried 11.jpg",
+                    "images/mic wried/mic wried 12.jpg",
+                    "images/mic wried/mic wried 13.jpg",
+                    "images/mic wried/mic wried 14.jpg",
+                    "images/mic wried/mic wried 15.jpg"
+                ]
+            },
+            {
+                id: 19,
+                name: "Condenser Wired Microphone",
+                params: ["Condenser Capsule", "Multiple Power Options", "Customizable Cable Length & Configuration"],
+                desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.",
+                images: ["images/mic wried/mic wried 17.jpg"]
+            }
+        ],
+        es: [
+            {
+                id: 1,
+                name: "LD-9200 Micrófono Inalámbrico 1 a 2",
+                params: ["10 Frecuencias Preestablecidas", "Búsqueda Rápida de Frecuencia Limpia", "Base de Conferencia Recargable"],
+                desc: "Captación clara y estable, fuerte anti-interferencia, adecuado para salas de reuniones pequeñas y medianas.",
+                images: [
+                    "images/mic/mic ld9200-1.jpg",
+                    "images/mic/mic ld9200-2.jpg",
+                    "images/mic/mic ld9200-3.jpg",
+                    "images/mic/mic ld9200-4.jpg",
+                    "images/mic/mic ld9200-5.jpg",
+                    "images/mic/mic ld9200-6.jpg",
+                    "images/mic/mic ld9200-7.jpg",
+                    "images/mic/mic ld9200-8.jpg",
+                    "images/mic/mic ld9200-9.jpg",
+                    "images/mic/mic ld9200-10.jpg"
+                ]
+            },
+            {
+                id: 2,
+                name: "LD-9600 Micrófono Inalámbrico 1 a 4",
+                params: ["10 Frecuencias Preestablecidas", "Búsqueda Rápida de Frecuencia Limpia", "Base de Conferencia Recargable"],
+                desc: "Configuración inalámbrica más sencilla, fácil instalación, adecuado para grandes salas de reuniones.",
+                images: [
+                    "images/mic ld9600/mic ld9600-1.jpg",
+                    "images/mic ld9600/mic ld9600-2.jpg",
+                    "images/mic ld9600/mic ld9600-3.jpg",
+                    "images/mic ld9600/mic ld9600-4.jpg",
+                    "images/mic ld9600/mic ld9600-5.jpg",
+                    "images/mic ld9600/mic ld9600-6.jpg",
+                    "images/mic ld9600/mic ld9600-7.jpg",
+                    "images/mic ld9600/mic ld9600-8.jpg",
+                    "images/mic ld9600/mic ld9600-9.jpg",
+                    "images/mic ld9600/mic ld9600-10.jpg",
+                    "images/mic ld9600/mic ld9600-11.jpg",
+                    "images/mic ld9600/mic ld9600-12.jpg"
+                ]
+            },
+            {
+                id: 3,
+                name: "LD-9800 Micrófono Inalámbrico 1 a 8",
+                params: ["10 Frecuencias Preestablecidas", "Búsqueda Rápida de Frecuencia Limpia", "Base de Conferencia Recargable"],
+                desc: "Instalación de escritorio, diseño estable, adecuado para reuniones gubernamentales formales.",
+                images: [
+                    "images/mic ld9800/mic ld9800-1.jpg",
+                    "images/mic ld9800/mic ld9800-2.jpg",
+                    "images/mic ld9800/mic ld9800-3.jpg",
+                    "images/mic ld9800/mic ld9800-4.jpg",
+                    "images/mic ld9800/mic ld9800-5.jpg",
+                    "images/mic ld9800/mic ld9800-6.jpg",
+                    "images/mic ld9800/mic ld9800-7.jpg",
+                    "images/mic ld9800/mic ld9800-8.jpg",
+                    "images/mic ld9800/mic ld9800-9.jpg",
+                    "images/mic ld9800/mic ld9800-10.jpg"
+                ]
+            },
+            {
+                id: 4,
+                name: "M-2000 Micrófono Inalámbrico Totalmente Metálico 1 a 4",
+                params: ["Circuito de Larga Distancia True Diversity", "Base de Conferencia Recargable", "Alcance de 100m"],
+                desc: "Instalación de escritorio, diseño estable, adecuado para reuniones gubernamentales formales.",
+                images: ["images/mic m2200/mic m2200.jpg", "images/mic m2200/mic m2200-1.jpg"]
+            },
+            {
+                id: 5,
+                name: "UR-880 True Diversity Inalámbrico 1 a 2 con Ajuste Interconectado",
+                params: ["Conexión RJ45 para Sistema de Ajuste", "Frecuencia de Grupo, Barrido, Espectro, EQ, SQ, ID", "Handheld con Ganancia, Potencia, Idioma, Silencio, Reinicio, Bloqueo"],
+                desc: "Múltiples puntos de control, recepción súper fuerte, alcance de hasta 300 metros.",
+                images: [
+                    "images/mic ur880/mic ur880-1.jpg",
+                    "images/mic ur880/mic ur880-2.jpg",
+                    "images/mic ur880/mic ur880-3.jpg"
+                ]
+            },
+            {
+                id: 6,
+                name: "UR-910 True Diversity Inalámbrico 1 a 1",
+                params: ["True Diversity PLL Phase-Locked Loop", "Cambio Handheld/Bodypack", "Alcance de Trabajo hasta 200m"],
+                desc: "Circuito de alta gama con cápsula dinámica dedicada para un sonido claro y transparente.",
+                images: [
+                    "images/mic ur910/mic ur910-1.jpg",
+                    "images/mic ur910/mic ur910-2.jpg",
+                    "images/mic ur910/mic ur910-3.jpg",
+                    "images/mic ur910/mic ur910-4.jpg"
+                ]
+            },
+            {
+                id: 7,
+                name: "UR-990 True Diversity Inalámbrico 1 a 2",
+                params: ["True Diversity PLL Phase-Locked Loop", "Cambio Handheld/Bodypack", "Alcance de Trabajo hasta 200m"],
+                desc: "Pantalla de alto brillo, circuito de fase de nivel profesional, recepción súper con 4 antenas.",
+                images: [
+                    "images/mic ur990/mic ur990-1.jpg",
+                    "images/mic ur990/mic ur990-2.jpg",
+                    "images/mic ur990/mic ur990-3.jpg",
+                    "images/mic ur990/mic ur990-4.jpg",
+                    "images/mic ur990/mic ur990-5.jpg"
+                ]
+            },
+            {
+                id: 8,
+                name: "UR-1000 True Diversity Inalámbrico 1 a 2",
+                params: ["True Diversity PLL Phase-Locked Loop", "Cambio Handheld/Bodypack", "Alcance de Trabajo hasta 200m"],
+                desc: "Circuito de alta gama con cápsula dinámica dedicada para un sonido claro y transparente.",
+                images: [
+                    "images/mic ur1000/mic ur1000-1.jpg",
+                    "images/mic ur1000/mic ur1000-2.jpg",
+                    "images/mic ur1000/mic ur1000-3.jpg"
+                ]
+            },
+            {
+                id: 9,
+                name: "UR-2400 True Diversity Inalámbrico 1 a 4",
+                params: ["True Diversity PLL Phase-Locked Loop", "Cambio Handheld/Bodypack", "Alcance de Trabajo hasta 200m"],
+                desc: "Pantalla de alto brillo, circuito de fase de nivel profesional, recepción súper con 4 antenas.",
+                images: [
+                    "images/mic ur2400/mic ur2400-1.jpg",
+                    "images/mic ur2400/mic ur2400-2.jpg",
+                    "images/mic ur2400/mic ur2400-3.jpg",
+                    "images/mic ur2400/mic ur2400-4.jpg",
+                    "images/mic ur2400/mic ur2400-5.jpg",
+                    "images/mic ur2400/mic ur2400-6.jpg",
+                    "images/mic ur2400/mic ur2400-7.jpg",
+                    "images/mic ur2400/mic ur2400-8.jpg"
+                ]
+            },
+            {
+                id: 10,
+                name: "CT Salto de Frecuencia Inalámbrico 1 a 2/4/8",
+                params: ["Frecuencia UHF600-690 MHz (Opcional)", "Mezcla de Conferencia/Handheld/Lavalier", "Control de Volumen Independiente"],
+                desc: "Circuito de fase bloqueada profesional con control de silencio por bloqueo de ruido para un rechazo efectivo de interferencias.",
+                images: [
+                    "images/mic ct/mic ct-2-1.jpg",
+                    "images/mic ct/mic ct-2-2.jpg",
+                    "images/mic ct/mic ct-2-3.jpg",
+                    "images/mic ct/mic ct-4-1.jpg",
+                    "images/mic ct/mic ct-4-2.jpg",
+                    "images/mic ct/mic ct-4-3.jpg",
+                    "images/mic ct/mic ct-8-1.jpg",
+                    "images/mic ct/mic ct-8-2.jpg",
+                    "images/mic ct/mic ct-8-3.jpg",
+                    "images/mic ct/mic ct-8-4.jpg"
+                ]
+            },
+            {
+                id: 11,
+                name: "CT-128 Micrófono Inalámbrico 1 a 2 de Alta Relación Calidad-Precio",
+                params: ["Síntesis de Frecuencia PLL", "Alcance de Transmisión 80m", "Cápsula Dinámica Dedicada para Sonido Limpio"],
+                desc: "Fuerte capacidad anti-interferencia, suprime eficazmente el ruido externo y la interferencia de co-canal.",
+                images: ["images/mic ct128/mic ct128-1.jpg", "images/mic ct128/mic ct128-2.jpg"]
+            },
+            {
+                id: 12,
+                name: "FG Serie Recargable Inalámbrico 2/4/8 Canales",
+                params: ["Síntesis de Frecuencia PLL", "Alcance de Transmisión 80m", "Batería Recargable 12 Horas"],
+                desc: "Circuito de fase bloqueada profesional con control de silencio por bloqueo de ruido para un rechazo efectivo de interferencias.",
+                images: ["images/mic fc/mic fc-1.jpg", "images/mic fc/mic fc-2.jpg", "images/mic fc/mic fc-3.jpg"]
+            },
+            {
+                id: 13,
+                name: "D90 Micrófono con Cable",
+                params: ["Cápsula de Condensador", "Múltiples Opciones de Alimentación", "Longitud de Cable y Configuración Personalizables"],
+                desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.",
+                images: [
+                    "images/mic wried/mic wried 1--1.jpg",
+                    "images/mic wried/mic wried 1--2.jpg",
+                    "images/mic wried/mic wried 1--3.jpg"
+                ]
+            },
+            {
+                id: 14,
+                name: "D80 Micrófono con Cable",
+                params: ["Cápsula de Condensador", "Alimentación: 48V Phantom/Batería", "Longitud de Cable y Configuración Personalizables"],
+                desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.",
+                images: [
+                    "images/mic wried/mic wried 2--1.jpg",
+                    "images/mic wried/mic wried 2--2.jpg",
+                    "images/mic wried/mic wried 2--3.jpg"
+                ]
+            },
+            {
+                id: 15,
+                name: "BM-38 Micrófono con Cable",
+                params: ["Cápsula de Condensador", "Múltiples Opciones de Alimentación", "Longitud de Cable y Configuración Personalizables"],
+                desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.",
+                images: ["images/mic wried/mic wried 1.jpg", "images/mic wried/mic wried 2.jpg"]
+            },
+            {
+                id: 16,
+                name: "BM-960 Micrófono con Cable",
+                params: ["Cápsula de Condensador", "Múltiples Opciones de Alimentación", "Longitud de Cable y Configuración Personalizables"],
+                desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.",
+                images: ["images/mic wried/mic wried 3.jpg"]
+            },
+            {
+                id: 17,
+                name: "Serie BM Micrófono con Cable",
+                params: ["Cápsula de Condensador", "Múltiples Opciones de Alimentación", "Longitud de Cable y Configuración Personalizables"],
+                desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.",
+                images: [
+                    "images/mic wried/mic wried 4.jpg",
+                    "images/mic wried/mic wried 5.jpg",
+                    "images/mic wried/mic wried 6.jpg",
+                    "images/mic wried/mic wried 7.jpg",
+                    "images/mic wried/mic wried 8.jpg",
+                    "images/mic wried/mic wried 9.jpg"
+                ]
+            },
+            {
+                id: 18,
+                name: "Serie BM con Pantalla Micrófono con Cable",
+                params: ["Cápsula de Condensador", "Múltiples Opciones de Alimentación", "Longitud de Cable y Configuración Personalizables"],
+                desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.",
+                images: [
+                    "images/mic wried/mic wried 10.jpg",
+                    "images/mic wried/mic wried 11.jpg",
+                    "images/mic wried/mic wried 12.jpg",
+                    "images/mic wried/mic wried 13.jpg",
+                    "images/mic wried/mic wried 14.jpg",
+                    "images/mic wried/mic wried 15.jpg"
+                ]
+            },
+            {
+                id: 19,
+                name: "Micrófono de Condensador con Cable",
+                params: ["Cápsula de Condensador", "Múltiples Opciones de Alimentación", "Longitud de Cable y Configuración Personalizables"],
+                desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.",
+                images: ["images/mic wried/mic wried 17.jpg"]
+            }
+        ]
+    };
 
-    // 多图轮播核心逻辑
-    document.querySelectorAll('.product-img-slider').forEach(slider => {
+    // ============================================================
+    // 4. 导航和面包屑多语言数据
+    // ============================================================
+    const navTranslations = {
+        zh: {
+            nav_home: "返回首页",
+            nav_profile: "公司介绍",
+            nav_products: "产品中心",
+            nav_articles: "企业资讯",
+            nav_contact: "联系方式",
+            bread_home: "首页",
+            bread_products: "产品中心",
+            bread_current: "麦克风系列",
+            page_title: "麦克风系列",
+            footer_copyright: "© 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。"
+        },
+        en: {
+            nav_home: "Home",
+            nav_profile: "About Us",
+            nav_products: "Products",
+            nav_articles: "News",
+            nav_contact: "Contact",
+            bread_home: "Home",
+            bread_products: "Products",
+            bread_current: "Microphone Series",
+            page_title: "Microphone Series",
+            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. All rights reserved."
+        },
+        es: {
+            nav_home: "Inicio",
+            nav_profile: "Sobre Nosotros",
+            nav_products: "Productos",
+            nav_articles: "Noticias",
+            nav_contact: "Contacto",
+            bread_home: "Inicio",
+            bread_products: "Productos",
+            bread_current: "Serie de Micrófonos",
+            page_title: "Serie de Micrófonos",
+            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Todos los derechos reservados."
+        }
+    };
+
+    // ============================================================
+    // 5. 渲染产品
+    // ============================================================
+    function renderProducts(lang) {
+        const grid = document.getElementById('productGrid');
+        const products = productData[lang] || productData.zh;
+        grid.innerHTML = '';
+
+        products.forEach(function(product, index) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+
+            // 轮播
+            const slider = document.createElement('div');
+            slider.className = 'product-img-slider';
+            slider.dataset.sliderId = product.id;
+
+            const wrapper = document.createElement('div');
+            wrapper.className = 'slider-wrapper';
+
+            product.images.forEach(function(img) {
+                const item = document.createElement('div');
+                item.className = 'slider-item';
+                item.style.backgroundImage = 'url(' + img + ')';
+                wrapper.appendChild(item);
+            });
+
+            slider.appendChild(wrapper);
+
+            // 按钮
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'slider-btn prev-btn';
+            prevBtn.textContent = '‹';
+            slider.appendChild(prevBtn);
+
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'slider-btn next-btn';
+            nextBtn.textContent = '›';
+            slider.appendChild(nextBtn);
+
+            // 指示器
+            const indicators = document.createElement('div');
+            indicators.className = 'slider-indicators';
+            product.images.forEach(function(img, idx) {
+                const dot = document.createElement('span');
+                dot.className = 'indicator-dot' + (idx === 0 ? ' active' : '');
+                dot.dataset.index = idx;
+                indicators.appendChild(dot);
+            });
+            slider.appendChild(indicators);
+
+            // 信息
+            const info = document.createElement('div');
+            info.className = 'product-info';
+
+            const title = document.createElement('h3');
+            title.textContent = product.name;
+
+            const paramsDiv = document.createElement('div');
+            paramsDiv.className = 'product-params';
+            product.params.forEach(function(p) {
+                const pTag = document.createElement('p');
+                pTag.textContent = p;
+                paramsDiv.appendChild(pTag);
+            });
+
+            const desc = document.createElement('p');
+            desc.textContent = product.desc;
+
+            info.appendChild(title);
+            info.appendChild(paramsDiv);
+            info.appendChild(desc);
+
+            card.appendChild(slider);
+            card.appendChild(info);
+            grid.appendChild(card);
+
+            // 初始化轮播
+            initSlider(slider);
+        });
+    }
+
+    // ============================================================
+    // 6. 轮播初始化
+    // ============================================================
+    function initSlider(slider) {
         const wrapper = slider.querySelector('.slider-wrapper');
         const items = slider.querySelectorAll('.slider-item');
         const prevBtn = slider.querySelector('.prev-btn');
@@ -928,48 +1212,102 @@
         const totalItems = items.length;
         let currentIndex = 0;
 
-        // 初始化：只有1张图时隐藏控制按钮
         if (totalItems === 1) {
             if (prevBtn) prevBtn.style.display = 'none';
             if (nextBtn) nextBtn.style.display = 'none';
+            return;
         }
 
-        // 更新轮播位置和指示器
-        const updateSlider = () => {
-            wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-            indicators.forEach((dot, index) => {
+        function updateSlider() {
+            wrapper.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+            indicators.forEach(function(dot, index) {
                 dot.classList.toggle('active', index === currentIndex);
             });
-        };
+        }
 
-        // 下一张
-        const goToNext = () => {
+        function goToNext() {
             currentIndex = (currentIndex + 1) % totalItems;
             updateSlider();
-        };
+        }
 
-        // 上一张
-        const goToPrev = () => {
+        function goToPrev() {
             currentIndex = (currentIndex - 1 + totalItems) % totalItems;
             updateSlider();
-        };
+        }
 
-        // 点击指示器切换
-        indicators.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
+        indicators.forEach(function(dot, index) {
+            dot.addEventListener('click', function() {
                 currentIndex = index;
                 updateSlider();
             });
         });
 
-        // 绑定按钮事件
         if (prevBtn) prevBtn.addEventListener('click', goToPrev);
         if (nextBtn) nextBtn.addEventListener('click', goToNext);
+    }
 
-        // 可选：自动轮播（如需开启，取消注释）
-        // let autoPlay = setInterval(goToNext, 3000);
-        // slider.addEventListener('mouseenter', () => clearInterval(autoPlay));
-        // slider.addEventListener('mouseleave', () => autoPlay = setInterval(goToNext, 3000));
+    // ============================================================
+    // 7. 多语言切换
+    // ============================================================
+    let currentLang = localStorage.getItem('ldmeting-lang') || 'zh';
+
+    function switchLanguage(lang) {
+        if (!navTranslations[lang]) return;
+        currentLang = lang;
+
+        // 更新导航和面包屑
+        document.querySelectorAll('[data-key]').forEach(function(el) {
+            const key = el.getAttribute('data-key');
+            if (navTranslations[lang] && navTranslations[lang][key]) {
+                el.textContent = navTranslations[lang][key];
+            }
+        });
+
+        // 更新语言切换按钮
+        document.querySelectorAll('.lang-switcher a').forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('data-lang') === lang) {
+                link.classList.add('active');
+            }
+        });
+
+        // 重新渲染产品
+        renderProducts(lang);
+
+        localStorage.setItem('ldmeting-lang', lang);
+    }
+
+    // ============================================================
+    // 8. 图片加载失败兜底
+    // ============================================================
+    function handleImageErrors() {
+        document.querySelectorAll('.slider-item').forEach(function(img) {
+            var imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
+            var testImg = new Image();
+            testImg.src = imgUrl;
+            testImg.onerror = function() {
+                img.style.backgroundImage = 'none';
+            };
+        });
+    }
+
+    // ============================================================
+    // 9. 初始化
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', function() {
+        // 绑定语言切换
+        document.querySelectorAll('.lang-switcher a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchLanguage(this.getAttribute('data-lang'));
+            });
+        });
+
+        // 初始化渲染
+        switchLanguage(currentLang);
+
+        // 图片兜底
+        setTimeout(handleImageErrors, 500);
     });
 </script>
 </body>
