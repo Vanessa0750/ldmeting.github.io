@@ -35,6 +35,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         .logo {
             font-size: 1.5rem;
@@ -42,6 +43,8 @@
         }
         .nav-links {
             display: flex;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .nav-links a {
             color: white;
@@ -59,7 +62,34 @@
             z-index: 101;
         }
 
-        /* 英雄区样式 - 已添加指定背景图 */
+        /* ===== 语言切换器 ===== */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            margin-left: 2rem;
+            gap: 0.2rem;
+        }
+        .lang-switcher a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.4rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .lang-switcher a:hover {
+            color: white;
+        }
+        .lang-switcher a.active {
+            color: #3498db;
+            font-weight: bold;
+        }
+        .lang-switcher .sep {
+            color: #555;
+            font-size: 0.8rem;
+        }
+
+        /* 英雄区样式 */
         .hero {
             background: linear-gradient(135deg, rgba(52, 152, 219, 0.3), rgba(41, 128, 185, 0.3)), 
                         url('https://raw.githubusercontent.com/Vanessa0750/ldmeting.github.io/main/images/1%20(4).jpg');
@@ -142,7 +172,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* 产品大类目样式（核心修改） */
+        /* 产品大类目样式 */
         .products {
             background-color: white;
         }
@@ -198,7 +228,7 @@
             background-color: #2980b9;
         }
 
-        /* 文章资讯样式 - 优化版 */
+        /* 文章资讯样式 */
         .articles {
             background-color: #f8f9fa;
         }
@@ -338,7 +368,6 @@
             .menu-toggle {
                 display: block;
             }
-            /* 移动端菜单样式优化 */
             .nav-links.mobile-open {
                 display: flex;
                 position: absolute;
@@ -350,6 +379,10 @@
                 flex-direction: column;
                 gap: 1rem;
                 box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            .nav-links.mobile-open .lang-switcher {
+                margin-left: 0;
+                justify-content: flex-start;
             }
             .hero h1 {
                 font-size: 2rem;
@@ -385,184 +418,377 @@
     <div class="nav-container">
         <div class="logo">LDMETING</div>
         <nav class="nav-links" aria-label="主导航">
-            <a href="#profile">公司介绍</a>
-            <a href="#products">产品中心</a>
-            <a href="#articles">企业资讯</a>
-            <a href="#contact">联系方式</a>
+            <a href="#profile" data-key="nav_profile">公司介绍</a>
+            <a href="#products" data-key="nav_products">产品中心</a>
+            <a href="#articles" data-key="nav_articles">企业资讯</a>
+            <a href="#contact" data-key="nav_contact">联系方式</a>
+            <!-- 语言切换器 -->
+            <div class="lang-switcher">
+                <a href="#" data-lang="zh" class="active">中文</a>
+                <span class="sep">|</span>
+                <a href="#" data-lang="en">English</a>
+                <span class="sep">|</span>
+                <a href="#" data-lang="es">Español</a>
+            </div>
         </nav>
         <div class="menu-toggle" aria-label="切换菜单">☰</div>
     </div>
 </header>
 
+<!-- 英雄区 -->
 <section class="hero">
-    <h1>LDMETING 专业会议音频系统</h1>
-    <p>专注会议麦克风、会议音箱、数字会议系统研发与生产，为政企会议、多功能厅、报告厅提供一站式解决方案。</p>
-    <a href="#products" class="btn">查看产品</a>
+    <h1 data-key="hero_title">LDMETING 专业会议音频系统</h1>
+    <p data-key="hero_desc">专注会议麦克风、会议音箱、数字会议系统研发与生产，为政企会议、多功能厅、报告厅提供一站式解决方案。</p>
+    <a href="#products" class="btn" data-key="hero_btn">查看产品</a>
 </section>
 
+<!-- 公司介绍 -->
 <section id="profile">
-    <h2 class="section-title">公司介绍</h2>
+    <h2 class="section-title" data-key="profile_title">公司介绍</h2>
     <div class="company-profile">
-        <p>恩平市凌动电子科技有限公司（LDMETING）是一家集研发、生产、销售于一体的专业音频设备企业。专注会议麦克风、数字会议系统、会议音箱等产品，拥有完整生产链与专业技术团队，产品远销国内外，为全球客户提供稳定、清晰、专业的会议音频体验。</p>
-        
+        <p data-key="profile_text">恩平市凌动电子科技有限公司（LDMETING）是一家集研发、生产、销售于一体的专业音频设备企业。专注会议麦克风、数字会议系统、会议音箱等产品，拥有完整生产链与专业技术团队，产品远销国内外，为全球客户提供稳定、清晰、专业的会议音频体验。</p>
         <div class="profile-grid">
             <div class="profile-item">
                 <h3>10+</h3>
-                <p>行业经验</p>
+                <p data-key="profile_exp">行业经验</p>
             </div>
             <div class="profile-item">
                 <h3>20+</h3>
-                <p>产品系列</p>
+                <p data-key="profile_series">产品系列</p>
             </div>
             <div class="profile-item">
                 <h3>50+</h3>
-                <p>国内外合作客户</p>
+                <p data-key="profile_clients">国内外合作客户</p>
             </div>
             <div class="profile-item">
                 <h3>100+</h3>
-                <p>成功工程案例</p>
+                <p data-key="profile_cases">成功工程案例</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- 产品大类目区域（核心修改） -->
+<!-- 产品大类目 -->
 <section id="products" class="products">
-    <h2 class="section-title">产品中心</h2>
+    <h2 class="section-title" data-key="products_title">产品中心</h2>
     <div class="product-category-grid">
-        <!-- 类目1：麦克风系列 -->
         <div class="category-card">
             <div class="category-icon">🎤</div>
-            <h3>麦克风系列</h3>
-            <p>包含有线、无线、鹅颈式等多种类型麦克风，满足不同场景拾音需求</p>
-            <a href="products-microphone.html" class="category-link">查看详情</a>
+            <h3 data-key="products_mic">麦克风系列</h3>
+            <p data-key="products_mic_desc">包含有线、无线、鹅颈式等多种类型麦克风，满足不同场景拾音需求</p>
+            <a href="products-microphone.html" class="category-link" data-key="products_detail">查看详情</a>
         </div>
-
-        <!-- 类目2：会议系统系列 -->
         <div class="category-card">
             <div class="category-icon">🖥️</div>
-            <h3>会议系统系列</h3>
-            <p>专业会议主机、讨论/视像跟踪系统，适配政企高端会议场景</p>
-            <a href="products-system.html" class="category-link">查看详情</a>
+            <h3 data-key="products_system">会议系统系列</h3>
+            <p data-key="products_system_desc">专业会议主机、讨论/视像跟踪系统，适配政企高端会议场景</p>
+            <a href="products-system.html" class="category-link" data-key="products_detail">查看详情</a>
         </div>
-
-        <!-- 类目3：周边设备系列 -->
         <div class="category-card">
             <div class="category-icon">🔊</div>
-            <h3>周边设备系列</h3>
-            <p>专业信号优化周边，放大、处理、抑制、分配一步到位，稳定可靠，提升整体效果</p>
-            <a href="products-peripheral devices.html" class="category-link">查看详情</a>
+            <h3 data-key="products_peripheral">周边设备系列</h3>
+            <p data-key="products_peripheral_desc">专业信号优化周边，放大、处理、抑制、分配一步到位，稳定可靠，提升整体效果</p>
+            <a href="products-peripheral devices.html" class="category-link" data-key="products_detail">查看详情</a>
         </div>
-
-        <!-- 类目4：整体解决方案 -->
         <div class="category-card">
             <div class="category-icon">📦</div>
-            <h3>整体解决方案</h3>
-            <p>根据要求定制一站式音频解决方案</p>
-            <a href="products-solution.html" class="category-link">查看详情</a>
+            <h3 data-key="products_solution">整体解决方案</h3>
+            <p data-key="products_solution_desc">根据要求定制一站式音频解决方案</p>
+            <a href="products-solution.html" class="category-link" data-key="products_detail">查看详情</a>
         </div>
     </div>
 </section>
 
-<!-- 企业资讯区域 - 优化版 -->
+<!-- 企业资讯 -->
 <section id="articles" class="articles">
-    <h2 class="section-title">企业资讯</h2>
+    <h2 class="section-title" data-key="articles_title">企业资讯</h2>
     <div class="article-grid">
-        <!-- 资讯1 -->
         <div class="article-card">
-            <h3>赴约羊城 声动未来</h3>
+            <h3 data-key="article1_title">赴约羊城 声动未来</h3>
             <div class="article-date">2026-01-10</div>
-            <p>我司重磅官宣参展2026广州国际专业灯光、音响展览会……</p>
-            <a href="article-detail-1.html" class="article-read-more">阅读全文 →</a>
+            <p data-key="article1_desc">我司重磅官宣参展2026广州国际专业灯光、音响展览会……</p>
+            <a href="article-detail-1.html" class="article-read-more" data-key="article_readmore">阅读全文 →</a>
         </div>
-        <!-- 资讯2 -->
         <div class="article-card">
-            <h3>无线六通道带表决带服务会议系统</h3>
+            <h3 data-key="article2_title">无线六通道带表决带服务会议系统</h3>
             <div class="article-date">2025-10-15</div>
-            <p>重构高效会议生态，赋能全场景智慧会务……</p>
-            <a href="article-detail-2.html" class="article-read-more">阅读全文 →</a>
+            <p data-key="article2_desc">重构高效会议生态，赋能全场景智慧会务……</p>
+            <a href="article-detail-2.html" class="article-read-more" data-key="article_readmore">阅读全文 →</a>
         </div>
-        <!-- 资讯3 -->
         <div class="article-card">
-            <h3>亮相羊城 聚力全球</h3>
+            <h3 data-key="article3_title">亮相羊城 聚力全球</h3>
             <div class="article-date">2025-05-30</div>
-            <p>我司携全系列会议音频精品闪耀2025广州灯光音响展览会</p>
-            <a href="article-detail-3.html" class="article-read-more">阅读全文 →</a>
+            <p data-key="article3_desc">我司携全系列会议音频精品闪耀2025广州灯光音响展览会</p>
+            <a href="article-detail-3.html" class="article-read-more" data-key="article_readmore">阅读全文 →</a>
         </div>
     </div>
-    <!-- 查看更多按钮 -->
     <div class="view-all-articles">
-        <a href="articles-list.html" class="view-all-btn">查看全部资讯</a>
+        <a href="articles-list.html" class="view-all-btn" data-key="articles_viewall">查看全部资讯</a>
     </div>
 </section>
 
+<!-- 联系方式 -->
 <section id="contact" class="contact">
-    <h2 class="section-title">联系方式</h2>
+    <h2 class="section-title" data-key="contact_title">联系方式</h2>
     <div class="contact-grid">
         <div class="contact-item">
-            <h3>📞 联系电话</h3>
+            <h3>📞 <span data-key="contact_phone_label">联系电话</span></h3>
             <p>+86 15976445882</p>
         </div>
         <div class="contact-item">
-            <h3>📧 电子邮箱</h3>
+            <h3>📧 <span data-key="contact_email_label">电子邮箱</span></h3>
             <p>ldmeting@qq.com</p>
         </div>
         <div class="contact-item">
-            <h3>📍 公司地址</h3>
-            <p>广东省恩平市</p>
-            <p>卓信工业园12栋503</p>
+            <h3>📍 <span data-key="contact_address_label">公司地址</span></h3>
+            <p data-key="contact_address1">广东省恩平市</p>
+            <p data-key="contact_address2">卓信工业园12栋503</p>
         </div>
         <div class="contact-item">
-            <h3>🕒 工作时间</h3>
-            <p>周一至周五：9:00-18:00</p>
-            <p>周六至周日：休息</p>
+            <h3>🕒 <span data-key="contact_hours_label">工作时间</span></h3>
+            <p data-key="contact_hours1">周一至周五：9:00-18:00</p>
+            <p data-key="contact_hours2">周六至周日：休息</p>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
+    <p data-key="footer_copyright">&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
 </footer>
 
 <!-- 返回顶部按钮 -->
 <div class="back-to-top" aria-label="返回顶部">↑</div>
 
 <script>
-    // 移动端菜单切换
+    // ============================================================
+    // 1. 移动端菜单切换
+    // ============================================================
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    
-    menuToggle.addEventListener('click', () => {
+
+    menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('mobile-open');
-        // 切换菜单图标
         menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
     });
 
-    // 点击导航链接关闭移动端菜单
-    const navAnchor = navLinks.querySelectorAll('a');
-    navAnchor.forEach(link => {
-        link.addEventListener('click', () => {
+    document.querySelectorAll('.nav-links a[href^="#"]').forEach(function(link) {
+        link.addEventListener('click', function() {
             navLinks.classList.remove('mobile-open');
             menuToggle.textContent = '☰';
         });
     });
 
-    // 返回顶部按钮
+    // ============================================================
+    // 2. 返回顶部
+    // ============================================================
     const backToTopBtn = document.querySelector('.back-to-top');
-    
-    window.addEventListener('scroll', () => {
+
+    window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
             backToTopBtn.classList.add('show');
         } else {
             backToTopBtn.classList.remove('show');
         }
     });
-    
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ============================================================
+    // 3. 多语言数据
+    // ============================================================
+    const translations = {
+        zh: {
+            // 导航
+            nav_profile: "公司介绍",
+            nav_products: "产品中心",
+            nav_articles: "企业资讯",
+            nav_contact: "联系方式",
+            // 英雄区
+            hero_title: "LDMETING 专业会议音频系统",
+            hero_desc: "专注会议麦克风、会议音箱、数字会议系统研发与生产，为政企会议、多功能厅、报告厅提供一站式解决方案。",
+            hero_btn: "查看产品",
+            // 公司介绍
+            profile_title: "公司介绍",
+            profile_text: "恩平市凌动电子科技有限公司（LDMETING）是一家集研发、生产、销售于一体的专业音频设备企业。专注会议麦克风、数字会议系统、会议音箱等产品，拥有完整生产链与专业技术团队，产品远销国内外，为全球客户提供稳定、清晰、专业的会议音频体验。",
+            profile_exp: "行业经验",
+            profile_series: "产品系列",
+            profile_clients: "国内外合作客户",
+            profile_cases: "成功工程案例",
+            // 产品中心
+            products_title: "产品中心",
+            products_mic: "麦克风系列",
+            products_mic_desc: "包含有线、无线、鹅颈式等多种类型麦克风，满足不同场景拾音需求",
+            products_system: "会议系统系列",
+            products_system_desc: "专业会议主机、讨论/视像跟踪系统，适配政企高端会议场景",
+            products_peripheral: "周边设备系列",
+            products_peripheral_desc: "专业信号优化周边，放大、处理、抑制、分配一步到位，稳定可靠，提升整体效果",
+            products_solution: "整体解决方案",
+            products_solution_desc: "根据要求定制一站式音频解决方案",
+            products_detail: "查看详情",
+            // 企业资讯
+            articles_title: "企业资讯",
+            article1_title: "赴约羊城 声动未来",
+            article1_desc: "我司重磅官宣参展2026广州国际专业灯光、音响展览会……",
+            article2_title: "无线六通道带表决带服务会议系统",
+            article2_desc: "重构高效会议生态，赋能全场景智慧会务……",
+            article3_title: "亮相羊城 聚力全球",
+            article3_desc: "我司携全系列会议音频精品闪耀2025广州灯光音响展览会",
+            article_readmore: "阅读全文 →",
+            articles_viewall: "查看全部资讯",
+            // 联系方式
+            contact_title: "联系方式",
+            contact_phone_label: "联系电话",
+            contact_email_label: "电子邮箱",
+            contact_address_label: "公司地址",
+            contact_address1: "广东省恩平市",
+            contact_address2: "卓信工业园12栋503",
+            contact_hours_label: "工作时间",
+            contact_hours1: "周一至周五：9:00-18:00",
+            contact_hours2: "周六至周日：休息",
+            // 页脚
+            footer_copyright: "© 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。"
+        },
+        en: {
+            nav_profile: "About Us",
+            nav_products: "Products",
+            nav_articles: "News",
+            nav_contact: "Contact",
+            hero_title: "LDMETING Professional Conference Audio Systems",
+            hero_desc: "Specializing in R&D and production of conference microphones, speakers, and digital conference systems, providing one-stop solutions for government and enterprise meetings, multi-function halls, and auditoriums.",
+            hero_btn: "View Products",
+            profile_title: "About Us",
+            profile_text: "Enping Lingdong Electronic Technology Co., Ltd. (LDMETING) is a professional audio equipment company integrating R&D, production, and sales. Focusing on conference microphones, digital conference systems, conference speakers and other products, we have a complete production chain and professional technical team. Our products are sold worldwide, providing stable, clear, and professional conference audio experiences for global customers.",
+            profile_exp: "Years of Experience",
+            profile_series: "Product Series",
+            profile_clients: "Global Partners",
+            profile_cases: "Successful Cases",
+            products_title: "Products",
+            products_mic: "Microphone Series",
+            products_mic_desc: "Including wired, wireless, gooseneck and other types of microphones to meet different pickup needs",
+            products_system: "Conference System Series",
+            products_system_desc: "Professional conference hosts, discussion/video tracking systems for high-end government and enterprise meetings",
+            products_peripheral: "Peripheral Series",
+            products_peripheral_desc: "Professional signal optimization peripherals, amplification, processing, suppression, distribution in one step, stable and reliable, improving overall performance",
+            products_solution: "Total Solutions",
+            products_solution_desc: "Customized one-stop audio solutions according to requirements",
+            products_detail: "View Details",
+            articles_title: "News",
+            article1_title: "Meet in Guangzhou, Sound of the Future",
+            article1_desc: "We are excited to announce our participation in the 2026 Guangzhou International Pro Audio & Lighting Exhibition...",
+            article2_title: "Wireless 6-Channel Voting & Service Conference System",
+            article2_desc: "Reconstructing efficient conference ecosystems, empowering all-scenario smart meetings...",
+            article3_title: "Shining in Guangzhou, Connecting the World",
+            article3_desc: "We showcased our full range of conference audio products at the 2025 Guangzhou Lighting & Sound Exhibition",
+            article_readmore: "Read More →",
+            articles_viewall: "View All News",
+            contact_title: "Contact Us",
+            contact_phone_label: "Phone",
+            contact_email_label: "Email",
+            contact_address_label: "Address",
+            contact_address1: "Enping City, Guangdong Province",
+            contact_address2: "Zhuoxin Industrial Park, Building 12, Room 503",
+            contact_hours_label: "Working Hours",
+            contact_hours1: "Monday to Friday: 9:00-18:00",
+            contact_hours2: "Saturday to Sunday: Closed",
+            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. All rights reserved."
+        },
+        es: {
+            nav_profile: "Sobre Nosotros",
+            nav_products: "Productos",
+            nav_articles: "Noticias",
+            nav_contact: "Contacto",
+            hero_title: "LDMETING Sistemas Profesionales de Audio para Conferencias",
+            hero_desc: "Especializados en I+D y producción de micrófonos, altavoces y sistemas digitales para conferencias, ofreciendo soluciones integrales para reuniones gubernamentales y empresariales, salas multifuncionales y auditorios.",
+            hero_btn: "Ver Productos",
+            profile_title: "Sobre Nosotros",
+            profile_text: "Enping Lingdong Electronic Technology Co., Ltd. (LDMETING) es una empresa de equipos de audio profesionales que integra I+D, producción y ventas. Centrada en micrófonos para conferencias, sistemas digitales, altavoces y otros productos, contamos con una cadena de producción completa y un equipo técnico profesional. Nuestros productos se venden en todo el mundo, proporcionando experiencias de audio estables, claras y profesionales para clientes globales.",
+            profile_exp: "Años de Experiencia",
+            profile_series: "Series de Productos",
+            profile_clients: "Socios Globales",
+            profile_cases: "Casos de Éxito",
+            products_title: "Productos",
+            products_mic: "Serie de Micrófonos",
+            products_mic_desc: "Incluye micrófonos alámbricos, inalámbricos, de cuello de cisne y otros tipos para satisfacer diferentes necesidades de captación",
+            products_system: "Serie de Sistemas de Conferencia",
+            products_system_desc: "Unidades centrales profesionales, sistemas de discusión/seguimiento de video para reuniones gubernamentales y empresariales de alto nivel",
+            products_peripheral: "Serie de Periféricos",
+            products_peripheral_desc: "Periféricos profesionales de optimización de señal, amplificación, procesamiento, supresión, distribución en un solo paso, estables y confiables, mejorando el rendimiento general",
+            products_solution: "Soluciones Integrales",
+            products_solution_desc: "Soluciones de audio personalizadas según requisitos",
+            products_detail: "Ver Detalles",
+            articles_title: "Noticias",
+            article1_title: "Encuentro en Guangzhou, Sonido del Futuro",
+            article1_desc: "Nos complace anunciar nuestra participación en la Exposición Internacional de Iluminación y Sonido Profesional de Guangzhou 2026...",
+            article2_title: "Sistema Inalámbrico de 6 Canales con Votación y Servicios",
+            article2_desc: "Reconstruyendo ecosistemas de conferencias eficientes, potenciando reuniones inteligentes en todos los escenarios...",
+            article3_title: "Brillando en Guangzhou, Conectando el Mundo",
+            article3_desc: "Presentamos nuestra gama completa de productos de audio para conferencias en la Exposición de Iluminación y Sonido de Guangzhou 2025",
+            article_readmore: "Leer Más →",
+            articles_viewall: "Ver Todas las Noticias",
+            contact_title: "Contáctenos",
+            contact_phone_label: "Teléfono",
+            contact_email_label: "Correo Electrónico",
+            contact_address_label: "Dirección",
+            contact_address1: "Ciudad de Enping, Provincia de Guangdong",
+            contact_address2: "Parque Industrial Zhuoxin, Edificio 12, Sala 503",
+            contact_hours_label: "Horario de Atención",
+            contact_hours1: "Lunes a Viernes: 9:00-18:00",
+            contact_hours2: "Sábado a Domingo: Cerrado",
+            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Todos los derechos reservados."
+        }
+    };
+
+    // ============================================================
+    // 4. 多语言核心逻辑
+    // ============================================================
+    let currentLang = localStorage.getItem('ldmeting-lang') || 'zh';
+
+    // 获取所有带 data-key 的元素
+    const translatableElements = document.querySelectorAll('[data-key]');
+
+    // 更新文本
+    function updateTexts(lang) {
+        translatableElements.forEach(function(el) {
+            const key = el.getAttribute('data-key');
+            if (translations[lang] && translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
         });
+    }
+
+    // 切换语言
+    function switchLanguage(lang) {
+        if (!translations[lang]) return;
+        currentLang = lang;
+        updateTexts(lang);
+
+        // 更新语言切换按钮状态
+        document.querySelectorAll('.lang-switcher a').forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('data-lang') === lang) {
+                link.classList.add('active');
+            }
+        });
+
+        localStorage.setItem('ldmeting-lang', lang);
+    }
+
+    // ============================================================
+    // 5. 初始化
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', function() {
+        // 绑定语言切换事件
+        document.querySelectorAll('.lang-switcher a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchLanguage(this.getAttribute('data-lang'));
+            });
+        });
+
+        // 应用当前语言
+        switchLanguage(currentLang);
     });
 </script>
 </body>
