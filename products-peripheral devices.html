@@ -199,6 +199,9 @@
             color: #666;
             margin: 1rem 0;
         }
+        .product-params p {
+            margin-bottom: 4px;
+        }
 
         /* 页脚 */
         footer {
@@ -284,16 +287,21 @@
     <span>周边设备系列</span>
 </div>
 
-<!-- 产品列表（示例放8个，可扩展到30个） -->
+<!-- 产品列表 -->
 <section>
     <h2 class="section-title">周边设备系列</h2>
     <div class="product-grid">
-        <!-- 产品1（多图示例） -->
+
+        <!-- 产品1：AT-200（单图，补充控制按钮） -->
         <div class="product-card">
-            <!-- 替换为多图轮播容器 -->
             <div class="product-img-slider" data-slider-id="1">
                 <div class="slider-wrapper">
                     <div class="slider-item" style="background-image: url('images/1-5/at200.jpg');"></div>
+                </div>
+                <button class="slider-btn prev-btn">‹</button>
+                <button class="slider-btn next-btn">›</button>
+                <div class="slider-indicators">
+                    <span class="indicator-dot active" data-index="0"></span>
                 </div>
             </div>
             <div class="product-info">
@@ -306,7 +314,8 @@
                 <p>无须调试，数字自动适应声学环境强力抑制啸叫。</p>
             </div>
         </div>
-        <!-- 产品2（多图示例） -->
+
+        <!-- 产品2：CTF系列 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="2">
                 <div class="slider-wrapper">
@@ -332,7 +341,8 @@
                 <p>内置晶体振荡，软件算法，稳定性能好，受温度和外界干扰小。</p>
             </div>
         </div>
-        <!-- 产品3-8 可参考上述格式添加多图，以下保留单图示例 -->
+
+        <!-- 产品3：DS系列音箱处理器 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="3">
                 <div class="slider-wrapper">
@@ -355,11 +365,13 @@
                 <div class="product-params">
                     <p>96KHz采样频率</p>
                     <p>32-bit DSP处理器</p>
-                    <p>24-bit A/D及D/A转换</p>
+                    <p>24-bit A/D及D/A转换</p>
                 </div>
                 <p>多接口远控，可联250台，带均衡滤波延时，面板/PC双控带锁存。</p>
             </div>
         </div>
+
+        <!-- 产品4：G-208电源时序器 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="4">
                 <div class="slider-wrapper">
@@ -383,6 +395,8 @@
                 <p>适用范围:娱乐KTV、酒吧、会议工程系列 (可带3~4台1000W~1500W功放)。</p>
             </div>
         </div>
+
+        <!-- 产品5：多通道调音台 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="5">
                 <div class="slider-wrapper">
@@ -408,6 +422,8 @@
                 <p>适用全球供电电压功率30瓦；使用灵活。具有无噪声、瞬间反应好、电耗低的特性。</p>
             </div>
         </div>
+
+        <!-- 产品6：TF-1100十路天线放大器 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="6">
                 <div class="slider-wrapper">
@@ -431,6 +447,8 @@
                 <p>产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。</p>
             </div>
         </div>
+
+        <!-- 产品7：TF-HT04无线系统专用天线放大器（已修复结构） -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="7">
                 <div class="slider-wrapper">
@@ -452,8 +470,10 @@
                     <p>补偿传输/分配损耗，提升接收灵敏度与稳定性</p>
                 </div>
                 <p>产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。</p>
-                </div>
+            </div>
         </div>
+
+        <!-- 产品8：TF系列四路天线放大器 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="8">
                 <div class="slider-wrapper">
@@ -478,6 +498,8 @@
                 <p>产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。</p>
             </div>
         </div>
+
+        <!-- 产品9：无线监听 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="9">
                 <div class="slider-wrapper">
@@ -499,6 +521,8 @@
                 <p>UHF高频无线保真传输，低延迟强连接，抗干扰稳如有线，高输出更迅捷。</p>
             </div>
         </div>
+
+        <!-- 产品10：柜式多通道调音台（已修复结构） -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="10">
                 <div class="slider-wrapper">
@@ -520,9 +544,10 @@
                     <p>XLR平衡输入话放噪声极低</p>
                 </div>
                 <p>适用全球供电电压功率30瓦；使用灵活。具有无噪声、瞬间反应好、电耗低的特性。</p>
-        </div>
             </div>
-        
+        </div>
+
+        <!-- 产品11：智慧运算中心（已修复结构） -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="11">
                 <div class="slider-wrapper">
@@ -548,9 +573,11 @@
                     <p>支持多台设备组网运行，在同一局域网内可以通过可以通过同一控制程序控制多台设备进行相关操作</p>
                     <p>内置简易中央控制处理器，集成图形控制组件，可完成控制矩阵、投影、幕布、灯光、窗帘、电源等第三方设备</p>
                     <p>连接互联网可对接到物联网平台，音频信号状态实时显示，可通过云平台控制音频功能，包括场景调用，音频矩阵路由功能，各路音量大小、静音等操作</p>
-        </div>
+                </div>
             </div>
-            
+        </div>
+
+        <!-- 产品12：电源时序器（已修复结构） -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="12">
                 <div class="slider-wrapper">
@@ -571,9 +598,11 @@
                     <p>RS232串口控制、凤凰控制口，实现单机控制、多机联机控制、远程控制</p>
                     <p>提供6路直流12V/1.2A输出、1路USB接口的DC5V输出</p>
                     <p>每路交流输出电源带独立控制按键和LED指示灯</p>
-        </div>
+                </div>
             </div>
-            
+        </div>
+
+        <!-- 产品13：数字音频处理器（已修复结构） -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="13">
                 <div class="slider-wrapper">
@@ -600,9 +629,11 @@
                     <p>软件支持可视化编程，可选择拉取模块化组件，自由组合成个性化用户界面，并支持一键导入至平板或手机终端使用</p>
                     <p>支持场景预设功能，最大支持16组场景</p>
                     <p>支持将场景数据生成文件保存，并实时导入导出</p>
-        </div>
+                </div>
             </div>
-            
+        </div>
+
+        <!-- 产品14：设备管控主机（已修复结构） -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="14">
                 <div class="slider-wrapper">
@@ -630,9 +661,10 @@
                     <p>兼容通用视频监控接入协议，平台可稳定调取前端监控画面，依托多层级网络传输优化设计，有效优化画面播放效果，降低视频画面传输延迟</p>
                     <p>预留环境传感设备数据接入端口，可同步接收各类环境采集设备传回数据，联动调控照明、遮阳帘、恒温调控等室内环境设备，实现基础环境智能调节</p>
                     <p>平台整合完整故障信息明细，清晰标注故障编号、设备编码、设备名称、所属项目区域、故障发生时间、故障具体原因、累计故障次数等内容，方便工作人员快速排查处置；故障处理完成后，可在平台内完成故障登记闭环，全程留存故障处理记录，便于后期溯源核查</p>
-        </div>
+                </div>
             </div>
         </div>
+
     </div>
 </section>
 
@@ -675,9 +707,8 @@
         };
     });
 
-    // 新增：多图轮播核心逻辑
+    // 多图轮播核心逻辑
     document.querySelectorAll('.product-img-slider').forEach(slider => {
-        const sliderId = slider.dataset.sliderId;
         const wrapper = slider.querySelector('.slider-wrapper');
         const items = slider.querySelectorAll('.slider-item');
         const prevBtn = slider.querySelector('.prev-btn');
@@ -686,7 +717,7 @@
         const totalItems = items.length;
         let currentIndex = 0;
 
-        // 初始化：隐藏单图的控制按钮
+        // 初始化：只有1张图时隐藏控制按钮
         if (totalItems === 1) {
             if (prevBtn) prevBtn.style.display = 'none';
             if (nextBtn) nextBtn.style.display = 'none';
@@ -694,28 +725,27 @@
 
         // 更新轮播位置和指示器
         const updateSlider = () => {
-            wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-            // 更新指示器激活状态
+            wrapper.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
             indicators.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentIndex);
             });
         };
 
         // 下一张
-        const goToNext = () => {
+        const goToNext = function() {
             currentIndex = (currentIndex + 1) % totalItems;
             updateSlider();
         };
 
         // 上一张
-        const goToPrev = () => {
+        const goToPrev = function() {
             currentIndex = (currentIndex - 1 + totalItems) % totalItems;
             updateSlider();
         };
 
         // 点击指示器切换
         indicators.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
+            dot.addEventListener('click', function() {
                 currentIndex = index;
                 updateSlider();
             });
@@ -724,12 +754,6 @@
         // 绑定按钮事件
         if (prevBtn) prevBtn.addEventListener('click', goToPrev);
         if (nextBtn) nextBtn.addEventListener('click', goToNext);
-
-        // 可选：自动轮播（如需开启，取消注释）
-        // let autoPlay = setInterval(goToNext, 3000);
-        // // 鼠标悬停暂停自动轮播
-        // slider.addEventListener('mouseenter', () => clearInterval(autoPlay));
-        // slider.addEventListener('mouseleave', () => autoPlay = setInterval(goToNext, 3000));
     });
 </script>
 </body>
