@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>周边设备系列 - LDMETING</title>
     <style>
-        /* 复用主页核心样式 + 适配子页 */
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +20,6 @@
             scroll-behavior: smooth;
         }
 
-        /* 导航栏 */
         header {
             background-color: #2c3e50;
             color: white;
@@ -59,7 +57,6 @@
             z-index: 101;
         }
 
-        /* 面包屑导航 */
         .breadcrumb {
             padding: 1rem 5%;
             background-color: white;
@@ -74,7 +71,6 @@
             margin: 0 0.5rem;
         }
 
-        /* 通用区块 */
         section {
             padding: 3rem 5%;
             margin: 1rem 0;
@@ -95,7 +91,6 @@
             margin: 1rem auto;
         }
 
-        /* 产品列表样式（可放30个产品） */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -107,19 +102,21 @@
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
-        
-        /* 新增：多图轮播容器样式 */
+
         .product-img-slider {
             position: relative;
             width: 100%;
             height: 200px;
             background-color: #f8f9fa;
             overflow: hidden;
+            flex-shrink: 0;
         }
         .slider-wrapper {
             display: flex;
@@ -138,7 +135,7 @@
             justify-content: center;
             color: #999;
         }
-        /* 轮播控制按钮 */
+
         .slider-btn {
             position: absolute;
             top: 50%;
@@ -166,7 +163,7 @@
         .next-btn {
             right: 10px;
         }
-        /* 轮播指示器 */
+
         .slider-indicators {
             position: absolute;
             bottom: 10px;
@@ -189,21 +186,57 @@
 
         .product-info {
             padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         .product-info h3 {
             color: #2c3e50;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+            flex-shrink: 0;
         }
         .product-params {
             font-size: 0.9rem;
             color: #666;
-            margin: 1rem 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         .product-params p {
             margin-bottom: 4px;
         }
 
-        /* 页脚 */
+        /* ===== 展开/收起功能 ===== */
+        .product-desc {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .product-desc.expanded {
+            -webkit-line-clamp: unset;
+            display: block;
+        }
+        .desc-toggle {
+            color: #3498db;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 0.6rem;
+            display: inline-block;
+            background: none;
+            border: none;
+            padding: 0;
+            font-family: inherit;
+            align-self: flex-start;
+            flex-shrink: 0;
+        }
+        .desc-toggle:hover {
+            color: #2c7ab1;
+            text-decoration: underline;
+        }
+
         footer {
             background-color: #1a252f;
             color: white;
@@ -212,7 +245,6 @@
             margin-top: 3rem;
         }
 
-        /* 返回顶部 */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -237,7 +269,6 @@
             visibility: visible;
         }
 
-        /* 响应式 */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -278,7 +309,6 @@
     </div>
 </header>
 
-<!-- 面包屑导航 -->
 <div class="breadcrumb">
     <a href="index.html">首页</a>
     <span>></span>
@@ -287,12 +317,11 @@
     <span>周边设备系列</span>
 </div>
 
-<!-- 产品列表 -->
 <section>
     <h2 class="section-title">周边设备系列</h2>
     <div class="product-grid">
 
-        <!-- 产品1：AT-200（单图，补充控制按钮） -->
+        <!-- 产品1：AT-200 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="1">
                 <div class="slider-wrapper">
@@ -307,11 +336,14 @@
             <div class="product-info">
                 <h3>AT-200自适应两进两出反馈抑制器</h3>
                 <div class="product-params">
-                    <p>3段EQ高中低音调节</p>
-                    <p>USB端口可连接电脑软件</p>
-                    <p>232中控接口，可连接中控</p>
+                    <div class="product-desc">
+                        <p>3段EQ高中低音调节</p>
+                        <p>USB端口可连接电脑软件</p>
+                        <p>232中控接口，可连接中控</p>
+                        <p>无须调试，数字自动适应声学环境强力抑制啸叫。</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
-                <p>无须调试，数字自动适应声学环境强力抑制啸叫。</p>
             </div>
         </div>
 
@@ -334,15 +366,18 @@
             <div class="product-info">
                 <h3>CTF系列反馈抑制器</h3>
                 <div class="product-params">
-                    <p>多通道连接传输</p>
-                    <p>有效滤除房间混响</p>
-                    <p>回音抵消和消除混响的算法</p>
+                    <div class="product-desc">
+                        <p>多通道连接传输</p>
+                        <p>有效滤除房间混响</p>
+                        <p>回音抵消和消除混响的算法</p>
+                        <p>内置晶体振荡，软件算法，稳定性能好，受温度和外界干扰小。</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
-                <p>内置晶体振荡，软件算法，稳定性能好，受温度和外界干扰小。</p>
             </div>
         </div>
 
-        <!-- 产品3：DS系列音箱处理器 -->
+        <!-- 产品3：DS系列 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="3">
                 <div class="slider-wrapper">
@@ -363,15 +398,18 @@
             <div class="product-info">
                 <h3>DS系列音箱处理器</h3>
                 <div class="product-params">
-                    <p>96KHz采样频率</p>
-                    <p>32-bit DSP处理器</p>
-                    <p>24-bit A/D及D/A转换</p>
+                    <div class="product-desc">
+                        <p>96KHz采样频率</p>
+                        <p>32-bit DSP处理器</p>
+                        <p>24-bit A/D及D/A转换</p>
+                        <p>多接口远控，可联250台，带均衡滤波延时，面板/PC双控带锁存。</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
-                <p>多接口远控，可联250台，带均衡滤波延时，面板/PC双控带锁存。</p>
             </div>
         </div>
 
-        <!-- 产品4：G-208电源时序器 -->
+        <!-- 产品4：G-208 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="4">
                 <div class="slider-wrapper">
@@ -388,15 +426,18 @@
             <div class="product-info">
                 <h3>G-208 8+2电源时序器</h3>
                 <div class="product-params">
-                    <p>30A最大输入电流</p>
-                    <p>总输出功率8000W</p>
-                    <p>每一路开关间隔时间1秒</p>
+                    <div class="product-desc">
+                        <p>30A最大输入电流</p>
+                        <p>总输出功率8000W</p>
+                        <p>每一路开关间隔时间1秒</p>
+                        <p>适用范围:娱乐KTV、酒吧、会议工程系列 (可带3~4台1000W~1500W功放)。</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
-                <p>适用范围:娱乐KTV、酒吧、会议工程系列 (可带3~4台1000W~1500W功放)。</p>
             </div>
         </div>
 
-        <!-- 产品5：多通道调音台 -->
+        <!-- 产品5：调音台 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="5">
                 <div class="slider-wrapper">
@@ -415,15 +456,18 @@
             <div class="product-info">
                 <h3>多通道调音台</h3>
                 <div class="product-params">
-                    <p>多通道多款式选择</p>
-                    <p>DSP效果+MP3+蓝牙+USB录音</p>
-                    <p>XLR平衡输入话放噪声极低</p>
+                    <div class="product-desc">
+                        <p>多通道多款式选择</p>
+                        <p>DSP效果+MP3+蓝牙+USB录音</p>
+                        <p>XLR平衡输入话放噪声极低</p>
+                        <p>适用全球供电电压功率30瓦；使用灵活。具有无噪声、瞬间反应好、电耗低的特性。</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
-                <p>适用全球供电电压功率30瓦；使用灵活。具有无噪声、瞬间反应好、电耗低的特性。</p>
             </div>
         </div>
 
-        <!-- 产品6：TF-1100十路天线放大器 -->
+        <!-- 产品6：TF-1100 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="6">
                 <div class="slider-wrapper">
@@ -440,15 +484,18 @@
             <div class="product-info">
                 <h3>TF-1100十路天线放大器</h3>
                 <div class="product-params">
-                    <p>天载波频率范围470-940MHz</p>
-                    <p>外置12V5A开关电源</p>
-                    <p>独立增益调节补偿不同级别的信号损失</p>
+                    <div class="product-desc">
+                        <p>天载波频率范围470-940MHz</p>
+                        <p>外置12V5A开关电源</p>
+                        <p>独立增益调节补偿不同级别的信号损失</p>
+                        <p>产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
-                <p>产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。</p>
             </div>
         </div>
 
-        <!-- 产品7：TF-HT04无线系统专用天线放大器（已修复结构） -->
+        <!-- 产品7：TF-HT04 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="7">
                 <div class="slider-wrapper">
@@ -465,15 +512,18 @@
             <div class="product-info">
                 <h3>TF-HT04无线系统专用天线放大器</h3>
                 <div class="product-params">
-                    <p>射频频率范围470-700MHz</p>
-                    <p>远程天线延长无线系统有效工作距离</p>
-                    <p>补偿传输/分配损耗，提升接收灵敏度与稳定性</p>
+                    <div class="product-desc">
+                        <p>射频频率范围470-700MHz</p>
+                        <p>远程天线延长无线系统有效工作距离</p>
+                        <p>补偿传输/分配损耗，提升接收灵敏度与稳定性</p>
+                        <p>产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
-                <p>产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。</p>
             </div>
         </div>
 
-        <!-- 产品8：TF系列四路天线放大器 -->
+        <!-- 产品8：TF系列 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="8">
                 <div class="slider-wrapper">
@@ -492,10 +542,13 @@
             <div class="product-info">
                 <h3>TF系列四路天线放大器</h3>
                 <div class="product-params">
-                    <p>天载波频率范围470-940MHz</p>
-                    <p>外置12V5A开关电源</p>
+                    <div class="product-desc">
+                        <p>天载波频率范围470-940MHz</p>
+                        <p>外置12V5A开关电源</p>
+                        <p>产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
-                <p>产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。</p>
             </div>
         </div>
 
@@ -514,15 +567,18 @@
             <div class="product-info">
                 <h3>无线监听</h3>
                 <div class="product-params">
-                    <p>远距离高频天线传输</p>
-                    <p>兼容各种声卡</p>
-                    <p>一主发射器无上限配置接收器</p>
+                    <div class="product-desc">
+                        <p>远距离高频天线传输</p>
+                        <p>兼容各种声卡</p>
+                        <p>一主发射器无上限配置接收器</p>
+                        <p>UHF高频无线保真传输，低延迟强连接，抗干扰稳如有线，高输出更迅捷。</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
-                <p>UHF高频无线保真传输，低延迟强连接，抗干扰稳如有线，高输出更迅捷。</p>
             </div>
         </div>
 
-        <!-- 产品10：柜式多通道调音台（已修复结构） -->
+        <!-- 产品10：柜式调音台 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="10">
                 <div class="slider-wrapper">
@@ -539,15 +595,18 @@
             <div class="product-info">
                 <h3>柜式多通道调音台</h3>
                 <div class="product-params">
-                    <p>多通道多款式选择</p>
-                    <p>DSP效果+MP3+蓝牙+USB录音</p>
-                    <p>XLR平衡输入话放噪声极低</p>
+                    <div class="product-desc">
+                        <p>多通道多款式选择</p>
+                        <p>DSP效果+MP3+蓝牙+USB录音</p>
+                        <p>XLR平衡输入话放噪声极低</p>
+                        <p>适用全球供电电压功率30瓦；使用灵活。具有无噪声、瞬间反应好、电耗低的特性。</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
-                <p>适用全球供电电压功率30瓦；使用灵活。具有无噪声、瞬间反应好、电耗低的特性。</p>
             </div>
         </div>
 
-        <!-- 产品11：智慧运算中心（已修复结构） -->
+        <!-- 产品11：智慧运算中心 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="11">
                 <div class="slider-wrapper">
@@ -562,22 +621,25 @@
             <div class="product-info">
                 <h3>智慧运算中心</h3>
                 <div class="product-params">
-                    <p>该智慧运算终端由音频处理模块、视频处理模块、音视频矩阵模块、DSP数字信号处理模块、中控功能模块和时序器功能模块</p>
-                    <p>具备强大的音频处理功能，支持音乐播放、录制和软视频会议</p>
-                    <p>支持输出音频音量大小可调节，支持均衡等处理算法，提供更好的音质体验</p>
-                    <p>通过可视化界面，监测输入输出通道实时状态，并能进行可视化编程</p>
-                    <p>具备视频处理功能，最大支持输出4K分辨率</p>
-                    <p>携带中控功能，485及232可单独设置串口功能</p>
-                    <p>兼备电源时序器功能，时序器可独立编辑开、关</p>
-                    <p>可通过手机或平板完成音视频及环境系统的操控，具备信号状态的实时监测</p>
-                    <p>支持多台设备组网运行，在同一局域网内可以通过可以通过同一控制程序控制多台设备进行相关操作</p>
-                    <p>内置简易中央控制处理器，集成图形控制组件，可完成控制矩阵、投影、幕布、灯光、窗帘、电源等第三方设备</p>
-                    <p>连接互联网可对接到物联网平台，音频信号状态实时显示，可通过云平台控制音频功能，包括场景调用，音频矩阵路由功能，各路音量大小、静音等操作</p>
+                    <div class="product-desc">
+                        <p>该智慧运算终端由音频处理模块、视频处理模块、音视频矩阵模块、DSP数字信号处理模块、中控功能模块和时序器功能模块</p>
+                        <p>具备强大的音频处理功能，支持音乐播放、录制和软视频会议</p>
+                        <p>支持输出音频音量大小可调节，支持均衡等处理算法，提供更好的音质体验</p>
+                        <p>通过可视化界面，监测输入输出通道实时状态，并能进行可视化编程</p>
+                        <p>具备视频处理功能，最大支持输出4K分辨率</p>
+                        <p>携带中控功能，485及232可单独设置串口功能</p>
+                        <p>兼备电源时序器功能，时序器可独立编辑开、关</p>
+                        <p>可通过手机或平板完成音视频及环境系统的操控，具备信号状态的实时监测</p>
+                        <p>支持多台设备组网运行，在同一局域网内可以通过可以通过同一控制程序控制多台设备进行相关操作</p>
+                        <p>内置简易中央控制处理器，集成图形控制组件，可完成控制矩阵、投影、幕布、灯光、窗帘、电源等第三方设备</p>
+                        <p>连接互联网可对接到物联网平台，音频信号状态实时显示，可通过云平台控制音频功能，包括场景调用，音频矩阵路由功能，各路音量大小、静音等操作</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
             </div>
         </div>
 
-        <!-- 产品12：电源时序器（已修复结构） -->
+        <!-- 产品12：电源时序器 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="12">
                 <div class="slider-wrapper">
@@ -592,17 +654,20 @@
             <div class="product-info">
                 <h3>电源时序器</h3>
                 <div class="product-params">
-                    <p>采用MCU控制，使时序时间更准确</p>
-                    <p>采用80A空气开关提供过流保护</p>
-                    <p>LED数码管电源电压指示，时刻监控当前市电电压</p>
-                    <p>RS232串口控制、凤凰控制口，实现单机控制、多机联机控制、远程控制</p>
-                    <p>提供6路直流12V/1.2A输出、1路USB接口的DC5V输出</p>
-                    <p>每路交流输出电源带独立控制按键和LED指示灯</p>
+                    <div class="product-desc">
+                        <p>采用MCU控制，使时序时间更准确</p>
+                        <p>采用80A空气开关提供过流保护</p>
+                        <p>LED数码管电源电压指示，时刻监控当前市电电压</p>
+                        <p>RS232串口控制、凤凰控制口，实现单机控制、多机联机控制、远程控制</p>
+                        <p>提供6路直流12V/1.2A输出、1路USB接口的DC5V输出</p>
+                        <p>每路交流输出电源带独立控制按键和LED指示灯</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
             </div>
         </div>
 
-        <!-- 产品13：数字音频处理器（已修复结构） -->
+        <!-- 产品13：数字音频处理器 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="13">
                 <div class="slider-wrapper">
@@ -617,23 +682,26 @@
             <div class="product-info">
                 <h3>数字音频处理器</h3>
                 <div class="product-params">
-                    <p>10 路模拟信号输入，10 路模拟信号输出，支持手机、平板、电脑端上位机软件与物联网平台任意切换</p>
-                    <p>可使用PC软件实现DSP数字音频信号处理，包括：AFC、AEC、ANS、AM、AGC、PEQ、延时、分频、矩阵等功能</p>
-                    <p>带有1路RS232，1路RS485,4路GPIO接口，可用于控制外部设备可对接外部设备</p>
-                    <p>以太网接口支持连接局域网进行本地调试控制；支持连接外网，对接物联网平台，进行远程设备监测与控制</p>
-                    <p>支持通过物联网平台实时查看设备在线状态，并查看实时电平、通道静音状态、矩阵混音状态</p>
-                    <p>支持将设备绑定至物联平台任意场所，并在平台中生成系统拓扑图，直观展示系统链路，便于用户对场所设备进行集中管理与异常排查</p>
-                    <p>支持通过物联平台对设备进行场景化管控，调用设备功能进行手动、定时、条件触发</p>
-                    <p>输入通道音频处理，支持ANS 噪声抑制、AFC 反馈抑制、AEC 回声消除、信号发生器、扩展器、压缩器、自动增益、参量均衡</p>
-                    <p>输出通道音频处理，支持延时器、高低通滤波器、限幅器、参量均衡</p>
-                    <p>软件支持可视化编程，可选择拉取模块化组件，自由组合成个性化用户界面，并支持一键导入至平板或手机终端使用</p>
-                    <p>支持场景预设功能，最大支持16组场景</p>
-                    <p>支持将场景数据生成文件保存，并实时导入导出</p>
+                    <div class="product-desc">
+                        <p>10 路模拟信号输入，10 路模拟信号输出，支持手机、平板、电脑端上位机软件与物联网平台任意切换</p>
+                        <p>可使用PC软件实现DSP数字音频信号处理，包括：AFC、AEC、ANS、AM、AGC、PEQ、延时、分频、矩阵等功能</p>
+                        <p>带有1路RS232，1路RS485,4路GPIO接口，可用于控制外部设备可对接外部设备</p>
+                        <p>以太网接口支持连接局域网进行本地调试控制；支持连接外网，对接物联网平台，进行远程设备监测与控制</p>
+                        <p>支持通过物联网平台实时查看设备在线状态，并查看实时电平、通道静音状态、矩阵混音状态</p>
+                        <p>支持将设备绑定至物联平台任意场所，并在平台中生成系统拓扑图，直观展示系统链路，便于用户对场所设备进行集中管理与异常排查</p>
+                        <p>支持通过物联平台对设备进行场景化管控，调用设备功能进行手动、定时、条件触发</p>
+                        <p>输入通道音频处理，支持ANS 噪声抑制、AFC 反馈抑制、AEC 回声消除、信号发生器、扩展器、压缩器、自动增益、参量均衡</p>
+                        <p>输出通道音频处理，支持延时器、高低通滤波器、限幅器、参量均衡</p>
+                        <p>软件支持可视化编程，可选择拉取模块化组件，自由组合成个性化用户界面，并支持一键导入至平板或手机终端使用</p>
+                        <p>支持场景预设功能，最大支持16组场景</p>
+                        <p>支持将场景数据生成文件保存，并实时导入导出</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
             </div>
         </div>
 
-        <!-- 产品14：设备管控主机（已修复结构） -->
+        <!-- 产品14：设备管控主机 -->
         <div class="product-card">
             <div class="product-img-slider" data-slider-id="14">
                 <div class="slider-wrapper">
@@ -648,19 +716,22 @@
             <div class="product-info">
                 <h3>设备管控主机</h3>
                 <div class="product-params">
-                    <p>平台依托互联数据运算、智能算法及物联网通信技术搭建整体框架，采用主流 B/S 网页运行模式，工作人员只需借助日常浏览器即可登录使用，完成各类前端设备统一统筹管理</p>
-                    <p>平台搭载轻量化物联网可视化搭建架构，落实统一化设备数据模型标准，为各类终端设备配备简易可视操作编辑界面，适配不同类型设备调试使用需求</p>
-                    <p>内置场景可视化编辑操作工具，整合各类硬件设备应用组件，采用简易拖拽编排方式完成系统组网布局搭建，自动生成设备集中管控操作界面，可兼容不同通信协议终端设备，完成全周期统一运维管理</p>
-                    <p>集成多类常用终端设备管理功能模块，覆盖声光、影音、通信等常用设备品类，可实现终端在线管控、故障自动提醒，同步生成设备组网运行示意图，清晰呈现设备组网连通状态，线路及设备异常可及时推送提醒</p>
-                    <p>配备智能组网视图展示功能，清晰呈现平台内所有设备组网关联、层级排布关系，实时同步设备在线离线、故障提示等运行状态，支持自由调整视图排版样式，直观梳理整体系统组网结构</p>
-                    <p>支持平台内终端设备多维度统筹管理，搭配项目综合数据看板，以数据图表形式直观展示管辖区域数量、设备在线数量、离线设备数量、故障提醒数据，同时完成设备品类统计、故障数据走势汇总</p>
-                    <p>搭载全天候设备状态监测功能，管理人员可随时调取物联网终端实时运行状态、过往运行数据记录，同时支持云端远程下发操控指令</p>
-                    <p>支持划分多种使用区域类别，可将对应终端设备绑定至指定区域，依托操作面板、组网视图完成区域内设备状态查看与日常智能管控</p>
-                    <p>支持批量录入平台使用人员信息，管理人员可完善人员账号、联系方式、所属部门等基础资料，按需划分使用身份，搭配完整账号管理功能，可完成账号新增、信息修改、注销删除及使用权限调整等基础操作</p>
-                    <p>平台各项操作功能权限可灵活调配，支持自主创建专属使用身份，按需分配对应操作权限，批量或单独分配至使用人员及团队，实现精细化权限划分管理</p>
-                    <p>兼容通用视频监控接入协议，平台可稳定调取前端监控画面，依托多层级网络传输优化设计，有效优化画面播放效果，降低视频画面传输延迟</p>
-                    <p>预留环境传感设备数据接入端口，可同步接收各类环境采集设备传回数据，联动调控照明、遮阳帘、恒温调控等室内环境设备，实现基础环境智能调节</p>
-                    <p>平台整合完整故障信息明细，清晰标注故障编号、设备编码、设备名称、所属项目区域、故障发生时间、故障具体原因、累计故障次数等内容，方便工作人员快速排查处置；故障处理完成后，可在平台内完成故障登记闭环，全程留存故障处理记录，便于后期溯源核查</p>
+                    <div class="product-desc">
+                        <p>平台依托互联数据运算、智能算法及物联网通信技术搭建整体框架，采用主流 B/S 网页运行模式，工作人员只需借助日常浏览器即可登录使用，完成各类前端设备统一统筹管理</p>
+                        <p>平台搭载轻量化物联网可视化搭建架构，落实统一化设备数据模型标准，为各类终端设备配备简易可视操作编辑界面，适配不同类型设备调试使用需求</p>
+                        <p>内置场景可视化编辑操作工具，整合各类硬件设备应用组件，采用简易拖拽编排方式完成系统组网布局搭建，自动生成设备集中管控操作界面，可兼容不同通信协议终端设备，完成全周期统一运维管理</p>
+                        <p>集成多类常用终端设备管理功能模块，覆盖声光、影音、通信等常用设备品类，可实现终端在线管控、故障自动提醒，同步生成设备组网运行示意图，清晰呈现设备组网连通状态，线路及设备异常可及时推送提醒</p>
+                        <p>配备智能组网视图展示功能，清晰呈现平台内所有设备组网关联、层级排布关系，实时同步设备在线离线、故障提示等运行状态，支持自由调整视图排版样式，直观梳理整体系统组网结构</p>
+                        <p>支持平台内终端设备多维度统筹管理，搭配项目综合数据看板，以数据图表形式直观展示管辖区域数量、设备在线数量、离线设备数量、故障提醒数据，同时完成设备品类统计、故障数据走势汇总</p>
+                        <p>搭载全天候设备状态监测功能，管理人员可随时调取物联网终端实时运行状态、过往运行数据记录，同时支持云端远程下发操控指令</p>
+                        <p>支持划分多种使用区域类别，可将对应终端设备绑定至指定区域，依托操作面板、组网视图完成区域内设备状态查看与日常智能管控</p>
+                        <p>支持批量录入平台使用人员信息，管理人员可完善人员账号、联系方式、所属部门等基础资料，按需划分使用身份，搭配完整账号管理功能，可完成账号新增、信息修改、注销删除及使用权限调整等基础操作</p>
+                        <p>平台各项操作功能权限可灵活调配，支持自主创建专属使用身份，按需分配对应操作权限，批量或单独分配至使用人员及团队，实现精细化权限划分管理</p>
+                        <p>兼容通用视频监控接入协议，平台可稳定调取前端监控画面，依托多层级网络传输优化设计，有效优化画面播放效果，降低视频画面传输延迟</p>
+                        <p>预留环境传感设备数据接入端口，可同步接收各类环境采集设备传回数据，联动调控照明、遮阳帘、恒温调控等室内环境设备，实现基础环境智能调节</p>
+                        <p>平台整合完整故障信息明细，清晰标注故障编号、设备编码、设备名称、所属项目区域、故障发生时间、故障具体原因、累计故障次数等内容，方便工作人员快速排查处置；故障处理完成后，可在平台内完成故障登记闭环，全程留存故障处理记录，便于后期溯源核查</p>
+                    </div>
+                    <button class="desc-toggle">展开更多 ▼</button>
                 </div>
             </div>
         </div>
@@ -672,86 +743,88 @@
     <p>&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
 </footer>
 
-<!-- 返回顶部按钮 -->
 <div class="back-to-top">↑</div>
 
 <script>
     // 移动端菜单切换
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    menuToggle.addEventListener('click', () => {
+    var menuToggle = document.querySelector('.menu-toggle');
+    var navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('mobile-open');
         menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
     });
 
     // 返回顶部
-    const backToTopBtn = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', () => {
+    var backToTopBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
             backToTopBtn.classList.add('show');
         } else {
             backToTopBtn.classList.remove('show');
         }
     });
-    backToTopBtn.addEventListener('click', () => {
+    backToTopBtn.addEventListener('click', function() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     });
 
     // 图片加载失败兜底
-    document.querySelectorAll('.slider-item').forEach(img => {
-        const imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
-        const testImg = new Image();
+    document.querySelectorAll('.slider-item').forEach(function(img) {
+        var imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
+        var testImg = new Image();
         testImg.src = imgUrl;
-        testImg.onerror = () => {
+        testImg.onerror = function() {
             img.style.backgroundImage = 'none';
         };
     });
 
-    // 多图轮播核心逻辑
-    document.querySelectorAll('.product-img-slider').forEach(slider => {
-        const wrapper = slider.querySelector('.slider-wrapper');
-        const items = slider.querySelectorAll('.slider-item');
-        const prevBtn = slider.querySelector('.prev-btn');
-        const nextBtn = slider.querySelector('.next-btn');
-        const indicators = slider.querySelectorAll('.indicator-dot');
-        const totalItems = items.length;
-        let currentIndex = 0;
+    // ===== 展开/收起功能 =====
+    document.querySelectorAll('.desc-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var desc = this.previousElementSibling;
+            desc.classList.toggle('expanded');
+            this.textContent = desc.classList.contains('expanded') ? '收起 ▲' : '展开更多 ▼';
+        });
+    });
 
-        // 初始化：只有1张图时隐藏控制按钮
+    // 多图轮播核心逻辑
+    document.querySelectorAll('.product-img-slider').forEach(function(slider) {
+        var wrapper = slider.querySelector('.slider-wrapper');
+        var items = slider.querySelectorAll('.slider-item');
+        var prevBtn = slider.querySelector('.prev-btn');
+        var nextBtn = slider.querySelector('.next-btn');
+        var indicators = slider.querySelectorAll('.indicator-dot');
+        var totalItems = items.length;
+        var currentIndex = 0;
+
         if (totalItems === 1) {
             if (prevBtn) prevBtn.style.display = 'none';
             if (nextBtn) nextBtn.style.display = 'none';
         }
 
-        // 更新轮播位置和指示器
-        const updateSlider = () => {
+        var updateSlider = function() {
             wrapper.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
-            indicators.forEach((dot, index) => {
+            indicators.forEach(function(dot, index) {
                 dot.classList.toggle('active', index === currentIndex);
             });
         };
 
-        // 下一张
-        const goToNext = function() {
+        var goToNext = function() {
             currentIndex = (currentIndex + 1) % totalItems;
             updateSlider();
         };
 
-        // 上一张
-        const goToPrev = function() {
+        var goToPrev = function() {
             currentIndex = (currentIndex - 1 + totalItems) % totalItems;
             updateSlider();
         };
 
-        // 点击指示器切换
-        indicators.forEach((dot, index) => {
+        indicators.forEach(function(dot, index) {
             dot.addEventListener('click', function() {
                 currentIndex = index;
                 updateSlider();
             });
         });
 
-        // 绑定按钮事件
         if (prevBtn) prevBtn.addEventListener('click', goToPrev);
         if (nextBtn) nextBtn.addEventListener('click', goToNext);
     });
