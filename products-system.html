@@ -3,366 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>会议系统系列 - LDMETING</title>
+
+    <!-- ===== SEO 基础标签 ===== -->
+    <link rel="canonical" href="https://www.ldmeting.com/products-system.html" />
+    <meta name="description" content="LDMETING 专业会议系统系列，包含无线讨论会议系统、视像跟踪会议系统、表决会议系统、有线矩阵会议系统等，适用于政企高端会议场景。" />
+    <meta name="keywords" content="会议系统,无线会议系统,视像跟踪会议系统,表决会议系统,有线会议系统,LDMETING" />
+    <meta name="google-site-verification" content="iPeL4d5MSvNHtI0my8gCsQvVTQ1eyYuKUrq1rhNLzIA" />
+
+    <!-- ===== 多语言 hreflang ===== -->
+    <link rel="alternate" hreflang="zh" href="https://www.ldmeting.com/products-system.html" />
+    <link rel="alternate" hreflang="en" href="https://www.ldmeting.com/en/products-system.html" />
+    <link rel="alternate" hreflang="es" href="https://www.ldmeting.com/es/products-system.html" />
+    <link rel="alternate" hreflang="ru" href="https://www.ldmeting.com/ru/products-system.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.ldmeting.com/products-system.html" />
+
+    <title>会议系统系列 - LDMETING 专业会议系统</title>
     <style>
-        /* 复用主页核心样式 + 适配子页 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft Yahei", sans-serif;
-        }
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* 导航栏 */
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem 5%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 2rem;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #3498db;
-        }
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 101;
-        }
-
-        /* 语言切换器 */
-        .lang-switcher {
-            display: flex;
-            align-items: center;
-            margin-left: 2rem;
-            gap: 0.2rem;
-        }
-        .lang-switcher a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.85rem;
-            padding: 0.2rem 0.4rem;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-        .lang-switcher a:hover {
-            color: white;
-        }
-        .lang-switcher a.active {
-            color: #3498db;
-            font-weight: bold;
-        }
-        .lang-switcher .sep {
-            color: #555;
-            font-size: 0.8rem;
-        }
-
-        /* 面包屑导航 */
-        .breadcrumb {
-            padding: 1rem 5%;
-            background-color: white;
-            font-size: 0.9rem;
-        }
-        .breadcrumb a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        .breadcrumb span {
-            color: #999;
-            margin: 0 0.5rem;
-        }
-
-        /* 通用区块 */
-        section {
-            padding: 3rem 5%;
-            margin: 1rem 0;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-            position: relative;
-        }
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 80px;
-            height: 3px;
-            background-color: #3498db;
-            margin: 1rem auto;
-        }
-
-        /* 产品列表样式 */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .product-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-
-        .product-img-slider {
-            position: relative;
-            width: 100%;
-            height: 200px;
-            background-color: #f8f9fa;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        .slider-wrapper {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease;
-        }
-        .slider-item {
-            flex: 0 0 100%;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-        }
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .product-img-slider:hover .slider-btn {
-            opacity: 1;
-        }
-        .prev-btn {
-            left: 10px;
-        }
-        .next-btn {
-            right: 10px;
-        }
-        .slider-indicators {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 5px;
-        }
-        .indicator-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .indicator-dot.active {
-            background-color: #3498db;
-        }
-
-        .product-info {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .product-info h3 {
-            color: #2c3e50;
-            margin-bottom: 0.8rem;
-            font-size: 1.05rem;
-        }
-        .product-params {
-            font-size: 0.9rem;
-            color: #666;
-            flex: 1;
-        }
-        .product-params p {
-            margin-bottom: 4px;
-        }
-        .product-desc {
-            margin-top: 0.5rem;
-            color: #555;
-            font-size: 0.95rem;
-        }
-
-        /* 页脚 */
-        footer {
-            background-color: #1a252f;
-            color: white;
-            text-align: center;
-            padding: 2rem 5%;
-            margin-top: 3rem;
-        }
-
-        /* 返回顶部 */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #3498db;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            transition: opacity 0.3s, transform 0.3s;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 99;
-        }
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* 响应式 */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft Yahei", "PingFang SC", sans-serif; }
+        body { background-color: #f5f7fa; color: #333; line-height: 1.6; }
+        html { scroll-behavior: smooth; }
+        header { background-color: #2c3e50; color: white; padding: 1rem 5%; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .logo a { color: white; text-decoration: none; }
+        .nav-links { display: flex; align-items: center; flex-wrap: wrap; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 2rem; transition: color 0.3s; }
+        .nav-links a:hover { color: #3498db; }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; z-index: 101; }
+        .lang-switcher { display: flex; align-items: center; margin-left: 2rem; gap: 0.2rem; flex-wrap: wrap; }
+        .lang-switcher a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.8rem; padding: 0.2rem 0.4rem; transition: color 0.3s; }
+        .lang-switcher a:hover { color: white; }
+        .lang-switcher a.active { color: #3498db; font-weight: bold; }
+        .lang-switcher .sep { color: #555; font-size: 0.7rem; }
+        .breadcrumb { padding: 1rem 5%; background-color: white; font-size: 0.9rem; border-bottom: 1px solid #eee; }
+        .breadcrumb a { color: #3498db; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { color: #999; margin: 0 0.5rem; }
+        section { padding: 3rem 5%; margin: 1rem 0; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: #2c3e50; position: relative; }
+        .section-title::after { content: ""; display: block; width: 80px; height: 3px; background-color: #3498db; margin: 1rem auto; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .product-card { background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
+        .product-img-slider { position: relative; width: 100%; height: 200px; background-color: #f8f9fa; overflow: hidden; flex-shrink: 0; }
+        .slider-wrapper { display: flex; width: 100%; height: 100%; transition: transform 0.5s ease; }
+        .slider-item { flex: 0 0 100%; width: 100%; height: 100%; background-size: contain; background-repeat: no-repeat; background-position: center; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%; background-color: rgba(0,0,0,0.5); color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; opacity: 0; transition: opacity 0.3s; font-size: 1.2rem; }
+        .product-img-slider:hover .slider-btn { opacity: 1; }
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+        .slider-indicators { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; }
+        .indicator-dot { width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.5); cursor: pointer; transition: background-color 0.3s; }
+        .indicator-dot.active { background-color: #3498db; }
+        .product-info { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+        .product-info h3 { color: #2c3e50; margin-bottom: 0.8rem; font-size: 1.05rem; flex-shrink: 0; }
+        .product-params { font-size: 0.9rem; color: #666; flex: 1; }
+        .product-params p { margin-bottom: 4px; padding-left: 1.2rem; position: relative; }
+        .product-params p::before { content: "•"; position: absolute; left: 0; color: #3498db; }
+        .product-desc { margin-top: 0.5rem; color: #555; font-size: 0.95rem; padding-top: 0.5rem; border-top: 1px solid #eee; }
+        footer { background-color: #1a252f; color: white; text-align: center; padding: 2rem 5%; margin-top: 3rem; }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; background-color: #3498db; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2); transition: opacity 0.3s, transform 0.3s; opacity: 0; visibility: hidden; z-index: 99; font-size: 1.2rem; border: none; }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { transform: translateY(-3px); background-color: #2980b9; }
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .nav-links.mobile-open {
-                display: flex;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: #2c3e50;
-                padding: 1rem 5%;
-                flex-direction: column;
-                gap: 1rem;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            }
-            .nav-links.mobile-open .lang-switcher {
-                margin-left: 0;
-                justify-content: flex-start;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .nav-links.mobile-open { display: flex; position: absolute; top: 100%; left: 0; width: 100%; background-color: #2c3e50; padding: 1rem 5%; flex-direction: column; gap: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+            .nav-links.mobile-open .lang-switcher { margin-left: 0; justify-content: flex-start; }
+            .section-title { font-size: 1.6rem; }
+            .product-grid { grid-template-columns: 1fr; }
+            .breadcrumb { font-size: 0.8rem; }
+        }
+        @media (max-width: 480px) {
+            .product-img-slider { height: 160px; }
+            .slider-btn { width: 24px; height: 24px; font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
+
 <header>
     <div class="nav-container">
-        <div class="logo">LDMETING</div>
-        <nav class="nav-links">
-            <a href="index.html" data-key="nav_home">返回首页</a>
-            <a href="index.html#profile" data-key="nav_profile">公司介绍</a>
-            <a href="index.html#products" data-key="nav_products">产品中心</a>
-            <a href="index.html#articles" data-key="nav_articles">企业资讯</a>
-            <a href="index.html#contact" data-key="nav_contact">联系方式</a>
+        <div class="logo"><a href="/">LDMETING</a></div>
+        <nav class="nav-links" aria-label="主导航">
+            <a href="/" data-key="nav_home">返回首页</a>
+            <a href="/#profile" data-key="nav_profile">公司介绍</a>
+            <a href="/#products" data-key="nav_products">产品中心</a>
+            <a href="/#articles" data-key="nav_articles">企业资讯</a>
+            <a href="/#contact" data-key="nav_contact">联系方式</a>
             <div class="lang-switcher">
-                <a href="#" data-lang="zh" class="active">中文</a>
+                <a href="/products-system.html" data-lang="zh" class="active">中文</a>
                 <span class="sep">|</span>
-                <a href="#" data-lang="en">English</a>
+                <a href="/en/products-system.html" data-lang="en">English</a>
                 <span class="sep">|</span>
-                <a href="#" data-lang="es">Español</a>
+                <a href="/es/products-system.html" data-lang="es">Español</a>
+                <span class="sep">|</span>
+                <a href="/ru/products-system.html" data-lang="ru">Русский</a>
             </div>
         </nav>
-        <div class="menu-toggle">☰</div>
+        <div class="menu-toggle" aria-label="切换菜单">☰</div>
     </div>
 </header>
 
-<!-- 面包屑导航 -->
 <div class="breadcrumb">
-    <a href="index.html" data-key="bread_home">首页</a>
+    <a href="/" data-key="bread_home">首页</a>
     <span>></span>
-    <a href="index.html#products" data-key="bread_products">产品中心</a>
+    <a href="/#products" data-key="bread_products">产品中心</a>
     <span>></span>
     <span data-key="bread_current">会议系统系列</span>
 </div>
 
-<!-- 产品列表 -->
 <section>
     <h2 class="section-title" data-key="page_title">会议系统系列</h2>
-    <div class="product-grid" id="productGrid">
-        <!-- 由 JavaScript 动态生成 -->
-    </div>
+    <div class="product-grid" id="productGrid"></div>
 </section>
 
 <footer>
     <p data-key="footer_copyright">&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
 </footer>
 
-<!-- 返回顶部按钮 -->
-<div class="back-to-top">↑</div>
+<div class="back-to-top" aria-label="返回顶部">↑</div>
 
 <script>
-    // ============================================================
-    // 1. 移动端菜单切换
-    // ============================================================
     var menuToggle = document.querySelector('.menu-toggle');
     var navLinks = document.querySelector('.nav-links');
     menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('mobile-open');
         menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
     });
-
     document.querySelectorAll('.nav-links a').forEach(function(link) {
         link.addEventListener('click', function() {
             navLinks.classList.remove('mobile-open');
@@ -370,342 +138,52 @@
         });
     });
 
-    // ============================================================
-    // 2. 返回顶部
-    // ============================================================
     var backToTopBtn = document.querySelector('.back-to-top');
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
+        backToTopBtn.classList.toggle('show', window.scrollY > 300);
     });
     backToTopBtn.addEventListener('click', function() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     });
 
-    // ============================================================
-    // 3. 多语言产品数据
-    // ============================================================
     var productData = {
         zh: [
-            {
-                id: 1,
-                name: "BM-3000M无线纯讨论会议系统",
-                params: ["接收有效距离60米", "支持无限支无线会议单元", "单元带有自动关闭功能"],
-                desc: "本系统操作简便、免工程布线、经济实用，是会议工程的首选。",
-                images: [
-                    "images/bm3000m-x/bm3000-1.jpg",
-                    "images/bm3000m-x/bm3000-8.jpg",
-                    "images/bm3000m-x/bm3000-7.jpg",
-                    "images/bm3000m-x/bm3000-6.jpg",
-                    "images/bm3000m-x/bm3000-11.jpg",
-                    "images/bm3000m-x/bm3000-10.jpg",
-                    "images/bm3000m-x/bm3000-9.jpg",
-                    "images/bm3000m-x/bm3000-2.jpg",
-                    "images/bm3000m-x/bm3000-5.jpg",
-                    "images/bm3000m-x/bm3000-4.jpg",
-                    "images/bm3000m-x/bm3000-3.jpg"
-                ]
-            },
-            {
-                id: 2,
-                name: "BM-3800M无线视像跟踪会议系统",
-                params: ["接收有效距离60米", "支持无限支无线会议单元", "单元带有自动关闭功能"],
-                desc: "本系统操作简便、免工程布线、经济实用，是会议工程的首选。",
-                images: [
-                    "images/bm3800m-x/bm3800m-1.jpg",
-                    "images/bm3000m-x/bm3000-8.jpg",
-                    "images/bm3000m-x/bm3000-7.jpg",
-                    "images/bm3000m-x/bm3000-6.jpg",
-                    "images/bm3000m-x/bm3000-11.jpg",
-                    "images/bm3000m-x/bm3000-10.jpg",
-                    "images/bm3000m-x/bm3000-9.jpg",
-                    "images/bm3000m-x/bm3000-2.jpg",
-                    "images/bm3000m-x/bm3000-5.jpg",
-                    "images/bm3000m-x/bm3000-4.jpg",
-                    "images/bm3000m-x/bm3000-3.jpg"
-                ]
-            },
-            {
-                id: 3,
-                name: "BM-8800M无线表决视像讨论会议系统",
-                params: ["控制信号可延长100米内", "签到、表决、纸笔茶水服务", "六通道、EQ调节、PC端"],
-                desc: "含分体式无源天线，彻底解决复杂环境信号问题。",
-                images: [
-                    "images/bm8800m-x/bm8800-1.jpg",
-                    "images/bm8800m-x/bm8800-2.jpg",
-                    "images/bm8800m-x/bm8800-3.jpg",
-                    "images/bm8800m-x/bm8800-4.jpg",
-                    "images/bm8800m-x/bm8800-5.jpg", 
-                    "images/bm8800m-x/bm8800-6.jpg"
-                ]
-            },
-            {
-                id: 4,
-                name: "HD-G60M有线四进二出视像跟踪矩阵会议系统",
-                params: ["CAN双工总线设计", "四进二出无缝式秒切换视频矩阵功能", "高强度钢化玻璃盖板显示菜单"],
-                desc: "系统主机集会议讨论，视像矩阵自动跟踪，网线及八芯传输功能于一体。",
-                images: [
-                    "images/hdg60m-x/g60-1.jpg",
-                    "images/hdg60m-x/g60-2.jpg",
-                    "images/hdg60m-x/g60-3.jpg",
-                    "images/hdg60m-x/g60-4.jpg",
-                    "images/hdg60m-x/g60-5.jpg",
-                    "images/hdg60m-x/g60-6.jpg",
-                    "images/hdg60m-x/g60-7.jpg",
-                    "images/hdg60m-x/g60-8.jpg",
-                    "images/hdg60m-x/g60-9.jpg",
-                    "images/hdg60m-x/g60-10.jpg",
-                    "images/hdg60m-x/g60-11.jpg",
-                    "images/hdg60m-x/g60-12.jpg",
-                    "images/hdg60m-x/g60-12.jpg",
-                    "images/hdg60m-x/g60-13.jpg"
-                ]
-            },
-            {
-                id: 5,
-                name: "HD-G80M有线表决视像讨论会议系统",
-                params: ["全视角IPS电容触摸屏", "申请茶水、纸、笔、服务人员等服务", "网络化协作管理"],
-                desc: "支持电脑联机操控多种功能，全自动电源、广播分区管理。",
-                images: [
-                    "images/hdg80m-x/g80-1.jpg",
-                    "images/hdg80m-x/g80-2.jpg",
-                    "images/hdg80m-x/g80-3.jpg",
-                    "images/hdg80m-x/g80-4.jpg",
-                    "images/hdg80m-x/g80-5.jpg",
-                    "images/hdg80m-x/g80-6.jpg"
-                ]
-            }
+            { id: 1, name: "BM-3000M无线纯讨论会议系统", params: ["接收有效距离60米", "支持无限支无线会议单元", "单元带有自动关闭功能"], desc: "本系统操作简便、免工程布线、经济实用，是会议工程的首选。", images: ["/images/bm3000m-x/bm3000-1.jpg","/images/bm3000m-x/bm3000-8.jpg","/images/bm3000m-x/bm3000-7.jpg","/images/bm3000m-x/bm3000-6.jpg","/images/bm3000m-x/bm3000-11.jpg","/images/bm3000m-x/bm3000-10.jpg","/images/bm3000m-x/bm3000-9.jpg","/images/bm3000m-x/bm3000-2.jpg","/images/bm3000m-x/bm3000-5.jpg","/images/bm3000m-x/bm3000-4.jpg","/images/bm3000m-x/bm3000-3.jpg"] },
+            { id: 2, name: "BM-3800M无线视像跟踪会议系统", params: ["接收有效距离60米", "支持无限支无线会议单元", "单元带有自动关闭功能"], desc: "本系统操作简便、免工程布线、经济实用，是会议工程的首选。", images: ["/images/bm3800m-x/bm3800m-1.jpg","/images/bm3000m-x/bm3000-8.jpg","/images/bm3000m-x/bm3000-7.jpg","/images/bm3000m-x/bm3000-6.jpg","/images/bm3000m-x/bm3000-11.jpg","/images/bm3000m-x/bm3000-10.jpg","/images/bm3000m-x/bm3000-9.jpg","/images/bm3000m-x/bm3000-2.jpg","/images/bm3000m-x/bm3000-5.jpg","/images/bm3000m-x/bm3000-4.jpg","/images/bm3000m-x/bm3000-3.jpg"] },
+            { id: 3, name: "BM-8800M无线表决视像讨论会议系统", params: ["控制信号可延长100米内", "签到、表决、纸笔茶水服务", "六通道、EQ调节、PC端"], desc: "含分体式无源天线，彻底解决复杂环境信号问题。", images: ["/images/bm8800m-x/bm8800-1.jpg","/images/bm8800m-x/bm8800-2.jpg","/images/bm8800m-x/bm8800-3.jpg","/images/bm8800m-x/bm8800-4.jpg","/images/bm8800m-x/bm8800-5.jpg","/images/bm8800m-x/bm8800-6.jpg"] },
+            { id: 4, name: "HD-G60M有线四进二出视像跟踪矩阵会议系统", params: ["CAN双工总线设计", "四进二出无缝式秒切换视频矩阵功能", "高强度钢化玻璃盖板显示菜单"], desc: "系统主机集会议讨论，视像矩阵自动跟踪，网线及八芯传输功能于一体。", images: ["/images/hdg60m-x/g60-1.jpg","/images/hdg60m-x/g60-2.jpg","/images/hdg60m-x/g60-3.jpg","/images/hdg60m-x/g60-4.jpg","/images/hdg60m-x/g60-5.jpg","/images/hdg60m-x/g60-6.jpg","/images/hdg60m-x/g60-7.jpg","/images/hdg60m-x/g60-8.jpg","/images/hdg60m-x/g60-9.jpg","/images/hdg60m-x/g60-10.jpg","/images/hdg60m-x/g60-11.jpg","/images/hdg60m-x/g60-12.jpg","/images/hdg60m-x/g60-13.jpg"] },
+            { id: 5, name: "HD-G80M有线表决视像讨论会议系统", params: ["全视角IPS电容触摸屏", "申请茶水、纸、笔、服务人员等服务", "网络化协作管理"], desc: "支持电脑联机操控多种功能，全自动电源、广播分区管理。", images: ["/images/hdg80m-x/g80-1.jpg","/images/hdg80m-x/g80-2.jpg","/images/hdg80m-x/g80-3.jpg","/images/hdg80m-x/g80-4.jpg","/images/hdg80m-x/g80-5.jpg","/images/hdg80m-x/g80-6.jpg"] }
         ],
         en: [
-            {
-                id: 1,
-                name: "BM-3000M Wireless Pure Discussion Conference System",
-                params: ["Receiving Range up to 60m", "Supports Unlimited Wireless Units", "Auto Power-Off Function"],
-                desc: "Easy to operate, no cabling required, cost-effective, ideal for conference projects.",
-                images: [
-                    "images/bm3000m-x/bm3000-1.jpg",
-                    "images/bm3000m-x/bm3000-8.jpg",
-                    "images/bm3000m-x/bm3000-7.jpg",
-                    "images/bm3000m-x/bm3000-6.jpg",
-                    "images/bm3000m-x/bm3000-11.jpg",
-                    "images/bm3000m-x/bm3000-10.jpg",
-                    "images/bm3000m-x/bm3000-9.jpg",
-                    "images/bm3000m-x/bm3000-2.jpg",
-                    "images/bm3000m-x/bm3000-5.jpg",
-                    "images/bm3000m-x/bm3000-4.jpg",
-                    "images/bm3000m-x/bm3000-3.jpg"
-                ]
-            },
-            {
-                id: 2,
-                name: "BM-3800M Wireless Video Tracking Conference System",
-                params: ["Receiving Range up to 60m", "Supports Unlimited Wireless Units", "Auto Power-Off Function"],
-                desc: "Easy to operate, no cabling required, cost-effective, ideal for conference projects.",
-                images: [
-                    "images/bm3800m-x/bm3800m-1.jpg",
-                    "images/bm3000m-x/bm3000-8.jpg",
-                    "images/bm3000m-x/bm3000-7.jpg",
-                    "images/bm3000m-x/bm3000-6.jpg",
-                    "images/bm3000m-x/bm3000-11.jpg",
-                    "images/bm3000m-x/bm3000-10.jpg",
-                    "images/bm3000m-x/bm3000-9.jpg",
-                    "images/bm3000m-x/bm3000-2.jpg",
-                    "images/bm3000m-x/bm3000-5.jpg",
-                    "images/bm3000m-x/bm3000-4.jpg",
-                    "images/bm3000m-x/bm3000-3.jpg"
-                ]
-            },
-            {
-                id: 3,
-                name: "BM-8800M Wireless Voting & Video Conference System",
-                params: ["Control Signal Extends up to 100m", "Check-in, Voting, Service Requests", "6 Channels, EQ Adjustment, PC Control"],
-                desc: "Includes detachable passive antennas, solving signal issues in complex environments.",
-                images: [
-                    "images/bm8800m-x/bm8800-1.jpg",
-                    "images/bm8800m-x/bm8800-2.jpg",
-                    "images/bm8800m-x/bm8800-3.jpg",
-                    "images/bm8800m-x/bm8800-4.jpg",
-                    "images/bm8800m-x/bm8800-5.jpg", 
-                    "images/bm8800m-x/bm8800-6.jpg"
-                ]
-            },
-            {
-                id: 4,
-                name: "HD-G60M Wired 4-in/2-out Matrix Conference System",
-                params: ["CAN Duplex Bus Design", "Seamless 4-in/2-out Video Matrix Switching", "Tempered Glass Display Panel"],
-                desc: "Integrates discussion, auto-tracking matrix, and Cat5/8-pin transmission.",
-                images: [
-                    "images/hdg60m-x/g60-1.jpg",
-                    "images/hdg60m-x/g60-2.jpg",
-                    "images/hdg60m-x/g60-3.jpg",
-                    "images/hdg60m-x/g60-4.jpg",
-                    "images/hdg60m-x/g60-5.jpg",
-                    "images/hdg60m-x/g60-6.jpg",
-                    "images/hdg60m-x/g60-7.jpg",
-                    "images/hdg60m-x/g60-8.jpg",
-                    "images/hdg60m-x/g60-9.jpg",
-                    "images/hdg60m-x/g60-10.jpg",
-                    "images/hdg60m-x/g60-11.jpg",
-                    "images/hdg60m-x/g60-12.jpg",
-                    "images/hdg60m-x/g60-12.jpg",
-                    "images/hdg60m-x/g60-13.jpg"
-                ]
-            },
-            {
-                id: 5,
-                name: "HD-G80M Wired Voting & Video Conference System",
-                params: ["IPS Capacitive Touchscreen", "Service Requests (Tea, Paper, Pen, etc.)", "Networked Collaboration Management"],
-                desc: "Supports PC control, automatic power management, and zoning.",
-                images: [
-                    "images/hdg80m-x/g80-1.jpg",
-                    "images/hdg80m-x/g80-2.jpg",
-                    "images/hdg80m-x/g80-3.jpg",
-                    "images/hdg80m-x/g80-4.jpg",
-                    "images/hdg80m-x/g80-5.jpg",
-                    "images/hdg80m-x/g80-6.jpg"
-                ]
-            }
+            { id: 1, name: "BM-3000M Wireless Pure Discussion Conference System", params: ["Receiving Range up to 60m", "Supports Unlimited Wireless Units", "Auto Power-Off Function"], desc: "Easy to operate, no cabling required, cost-effective, ideal for conference projects.", images: ["/images/bm3000m-x/bm3000-1.jpg","/images/bm3000m-x/bm3000-8.jpg","/images/bm3000m-x/bm3000-7.jpg","/images/bm3000m-x/bm3000-6.jpg","/images/bm3000m-x/bm3000-11.jpg","/images/bm3000m-x/bm3000-10.jpg","/images/bm3000m-x/bm3000-9.jpg","/images/bm3000m-x/bm3000-2.jpg","/images/bm3000m-x/bm3000-5.jpg","/images/bm3000m-x/bm3000-4.jpg","/images/bm3000m-x/bm3000-3.jpg"] },
+            { id: 2, name: "BM-3800M Wireless Video Tracking Conference System", params: ["Receiving Range up to 60m", "Supports Unlimited Wireless Units", "Auto Power-Off Function"], desc: "Easy to operate, no cabling required, cost-effective, ideal for conference projects.", images: ["/images/bm3800m-x/bm3800m-1.jpg","/images/bm3000m-x/bm3000-8.jpg","/images/bm3000m-x/bm3000-7.jpg","/images/bm3000m-x/bm3000-6.jpg","/images/bm3000m-x/bm3000-11.jpg","/images/bm3000m-x/bm3000-10.jpg","/images/bm3000m-x/bm3000-9.jpg","/images/bm3000m-x/bm3000-2.jpg","/images/bm3000m-x/bm3000-5.jpg","/images/bm3000m-x/bm3000-4.jpg","/images/bm3000m-x/bm3000-3.jpg"] },
+            { id: 3, name: "BM-8800M Wireless Voting & Video Conference System", params: ["Control Signal Extends up to 100m", "Check-in, Voting, Service Requests", "6 Channels, EQ Adjustment, PC Control"], desc: "Includes detachable passive antennas, solving signal issues in complex environments.", images: ["/images/bm8800m-x/bm8800-1.jpg","/images/bm8800m-x/bm8800-2.jpg","/images/bm8800m-x/bm8800-3.jpg","/images/bm8800m-x/bm8800-4.jpg","/images/bm8800m-x/bm8800-5.jpg","/images/bm8800m-x/bm8800-6.jpg"] },
+            { id: 4, name: "HD-G60M Wired 4-in/2-out Matrix Conference System", params: ["CAN Duplex Bus Design", "Seamless 4-in/2-out Video Matrix Switching", "Tempered Glass Display Panel"], desc: "Integrates discussion, auto-tracking matrix, and Cat5/8-pin transmission.", images: ["/images/hdg60m-x/g60-1.jpg","/images/hdg60m-x/g60-2.jpg","/images/hdg60m-x/g60-3.jpg","/images/hdg60m-x/g60-4.jpg","/images/hdg60m-x/g60-5.jpg","/images/hdg60m-x/g60-6.jpg","/images/hdg60m-x/g60-7.jpg","/images/hdg60m-x/g60-8.jpg","/images/hdg60m-x/g60-9.jpg","/images/hdg60m-x/g60-10.jpg","/images/hdg60m-x/g60-11.jpg","/images/hdg60m-x/g60-12.jpg","/images/hdg60m-x/g60-13.jpg"] },
+            { id: 5, name: "HD-G80M Wired Voting & Video Conference System", params: ["IPS Capacitive Touchscreen", "Service Requests (Tea, Paper, Pen, etc.)", "Networked Collaboration Management"], desc: "Supports PC control, automatic power management, and zoning.", images: ["/images/hdg80m-x/g80-1.jpg","/images/hdg80m-x/g80-2.jpg","/images/hdg80m-x/g80-3.jpg","/images/hdg80m-x/g80-4.jpg","/images/hdg80m-x/g80-5.jpg","/images/hdg80m-x/g80-6.jpg"] }
         ],
         es: [
-            {
-                id: 1,
-                name: "BM-3000M Sistema Inalámbrico de Conferencia y Discusión",
-                params: ["Alcance de Recepción hasta 60m", "Soporta Unidades Inalámbricas Ilimitadas", "Apagado Automático"],
-                desc: "Fácil de operar, sin cableado, rentable, ideal para proyectos de conferencias.",
-                images: [
-                    "images/bm3000m-x/bm3000-1.jpg",
-                    "images/bm3000m-x/bm3000-8.jpg",
-                    "images/bm3000m-x/bm3000-7.jpg",
-                    "images/bm3000m-x/bm3000-6.jpg",
-                    "images/bm3000m-x/bm3000-11.jpg",
-                    "images/bm3000m-x/bm3000-10.jpg",
-                    "images/bm3000m-x/bm3000-9.jpg",
-                    "images/bm3000m-x/bm3000-2.jpg",
-                    "images/bm3000m-x/bm3000-5.jpg",
-                    "images/bm3000m-x/bm3000-4.jpg",
-                    "images/bm3000m-x/bm3000-3.jpg"
-                ]
-            },
-            {
-                id: 2,
-                name: "BM-3800M Sistema Inalámbrico con Seguimiento de Video",
-                params: ["Alcance de Recepción hasta 60m", "Soporta Unidades Inalámbricas Ilimitadas", "Apagado Automático"],
-                desc: "Fácil de operar, sin cableado, rentable, ideal para proyectos de conferencias.",
-                images: [
-                    "images/bm3800m-x/bm3800m-1.jpg",
-                    "images/bm3000m-x/bm3000-8.jpg",
-                    "images/bm3000m-x/bm3000-7.jpg",
-                    "images/bm3000m-x/bm3000-6.jpg",
-                    "images/bm3000m-x/bm3000-11.jpg",
-                    "images/bm3000m-x/bm3000-10.jpg",
-                    "images/bm3000m-x/bm3000-9.jpg",
-                    "images/bm3000m-x/bm3000-2.jpg",
-                    "images/bm3000m-x/bm3000-5.jpg",
-                    "images/bm3000m-x/bm3000-4.jpg",
-                    "images/bm3000m-x/bm3000-3.jpg"
-                ]
-            },
-            {
-                id: 3,
-                name: "BM-8800M Sistema Inalámbrico de Votación y Video",
-                params: ["Señal de Control hasta 100m", "Registro, Votación, Solicitud de Servicios", "6 Canales, EQ, Control por PC"],
-                desc: "Incluye antenas pasivas desmontables, resuelve problemas de señal en entornos complejos.",
-                images: [
-                    "images/bm8800m-x/bm8800-1.jpg",
-                    "images/bm8800m-x/bm8800-2.jpg",
-                    "images/bm8800m-x/bm8800-3.jpg",
-                    "images/bm8800m-x/bm8800-4.jpg",
-                    "images/bm8800m-x/bm8800-5.jpg", 
-                    "images/bm8800m-x/bm8800-6.jpg"
-                ]
-            },
-            {
-                id: 4,
-                name: "HD-G60M Sistema de Matriz 4-entradas/2-salidas por Cable",
-                params: ["Diseño de Bus Dúplex CAN", "Conmutación de Matriz de Video 4-in/2-out sin Interrupciones", "Panel de Vidrio Templado"],
-                desc: "Integra discusión, matriz de seguimiento automático y transmisión por Cat5/8-pines.",
-                images: [
-                    "images/hdg60m-x/g60-1.jpg",
-                    "images/hdg60m-x/g60-2.jpg",
-                    "images/hdg60m-x/g60-3.jpg",
-                    "images/hdg60m-x/g60-4.jpg",
-                    "images/hdg60m-x/g60-5.jpg",
-                    "images/hdg60m-x/g60-6.jpg",
-                    "images/hdg60m-x/g60-7.jpg",
-                    "images/hdg60m-x/g60-8.jpg",
-                    "images/hdg60m-x/g60-9.jpg",
-                    "images/hdg60m-x/g60-10.jpg",
-                    "images/hdg60m-x/g60-11.jpg",
-                    "images/hdg60m-x/g60-12.jpg",
-                    "images/hdg60m-x/g60-12.jpg",
-                    "images/hdg60m-x/g60-13.jpg"
-                ]
-            },
-            {
-                id: 5,
-                name: "HD-G80M Sistema de Votación y Video por Cable",
-                params: ["Pantalla Táctil IPS Capacitiva", "Solicitud de Servicios (Té, Papel, etc.)", "Gestión Colaborativa en Red"],
-                desc: "Admite control por PC, gestión automática de energía y zonificación.",
-                images: [
-                    "images/hdg80m-x/g80-1.jpg",
-                    "images/hdg80m-x/g80-2.jpg",
-                    "images/hdg80m-x/g80-3.jpg",
-                    "images/hdg80m-x/g80-4.jpg",
-                    "images/hdg80m-x/g80-5.jpg",
-                    "images/hdg80m-x/g80-6.jpg"
-                ]
-            }
+            { id: 1, name: "BM-3000M Sistema Inalámbrico de Conferencia y Discusión", params: ["Alcance de Recepción hasta 60m", "Soporta Unidades Inalámbricas Ilimitadas", "Apagado Automático"], desc: "Fácil de operar, sin cableado, rentable, ideal para proyectos de conferencias.", images: ["/images/bm3000m-x/bm3000-1.jpg","/images/bm3000m-x/bm3000-8.jpg","/images/bm3000m-x/bm3000-7.jpg","/images/bm3000m-x/bm3000-6.jpg","/images/bm3000m-x/bm3000-11.jpg","/images/bm3000m-x/bm3000-10.jpg","/images/bm3000m-x/bm3000-9.jpg","/images/bm3000m-x/bm3000-2.jpg","/images/bm3000m-x/bm3000-5.jpg","/images/bm3000m-x/bm3000-4.jpg","/images/bm3000m-x/bm3000-3.jpg"] },
+            { id: 2, name: "BM-3800M Sistema Inalámbrico con Seguimiento de Video", params: ["Alcance de Recepción hasta 60m", "Soporta Unidades Inalámbricas Ilimitadas", "Apagado Automático"], desc: "Fácil de operar, sin cableado, rentable, ideal para proyectos de conferencias.", images: ["/images/bm3800m-x/bm3800m-1.jpg","/images/bm3000m-x/bm3000-8.jpg","/images/bm3000m-x/bm3000-7.jpg","/images/bm3000m-x/bm3000-6.jpg","/images/bm3000m-x/bm3000-11.jpg","/images/bm3000m-x/bm3000-10.jpg","/images/bm3000m-x/bm3000-9.jpg","/images/bm3000m-x/bm3000-2.jpg","/images/bm3000m-x/bm3000-5.jpg","/images/bm3000m-x/bm3000-4.jpg","/images/bm3000m-x/bm3000-3.jpg"] },
+            { id: 3, name: "BM-8800M Sistema Inalámbrico de Votación y Video", params: ["Señal de Control hasta 100m", "Registro, Votación, Solicitud de Servicios", "6 Canales, EQ, Control por PC"], desc: "Incluye antenas pasivas desmontables, resuelve problemas de señal en entornos complejos.", images: ["/images/bm8800m-x/bm8800-1.jpg","/images/bm8800m-x/bm8800-2.jpg","/images/bm8800m-x/bm8800-3.jpg","/images/bm8800m-x/bm8800-4.jpg","/images/bm8800m-x/bm8800-5.jpg","/images/bm8800m-x/bm8800-6.jpg"] },
+            { id: 4, name: "HD-G60M Sistema de Matriz 4-entradas/2-salidas por Cable", params: ["Diseño de Bus Dúplex CAN", "Conmutación de Matriz de Video 4-in/2-out sin Interrupciones", "Panel de Vidrio Templado"], desc: "Integra discusión, matriz de seguimiento automático y transmisión por Cat5/8-pines.", images: ["/images/hdg60m-x/g60-1.jpg","/images/hdg60m-x/g60-2.jpg","/images/hdg60m-x/g60-3.jpg","/images/hdg60m-x/g60-4.jpg","/images/hdg60m-x/g60-5.jpg","/images/hdg60m-x/g60-6.jpg","/images/hdg60m-x/g60-7.jpg","/images/hdg60m-x/g60-8.jpg","/images/hdg60m-x/g60-9.jpg","/images/hdg60m-x/g60-10.jpg","/images/hdg60m-x/g60-11.jpg","/images/hdg60m-x/g60-12.jpg","/images/hdg60m-x/g60-13.jpg"] },
+            { id: 5, name: "HD-G80M Sistema de Votación y Video por Cable", params: ["Pantalla Táctil IPS Capacitiva", "Solicitud de Servicios (Té, Papel, etc.)", "Gestión Colaborativa en Red"], desc: "Admite control por PC, gestión automática de energía y zonificación.", images: ["/images/hdg80m-x/g80-1.jpg","/images/hdg80m-x/g80-2.jpg","/images/hdg80m-x/g80-3.jpg","/images/hdg80m-x/g80-4.jpg","/images/hdg80m-x/g80-5.jpg","/images/hdg80m-x/g80-6.jpg"] }
+        ],
+        ru: [
+            { id: 1, name: "BM-3000M Беспроводная Система для Обсуждений", params: ["Дальность Приема до 60м", "Поддерживает Неограниченное Количество Беспроводных Блоков", "Автоматическое Отключение"], desc: "Проста в управлении, не требует прокладки кабелей, экономична, идеальна для конференц-проектов.", images: ["/images/bm3000m-x/bm3000-1.jpg","/images/bm3000m-x/bm3000-8.jpg","/images/bm3000m-x/bm3000-7.jpg","/images/bm3000m-x/bm3000-6.jpg","/images/bm3000m-x/bm3000-11.jpg","/images/bm3000m-x/bm3000-10.jpg","/images/bm3000m-x/bm3000-9.jpg","/images/bm3000m-x/bm3000-2.jpg","/images/bm3000m-x/bm3000-5.jpg","/images/bm3000m-x/bm3000-4.jpg","/images/bm3000m-x/bm3000-3.jpg"] },
+            { id: 2, name: "BM-3800M Беспроводная Система с Видеослежением", params: ["Дальность Приема до 60м", "Поддерживает Неограниченное Количество Беспроводных Блоков", "Автоматическое Отключение"], desc: "Проста в управлении, не требует прокладки кабелей, экономична, идеальна для конференц-проектов.", images: ["/images/bm3800m-x/bm3800m-1.jpg","/images/bm3000m-x/bm3000-8.jpg","/images/bm3000m-x/bm3000-7.jpg","/images/bm3000m-x/bm3000-6.jpg","/images/bm3000m-x/bm3000-11.jpg","/images/bm3000m-x/bm3000-10.jpg","/images/bm3000m-x/bm3000-9.jpg","/images/bm3000m-x/bm3000-2.jpg","/images/bm3000m-x/bm3000-5.jpg","/images/bm3000m-x/bm3000-4.jpg","/images/bm3000m-x/bm3000-3.jpg"] },
+            { id: 3, name: "BM-8800M Беспроводная Система Голосования и Видео", params: ["Сигнал Управления до 100м", "Регистрация, Голосование, Запрос Услуг", "6 Каналов, EQ, Управление с ПК"], desc: "Включает съемные пассивные антенны, решает проблемы с сигналом в сложных условиях.", images: ["/images/bm8800m-x/bm8800-1.jpg","/images/bm8800m-x/bm8800-2.jpg","/images/bm8800m-x/bm8800-3.jpg","/images/bm8800m-x/bm8800-4.jpg","/images/bm8800m-x/bm8800-5.jpg","/images/bm8800m-x/bm8800-6.jpg"] },
+            { id: 4, name: "HD-G60M Проводная Матричная Система 4-вх/2-вых", params: ["CAN Дуплексная Шина", "Бесшовное Переключение Видеоматрицы 4-вх/2-вых", "Панель из Закаленного Стекла"], desc: "Объединяет обсуждение, автослежение и передачу по Cat5/8-контактам.", images: ["/images/hdg60m-x/g60-1.jpg","/images/hdg60m-x/g60-2.jpg","/images/hdg60m-x/g60-3.jpg","/images/hdg60m-x/g60-4.jpg","/images/hdg60m-x/g60-5.jpg","/images/hdg60m-x/g60-6.jpg","/images/hdg60m-x/g60-7.jpg","/images/hdg60m-x/g60-8.jpg","/images/hdg60m-x/g60-9.jpg","/images/hdg60m-x/g60-10.jpg","/images/hdg60m-x/g60-11.jpg","/images/hdg60m-x/g60-12.jpg","/images/hdg60m-x/g60-13.jpg"] },
+            { id: 5, name: "HD-G80M Проводная Система Голосования и Видео", params: ["IPS Емкостный Сенсорный Экран", "Запрос Услуг (Чай, Бумага, Ручка и т.д.)", "Сетевое Совместное Управление"], desc: "Поддерживает управление с ПК, автоматическое управление питанием и зонирование.", images: ["/images/hdg80m-x/g80-1.jpg","/images/hdg80m-x/g80-2.jpg","/images/hdg80m-x/g80-3.jpg","/images/hdg80m-x/g80-4.jpg","/images/hdg80m-x/g80-5.jpg","/images/hdg80m-x/g80-6.jpg"] }
         ]
     };
 
-    // ============================================================
-    // 4. 导航和面包屑多语言数据
-    // ============================================================
     var navTranslations = {
-        zh: {
-            nav_home: "返回首页",
-            nav_profile: "公司介绍",
-            nav_products: "产品中心",
-            nav_articles: "企业资讯",
-            nav_contact: "联系方式",
-            bread_home: "首页",
-            bread_products: "产品中心",
-            bread_current: "会议系统系列",
-            page_title: "会议系统系列",
-            footer_copyright: "© 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。"
-        },
-        en: {
-            nav_home: "Home",
-            nav_profile: "About Us",
-            nav_products: "Products",
-            nav_articles: "News",
-            nav_contact: "Contact",
-            bread_home: "Home",
-            bread_products: "Products",
-            bread_current: "Conference System Series",
-            page_title: "Conference System Series",
-            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. All rights reserved."
-        },
-        es: {
-            nav_home: "Inicio",
-            nav_profile: "Sobre Nosotros",
-            nav_products: "Productos",
-            nav_articles: "Noticias",
-            nav_contact: "Contacto",
-            bread_home: "Inicio",
-            bread_products: "Productos",
-            bread_current: "Serie de Sistemas de Conferencia",
-            page_title: "Serie de Sistemas de Conferencia",
-            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Todos los derechos reservados."
-        }
+        zh: { nav_home: "返回首页", nav_profile: "公司介绍", nav_products: "产品中心", nav_articles: "企业资讯", nav_contact: "联系方式", bread_home: "首页", bread_products: "产品中心", bread_current: "会议系统系列", page_title: "会议系统系列", footer_copyright: "© 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。" },
+        en: { nav_home: "Home", nav_profile: "About Us", nav_products: "Products", nav_articles: "News", nav_contact: "Contact", bread_home: "Home", bread_products: "Products", bread_current: "Conference System Series", page_title: "Conference System Series", footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. All rights reserved." },
+        es: { nav_home: "Inicio", nav_profile: "Sobre Nosotros", nav_products: "Productos", nav_articles: "Noticias", nav_contact: "Contacto", bread_home: "Inicio", bread_products: "Productos", bread_current: "Serie de Sistemas de Conferencia", page_title: "Serie de Sistemas de Conferencia", footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Todos los derechos reservados." },
+        ru: { nav_home: "Главная", nav_profile: "О нас", nav_products: "Продукты", nav_articles: "Новости", nav_contact: "Контакты", bread_home: "Главная", bread_products: "Продукты", bread_current: "Конференц-Системы", page_title: "Конференц-Системы", footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Все права защищены." }
     };
 
-    // ============================================================
-    // 5. 渲染产品
-    // ============================================================
     function renderProducts(lang) {
         var grid = document.getElementById('productGrid');
         var products = productData[lang] || productData.zh;
@@ -715,7 +193,6 @@
             var card = document.createElement('div');
             card.className = 'product-card';
 
-            // 轮播
             var slider = document.createElement('div');
             slider.className = 'product-img-slider';
             slider.dataset.sliderId = product.id;
@@ -726,7 +203,7 @@
             product.images.forEach(function(img) {
                 var item = document.createElement('div');
                 item.className = 'slider-item';
-                item.style.backgroundImage = 'url(' + img + ')';
+                item.style.backgroundImage = 'url(' + encodeURI(img) + ')';
                 wrapper.appendChild(item);
             });
 
@@ -752,7 +229,6 @@
             });
             slider.appendChild(indicators);
 
-            // 信息
             var info = document.createElement('div');
             info.className = 'product-info';
 
@@ -779,14 +255,10 @@
             card.appendChild(info);
             grid.appendChild(card);
 
-            // 初始化轮播
             initSlider(slider);
         });
     }
 
-    // ============================================================
-    // 6. 轮播初始化
-    // ============================================================
     function initSlider(slider) {
         var wrapper = slider.querySelector('.slider-wrapper');
         var items = slider.querySelectorAll('.slider-item');
@@ -796,7 +268,7 @@
         var totalItems = items.length;
         var currentIndex = 0;
 
-        if (totalItems === 1) {
+        if (totalItems <= 1) {
             if (prevBtn) prevBtn.style.display = 'none';
             if (nextBtn) nextBtn.style.display = 'none';
             return;
@@ -804,35 +276,32 @@
 
         function updateSlider() {
             wrapper.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
-            indicators.forEach(function(dot, index) {
-                dot.classList.toggle('active', index === currentIndex);
+            indicators.forEach(function(dot, idx) {
+                dot.classList.toggle('active', idx === currentIndex);
             });
         }
 
-        function goToNext() {
-            currentIndex = (currentIndex + 1) % totalItems;
-            updateSlider();
-        }
-
-        function goToPrev() {
+        prevBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
             currentIndex = (currentIndex - 1 + totalItems) % totalItems;
             updateSlider();
-        }
+        });
 
-        indicators.forEach(function(dot, index) {
-            dot.addEventListener('click', function() {
-                currentIndex = index;
+        nextBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateSlider();
+        });
+
+        indicators.forEach(function(dot, idx) {
+            dot.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentIndex = idx;
                 updateSlider();
             });
         });
-
-        if (prevBtn) prevBtn.addEventListener('click', goToPrev);
-        if (nextBtn) nextBtn.addEventListener('click', goToNext);
     }
 
-    // ============================================================
-    // 7. 多语言切换
-    // ============================================================
     var currentLang = localStorage.getItem('ldmeting-lang') || 'zh';
 
     function switchLanguage(lang) {
@@ -857,9 +326,6 @@
         localStorage.setItem('ldmeting-lang', lang);
     }
 
-    // ============================================================
-    // 8. 图片加载失败兜底
-    // ============================================================
     function handleImageErrors() {
         document.querySelectorAll('.slider-item').forEach(function(img) {
             var imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
@@ -871,9 +337,6 @@
         });
     }
 
-    // ============================================================
-    // 9. 初始化
-    // ============================================================
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.lang-switcher a').forEach(function(link) {
             link.addEventListener('click', function(e) {
@@ -881,7 +344,6 @@
                 switchLanguage(this.getAttribute('data-lang'));
             });
         });
-
         switchLanguage(currentLang);
         setTimeout(handleImageErrors, 500);
     });
