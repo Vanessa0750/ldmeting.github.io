@@ -3,293 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>整体解决方案 - LDMETING</title>
+
+    <!-- ===== SEO 基础标签 ===== -->
+    <link rel="canonical" href="https://www.ldmeting.com/products-solution.html" />
+    <meta name="description" content="LDMETING 专业会议音频整体解决方案，覆盖小型会议室、中型会议室、大型报告厅、视频会议、移动会议等全场景音频系统集成方案。" />
+    <meta name="keywords" content="会议音频解决方案,会议室方案,报告厅方案,视频会议方案,音频系统集成,LDMETING" />
+    <meta name="google-site-verification" content="iPeL4d5MSvNHtI0my8gCsQvVTQ1eyYuKUrq1rhNLzIA" />
+
+    <!-- ===== 多语言 hreflang ===== -->
+    <link rel="alternate" hreflang="zh" href="https://www.ldmeting.com/products-solution.html" />
+    <link rel="alternate" hreflang="en" href="https://www.ldmeting.com/en/products-solution.html" />
+    <link rel="alternate" hreflang="es" href="https://www.ldmeting.com/es/products-solution.html" />
+    <link rel="alternate" hreflang="ru" href="https://www.ldmeting.com/ru/products-solution.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.ldmeting.com/products-solution.html" />
+
+    <title>整体解决方案 - LDMETING 专业会议音频系统集成</title>
     <style>
-        /* 复用样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft Yahei", sans-serif;
-        }
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem 5%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 2rem;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #3498db;
-        }
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 101;
-        }
-
-        .lang-switcher {
-            display: flex;
-            align-items: center;
-            margin-left: 2rem;
-            gap: 0.2rem;
-        }
-        .lang-switcher a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.85rem;
-            padding: 0.2rem 0.4rem;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-        .lang-switcher a:hover {
-            color: white;
-        }
-        .lang-switcher a.active {
-            color: #3498db;
-            font-weight: bold;
-        }
-        .lang-switcher .sep {
-            color: #555;
-            font-size: 0.8rem;
-        }
-
-        .breadcrumb {
-            padding: 1rem 5%;
-            background-color: white;
-            font-size: 0.9rem;
-        }
-        .breadcrumb a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        .breadcrumb span {
-            color: #999;
-            margin: 0 0.5rem;
-        }
-
-        section {
-            padding: 3rem 5%;
-            margin: 1rem 0;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-            position: relative;
-        }
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 80px;
-            height: 3px;
-            background-color: #3498db;
-            margin: 1rem auto;
-        }
-
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .solution-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-        .solution-img {
-            width: 100%;
-            height: 200px;
-            background-color: #f8f9fa;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            flex-shrink: 0;
-        }
-        .solution-info {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .solution-info h3 {
-            color: #2c3e50;
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
-        .solution-params {
-            font-size: 0.9rem;
-            color: #666;
-            flex: 1;
-        }
-        .solution-params p {
-            margin-bottom: 4px;
-        }
-        .solution-desc {
-            margin-top: 0.8rem;
-            color: #555;
-            font-size: 0.95rem;
-        }
-
-        footer {
-            background-color: #1a252f;
-            color: white;
-            text-align: center;
-            padding: 2rem 5%;
-            margin-top: 3rem;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #3498db;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            transition: opacity 0.3s, transform 0.3s;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 99;
-        }
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft Yahei", "PingFang SC", sans-serif; }
+        body { background-color: #f5f7fa; color: #333; line-height: 1.6; }
+        html { scroll-behavior: smooth; }
+        header { background-color: #2c3e50; color: white; padding: 1rem 5%; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .logo a { color: white; text-decoration: none; }
+        .nav-links { display: flex; align-items: center; flex-wrap: wrap; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 2rem; transition: color 0.3s; }
+        .nav-links a:hover { color: #3498db; }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; z-index: 101; }
+        .lang-switcher { display: flex; align-items: center; margin-left: 2rem; gap: 0.2rem; flex-wrap: wrap; }
+        .lang-switcher a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.8rem; padding: 0.2rem 0.4rem; transition: color 0.3s; }
+        .lang-switcher a:hover { color: white; }
+        .lang-switcher a.active { color: #3498db; font-weight: bold; }
+        .lang-switcher .sep { color: #555; font-size: 0.7rem; }
+        .breadcrumb { padding: 1rem 5%; background-color: white; font-size: 0.9rem; border-bottom: 1px solid #eee; }
+        .breadcrumb a { color: #3498db; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { color: #999; margin: 0 0.5rem; }
+        section { padding: 3rem 5%; margin: 1rem 0; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: #2c3e50; position: relative; }
+        .section-title::after { content: ""; display: block; width: 80px; height: 3px; background-color: #3498db; margin: 1rem auto; }
+        .solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .solution-card { background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
+        .solution-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
+        .solution-img { width: 100%; height: 200px; background-color: #f8f9fa; background-size: cover; background-position: center; flex-shrink: 0; }
+        .solution-info { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+        .solution-info h3 { color: #2c3e50; margin-bottom: 0.8rem; font-size: 1.1rem; flex-shrink: 0; }
+        .solution-params { font-size: 0.9rem; color: #666; flex: 1; }
+        .solution-params p { margin-bottom: 4px; padding-left: 1.2rem; position: relative; }
+        .solution-params p::before { content: "•"; position: absolute; left: 0; color: #3498db; }
+        .solution-desc { margin-top: 0.8rem; color: #555; font-size: 0.95rem; padding-top: 0.8rem; border-top: 1px solid #eee; }
+        footer { background-color: #1a252f; color: white; text-align: center; padding: 2rem 5%; margin-top: 3rem; }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; background-color: #3498db; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2); transition: opacity 0.3s, transform 0.3s; opacity: 0; visibility: hidden; z-index: 99; font-size: 1.2rem; border: none; }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { transform: translateY(-3px); background-color: #2980b9; }
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .nav-links.mobile-open {
-                display: flex;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: #2c3e50;
-                padding: 1rem 5%;
-                flex-direction: column;
-                gap: 1rem;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            }
-            .nav-links.mobile-open .lang-switcher {
-                margin-left: 0;
-                justify-content: flex-start;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .nav-links.mobile-open { display: flex; position: absolute; top: 100%; left: 0; width: 100%; background-color: #2c3e50; padding: 1rem 5%; flex-direction: column; gap: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+            .nav-links.mobile-open .lang-switcher { margin-left: 0; justify-content: flex-start; }
+            .section-title { font-size: 1.6rem; }
+            .solution-grid { grid-template-columns: 1fr; }
+            .breadcrumb { font-size: 0.8rem; }
+        }
+        @media (max-width: 480px) {
+            .solution-img { height: 160px; }
         }
     </style>
 </head>
 <body>
+
 <header>
     <div class="nav-container">
-        <div class="logo">LDMETING</div>
-        <nav class="nav-links">
-            <a href="index.html" data-key="nav_home">返回首页</a>
-            <a href="index.html#profile" data-key="nav_profile">公司介绍</a>
-            <a href="index.html#products" data-key="nav_products">产品中心</a>
-            <a href="index.html#articles" data-key="nav_articles">企业资讯</a>
-            <a href="index.html#contact" data-key="nav_contact">联系方式</a>
+        <div class="logo"><a href="/">LDMETING</a></div>
+        <nav class="nav-links" aria-label="主导航">
+            <a href="/" data-key="nav_home">返回首页</a>
+            <a href="/#profile" data-key="nav_profile">公司介绍</a>
+            <a href="/#products" data-key="nav_products">产品中心</a>
+            <a href="/#articles" data-key="nav_articles">企业资讯</a>
+            <a href="/#contact" data-key="nav_contact">联系方式</a>
             <div class="lang-switcher">
-                <a href="#" data-lang="zh" class="active">中文</a>
+                <a href="/products-solution.html" data-lang="zh" class="active">中文</a>
                 <span class="sep">|</span>
-                <a href="#" data-lang="en">English</a>
+                <a href="/en/products-solution.html" data-lang="en">English</a>
                 <span class="sep">|</span>
-                <a href="#" data-lang="es">Español</a>
+                <a href="/es/products-solution.html" data-lang="es">Español</a>
+                <span class="sep">|</span>
+                <a href="/ru/products-solution.html" data-lang="ru">Русский</a>
             </div>
         </nav>
-        <div class="menu-toggle">☰</div>
+        <div class="menu-toggle" aria-label="切换菜单">☰</div>
     </div>
 </header>
 
 <div class="breadcrumb">
-    <a href="index.html" data-key="bread_home">首页</a>
+    <a href="/" data-key="bread_home">首页</a>
     <span>></span>
-    <a href="index.html#products" data-key="bread_products">产品中心</a>
+    <a href="/#products" data-key="bread_products">产品中心</a>
     <span>></span>
     <span data-key="bread_current">整体解决方案</span>
 </div>
 
 <section>
     <h2 class="section-title" data-key="page_title">整体解决方案</h2>
-    <div class="solution-grid" id="solutionGrid">
-        <!-- 由 JavaScript 动态生成 -->
-    </div>
+    <div class="solution-grid" id="solutionGrid"></div>
 </section>
 
 <footer>
     <p data-key="footer_copyright">&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
 </footer>
 
-<div class="back-to-top">↑</div>
+<div class="back-to-top" aria-label="返回顶部">↑</div>
 
 <script>
-    // ============================================================
-    // 1. 移动端菜单切换
-    // ============================================================
     var menuToggle = document.querySelector('.menu-toggle');
     var navLinks = document.querySelector('.nav-links');
     menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('mobile-open');
         menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
     });
-
     document.querySelectorAll('.nav-links a').forEach(function(link) {
         link.addEventListener('click', function() {
             navLinks.classList.remove('mobile-open');
@@ -297,183 +128,52 @@
         });
     });
 
-    // ============================================================
-    // 2. 返回顶部
-    // ============================================================
     var backToTopBtn = document.querySelector('.back-to-top');
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
+        backToTopBtn.classList.toggle('show', window.scrollY > 300);
     });
     backToTopBtn.addEventListener('click', function() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     });
 
-    // ============================================================
-    // 3. 多语言方案数据
-    // ============================================================
     var solutionData = {
         zh: [
-            {
-                id: 1,
-                name: "10-30㎡小型会议室方案",
-                params: ["无线系统麦克风 + 2个壁挂音箱 + 简易功放", "特点：成本低，安装快，即插即用", "适配：小型办公室、洽谈室"],
-                desc: "一站式解决小型会议扩声需求，性价比高。",
-                img: "images/solution/10.jpg"
-            },
-            {
-                id: 2,
-                name: "30-80㎡中型会议室方案",
-                params: ["无线系统麦克风 + 4个会议音箱 + 显示屏", "特点：无线布置，支持视像跟踪", "适配：企业会议室、培训室"],
-                desc: "满足多人会议发言、扩声、摄像跟踪需求。",
-                img: "images/solution/30.jpg"
-            },
-            {
-                id: 3,
-                name: "80-200㎡大型报告厅方案",
-                params: ["有线会议系统 + 阵列音箱 + 调音台 + 桌牌", "特点：覆盖广，音质均匀，支持直播", "适配：政府报告厅、学校礼堂"],
-                desc: "专业级扩声方案，满足大型集会发言需求。",
-                img: "images/solution/80.jpg"
-            },
-            {
-                id: 4,
-                name: "视频会议一体化方案",
-                params: ["视像跟踪会议系统 + 摄像头 + 投屏系统", "特点：音视频同步，操作简单"],
-                desc: "适配远程视频会议场景，音视频体验佳。",
-                img: "images/solution/shipin.jpg"
-            },
-            {
-                id: 5,
-                name: "移动会议解决方案",
-                params: ["无线麦克风 + 便携音箱 + 充电宝供电", "特点：全无线，免安装，即开即用", "适配：临时会议、户外集会"],
-                desc: "满足移动办公、临时会议的音频需求。",
-                img: "images/solution/yidong.jpg"
-            }
+            { id: 1, name: "10-30㎡小型会议室方案", params: ["无线系统麦克风 + 2个壁挂音箱 + 简易功放", "特点：成本低，安装快，即插即用", "适配：小型办公室、洽谈室"], desc: "一站式解决小型会议扩声需求，性价比高。", img: "/images/solution/10.jpg" },
+            { id: 2, name: "30-80㎡中型会议室方案", params: ["无线系统麦克风 + 4个会议音箱 + 显示屏", "特点：无线布置，支持视像跟踪", "适配：企业会议室、培训室"], desc: "满足多人会议发言、扩声、摄像跟踪需求。", img: "/images/solution/30.jpg" },
+            { id: 3, name: "80-200㎡大型报告厅方案", params: ["有线会议系统 + 阵列音箱 + 调音台 + 桌牌", "特点：覆盖广，音质均匀，支持直播", "适配：政府报告厅、学校礼堂"], desc: "专业级扩声方案，满足大型集会发言需求。", img: "/images/solution/80.jpg" },
+            { id: 4, name: "视频会议一体化方案", params: ["视像跟踪会议系统 + 摄像头 + 投屏系统", "特点：音视频同步，操作简单"], desc: "适配远程视频会议场景，音视频体验佳。", img: "/images/solution/shipin.jpg" },
+            { id: 5, name: "移动会议解决方案", params: ["无线麦克风 + 便携音箱 + 充电宝供电", "特点：全无线，免安装，即开即用", "适配：临时会议、户外集会"], desc: "满足移动办公、临时会议的音频需求。", img: "/images/solution/yidong.jpg" }
         ],
         en: [
-            {
-                id: 1,
-                name: "10-30㎡ Small Meeting Room Solution",
-                params: ["Wireless Microphone System + 2 Wall-mounted Speakers + Simple Amplifier", "Features: Low cost, fast installation, plug-and-play", "Applicable: Small offices, meeting rooms"],
-                desc: "One-stop solution for small meeting sound reinforcement with high cost-effectiveness.",
-                img: "images/solution/10.jpg"
-            },
-            {
-                id: 2,
-                name: "30-80㎡ Medium Meeting Room Solution",
-                params: ["Wireless Microphone System + 4 Conference Speakers + Display Screen", "Features: Wireless setup, supports video tracking", "Applicable: Corporate meeting rooms, training rooms"],
-                desc: "Meets the needs of multi-person presentations, sound reinforcement, and camera tracking.",
-                img: "images/solution/30.jpg"
-            },
-            {
-                id: 3,
-                name: "80-200㎡ Large Auditorium Solution",
-                params: ["Wired Conference System + Line Array Speakers + Mixing Console + Name Tags", "Features: Wide coverage, uniform sound quality, supports live streaming", "Applicable: Government auditoriums, school halls"],
-                desc: "Professional-grade sound reinforcement for large gatherings and presentations.",
-                img: "images/solution/80.jpg"
-            },
-            {
-                id: 4,
-                name: "Integrated Video Conference Solution",
-                params: ["Video Tracking Conference System + Camera + Screen Sharing System", "Features: Audio-video synchronization, easy operation"],
-                desc: "Ideal for remote video conferencing with excellent audio-visual experience.",
-                img: "images/solution/shipin.jpg"
-            },
-            {
-                id: 5,
-                name: "Mobile Meeting Solution",
-                params: ["Wireless Microphone + Portable Speaker + Power Bank Power Supply", "Features: Fully wireless, no installation, ready to use", "Applicable: Temporary meetings, outdoor events"],
-                desc: "Meets the audio needs of mobile work and temporary meetings.",
-                img: "images/solution/yidong.jpg"
-            }
+            { id: 1, name: "10-30㎡ Small Meeting Room Solution", params: ["Wireless Microphone System + 2 Wall-mounted Speakers + Simple Amplifier", "Features: Low cost, fast installation, plug-and-play", "Applicable: Small offices, meeting rooms"], desc: "One-stop solution for small meeting sound reinforcement with high cost-effectiveness.", img: "/images/solution/10.jpg" },
+            { id: 2, name: "30-80㎡ Medium Meeting Room Solution", params: ["Wireless Microphone System + 4 Conference Speakers + Display Screen", "Features: Wireless setup, supports video tracking", "Applicable: Corporate meeting rooms, training rooms"], desc: "Meets the needs of multi-person presentations, sound reinforcement, and camera tracking.", img: "/images/solution/30.jpg" },
+            { id: 3, name: "80-200㎡ Large Auditorium Solution", params: ["Wired Conference System + Line Array Speakers + Mixing Console + Name Tags", "Features: Wide coverage, uniform sound quality, supports live streaming", "Applicable: Government auditoriums, school halls"], desc: "Professional-grade sound reinforcement for large gatherings and presentations.", img: "/images/solution/80.jpg" },
+            { id: 4, name: "Integrated Video Conference Solution", params: ["Video Tracking Conference System + Camera + Screen Sharing System", "Features: Audio-video synchronization, easy operation"], desc: "Ideal for remote video conferencing with excellent audio-visual experience.", img: "/images/solution/shipin.jpg" },
+            { id: 5, name: "Mobile Meeting Solution", params: ["Wireless Microphone + Portable Speaker + Power Bank Power Supply", "Features: Fully wireless, no installation, ready to use", "Applicable: Temporary meetings, outdoor events"], desc: "Meets the audio needs of mobile work and temporary meetings.", img: "/images/solution/yidong.jpg" }
         ],
         es: [
-            {
-                id: 1,
-                name: "Solución para Sala de Reuniones Pequeña 10-30㎡",
-                params: ["Sistema de Micrófono Inalámbrico + 2 Altavoces de Pared + Amplificador Simple", "Características: Bajo costo, instalación rápida, plug-and-play", "Aplicable: Oficinas pequeñas, salas de reuniones"],
-                desc: "Solución integral para amplificación de sonido en reuniones pequeñas con alta relación calidad-precio.",
-                img: "images/solution/10.jpg"
-            },
-            {
-                id: 2,
-                name: "Solución para Sala de Reuniones Mediana 30-80㎡",
-                params: ["Sistema de Micrófono Inalámbrico + 4 Altavoces + Pantalla", "Características: Configuración inalámbrica, soporta seguimiento de video", "Aplicable: Salas de reuniones corporativas, salas de capacitación"],
-                desc: "Satisface las necesidades de presentaciones múltiples, amplificación y seguimiento de cámara.",
-                img: "images/solution/30.jpg"
-            },
-            {
-                id: 3,
-                name: "Solución para Auditorio Grande 80-200㎡",
-                params: ["Sistema de Conferencia con Cable + Altavoces Line Array + Mezclador + Identificadores", "Características: Cobertura amplia, calidad de sonido uniforme, soporta transmisión en vivo", "Aplicable: Auditorios gubernamentales, salones escolares"],
-                desc: "Amplificación de sonido de nivel profesional para grandes reuniones y presentaciones.",
-                img: "images/solution/80.jpg"
-            },
-            {
-                id: 4,
-                name: "Solución Integrada de Videoconferencia",
-                params: ["Sistema de Conferencia con Seguimiento de Video + Cámara + Sistema de Compartición de Pantalla", "Características: Sincronización audio-video, operación sencilla"],
-                desc: "Ideal para videoconferencias remotas con excelente experiencia audiovisual.",
-                img: "images/solution/shipin.jpg"
-            },
-            {
-                id: 5,
-                name: "Solución para Reuniones Móviles",
-                params: ["Micrófono Inalámbrico + Altavoz Portátil + Alimentación por Power Bank", "Características: Totalmente inalámbrico, sin instalación, listo para usar", "Aplicable: Reuniones temporales, eventos al aire libre"],
-                desc: "Satisface las necesidades de audio para trabajo móvil y reuniones temporales.",
-                img: "images/solution/yidong.jpg"
-            }
+            { id: 1, name: "Solución para Sala de Reuniones Pequeña 10-30㎡", params: ["Sistema de Micrófono Inalámbrico + 2 Altavoces de Pared + Amplificador Simple", "Características: Bajo costo, instalación rápida, plug-and-play", "Aplicable: Oficinas pequeñas, salas de reuniones"], desc: "Solución integral para amplificación de sonido en reuniones pequeñas con alta relación calidad-precio.", img: "/images/solution/10.jpg" },
+            { id: 2, name: "Solución para Sala de Reuniones Mediana 30-80㎡", params: ["Sistema de Micrófono Inalámbrico + 4 Altavoces + Pantalla", "Características: Configuración inalámbrica, soporta seguimiento de video", "Aplicable: Salas de reuniones corporativas, salas de capacitación"], desc: "Satisface las necesidades de presentaciones múltiples, amplificación y seguimiento de cámara.", img: "/images/solution/30.jpg" },
+            { id: 3, name: "Solución para Auditorio Grande 80-200㎡", params: ["Sistema de Conferencia con Cable + Altavoces Line Array + Mezclador + Identificadores", "Características: Cobertura amplia, calidad de sonido uniforme, soporta transmisión en vivo", "Aplicable: Auditorios gubernamentales, salones escolares"], desc: "Amplificación de sonido de nivel profesional para grandes reuniones y presentaciones.", img: "/images/solution/80.jpg" },
+            { id: 4, name: "Solución Integrada de Videoconferencia", params: ["Sistema de Conferencia con Seguimiento de Video + Cámara + Sistema de Compartición de Pantalla", "Características: Sincronización audio-video, operación sencilla"], desc: "Ideal para videoconferencias remotas con excelente experiencia audiovisual.", img: "/images/solution/shipin.jpg" },
+            { id: 5, name: "Solución para Reuniones Móviles", params: ["Micrófono Inalámbrico + Altavoz Portátil + Alimentación por Power Bank", "Características: Totalmente inalámbrico, sin instalación, listo para usar", "Aplicable: Reuniones temporales, eventos al aire libre"], desc: "Satisface las necesidades de audio para trabajo móvil y reuniones temporales.", img: "/images/solution/yidong.jpg" }
+        ],
+        ru: [
+            { id: 1, name: "Решение для Малого Конференц-зала 10-30㎡", params: ["Беспроводная Микрофонная Система + 2 Настенных Колонки + Простой Усилитель", "Особенности: Низкая стоимость, быстрый монтаж, plug-and-play", "Применение: Малые офисы, переговорные"], desc: "Комплексное решение для звукоусиления в малых залах с высокой экономичностью.", img: "/images/solution/10.jpg" },
+            { id: 2, name: "Решение для Среднего Конференц-зала 30-80㎡", params: ["Беспроводная Микрофонная Система + 4 Конференц-Колонки + Экран", "Особенности: Беспроводная установка, поддержка видеослежения", "Применение: Корпоративные конференц-залы, учебные классы"], desc: "Удовлетворяет потребности в выступлениях, звукоусилении и видеослежении.", img: "/images/solution/30.jpg" },
+            { id: 3, name: "Решение для Большого Актового Зала 80-200㎡", params: ["Проводная Конференц-Система + Линейные Колонки + Микшер + Таблички", "Особенности: Широкое покрытие, равномерное звучание, поддержка трансляций", "Применение: Государственные залы, школьные актовые залы"], desc: "Профессиональное звукоусиление для крупных мероприятий и выступлений.", img: "/images/solution/80.jpg" },
+            { id: 4, name: "Интегрированное Решение для Видеоконференций", params: ["Система Видеослежения + Камера + Система Демонстрации Экрана", "Особенности: Синхронизация звука и видео, простота использования"], desc: "Идеально для удаленных видеоконференций с превосходным качеством звука и видео.", img: "/images/solution/shipin.jpg" },
+            { id: 5, name: "Решение для Мобильных Встреч", params: ["Беспроводной Микрофон + Портативная Колонка + Питание от Power Bank", "Особенности: Полностью беспроводной, без монтажа, готов к использованию", "Применение: Временные встречи, уличные мероприятия"], desc: "Удовлетворяет потребности в звуке для мобильной работы и временных встреч.", img: "/images/solution/yidong.jpg" }
         ]
     };
 
-    // ============================================================
-    // 4. 导航和面包屑多语言数据
-    // ============================================================
     var navTranslations = {
-        zh: {
-            nav_home: "返回首页",
-            nav_profile: "公司介绍",
-            nav_products: "产品中心",
-            nav_articles: "企业资讯",
-            nav_contact: "联系方式",
-            bread_home: "首页",
-            bread_products: "产品中心",
-            bread_current: "整体解决方案",
-            page_title: "整体解决方案",
-            footer_copyright: "© 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。"
-        },
-        en: {
-            nav_home: "Home",
-            nav_profile: "About Us",
-            nav_products: "Products",
-            nav_articles: "News",
-            nav_contact: "Contact",
-            bread_home: "Home",
-            bread_products: "Products",
-            bread_current: "Total Solutions",
-            page_title: "Total Solutions",
-            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. All rights reserved."
-        },
-        es: {
-            nav_home: "Inicio",
-            nav_profile: "Sobre Nosotros",
-            nav_products: "Productos",
-            nav_articles: "Noticias",
-            nav_contact: "Contacto",
-            bread_home: "Inicio",
-            bread_products: "Productos",
-            bread_current: "Soluciones Integrales",
-            page_title: "Soluciones Integrales",
-            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Todos los derechos reservados."
-        }
+        zh: { nav_home: "返回首页", nav_profile: "公司介绍", nav_products: "产品中心", nav_articles: "企业资讯", nav_contact: "联系方式", bread_home: "首页", bread_products: "产品中心", bread_current: "整体解决方案", page_title: "整体解决方案", footer_copyright: "© 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。" },
+        en: { nav_home: "Home", nav_profile: "About Us", nav_products: "Products", nav_articles: "News", nav_contact: "Contact", bread_home: "Home", bread_products: "Products", bread_current: "Total Solutions", page_title: "Total Solutions", footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. All rights reserved." },
+        es: { nav_home: "Inicio", nav_profile: "Sobre Nosotros", nav_products: "Productos", nav_articles: "Noticias", nav_contact: "Contacto", bread_home: "Inicio", bread_products: "Productos", bread_current: "Soluciones Integrales", page_title: "Soluciones Integrales", footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Todos los derechos reservados." },
+        ru: { nav_home: "Главная", nav_profile: "О нас", nav_products: "Продукты", nav_articles: "Новости", nav_contact: "Контакты", bread_home: "Главная", bread_products: "Продукты", bread_current: "Комплексные Решения", page_title: "Комплексные Решения", footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Все права защищены." }
     };
 
-    // ============================================================
-    // 5. 渲染方案
-    // ============================================================
     function renderSolutions(lang) {
         var grid = document.getElementById('solutionGrid');
         var solutions = solutionData[lang] || solutionData.zh;
@@ -485,7 +185,7 @@
 
             var imgDiv = document.createElement('div');
             imgDiv.className = 'solution-img';
-            imgDiv.style.backgroundImage = 'url(' + solution.img + ')';
+            imgDiv.style.backgroundImage = 'url(' + encodeURI(solution.img) + ')';
 
             var info = document.createElement('div');
             info.className = 'solution-info';
@@ -515,9 +215,17 @@
         });
     }
 
-    // ============================================================
-    // 6. 多语言切换
-    // ============================================================
+    function handleImageErrors() {
+        document.querySelectorAll('.solution-img').forEach(function(img) {
+            var imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
+            var testImg = new Image();
+            testImg.src = imgUrl;
+            testImg.onerror = function() {
+                img.style.backgroundImage = 'none';
+            };
+        });
+    }
+
     var currentLang = localStorage.getItem('ldmeting-lang') || 'zh';
 
     function switchLanguage(lang) {
@@ -542,23 +250,6 @@
         localStorage.setItem('ldmeting-lang', lang);
     }
 
-    // ============================================================
-    // 7. 图片加载失败兜底
-    // ============================================================
-    function handleImageErrors() {
-        document.querySelectorAll('.solution-img').forEach(function(img) {
-            var imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
-            var testImg = new Image();
-            testImg.src = imgUrl;
-            testImg.onerror = function() {
-                img.style.backgroundImage = 'none';
-            };
-        });
-    }
-
-    // ============================================================
-    // 8. 初始化
-    // ============================================================
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.lang-switcher a').forEach(function(link) {
             link.addEventListener('click', function(e) {
@@ -566,7 +257,6 @@
                 switchLanguage(this.getAttribute('data-lang'));
             });
         });
-
         switchLanguage(currentLang);
         setTimeout(handleImageErrors, 500);
     });
