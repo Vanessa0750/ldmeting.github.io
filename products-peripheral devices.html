@@ -3,383 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>周边设备系列 - LDMETING</title>
+
+    <!-- ===== SEO 基础标签 ===== -->
+    <link rel="canonical" href="https://www.ldmeting.com/products-peripheral%20devices.html" />
+    <meta name="description" content="LDMETING 专业音频周边设备，包含反馈抑制器、音箱处理器、电源时序器、天线放大器、调音台等，为会议系统提供完整配套解决方案。" />
+    <meta name="keywords" content="反馈抑制器,音箱处理器,电源时序器,天线放大器,调音台,音频周边设备,LDMETING" />
+    <meta name="google-site-verification" content="iPeL4d5MSvNHtI0my8gCsQvVTQ1eyYuKUrq1rhNLzIA" />
+
+    <!-- ===== 多语言 hreflang ===== -->
+    <link rel="alternate" hreflang="zh" href="https://www.ldmeting.com/products-peripheral%20devices.html" />
+    <link rel="alternate" hreflang="en" href="https://www.ldmeting.com/en/products-peripheral%20devices.html" />
+    <link rel="alternate" hreflang="es" href="https://www.ldmeting.com/es/products-peripheral%20devices.html" />
+    <link rel="alternate" hreflang="ru" href="https://www.ldmeting.com/ru/products-peripheral%20devices.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.ldmeting.com/products-peripheral%20devices.html" />
+
+    <title>周边设备系列 - LDMETING 专业音频周边设备</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft Yahei", sans-serif;
-        }
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem 5%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 2rem;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #3498db;
-        }
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 101;
-        }
-
-        .lang-switcher {
-            display: flex;
-            align-items: center;
-            margin-left: 2rem;
-            gap: 0.2rem;
-        }
-        .lang-switcher a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.85rem;
-            padding: 0.2rem 0.4rem;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-        .lang-switcher a:hover {
-            color: white;
-        }
-        .lang-switcher a.active {
-            color: #3498db;
-            font-weight: bold;
-        }
-        .lang-switcher .sep {
-            color: #555;
-            font-size: 0.8rem;
-        }
-
-        .breadcrumb {
-            padding: 1rem 5%;
-            background-color: white;
-            font-size: 0.9rem;
-        }
-        .breadcrumb a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        .breadcrumb span {
-            color: #999;
-            margin: 0 0.5rem;
-        }
-
-        section {
-            padding: 3rem 5%;
-            margin: 1rem 0;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-            position: relative;
-        }
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 80px;
-            height: 3px;
-            background-color: #3498db;
-            margin: 1rem auto;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .product-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-
-        .product-img-slider {
-            position: relative;
-            width: 100%;
-            height: 200px;
-            background-color: #f8f9fa;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        .slider-wrapper {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease;
-        }
-        .slider-item {
-            flex: 0 0 100%;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-        }
-
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .product-img-slider:hover .slider-btn {
-            opacity: 1;
-        }
-        .prev-btn {
-            left: 10px;
-        }
-        .next-btn {
-            right: 10px;
-        }
-
-        .slider-indicators {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 5px;
-        }
-        .indicator-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .indicator-dot.active {
-            background-color: #3498db;
-        }
-
-        .product-info {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .product-info h3 {
-            color: #2c3e50;
-            margin-bottom: 0.8rem;
-            font-size: 1.05rem;
-            flex-shrink: 0;
-        }
-        .product-params {
-            font-size: 0.9rem;
-            color: #666;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .product-params p {
-            margin-bottom: 4px;
-        }
-
-        .product-desc {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .product-desc.expanded {
-            -webkit-line-clamp: unset;
-            display: block;
-        }
-        .desc-toggle {
-            color: #3498db;
-            cursor: pointer;
-            font-size: 0.85rem;
-            margin-top: 0.6rem;
-            display: inline-block;
-            background: none;
-            border: none;
-            padding: 0;
-            font-family: inherit;
-            align-self: flex-start;
-            flex-shrink: 0;
-        }
-        .desc-toggle:hover {
-            color: #2c7ab1;
-            text-decoration: underline;
-        }
-
-        footer {
-            background-color: #1a252f;
-            color: white;
-            text-align: center;
-            padding: 2rem 5%;
-            margin-top: 3rem;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #3498db;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            transition: opacity 0.3s, transform 0.3s;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 99;
-        }
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft Yahei", "PingFang SC", sans-serif; }
+        body { background-color: #f5f7fa; color: #333; line-height: 1.6; }
+        html { scroll-behavior: smooth; }
+        header { background-color: #2c3e50; color: white; padding: 1rem 5%; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .logo a { color: white; text-decoration: none; }
+        .nav-links { display: flex; align-items: center; flex-wrap: wrap; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 2rem; transition: color 0.3s; }
+        .nav-links a:hover { color: #3498db; }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; z-index: 101; }
+        .lang-switcher { display: flex; align-items: center; margin-left: 2rem; gap: 0.2rem; flex-wrap: wrap; }
+        .lang-switcher a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.8rem; padding: 0.2rem 0.4rem; transition: color 0.3s; }
+        .lang-switcher a:hover { color: white; }
+        .lang-switcher a.active { color: #3498db; font-weight: bold; }
+        .lang-switcher .sep { color: #555; font-size: 0.7rem; }
+        .breadcrumb { padding: 1rem 5%; background-color: white; font-size: 0.9rem; border-bottom: 1px solid #eee; }
+        .breadcrumb a { color: #3498db; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { color: #999; margin: 0 0.5rem; }
+        section { padding: 3rem 5%; margin: 1rem 0; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: #2c3e50; position: relative; }
+        .section-title::after { content: ""; display: block; width: 80px; height: 3px; background-color: #3498db; margin: 1rem auto; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .product-card { background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
+        .product-img-slider { position: relative; width: 100%; height: 200px; background-color: #f8f9fa; overflow: hidden; flex-shrink: 0; }
+        .slider-wrapper { display: flex; width: 100%; height: 100%; transition: transform 0.5s ease; }
+        .slider-item { flex: 0 0 100%; width: 100%; height: 100%; background-size: contain; background-repeat: no-repeat; background-position: center; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%; background-color: rgba(0,0,0,0.5); color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; opacity: 0; transition: opacity 0.3s; font-size: 1.2rem; }
+        .product-img-slider:hover .slider-btn { opacity: 1; }
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+        .slider-indicators { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; }
+        .indicator-dot { width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.5); cursor: pointer; transition: background-color 0.3s; }
+        .indicator-dot.active { background-color: #3498db; }
+        .product-info { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+        .product-info h3 { color: #2c3e50; margin-bottom: 0.8rem; font-size: 1.05rem; flex-shrink: 0; }
+        .product-params { font-size: 0.9rem; color: #666; flex: 1; display: flex; flex-direction: column; }
+        .product-params p { margin-bottom: 4px; padding-left: 1.2rem; position: relative; }
+        .product-params p::before { content: "•"; position: absolute; left: 0; color: #3498db; }
+        .product-desc { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; transition: all 0.3s ease; margin-top: 8px; }
+        .product-desc p { padding-left: 1.2rem; position: relative; }
+        .product-desc p::before { content: "•"; position: absolute; left: 0; color: #3498db; }
+        .product-desc.expanded { -webkit-line-clamp: unset; display: block; }
+        .desc-toggle { color: #3498db; cursor: pointer; font-size: 0.85rem; margin-top: 0.6rem; display: inline-block; background: none; border: none; padding: 0; font-family: inherit; align-self: flex-start; flex-shrink: 0; }
+        .desc-toggle:hover { color: #2c7ab1; text-decoration: underline; }
+        footer { background-color: #1a252f; color: white; text-align: center; padding: 2rem 5%; margin-top: 3rem; }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; background-color: #3498db; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2); transition: opacity 0.3s, transform 0.3s; opacity: 0; visibility: hidden; z-index: 99; font-size: 1.2rem; border: none; }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { transform: translateY(-3px); background-color: #2980b9; }
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .nav-links.mobile-open {
-                display: flex;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: #2c3e50;
-                padding: 1rem 5%;
-                flex-direction: column;
-                gap: 1rem;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            }
-            .nav-links.mobile-open .lang-switcher {
-                margin-left: 0;
-                justify-content: flex-start;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .nav-links.mobile-open { display: flex; position: absolute; top: 100%; left: 0; width: 100%; background-color: #2c3e50; padding: 1rem 5%; flex-direction: column; gap: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+            .nav-links.mobile-open .lang-switcher { margin-left: 0; justify-content: flex-start; }
+            .section-title { font-size: 1.6rem; }
+            .product-grid { grid-template-columns: 1fr; }
+            .breadcrumb { font-size: 0.8rem; }
+        }
+        @media (max-width: 480px) {
+            .product-img-slider { height: 160px; }
+            .slider-btn { width: 24px; height: 24px; font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
+
 <header>
     <div class="nav-container">
-        <div class="logo">LDMETING</div>
-        <nav class="nav-links">
-            <a href="index.html" data-key="nav_home">返回首页</a>
-            <a href="index.html#profile" data-key="nav_profile">公司介绍</a>
-            <a href="index.html#products" data-key="nav_products">产品中心</a>
-            <a href="index.html#articles" data-key="nav_articles">企业资讯</a>
-            <a href="index.html#contact" data-key="nav_contact">联系方式</a>
+        <div class="logo"><a href="/">LDMETING</a></div>
+        <nav class="nav-links" aria-label="主导航">
+            <a href="/" data-key="nav_home">返回首页</a>
+            <a href="/#profile" data-key="nav_profile">公司介绍</a>
+            <a href="/#products" data-key="nav_products">产品中心</a>
+            <a href="/#articles" data-key="nav_articles">企业资讯</a>
+            <a href="/#contact" data-key="nav_contact">联系方式</a>
             <div class="lang-switcher">
-                <a href="#" data-lang="zh" class="active">中文</a>
+                <a href="/products-peripheral%20devices.html" data-lang="zh" class="active">中文</a>
                 <span class="sep">|</span>
-                <a href="#" data-lang="en">English</a>
+                <a href="/en/products-peripheral%20devices.html" data-lang="en">English</a>
                 <span class="sep">|</span>
-                <a href="#" data-lang="es">Español</a>
+                <a href="/es/products-peripheral%20devices.html" data-lang="es">Español</a>
+                <span class="sep">|</span>
+                <a href="/ru/products-peripheral%20devices.html" data-lang="ru">Русский</a>
             </div>
         </nav>
-        <div class="menu-toggle">☰</div>
+        <div class="menu-toggle" aria-label="切换菜单">☰</div>
     </div>
 </header>
 
 <div class="breadcrumb">
-    <a href="index.html" data-key="bread_home">首页</a>
+    <a href="/" data-key="bread_home">首页</a>
     <span>></span>
-    <a href="index.html#products" data-key="bread_products">产品中心</a>
+    <a href="/#products" data-key="bread_products">产品中心</a>
     <span>></span>
     <span data-key="bread_current">周边设备系列</span>
 </div>
 
 <section>
     <h2 class="section-title" data-key="page_title">周边设备系列</h2>
-    <div class="product-grid" id="productGrid">
-        <!-- 产品由 JavaScript 动态生成 -->
-    </div>
+    <div class="product-grid" id="productGrid"></div>
 </section>
 
 <footer>
     <p data-key="footer_copyright">&copy; 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。</p>
 </footer>
 
-<div class="back-to-top">↑</div>
+<div class="back-to-top" aria-label="返回顶部">↑</div>
 
 <script>
-    // ============================================================
-    // 1. 移动端菜单切换
-    // ============================================================
     var menuToggle = document.querySelector('.menu-toggle');
     var navLinks = document.querySelector('.nav-links');
     menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('mobile-open');
         menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
     });
-
     document.querySelectorAll('.nav-links a').forEach(function(link) {
         link.addEventListener('click', function() {
             navLinks.classList.remove('mobile-open');
@@ -387,403 +143,101 @@
         });
     });
 
-    // ============================================================
-    // 2. 返回顶部
-    // ============================================================
     var backToTopBtn = document.querySelector('.back-to-top');
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
+        backToTopBtn.classList.toggle('show', window.scrollY > 300);
     });
     backToTopBtn.addEventListener('click', function() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     });
 
-    // ============================================================
-    // 3. 多语言产品数据
-    // ============================================================
     var productData = {
         zh: [
-            {
-                id: 1,
-                name: "AT-200自适应两进两出反馈抑制器",
-                params: ["3段EQ高中低音调节", "USB端口可连接电脑软件", "232中控接口，可连接中控"],
-                desc: "无须调试，数字自动适应声学环境强力抑制啸叫。",
-                images: ["images/1-5/at200.jpg"]
-            },
-            {
-                id: 2,
-                name: "CTF系列反馈抑制器",
-                params: ["多通道连接传输", "有效滤除房间混响", "回音抵消和消除混响的算法"],
-                desc: "内置晶体振荡，软件算法，稳定性能好，受温度和外界干扰小。",
-                images: ["images/1-5/ctf2400.jpg", "images/1-5/ctf2120.jpg", "images/1-5/ctf1000.jpg"]
-            },
-            {
-                id: 3,
-                name: "DS系列音箱处理器",
-                params: ["96KHz采样频率", "32-bit DSP处理器", "24-bit A/D及D/A转换"],
-                desc: "多接口远控，可联250台，带均衡滤波延时，面板/PC双控带锁存。",
-                images: ["images/1-5/2j4.jpg", "images/1-5/2j6.jpg", "images/1-5/4j6.jpg", "images/1-5/4j8.jpg"]
-            },
-            {
-                id: 4,
-                name: "G系列8+2电源时序器",
-                params: ["30A最大输入电流", "总输出功率8000W", "每一路开关间隔时间1秒"],
-                desc: "适用范围:娱乐KTV、酒吧、会议工程系列 (可带3~4台1000W~1500W功放)。",
-                images: ["images/1-5/g508.jpg", "images/1-5/g208-1.jpg", "images/1-5/g208-2.jpg"]
-            },
-            {
-                id: 5,
-                name: "RS系列209 16A电源时序器",
-                params: ["输出继电器触点电流：30A 277VAC", "短路过流保护断路", "RS-232串口智能控制端口", "总容量：220V,45A,8路输出插座单路最大输出电流16A"],
-                desc: "专业级电源时序管理，稳定可靠，适用于专业音频工程。",
-                images: ["images/1-5/rs209.jpg"]
-            },
-            {
-                id: 6,
-                name: "多通道调音台",
-                params: ["多通道多款式选择", "DSP效果+MP3+蓝牙+USB录音", "XLR平衡输入话放噪声极低"],
-                desc: "适用全球供电电压功率30瓦；使用灵活。具有无噪声、瞬间反应好、电耗低的特性。",
-                images: ["images/1-5/t2.jpg", "images/1-5/t3.jpg", "images/1-5/t4.jpg"]
-            },
-            {
-                id: 7,
-                name: "TF-1100十路天线放大器",
-                params: ["天载波频率范围470-940MHz", "外置12V5A开关电源", "独立增益调节补偿不同级别的信号损失"],
-                desc: "产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。",
-                images: ["images/1-5/tf1100-1.jpg", "images/1-5/tf1100-2.jpg"]
-            },
-            {
-                id: 8,
-                name: "TF-HT04无线系统专用天线放大器",
-                params: ["射频频率范围470-700MHz", "远程天线延长无线系统有效工作距离", "补偿传输/分配损耗，提升接收灵敏度与稳定性"],
-                desc: "产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。",
-                images: ["images/1-5/tf04-1.jpg", "images/1-5/tf04-2.jpg"]
-            },
-            {
-                id: 9,
-                name: "TF系列四路天线放大器",
-                params: ["天载波频率范围470-940MHz", "外置12V5A开关电源"],
-                desc: "产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。",
-                images: ["images/1-5/tf800.jpg", "images/1-5/tf890.jpg", "images/1-5/tf960.jpg"]
-            },
-            {
-                id: 10,
-                name: "无线监听",
-                params: ["远距离高频天线传输", "兼容各种声卡", "一主发射器无上限配置接收器"],
-                desc: "UHF高频无线保真传输，低延迟强连接，抗干扰稳如有线，高输出更迅捷。",
-                images: ["images/1-5/jt1.jpg"]
-            },
-            {
-                id: 11,
-                name: "柜式多通道调音台",
-                params: ["多通道多款式选择", "DSP效果+MP3+蓝牙+USB录音", "XLR平衡输入话放噪声极低"],
-                desc: "适用全球供电电压功率30瓦；使用灵活。具有无噪声、瞬间反应好、电耗低的特性。",
-                images: ["images/1-5/t1.jpg", "images/1-5/t1-1.jpg"]
-            },
-            {
-                id: 12,
-                name: "智慧运算中心",
-                params: ["音频处理模块、视频处理模块、音视频矩阵模块、DSP数字信号处理模块、中控功能模块和时序器功能模块", "支持音乐播放、录制和软视频会议", "通过可视化界面监测输入输出通道实时状态"],
-                desc: "集音频、视频、矩阵、DSP、中控、时序器六大功能于一体的一站式智能会议核心设备。",
-                images: ["images/1-5/dsp1010p.jpg"]
-            },
-            {
-                id: 13,
-                name: "电源时序器",
-                params: ["采用MCU控制，使时序时间更准确", "采用80A空气开关提供过流保护", "LED数码管电源电压指示", "RS232串口控制、凤凰控制口", "提供6路直流12V/1.2A输出、1路USB接口的DC5V输出", "每路交流输出电源带独立控制按键和LED指示灯"],
-                desc: "专业级电源时序管理设备，保障系统设备安全有序启动。",
-                images: ["images/1-5/dsp3000d.jpg"]
-            },
-            {
-                id: 14,
-                name: "数字音频处理器",
-                params: ["10路模拟信号输入/输出", "支持AFC、AEC、ANS、AGC、PEQ、延时、分频、矩阵等功能", "支持物联网平台远程管控", "支持场景预设，最大16组场景"],
-                desc: "专业级DSP数字音频处理，为各类会议场景提供卓越的音质优化。",
-                images: ["images/1-5/dy14r.jpg"]
-            },
-            {
-                id: 15,
-                name: "设备管控主机",
-                params: ["B/S网页架构，统一设备统筹管理", "物联网可视化搭建，拖拽式组网布局", "设备在线管控、故障自动提醒", "多区域划分，精细化权限管理", "兼容视频监控接入，环境传感联动"],
-                desc: "一站式设备管控平台，实现全场景智能化运维管理。",
-                images: ["images/1-5/zk130k.jpg"]
-            }
+            { id: 1, name: "AT-200自适应两进两出反馈抑制器", params: ["3段EQ高中低音调节", "USB端口可连接电脑软件", "232中控接口，可连接中控"], desc: "无须调试，数字自动适应声学环境强力抑制啸叫。", images: ["/images/1-5/at200.jpg"] },
+            { id: 2, name: "CTF系列反馈抑制器", params: ["多通道连接传输", "有效滤除房间混响", "回音抵消和消除混响的算法"], desc: "内置晶体振荡，软件算法，稳定性能好，受温度和外界干扰小。", images: ["/images/1-5/ctf2400.jpg", "/images/1-5/ctf2120.jpg", "/images/1-5/ctf1000.jpg"] },
+            { id: 3, name: "DS系列音箱处理器", params: ["96KHz采样频率", "32-bit DSP处理器", "24-bit A/D及D/A转换"], desc: "多接口远控，可联250台，带均衡滤波延时，面板/PC双控带锁存。", images: ["/images/1-5/2j4.jpg", "/images/1-5/2j6.jpg", "/images/1-5/4j6.jpg", "/images/1-5/4j8.jpg"] },
+            { id: 4, name: "G系列8+2电源时序器", params: ["30A最大输入电流", "总输出功率8000W", "每一路开关间隔时间1秒"], desc: "适用范围:娱乐KTV、酒吧、会议工程系列 (可带3~4台1000W~1500W功放)。", images: ["/images/1-5/g508.jpg", "/images/1-5/g208-1.jpg", "/images/1-5/g208-2.jpg"] },
+            { id: 5, name: "RS系列209 16A电源时序器", params: ["输出继电器触点电流：30A 277VAC", "短路过流保护断路", "RS-232串口智能控制端口", "总容量：220V,45A,8路输出插座单路最大输出电流16A"], desc: "专业级电源时序管理，稳定可靠，适用于专业音频工程。", images: ["/images/1-5/rs209.jpg"] },
+            { id: 6, name: "多通道调音台", params: ["多通道多款式选择", "DSP效果+MP3+蓝牙+USB录音", "XLR平衡输入话放噪声极低"], desc: "适用全球供电电压功率30瓦；使用灵活。具有无噪声、瞬间反应好、电耗低的特性。", images: ["/images/1-5/t2.jpg", "/images/1-5/t3.jpg", "/images/1-5/t4.jpg"] },
+            { id: 7, name: "TF-1100十路天线放大器", params: ["天载波频率范围470-940MHz", "外置12V5A开关电源", "独立增益调节补偿不同级别的信号损失"], desc: "产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。", images: ["/images/1-5/tf1100-1.jpg", "/images/1-5/tf1100-2.jpg"] },
+            { id: 8, name: "TF-HT04无线系统专用天线放大器", params: ["射频频率范围470-700MHz", "远程天线延长无线系统有效工作距离", "补偿传输/分配损耗，提升接收灵敏度与稳定性"], desc: "产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。", images: ["/images/1-5/tf04-1.jpg", "/images/1-5/tf04-2.jpg"] },
+            { id: 9, name: "TF系列四路天线放大器", params: ["天载波频率范围470-940MHz", "外置12V5A开关电源"], desc: "产品使用低噪声高品质元件保持清晰的信号并保障放大射频信号后的最低失真度。", images: ["/images/1-5/tf800.jpg", "/images/1-5/tf890.jpg", "/images/1-5/tf960.jpg"] },
+            { id: 10, name: "无线监听", params: ["远距离高频天线传输", "兼容各种声卡", "一主发射器无上限配置接收器"], desc: "UHF高频无线保真传输，低延迟强连接，抗干扰稳如有线，高输出更迅捷。", images: ["/images/1-5/jt1.jpg"] },
+            { id: 11, name: "柜式多通道调音台", params: ["多通道多款式选择", "DSP效果+MP3+蓝牙+USB录音", "XLR平衡输入话放噪声极低"], desc: "适用全球供电电压功率30瓦；使用灵活。具有无噪声、瞬间反应好、电耗低的特性。", images: ["/images/1-5/t1.jpg", "/images/1-5/t1-1.jpg"] },
+            { id: 12, name: "智慧运算中心", params: ["音频处理模块、视频处理模块、音视频矩阵模块、DSP数字信号处理模块、中控功能模块和时序器功能模块", "支持音乐播放、录制和软视频会议", "通过可视化界面监测输入输出通道实时状态"], desc: "集音频、视频、矩阵、DSP、中控、时序器六大功能于一体的一站式智能会议核心设备。", images: ["/images/1-5/dsp1010p.jpg"] },
+            { id: 13, name: "电源时序器", params: ["采用MCU控制，使时序时间更准确", "采用80A空气开关提供过流保护", "LED数码管电源电压指示", "RS232串口控制、凤凰控制口", "提供6路直流12V/1.2A输出、1路USB接口的DC5V输出", "每路交流输出电源带独立控制按键和LED指示灯"], desc: "专业级电源时序管理设备，保障系统设备安全有序启动。", images: ["/images/1-5/dsp3000d.jpg"] },
+            { id: 14, name: "数字音频处理器", params: ["10路模拟信号输入/输出", "支持AFC、AEC、ANS、AGC、PEQ、延时、分频、矩阵等功能", "支持物联网平台远程管控", "支持场景预设，最大16组场景"], desc: "专业级DSP数字音频处理，为各类会议场景提供卓越的音质优化。", images: ["/images/1-5/dy14r.jpg"] },
+            { id: 15, name: "设备管控主机", params: ["B/S网页架构，统一设备统筹管理", "物联网可视化搭建，拖拽式组网布局", "设备在线管控、故障自动提醒", "多区域划分，精细化权限管理", "兼容视频监控接入，环境传感联动"], desc: "一站式设备管控平台，实现全场景智能化运维管理。", images: ["/images/1-5/zk130k.jpg"] }
         ],
         en: [
-            {
-                id: 1,
-                name: "AT-200 Adaptive 2-in/2-out Feedback Suppressor",
-                params: ["3-band EQ (Bass/Mid/Treble)", "USB Port for PC Software Connection", "RS-232 Control Interface"],
-                desc: "No need for manual tuning, digital automatic adaptation to acoustic environment for powerful feedback suppression.",
-                images: ["images/1-5/at200.jpg"]
-            },
-            {
-                id: 2,
-                name: "CTF Series Feedback Suppressor",
-                params: ["Multi-channel Connection & Transmission", "Effective Room Reverberation Filtering", "Echo Cancellation & Reverb Reduction Algorithm"],
-                desc: "Built-in crystal oscillator with software algorithm for stable performance, resistant to temperature and external interference.",
-                images: ["images/1-5/ctf2400.jpg", "images/1-5/ctf2120.jpg", "images/1-5/ctf1000.jpg"]
-            },
-            {
-                id: 3,
-                name: "DS Series Speaker Processor",
-                params: ["96kHz Sampling Frequency", "32-bit DSP Processor", "24-bit A/D & D/A Conversion"],
-                desc: "Multi-interface remote control, supports up to 250 units, with EQ, filtering, delay, and panel/PC dual control with latch.",
-                images: ["images/1-5/2j4.jpg", "images/1-5/2j6.jpg", "images/1-5/4j6.jpg", "images/1-5/4j8.jpg"]
-            },
-            {
-                id: 4,
-                name: "G Series 8+2 Power Sequencer",
-                params: ["30A Max Input Current", "8000W Total Output Power", "1-Second Interval Between Each Channel"],
-                desc: "Applications: KTV, Bars, Conference Projects (can power 3-4 units of 1000W-1500W amplifiers).",
-                images: ["images/1-5/g508.jpg", "images/1-5/g208-1.jpg", "images/1-5/g208-2.jpg"]
-            },
-            {
-                id: 5,
-                name: "RS Series 209 16A Power Sequencer",
-                params: ["Output Relay Contact: 30A 277VAC", "Short Circuit & Overcurrent Protection", "RS-232 Smart Control Port", "Total Capacity: 220V,45A, 8 Outputs (16A Max per Channel)"],
-                desc: "Professional power sequencing for stable and reliable audio system operation.",
-                images: ["images/1-5/rs209.jpg"]
-            },
-            {
-                id: 6,
-                name: "Multi-channel Mixing Console",
-                params: ["Multiple Channels & Models Available", "DSP Effects + MP3 + Bluetooth + USB Recording", "Ultra-low Noise XLR Balanced Input Preamp"],
-                desc: "Global power supply compatibility at 30W. Flexible, noise-free, fast response, and low power consumption.",
-                images: ["images/1-5/t2.jpg", "images/1-5/t3.jpg", "images/1-5/t4.jpg"]
-            },
-            {
-                id: 7,
-                name: "TF-1100 10-Channel Antenna Amplifier",
-                params: ["Carrier Frequency Range: 470-940MHz", "External 12V/5A Switching Power Supply", "Independent Gain Adjustment for Signal Loss Compensation"],
-                desc: "Uses low-noise high-quality components to maintain clear signals with minimal distortion after RF amplification.",
-                images: ["images/1-5/tf1100-1.jpg", "images/1-5/tf1100-2.jpg"]
-            },
-            {
-                id: 8,
-                name: "TF-HT04 Dedicated Antenna Amplifier for Wireless Systems",
-                params: ["RF Frequency Range: 470-700MHz", "Extends Working Range of Wireless Systems", "Compensates Transmission/Distribution Losses, Improves Sensitivity"],
-                desc: "Uses low-noise high-quality components to maintain clear signals with minimal distortion.",
-                images: ["images/1-5/tf04-1.jpg", "images/1-5/tf04-2.jpg"]
-            },
-            {
-                id: 9,
-                name: "TF Series 4-Channel Antenna Amplifier",
-                params: ["Carrier Frequency Range: 470-940MHz", "External 12V/5A Switching Power Supply"],
-                desc: "Uses low-noise high-quality components for clean signal amplification with minimal distortion.",
-                images: ["images/1-5/tf800.jpg", "images/1-5/tf890.jpg", "images/1-5/tf960.jpg"]
-            },
-            {
-                id: 10,
-                name: "Wireless Monitoring System",
-                params: ["Long-distance High-frequency Antenna Transmission", "Compatible with Various Sound Cards", "1 Transmitter with Unlimited Receiver Configuration"],
-                desc: "UHF high-fidelity wireless transmission, low latency, strong connection, stable anti-interference, and high output.",
-                images: ["images/1-5/jt1.jpg"]
-            },
-            {
-                id: 11,
-                name: "Rack-mount Multi-channel Mixing Console",
-                params: ["Multiple Channels & Models Available", "DSP Effects + MP3 + Bluetooth + USB Recording", "Ultra-low Noise XLR Balanced Input Preamp"],
-                desc: "Global power supply compatibility at 30W. Flexible, noise-free, fast response, and low power consumption.",
-                images: ["images/1-5/t1.jpg", "images/1-5/t1-1.jpg"]
-            },
-            {
-                id: 12,
-                name: "Smart Computing Center",
-                params: ["Audio Processing, Video Processing, Matrix Switching, DSP, Control System, Power Sequencer", "Music Playback, Recording & Video Conferencing", "Visualized Real-time Monitoring of I/O Channels"],
-                desc: "All-in-one smart conference core device integrating audio, video, matrix, DSP, control, and power sequencing.",
-                images: ["images/1-5/dsp1010p.jpg"]
-            },
-            {
-                id: 13,
-                name: "Power Sequencer",
-                params: ["MCU Control for Accurate Timing", "80A Circuit Breaker for Overcurrent Protection", "LED Digital Voltage Display", "RS-232 & Phoenix Control Ports", "6-Channel 12V/1.2A DC Output + 1 USB 5V Output", "Independent Control Buttons & LED Indicators for Each Output"],
-                desc: "Professional power sequencing device ensuring safe and orderly power-up of system equipment.",
-                images: ["images/1-5/dsp3000d.jpg"]
-            },
-            {
-                id: 14,
-                name: "Digital Audio Processor",
-                params: ["10-Channel Analog Input/Output", "AFC, AEC, ANS, AGC, PEQ, Delay, Crossover, Matrix", "IoT Platform Remote Management", "Scene Presets, Up to 16 Scenes"],
-                desc: "Professional DSP audio processing delivering superior sound quality optimization for various conference scenarios.",
-                images: ["images/1-5/dy14r.jpg"]
-            },
-            {
-                id: 15,
-                name: "Device Management & Control Host",
-                params: ["B/S Web Architecture for Unified Management", "Visual IoT Configuration with Drag-and-drop", "Online Device Control & Auto Fault Alerts", "Multi-zone & Permission Management", "Video Surveillance & Environmental Sensor Integration"],
-                desc: "All-in-one device management platform for intelligent operations across all scenarios.",
-                images: ["images/1-5/zk130k.jpg"]
-            }
+            { id: 1, name: "AT-200 Adaptive 2-in/2-out Feedback Suppressor", params: ["3-band EQ (Bass/Mid/Treble)", "USB Port for PC Software Connection", "RS-232 Control Interface"], desc: "No need for manual tuning, digital automatic adaptation to acoustic environment for powerful feedback suppression.", images: ["/images/1-5/at200.jpg"] },
+            { id: 2, name: "CTF Series Feedback Suppressor", params: ["Multi-channel Connection & Transmission", "Effective Room Reverberation Filtering", "Echo Cancellation & Reverb Reduction Algorithm"], desc: "Built-in crystal oscillator with software algorithm for stable performance, resistant to temperature and external interference.", images: ["/images/1-5/ctf2400.jpg", "/images/1-5/ctf2120.jpg", "/images/1-5/ctf1000.jpg"] },
+            { id: 3, name: "DS Series Speaker Processor", params: ["96kHz Sampling Frequency", "32-bit DSP Processor", "24-bit A/D & D/A Conversion"], desc: "Multi-interface remote control, supports up to 250 units, with EQ, filtering, delay, and panel/PC dual control with latch.", images: ["/images/1-5/2j4.jpg", "/images/1-5/2j6.jpg", "/images/1-5/4j6.jpg", "/images/1-5/4j8.jpg"] },
+            { id: 4, name: "G Series 8+2 Power Sequencer", params: ["30A Max Input Current", "8000W Total Output Power", "1-Second Interval Between Each Channel"], desc: "Applications: KTV, Bars, Conference Projects (can power 3-4 units of 1000W-1500W amplifiers).", images: ["/images/1-5/g508.jpg", "/images/1-5/g208-1.jpg", "/images/1-5/g208-2.jpg"] },
+            { id: 5, name: "RS Series 209 16A Power Sequencer", params: ["Output Relay Contact: 30A 277VAC", "Short Circuit & Overcurrent Protection", "RS-232 Smart Control Port", "Total Capacity: 220V,45A, 8 Outputs (16A Max per Channel)"], desc: "Professional power sequencing for stable and reliable audio system operation.", images: ["/images/1-5/rs209.jpg"] },
+            { id: 6, name: "Multi-channel Mixing Console", params: ["Multiple Channels & Models Available", "DSP Effects + MP3 + Bluetooth + USB Recording", "Ultra-low Noise XLR Balanced Input Preamp"], desc: "Global power supply compatibility at 30W. Flexible, noise-free, fast response, and low power consumption.", images: ["/images/1-5/t2.jpg", "/images/1-5/t3.jpg", "/images/1-5/t4.jpg"] },
+            { id: 7, name: "TF-1100 10-Channel Antenna Amplifier", params: ["Carrier Frequency Range: 470-940MHz", "External 12V/5A Switching Power Supply", "Independent Gain Adjustment for Signal Loss Compensation"], desc: "Uses low-noise high-quality components to maintain clear signals with minimal distortion after RF amplification.", images: ["/images/1-5/tf1100-1.jpg", "/images/1-5/tf1100-2.jpg"] },
+            { id: 8, name: "TF-HT04 Dedicated Antenna Amplifier for Wireless Systems", params: ["RF Frequency Range: 470-700MHz", "Extends Working Range of Wireless Systems", "Compensates Transmission/Distribution Losses, Improves Sensitivity"], desc: "Uses low-noise high-quality components to maintain clear signals with minimal distortion.", images: ["/images/1-5/tf04-1.jpg", "/images/1-5/tf04-2.jpg"] },
+            { id: 9, name: "TF Series 4-Channel Antenna Amplifier", params: ["Carrier Frequency Range: 470-940MHz", "External 12V/5A Switching Power Supply"], desc: "Uses low-noise high-quality components for clean signal amplification with minimal distortion.", images: ["/images/1-5/tf800.jpg", "/images/1-5/tf890.jpg", "/images/1-5/tf960.jpg"] },
+            { id: 10, name: "Wireless Monitoring System", params: ["Long-distance High-frequency Antenna Transmission", "Compatible with Various Sound Cards", "1 Transmitter with Unlimited Receiver Configuration"], desc: "UHF high-fidelity wireless transmission, low latency, strong connection, stable anti-interference, and high output.", images: ["/images/1-5/jt1.jpg"] },
+            { id: 11, name: "Rack-mount Multi-channel Mixing Console", params: ["Multiple Channels & Models Available", "DSP Effects + MP3 + Bluetooth + USB Recording", "Ultra-low Noise XLR Balanced Input Preamp"], desc: "Global power supply compatibility at 30W. Flexible, noise-free, fast response, and low power consumption.", images: ["/images/1-5/t1.jpg", "/images/1-5/t1-1.jpg"] },
+            { id: 12, name: "Smart Computing Center", params: ["Audio Processing, Video Processing, Matrix Switching, DSP, Control System, Power Sequencer", "Music Playback, Recording & Video Conferencing", "Visualized Real-time Monitoring of I/O Channels"], desc: "All-in-one smart conference core device integrating audio, video, matrix, DSP, control, and power sequencing.", images: ["/images/1-5/dsp1010p.jpg"] },
+            { id: 13, name: "Power Sequencer", params: ["MCU Control for Accurate Timing", "80A Circuit Breaker for Overcurrent Protection", "LED Digital Voltage Display", "RS-232 & Phoenix Control Ports", "6-Channel 12V/1.2A DC Output + 1 USB 5V Output", "Independent Control Buttons & LED Indicators for Each Output"], desc: "Professional power sequencing device ensuring safe and orderly power-up of system equipment.", images: ["/images/1-5/dsp3000d.jpg"] },
+            { id: 14, name: "Digital Audio Processor", params: ["10-Channel Analog Input/Output", "AFC, AEC, ANS, AGC, PEQ, Delay, Crossover, Matrix", "IoT Platform Remote Management", "Scene Presets, Up to 16 Scenes"], desc: "Professional DSP audio processing delivering superior sound quality optimization for various conference scenarios.", images: ["/images/1-5/dy14r.jpg"] },
+            { id: 15, name: "Device Management & Control Host", params: ["B/S Web Architecture for Unified Management", "Visual IoT Configuration with Drag-and-drop", "Online Device Control & Auto Fault Alerts", "Multi-zone & Permission Management", "Video Surveillance & Environmental Sensor Integration"], desc: "All-in-one device management platform for intelligent operations across all scenarios.", images: ["/images/1-5/zk130k.jpg"] }
         ],
         es: [
-            {
-                id: 1,
-                name: "AT-200 Supresor de Retroalimentación Adaptativo 2-in/2-out",
-                params: ["Ecualizador de 3 bandas (Graves/Medios/Agudos)", "Puerto USB para Software PC", "Interfaz de Control RS-232"],
-                desc: "Sin necesidad de ajuste manual, adaptación digital automática al entorno acústico para una potente supresión de retroalimentación.",
-                images: ["images/1-5/at200.jpg"]
-            },
-            {
-                id: 2,
-                name: "Serie CTF Supresor de Retroalimentación",
-                params: ["Transmisión Multicanal", "Filtrado Efectivo de Reverberación", "Algoritmo de Cancelación de Eco y Reducción de Reverberación"],
-                desc: "Oscilador de cristal integrado con algoritmo de software para rendimiento estable y resistencia a interferencias externas.",
-                images: ["images/1-5/ctf2400.jpg", "images/1-5/ctf2120.jpg", "images/1-5/ctf1000.jpg"]
-            },
-            {
-                id: 3,
-                name: "Serie DS Procesador de Altavoces",
-                params: ["Frecuencia de Muestreo 96kHz", "Procesador DSP de 32 bits", "Conversión A/D y D/A de 24 bits"],
-                desc: "Control remoto multi-interfaz, compatible hasta 250 unidades, con EQ, filtrado, retardo y control dual panel/PC con retención.",
-                images: ["images/1-5/2j4.jpg", "images/1-5/2j6.jpg", "images/1-5/4j6.jpg", "images/1-5/4j8.jpg"]
-            },
-            {
-                id: 4,
-                name: "Serie G Secuenciador de Alimentación 8+2",
-                params: ["Corriente Máxima de Entrada 30A", "Potencia Total de Salida 8000W", "Intervalo de 1 Segundo entre Canales"],
-                desc: "Aplicaciones: KTV, Bares, Proyectos de Conferencias (puede alimentar 3-4 amplificadores de 1000W-1500W).",
-                images: ["images/1-5/g508.jpg", "images/1-5/g208-1.jpg", "images/1-5/g208-2.jpg"]
-            },
-            {
-                id: 5,
-                name: "Serie RS 209 Secuenciador de Alimentación 16A",
-                params: ["Contacto Relé de Salida: 30A 277VAC", "Protección contra Cortocircuitos y Sobrecorriente", "Puerto de Control Inteligente RS-232", "Capacidad Total: 220V,45A, 8 Salidas (16A Máx. por Canal)"],
-                desc: "Secuenciación de alimentación profesional para operación estable y confiable del sistema de audio.",
-                images: ["images/1-5/rs209.jpg"]
-            },
-            {
-                id: 6,
-                name: "Mesa de Mezclas Multicanal",
-                params: ["Múltiples Canales y Modelos", "Efectos DSP + MP3 + Bluetooth + Grabación USB", "Preamplificador de Entrada Balanceada XLR con Bajo Ruido"],
-                desc: "Compatibilidad global de alimentación a 30W. Flexible, sin ruido, respuesta rápida y bajo consumo.",
-                images: ["images/1-5/t2.jpg", "images/1-5/t3.jpg", "images/1-5/t4.jpg"]
-            },
-            {
-                id: 7,
-                name: "TF-1100 Amplificador de Antena de 10 Canales",
-                params: ["Rango de Frecuencia Portadora: 470-940MHz", "Fuente de Alimentación Externa 12V/5A", "Ajuste de Ganancia Independiente"],
-                desc: "Componentes de alta calidad y bajo ruido para señales claras con mínima distorsión.",
-                images: ["images/1-5/tf1100-1.jpg", "images/1-5/tf1100-2.jpg"]
-            },
-            {
-                id: 8,
-                name: "TF-HT04 Amplificador de Antena para Sistemas Inalámbricos",
-                params: ["Rango de Frecuencia RF: 470-700MHz", "Extiende el Alcance de Sistemas Inalámbricos", "Compensa Pérdidas de Transmisión/Distribución"],
-                desc: "Componentes de alta calidad y bajo ruido para señales claras con mínima distorsión.",
-                images: ["images/1-5/tf04-1.jpg", "images/1-5/tf04-2.jpg"]
-            },
-            {
-                id: 9,
-                name: "Serie TF Amplificador de Antena de 4 Canales",
-                params: ["Rango de Frecuencia Portadora: 470-940MHz", "Fuente de Alimentación Externa 12V/5A"],
-                desc: "Componentes de alta calidad y bajo ruido para amplificación de señal limpia.",
-                images: ["images/1-5/tf800.jpg", "images/1-5/tf890.jpg", "images/1-5/tf960.jpg"]
-            },
-            {
-                id: 10,
-                name: "Sistema de Monitoreo Inalámbrico",
-                params: ["Transmisión de Antena de Alta Frecuencia de Larga Distancia", "Compatible con Varias Tarjetas de Sonido", "1 Transmisor con Receptores Ilimitados"],
-                desc: "Transmisión inalámbrica UHF de alta fidelidad, baja latencia, conexión fuerte y alta salida.",
-                images: ["images/1-5/jt1.jpg"]
-            },
-            {
-                id: 11,
-                name: "Mesa de Mezclas Multicanal para Rack",
-                params: ["Múltiples Canales y Modelos", "Efectos DSP + MP3 + Bluetooth + Grabación USB", "Preamplificador de Entrada Balanceada XLR con Bajo Ruido"],
-                desc: "Compatibilidad global de alimentación a 30W. Flexible, sin ruido, respuesta rápida y bajo consumo.",
-                images: ["images/1-5/t1.jpg", "images/1-5/t1-1.jpg"]
-            },
-            {
-                id: 12,
-                name: "Centro de Computación Inteligente",
-                params: ["Procesamiento de Audio, Video, Matriz, DSP, Control y Secuenciador", "Reproducción de Música, Grabación y Videoconferencia", "Monitoreo Visual en Tiempo Real de Canales I/O"],
-                desc: "Dispositivo central todo-en-uno que integra audio, video, matriz, DSP, control y secuenciación de alimentación.",
-                images: ["images/1-5/dsp1010p.jpg"]
-            },
-            {
-                id: 13,
-                name: "Secuenciador de Alimentación",
-                params: ["Control MCU para Temporización Precisa", "Interruptor de 80A para Protección contra Sobrecorriente", "Pantalla Digital de Voltaje LED", "Puertos RS-232 y Phoenix", "Salida DC 12V/1.2A de 6 Canales + USB 5V", "Controles Independientes e Indicadores LED para cada Salida"],
-                desc: "Dispositivo profesional de secuenciación de alimentación para encendido seguro y ordenado.",
-                images: ["images/1-5/dsp3000d.jpg"]
-            },
-            {
-                id: 14,
-                name: "Procesador de Audio Digital",
-                params: ["Entrada/Salida Analógica de 10 Canales", "AFC, AEC, ANS, AGC, PEQ, Retardo, Crossover, Matriz", "Gestión Remota IoT", "Presets de Escena, Hasta 16 Escenas"],
-                desc: "Procesamiento DSP profesional para una calidad de sonido superior en diversos escenarios de conferencias.",
-                images: ["images/1-5/dy14r.jpg"]
-            },
-            {
-                id: 15,
-                name: "Host de Gestión y Control de Dispositivos",
-                params: ["Arquitectura Web B/S para Gestión Unificada", "Configuración IoT Visual con Arrastrar y Soltar", "Control en Línea y Alertas de Fallos", "Gestión de Zonas y Permisos", "Integración con Videovigilancia y Sensores Ambientales"],
-                desc: "Plataforma integral de gestión de dispositivos para operaciones inteligentes en todos los escenarios.",
-                images: ["images/1-5/zk130k.jpg"]
-            }
+            { id: 1, name: "AT-200 Supresor de Retroalimentación Adaptativo 2-in/2-out", params: ["Ecualizador de 3 bandas (Graves/Medios/Agudos)", "Puerto USB para Software PC", "Interfaz de Control RS-232"], desc: "Sin necesidad de ajuste manual, adaptación digital automática al entorno acústico para una potente supresión de retroalimentación.", images: ["/images/1-5/at200.jpg"] },
+            { id: 2, name: "Serie CTF Supresor de Retroalimentación", params: ["Transmisión Multicanal", "Filtrado Efectivo de Reverberación", "Algoritmo de Cancelación de Eco y Reducción de Reverberación"], desc: "Oscilador de cristal integrado con algoritmo de software para rendimiento estable y resistencia a interferencias externas.", images: ["/images/1-5/ctf2400.jpg", "/images/1-5/ctf2120.jpg", "/images/1-5/ctf1000.jpg"] },
+            { id: 3, name: "Serie DS Procesador de Altavoces", params: ["Frecuencia de Muestreo 96kHz", "Procesador DSP de 32 bits", "Conversión A/D y D/A de 24 bits"], desc: "Control remoto multi-interfaz, compatible hasta 250 unidades, con EQ, filtrado, retardo y control dual panel/PC con retención.", images: ["/images/1-5/2j4.jpg", "/images/1-5/2j6.jpg", "/images/1-5/4j6.jpg", "/images/1-5/4j8.jpg"] },
+            { id: 4, name: "Serie G Secuenciador de Alimentación 8+2", params: ["Corriente Máxima de Entrada 30A", "Potencia Total de Salida 8000W", "Intervalo de 1 Segundo entre Canales"], desc: "Aplicaciones: KTV, Bares, Proyectos de Conferencias (puede alimentar 3-4 amplificadores de 1000W-1500W).", images: ["/images/1-5/g508.jpg", "/images/1-5/g208-1.jpg", "/images/1-5/g208-2.jpg"] },
+            { id: 5, name: "Serie RS 209 Secuenciador de Alimentación 16A", params: ["Contacto Relé de Salida: 30A 277VAC", "Protección contra Cortocircuitos y Sobrecorriente", "Puerto de Control Inteligente RS-232", "Capacidad Total: 220V,45A, 8 Salidas (16A Máx. por Canal)"], desc: "Secuenciación de alimentación profesional para operación estable y confiable del sistema de audio.", images: ["/images/1-5/rs209.jpg"] },
+            { id: 6, name: "Mesa de Mezclas Multicanal", params: ["Múltiples Canales y Modelos", "Efectos DSP + MP3 + Bluetooth + Grabación USB", "Preamplificador de Entrada Balanceada XLR con Bajo Ruido"], desc: "Compatibilidad global de alimentación a 30W. Flexible, sin ruido, respuesta rápida y bajo consumo.", images: ["/images/1-5/t2.jpg", "/images/1-5/t3.jpg", "/images/1-5/t4.jpg"] },
+            { id: 7, name: "TF-1100 Amplificador de Antena de 10 Canales", params: ["Rango de Frecuencia Portadora: 470-940MHz", "Fuente de Alimentación Externa 12V/5A", "Ajuste de Ganancia Independiente"], desc: "Componentes de alta calidad y bajo ruido para señales claras con mínima distorsión.", images: ["/images/1-5/tf1100-1.jpg", "/images/1-5/tf1100-2.jpg"] },
+            { id: 8, name: "TF-HT04 Amplificador de Antena para Sistemas Inalámbricos", params: ["Rango de Frecuencia RF: 470-700MHz", "Extiende el Alcance de Sistemas Inalámbricos", "Compensa Pérdidas de Transmisión/Distribución"], desc: "Componentes de alta calidad y bajo ruido para señales claras con mínima distorsión.", images: ["/images/1-5/tf04-1.jpg", "/images/1-5/tf04-2.jpg"] },
+            { id: 9, name: "Serie TF Amplificador de Antena de 4 Canales", params: ["Rango de Frecuencia Portadora: 470-940MHz", "Fuente de Alimentación Externa 12V/5A"], desc: "Componentes de alta calidad y bajo ruido para amplificación de señal limpia.", images: ["/images/1-5/tf800.jpg", "/images/1-5/tf890.jpg", "/images/1-5/tf960.jpg"] },
+            { id: 10, name: "Sistema de Monitoreo Inalámbrico", params: ["Transmisión de Antena de Alta Frecuencia de Larga Distancia", "Compatible con Varias Tarjetas de Sonido", "1 Transmisor con Receptores Ilimitados"], desc: "Transmisión inalámbrica UHF de alta fidelidad, baja latencia, conexión fuerte y alta salida.", images: ["/images/1-5/jt1.jpg"] },
+            { id: 11, name: "Mesa de Mezclas Multicanal para Rack", params: ["Múltiples Canales y Modelos", "Efectos DSP + MP3 + Bluetooth + Grabación USB", "Preamplificador de Entrada Balanceada XLR con Bajo Ruido"], desc: "Compatibilidad global de alimentación a 30W. Flexible, sin ruido, respuesta rápida y bajo consumo.", images: ["/images/1-5/t1.jpg", "/images/1-5/t1-1.jpg"] },
+            { id: 12, name: "Centro de Computación Inteligente", params: ["Procesamiento de Audio, Video, Matriz, DSP, Control y Secuenciador", "Reproducción de Música, Grabación y Videoconferencia", "Monitoreo Visual en Tiempo Real de Canales I/O"], desc: "Dispositivo central todo-en-uno que integra audio, video, matriz, DSP, control y secuenciación de alimentación.", images: ["/images/1-5/dsp1010p.jpg"] },
+            { id: 13, name: "Secuenciador de Alimentación", params: ["Control MCU para Temporización Precisa", "Interruptor de 80A para Protección contra Sobrecorriente", "Pantalla Digital de Voltaje LED", "Puertos RS-232 y Phoenix", "Salida DC 12V/1.2A de 6 Canales + USB 5V", "Controles Independientes e Indicadores LED para cada Salida"], desc: "Dispositivo profesional de secuenciación de alimentación para encendido seguro y ordenado.", images: ["/images/1-5/dsp3000d.jpg"] },
+            { id: 14, name: "Procesador de Audio Digital", params: ["Entrada/Salida Analógica de 10 Canales", "AFC, AEC, ANS, AGC, PEQ, Retardo, Crossover, Matriz", "Gestión Remota IoT", "Presets de Escena, Hasta 16 Escenas"], desc: "Procesamiento DSP profesional para una calidad de sonido superior en diversos escenarios de conferencias.", images: ["/images/1-5/dy14r.jpg"] },
+            { id: 15, name: "Host de Gestión y Control de Dispositivos", params: ["Arquitectura Web B/S para Gestión Unificada", "Configuración IoT Visual con Arrastrar y Soltar", "Control en Línea y Alertas de Fallos", "Gestión de Zonas y Permisos", "Integración con Videovigilancia y Sensores Ambientales"], desc: "Plataforma integral de gestión de dispositivos para operaciones inteligentes en todos los escenarios.", images: ["/images/1-5/zk130k.jpg"] }
+        ],
+        ru: [
+            { id: 1, name: "AT-200 Адаптивный 2-в/2-вых Подавитель Обратной Связи", params: ["3-полосный Эквалайзер", "USB Порт для Подключения к ПК", "Интерфейс Управления RS-232"], desc: "Не требует ручной настройки, цифровая автоматическая адаптация к акустической среде для мощного подавления обратной связи.", images: ["/images/1-5/at200.jpg"] },
+            { id: 2, name: "Серия CTF Подавитель Обратной Связи", params: ["Многоканальная Передача", "Эффективная Фильтрация Реверберации", "Алгоритм Подавления Эха"], desc: "Встроенный кристаллический генератор с программным алгоритмом для стабильной работы, устойчив к температуре и внешним помехам.", images: ["/images/1-5/ctf2400.jpg", "/images/1-5/ctf2120.jpg", "/images/1-5/ctf1000.jpg"] },
+            { id: 3, name: "Серия DS Процессор Акустических Систем", params: ["Частота Дискретизации 96кГц", "32-битный DSP Процессор", "24-битное А/Ц и Ц/А Преобразование"], desc: "Многоинтерфейсное дистанционное управление, поддержка до 250 устройств, с EQ, фильтрацией, задержкой и двойным управлением.", images: ["/images/1-5/2j4.jpg", "/images/1-5/2j6.jpg", "/images/1-5/4j6.jpg", "/images/1-5/4j8.jpg"] },
+            { id: 4, name: "Серия G 8+2 Секвенсор Питания", params: ["Макс. Входной Ток 30A", "Общая Выходная Мощность 8000W", "Интервал 1 Секунда между Каналами"], desc: "Применение: KTV, Бары, Конференц-проекты (может питать 3-4 усилителя 1000W-1500W).", images: ["/images/1-5/g508.jpg", "/images/1-5/g208-1.jpg", "/images/1-5/g208-2.jpg"] },
+            { id: 5, name: "Серия RS 209 16A Секвенсор Питания", params: ["Контакт Выходного Реле: 30A 277VAC", "Защита от Короткого Замыкания и Перегрузки", "Порт Управления RS-232", "Общая Емкость: 220V,45A, 8 Выходов (16A Макс. на Канал)"], desc: "Профессиональное секвенирование питания для стабильной и надежной работы аудиосистемы.", images: ["/images/1-5/rs209.jpg"] },
+            { id: 6, name: "Многоканальный Микшерный Пульт", params: ["Несколько Каналов и Моделей", "Эффекты DSP + MP3 + Bluetooth + USB Запись", "XLR Балансный Вход с Низким Шумом"], desc: "Совместимость с питанием 30W. Гибкий, бесшумный, быстрый отклик и низкое энергопотребление.", images: ["/images/1-5/t2.jpg", "/images/1-5/t3.jpg", "/images/1-5/t4.jpg"] },
+            { id: 7, name: "TF-1100 10-канальный Антенный Усилитель", params: ["Диапазон Несущей Частоты: 470-940МГц", "Внешний Блок Питания 12V/5A", "Независимая Регулировка Усиления"], desc: "Использует малошумящие компоненты для чистого сигнала с минимальными искажениями.", images: ["/images/1-5/tf1100-1.jpg", "/images/1-5/tf1100-2.jpg"] },
+            { id: 8, name: "TF-HT04 Антенный Усилитель для Беспроводных Систем", params: ["Диапазон РФ: 470-700МГц", "Увеличивает Рабочий Диапазон", "Компенсирует Потери Передачи"], desc: "Использует малошумящие компоненты для чистого сигнала с минимальными искажениями.", images: ["/images/1-5/tf04-1.jpg", "/images/1-5/tf04-2.jpg"] },
+            { id: 9, name: "Серия TF 4-канальный Антенный Усилитель", params: ["Диапазон Несущей Частоты: 470-940МГц", "Внешний Блок Питания 12V/5A"], desc: "Использует малошумящие компоненты для чистого усиления сигнала.", images: ["/images/1-5/tf800.jpg", "/images/1-5/tf890.jpg", "/images/1-5/tf960.jpg"] },
+            { id: 10, name: "Система Беспроводного Мониторинга", params: ["Дальняя Высокочастотная Антенная Передача", "Совместимость с Различными Звуковыми Картами", "1 Передатчик с Неограниченным Количеством Приемников"], desc: "UHF высококачественная беспроводная передача, низкая задержка, стабильная помехоустойчивость.", images: ["/images/1-5/jt1.jpg"] },
+            { id: 11, name: "Стоечный Многоканальный Микшерный Пульт", params: ["Несколько Каналов и Моделей", "Эффекты DSP + MP3 + Bluetooth + USB Запись", "XLR Балансный Вход с Низким Шумом"], desc: "Совместимость с питанием 30W. Гибкий, бесшумный, быстрый отклик и низкое энергопотребление.", images: ["/images/1-5/t1.jpg", "/images/1-5/t1-1.jpg"] },
+            { id: 12, name: "Интеллектуальный Вычислительный Центр", params: ["Обработка Аудио, Видео, Матрица, DSP, Управление, Секвенсор", "Воспроизведение, Запись и Видеоконференции", "Визуализированный Мониторинг Каналов"], desc: "Устройство «все-в-одном», объединяющее аудио, видео, матрицу, DSP, управление и секвенирование питания.", images: ["/images/1-5/dsp1010p.jpg"] },
+            { id: 13, name: "Секвенсор Питания", params: ["Управление MCU для Точной Синхронизации", "Автоматический Выключатель 80A", "LED Индикация Напряжения", "Порты RS-232 и Phoenix", "6 Каналов 12V/1.2A DC + USB 5V", "Независимые Кнопки и Индикаторы для Каждого Выхода"], desc: "Профессиональное устройство для безопасного и упорядоченного включения оборудования.", images: ["/images/1-5/dsp3000d.jpg"] },
+            { id: 14, name: "Цифровой Аудиопроцессор", params: ["10-канальный Аналоговый Вход/Выход", "AFC, AEC, ANS, AGC, PEQ, Задержка, Кроссовер, Матрица", "Удаленное Управление IoT", "До 16 Сцен"], desc: "Профессиональная DSP-обработка для превосходного качества звука в различных сценариях.", images: ["/images/1-5/dy14r.jpg"] },
+            { id: 15, name: "Хост Управления Оборудованием", params: ["Веб-Архитектура B/S", "Визуальная IoT Конфигурация", "Онлайн-Управление и Оповещения", "Многозонное Управление", "Интеграция с Видеонаблюдением"], desc: "Универсальная платформа для интеллектуальной эксплуатации оборудования.", images: ["/images/1-5/zk130k.jpg"] }
         ]
     };
 
-    // ============================================================
-    // 4. 导航和面包屑多语言数据
-    // ============================================================
     var navTranslations = {
-        zh: {
-            nav_home: "返回首页",
-            nav_profile: "公司介绍",
-            nav_products: "产品中心",
-            nav_articles: "企业资讯",
-            nav_contact: "联系方式",
-            bread_home: "首页",
-            bread_products: "产品中心",
-            bread_current: "周边设备系列",
-            page_title: "周边设备系列",
-            footer_copyright: "© 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。"
-        },
-        en: {
-            nav_home: "Home",
-            nav_profile: "About Us",
-            nav_products: "Products",
-            nav_articles: "News",
-            nav_contact: "Contact",
-            bread_home: "Home",
-            bread_products: "Products",
-            bread_current: "Peripheral Series",
-            page_title: "Peripheral Series",
-            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. All rights reserved."
-        },
-        es: {
-            nav_home: "Inicio",
-            nav_profile: "Sobre Nosotros",
-            nav_products: "Productos",
-            nav_articles: "Noticias",
-            nav_contact: "Contacto",
-            bread_home: "Inicio",
-            bread_products: "Productos",
-            bread_current: "Serie de Periféricos",
-            page_title: "Serie de Periféricos",
-            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Todos los derechos reservados."
-        }
+        zh: { nav_home: "返回首页", nav_profile: "公司介绍", nav_products: "产品中心", nav_articles: "企业资讯", nav_contact: "联系方式", bread_home: "首页", bread_products: "产品中心", bread_current: "周边设备系列", page_title: "周边设备系列", footer_copyright: "© 2005 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。" },
+        en: { nav_home: "Home", nav_profile: "About Us", nav_products: "Products", nav_articles: "News", nav_contact: "Contact", bread_home: "Home", bread_products: "Products", bread_current: "Peripheral Series", page_title: "Peripheral Series", footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. All rights reserved." },
+        es: { nav_home: "Inicio", nav_profile: "Sobre Nosotros", nav_products: "Productos", nav_articles: "Noticias", nav_contact: "Contacto", bread_home: "Inicio", bread_products: "Productos", bread_current: "Serie de Periféricos", page_title: "Serie de Periféricos", footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Todos los derechos reservados." },
+        ru: { nav_home: "Главная", nav_profile: "О нас", nav_products: "Продукты", nav_articles: "Новости", nav_contact: "Контакты", bread_home: "Главная", bread_products: "Продукты", bread_current: "Периферийное Оборудование", page_title: "Периферийное Оборудование", footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Все права защищены." }
     };
 
-    // ============================================================
-    // 5. 渲染产品
-    // ============================================================
     function renderProducts(lang) {
         var grid = document.getElementById('productGrid');
         var products = productData[lang] || productData.zh;
         grid.innerHTML = '';
 
-        products.forEach(function(product, index) {
+        products.forEach(function(product) {
             var card = document.createElement('div');
             card.className = 'product-card';
 
-            // 轮播
             var slider = document.createElement('div');
             slider.className = 'product-img-slider';
             slider.dataset.sliderId = product.id;
@@ -794,7 +248,7 @@
             product.images.forEach(function(img) {
                 var item = document.createElement('div');
                 item.className = 'slider-item';
-                item.style.backgroundImage = 'url(' + img + ')';
+                item.style.backgroundImage = 'url(' + encodeURI(img) + ')';
                 wrapper.appendChild(item);
             });
 
@@ -820,7 +274,6 @@
             });
             slider.appendChild(indicators);
 
-            // 信息
             var info = document.createElement('div');
             info.className = 'product-info';
 
@@ -855,10 +308,8 @@
             card.appendChild(info);
             grid.appendChild(card);
 
-            // 初始化轮播
             initSlider(slider);
 
-            // 展开/收起功能
             toggleBtn.addEventListener('click', function() {
                 descDiv.classList.toggle('expanded');
                 this.textContent = descDiv.classList.contains('expanded') ? '收起 ▲' : '展开更多 ▼';
@@ -866,9 +317,6 @@
         });
     }
 
-    // ============================================================
-    // 6. 轮播初始化
-    // ============================================================
     function initSlider(slider) {
         var wrapper = slider.querySelector('.slider-wrapper');
         var items = slider.querySelectorAll('.slider-item');
@@ -878,7 +326,7 @@
         var totalItems = items.length;
         var currentIndex = 0;
 
-        if (totalItems === 1) {
+        if (totalItems <= 1) {
             if (prevBtn) prevBtn.style.display = 'none';
             if (nextBtn) nextBtn.style.display = 'none';
             return;
@@ -886,35 +334,32 @@
 
         function updateSlider() {
             wrapper.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
-            indicators.forEach(function(dot, index) {
-                dot.classList.toggle('active', index === currentIndex);
+            indicators.forEach(function(dot, idx) {
+                dot.classList.toggle('active', idx === currentIndex);
             });
         }
 
-        function goToNext() {
-            currentIndex = (currentIndex + 1) % totalItems;
-            updateSlider();
-        }
-
-        function goToPrev() {
+        prevBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
             currentIndex = (currentIndex - 1 + totalItems) % totalItems;
             updateSlider();
-        }
+        });
 
-        indicators.forEach(function(dot, index) {
-            dot.addEventListener('click', function() {
-                currentIndex = index;
+        nextBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateSlider();
+        });
+
+        indicators.forEach(function(dot, idx) {
+            dot.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentIndex = idx;
                 updateSlider();
             });
         });
-
-        if (prevBtn) prevBtn.addEventListener('click', goToPrev);
-        if (nextBtn) nextBtn.addEventListener('click', goToNext);
     }
 
-    // ============================================================
-    // 7. 多语言切换
-    // ============================================================
     var currentLang = localStorage.getItem('ldmeting-lang') || 'zh';
 
     function switchLanguage(lang) {
@@ -939,23 +384,6 @@
         localStorage.setItem('ldmeting-lang', lang);
     }
 
-    // ============================================================
-    // 8. 图片加载失败兜底
-    // ============================================================
-    function handleImageErrors() {
-        document.querySelectorAll('.slider-item').forEach(function(img) {
-            var imgUrl = img.style.backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
-            var testImg = new Image();
-            testImg.src = imgUrl;
-            testImg.onerror = function() {
-                img.style.backgroundImage = 'none';
-            };
-        });
-    }
-
-    // ============================================================
-    // 9. 初始化
-    // ============================================================
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.lang-switcher a').forEach(function(link) {
             link.addEventListener('click', function(e) {
@@ -963,9 +391,7 @@
                 switchLanguage(this.getAttribute('data-lang'));
             });
         });
-
         switchLanguage(currentLang);
-        setTimeout(handleImageErrors, 500);
     });
 </script>
 </body>
