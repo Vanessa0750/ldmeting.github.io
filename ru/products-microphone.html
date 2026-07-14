@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== SEO-теги ===== -->
+    <link rel="canonical" href="https://www.ldmeting.com/ru/products-microphone.html" />
+    <meta name="description" content="LDMETING профессиональная серия микрофонов для конференций, включая проводные микрофоны, беспроводные микрофоны, системы для государственных встреч, презентаций и трансляций." />
+    <meta name="keywords" content="микрофон для конференций, проводной микрофон, беспроводной микрофон, система конференций, профессиональный звук, LDMETING" />
+    <meta name="google-site-verification" content="iPeL4d5MSvNHtI0my8gCsQvVTQ1eyYuKUrq1rhNLzIA" />
+
+    <!-- ===== Hreflang-теги ===== -->
+    <link rel="alternate" hreflang="zh" href="https://www.ldmeting.com/products-microphone.html" />
+    <link rel="alternate" hreflang="en" href="https://www.ldmeting.com/en/products-microphone.html" />
+    <link rel="alternate" hreflang="es" href="https://www.ldmeting.com/es/products-microphone.html" />
+    <link rel="alternate" hreflang="ru" href="https://www.ldmeting.com/ru/products-microphone.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.ldmeting.com/products-microphone.html" />
+
+    <title>Микрофоны - LDMETING Профессиональные Микрофоны для Конференций</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", Arial, "Helvetica Neue", sans-serif; }
+        body { background-color: #f5f7fa; color: #333; line-height: 1.6; }
+        html { scroll-behavior: smooth; }
+        header { background-color: #2c3e50; color: white; padding: 1rem 5%; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .logo a { color: white; text-decoration: none; }
+        .nav-links { display: flex; align-items: center; flex-wrap: wrap; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 2rem; transition: color 0.3s; }
+        .nav-links a:hover { color: #3498db; }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; z-index: 101; }
+        .lang-switcher { display: flex; align-items: center; margin-left: 2rem; gap: 0.2rem; flex-wrap: wrap; }
+        .lang-switcher a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.8rem; padding: 0.2rem 0.4rem; transition: color 0.3s; }
+        .lang-switcher a:hover { color: white; }
+        .lang-switcher a.active { color: #3498db; font-weight: bold; }
+        .lang-switcher .sep { color: #555; font-size: 0.7rem; }
+        .breadcrumb { padding: 1rem 5%; background-color: white; font-size: 0.9rem; border-bottom: 1px solid #eee; }
+        .breadcrumb a { color: #3498db; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { color: #999; margin: 0 0.5rem; }
+        section { padding: 3rem 5%; margin: 1rem 0; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: #2c3e50; position: relative; }
+        .section-title::after { content: ""; display: block; width: 80px; height: 3px; background-color: #3498db; margin: 1rem auto; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .product-card { background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
+        .product-img-slider { position: relative; width: 100%; height: 200px; background-color: #f8f9fa; overflow: hidden; }
+        .slider-wrapper { display: flex; width: 100%; height: 100%; transition: transform 0.5s ease; }
+        .slider-item { flex: 0 0 100%; width: 100%; height: 100%; background-size: contain; background-repeat: no-repeat; background-position: center; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%; background-color: rgba(0,0,0,0.5); color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; opacity: 0; transition: opacity 0.3s; font-size: 1.2rem; }
+        .product-img-slider:hover .slider-btn { opacity: 1; }
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+        .slider-indicators { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; }
+        .indicator-dot { width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.5); cursor: pointer; transition: background-color 0.3s; }
+        .indicator-dot.active { background-color: #3498db; }
+        .product-info { padding: 1.5rem; }
+        .product-info h3 { color: #2c3e50; margin-bottom: 0.8rem; font-size: 1.1rem; }
+        .product-params { font-size: 0.9rem; color: #666; margin: 0.8rem 0; }
+        .product-params p { margin-bottom: 3px; padding-left: 1.2rem; position: relative; }
+        .product-params p::before { content: "•"; position: absolute; left: 0; color: #3498db; }
+        .product-info .desc { color: #888; font-size: 0.9rem; margin-top: 0.5rem; }
+        footer { background-color: #1a252f; color: white; text-align: center; padding: 2rem 5%; margin-top: 3rem; }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; background-color: #3498db; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2); transition: opacity 0.3s, transform 0.3s; opacity: 0; visibility: hidden; z-index: 99; font-size: 1.2rem; border: none; }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { transform: translateY(-3px); background-color: #2980b9; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .nav-links.mobile-open { display: flex; position: absolute; top: 100%; left: 0; width: 100%; background-color: #2c3e50; padding: 1rem 5%; flex-direction: column; gap: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+            .nav-links.mobile-open .lang-switcher { margin-left: 0; justify-content: flex-start; }
+            .section-title { font-size: 1.6rem; }
+            .product-grid { grid-template-columns: 1fr; }
+            .breadcrumb { font-size: 0.8rem; }
+        }
+        @media (max-width: 480px) {
+            .product-img-slider { height: 160px; }
+            .slider-btn { width: 24px; height: 24px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo"><a href="/">LDMETING</a></div>
+        <nav class="nav-links" aria-label="Главная навигация">
+            <a href="/" data-key="nav_home">Главная</a>
+            <a href="/#profile" data-key="nav_profile">О нас</a>
+            <a href="/#products" data-key="nav_products">Продукты</a>
+            <a href="/#articles" data-key="nav_articles">Новости</a>
+            <a href="/#contact" data-key="nav_contact">Контакты</a>
+            <div class="lang-switcher">
+                <a href="/products-microphone.html" data-lang="zh">中文</a>
+                <span class="sep">|</span>
+                <a href="/en/products-microphone.html" data-lang="en">English</a>
+                <span class="sep">|</span>
+                <a href="/es/products-microphone.html" data-lang="es">Español</a>
+                <span class="sep">|</span>
+                <a href="/ru/products-microphone.html" data-lang="ru" class="active">Русский</a>
+            </div>
+        </nav>
+        <div class="menu-toggle" aria-label="Переключить меню">☰</div>
+    </div>
+</header>
+
+<div class="breadcrumb">
+    <a href="/" data-key="bread_home">Главная</a>
+    <span>></span>
+    <a href="/#products" data-key="bread_products">Продукты</a>
+    <span>></span>
+    <span data-key="bread_current">Микрофоны</span>
+</div>
+
+<section>
+    <h2 class="section-title" data-key="page_title">Микрофоны</h2>
+    <div class="product-grid" id="productGrid"></div>
+</section>
+
+<footer>
+    <p data-key="footer_copyright">&copy; 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Все права защищены.</p>
+</footer>
+
+<div class="back-to-top" aria-label="Наверх">↑</div>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('mobile-open');
+        menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
+    });
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            navLinks.classList.remove('mobile-open');
+            menuToggle.textContent = '☰';
+        });
+    });
+
+    const backToTopBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', function() {
+        backToTopBtn.classList.toggle('show', window.scrollY > 300);
+    });
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    const productData = {
+        zh: [
+            { id: 1, name: "LD-9200 无线一拖二麦克风", params: ["十组预设频率", "快速搜索干净频率", "会议底座可充电"], desc: "拾音清晰稳定，抗干扰强，适合中小型会议室。", images: ["/images/mic-ld9200/1.jpg","/images/mic-ld9200/2.jpg","/images/mic-ld9200/3.jpg","/images/mic-ld9200/4.jpg","/images/mic-ld9200/5.jpg","/images/mic-ld9200/6.jpg","/images/mic-ld9200/7.jpg","/images/mic-ld9200/8.jpg","/images/mic-ld9200/9.jpg","/images/mic-ld9200/10.jpg"] },
+            { id: 2, name: "LD-9600 无线一拖四麦克风", params: ["十组预设频率", "快速搜索干净频率", "会议底座可充电"], desc: "无线布置更简洁，安装方便，适合大型会议室。", images: ["/images/mic-ld9600/1.jpg","/images/mic-ld9600/2.jpg","/images/mic-ld9600/3.jpg","/images/mic-ld9600/4.jpg","/images/mic-ld9600/5.jpg","/images/mic-ld9600/6.jpg","/images/mic-ld9600/7.jpg","/images/mic-ld9600/8.jpg","/images/mic-ld9600/9.jpg","/images/mic-ld9600/10.jpg","/images/mic-ld9600/11.jpg","/images/mic-ld9600/12.jpg"] },
+            { id: 3, name: "LD-9800 无线一拖八麦克风", params: ["十组预设频率", "快速搜索干净频率", "会议底座可充电"], desc: "桌面式安装，造型稳重，适合政府正式会议。", images: ["/images/mic-ld9800/1.jpg","/images/mic-ld9800/2.jpg","/images/mic-ld9800/3.jpg","/images/mic-ld9800/4.jpg","/images/mic-ld9800/5.jpg","/images/mic-ld9800/6.jpg","/images/mic-ld9800/7.jpg","/images/mic-ld9800/8.jpg","/images/mic-ld9800/9.jpg","/images/mic-ld9800/10.jpg"] },
+            { id: 4, name: "M-2000 无线全金属一拖四麦克风", params: ["真分集远距离线路", "会议底座可充电", "工作有效距离100米"], desc: "桌面式安装，造型稳重，适合政府正式会议。", images: ["/images/mic-m2200/m2200.jpg","/images/mic-m2200/m2200-1.jpg"] },
+            { id: 5, name: "UR-880互通联调无线一拖二真分集", params: ["可通过RJ45网线连接组成联调系统", "组频、扫频、频谱仪、EQ、SQ、ID身份", "手持带增益、功率、语言、静音、复位、锁定功能"], desc: "多控标点，超强接收，使用距离可达300米。", images: ["/images/mic-ur880/ur880-1.jpg","/images/mic-ur880/ur880-2.jpg","/images/mic-ur880/ur880-3.jpg"] },
+            { id: 6, name: "UR-910无线一拖一真分集", params: ["真分集PLL锁相环线路", "手持及腰包按键切换", "工作有效距离200米"], desc: "高配置线路与专供动圈咪芯搭配调节，使整体话筒噪底清净，音质通透直至达到完美的效果。", images: ["/images/mic-ur910/1.jpg","/images/mic-ur910/2.jpg","/images/mic-ur910/3.jpg","/images/mic-ur910/4.jpg"] },
+            { id: 7, name: "UR-990无线一拖二真分集", params: ["真分集PLL锁相环线路", "手持及腰包按键切换", "工作有效距离200米"], desc: "高亮度全视角显示，演出级别的相位锁定线路，四天线超强接收。", images: ["/images/mic-ur990/1.jpg","/images/mic-ur990/2.jpg","/images/mic-ur990/3.jpg","/images/mic-ur990/4.jpg","/images/mic-ur990/5.jpg"] },
+            { id: 8, name: "UR-1000无线一拖二真分集", params: ["真分集PLL锁相环线路", "手持及腰包按键切换", "工作有效距离200米"], desc: "高配置线路与专供动圈咪芯搭配调节，使整体话筒噪底清净，音质通透直至达到完美的效果。", images: ["/images/mic-ur1000/1.jpg","/images/mic-ur1000/2.jpg","/images/mic-ur1000/3.jpg"] },
+            { id: 9, name: "UR-2400无线一拖四真分集", params: ["真分集PLL锁相环线路", "手持及腰包按键切换", "工作有效距离200米"], desc: "高亮度全视角显示，演出级别的相位锁定线路，四天线超强接收。", images: ["/images/mic-ur2400/1.jpg","/images/mic-ur2400/2.jpg","/images/mic-ur2400/3.jpg","/images/mic-ur2400/4.jpg","/images/mic-ur2400/5.jpg","/images/mic-ur2400/6.jpg","/images/mic-ur2400/7.jpg","/images/mic-ur2400/8.jpg"] },
+            { id: 10, name: "CT跳频系列无线一拖二四八麦克风", params: ["工作频率UHF600-690 MHz（可选）", "发射器中会议/手持/领夹可以混搭使用", "音量音频独立可控"], desc: "专业级别的相位锁定电路，配合杂讯锁定静噪控制，保证了对干扰信号的有效阻隔。", images: ["/images/mic-ct/1.jpg","/images/mic-ct/2.jpg","/images/mic-ct/3.jpg","/images/mic-ct/4.jpg","/images/mic-ct/5.jpg","/images/mic-ct/6.jpg","/images/mic-ct/7.jpg","/images/mic-ct/8.jpg","/images/mic-ct/9.jpg"] },
+            { id: 11, name: "CT-128高性价比无线一拖二麦克风", params: ["PLL频率合成技术", "80米传输距离", "专供动圈咪芯搭配调节噪底清净"], desc: "抗干扰能力强，能有效抑制由外部带来的噪音干扰及同频干扰。", images: ["/images/mic-ct128/mic-ct128-1.jpg","/images/mic-ct128/mic-ct128-2.jpg"] },
+            { id: 12, name: "FG充电系列无线二四八通道麦克风", params: ["PLL频率合成技术", "80米传输距离", "麦克风可充电使用时长12小时"], desc: "专业级别的相位锁定电路，配合杂讯锁定静噪控制，保证了对干扰信号的有效阻隔。", images: ["/images/mic-fc/fc-1.jpg","/images/mic-fc/fc-2.jpg","/images/mic-fc/fc-3.jpg"] },
+            { id: 13, name: "D90有线麦克风", params: ["换能方式电容式咪芯", "多种供电选择", "音频线长度、配置可定制"], desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。", images: ["/images/mic-wried/1.jpg","/images/mic-wried/2.jpg","/images/mic-wried/3.jpg"] },
+            { id: 14, name: "D80有线麦克风", params: ["换能方式电容式咪芯", "供电选择：48V幻象/电池", "音频线长度、配置可定制"], desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。", images: ["/images/mic-wried/4.jpg","/images/mic-wried/5.jpg","/images/mic-wried/6.jpg"] },
+            { id: 15, name: "BM-38有线麦克风", params: ["换能方式电容式咪芯", "多种供电选择", "音频线长度、配置可定制"], desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。", images: ["/images/mic-wried/7.jpg","/images/mic-wried/8.jpg"] },
+            { id: 16, name: "BM-960有线麦克风", params: ["换能方式电容式咪芯", "多种供电选择", "音频线长度、配置可定制"], desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。", images: ["/images/mic-wried/9.jpg"] },
+            { id: 17, name: "BM系列有线麦克风", params: ["换能方式电容式咪芯", "多种供电选择", "音频线长度、配置可定制"], desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。", images: ["/images/mic-wried/10.jpg","/images/mic-wried/11.jpg","/images/mic-wried/12.jpg","/images/mic-wried/13.jpg","/images/mic-wried/14.jpg","/images/mic-wried/15.jpg"] },
+            { id: 18, name: "BM带显示系列有线麦克风", params: ["换能方式电容式咪芯", "多种供电选择", "音频线长度、配置可定制"], desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。", images: ["/images/mic-wried/17.jpg","/images/mic-wried/18.jpg","/images/mic-wried/19.jpg","/images/mic-wried/20.jpg","/images/mic-wried/21.jpg","/images/mic-wried/22.jpg"] },
+            { id: 19, name: "收音有线麦克风", params: ["换能方式电容式咪芯", "多种供电选择", "音频线长度、配置可定制"], desc: "高保真拾音有线麦克风，稳定抗干扰，人声清晰，适配会议演讲直播等场景。", images: ["/images/mic-wried/A1.jpg"] }
+        ],
+        en: [
+            { id: 1, name: "LD-9200 Wireless 1-to-2 Microphone", params: ["10 Preset Frequencies", "Fast Clean Frequency Search", "Rechargeable Conference Base"], desc: "Clear and stable pickup, strong anti-interference, suitable for small and medium-sized meeting rooms.", images: ["/images/mic-ld9200/1.jpg","/images/mic-ld9200/2.jpg","/images/mic-ld9200/3.jpg","/images/mic-ld9200/4.jpg","/images/mic-ld9200/5.jpg","/images/mic-ld9200/6.jpg","/images/mic-ld9200/7.jpg","/images/mic-ld9200/8.jpg","/images/mic-ld9200/9.jpg","/images/mic-ld9200/10.jpg"] },
+            { id: 2, name: "LD-9600 Wireless 1-to-4 Microphone", params: ["10 Preset Frequencies", "Fast Clean Frequency Search", "Rechargeable Conference Base"], desc: "Wireless setup is more concise, easy to install, suitable for large meeting rooms.", images: ["/images/mic-ld9600/1.jpg","/images/mic-ld9600/2.jpg","/images/mic-ld9600/3.jpg","/images/mic-ld9600/4.jpg","/images/mic-ld9600/5.jpg","/images/mic-ld9600/6.jpg","/images/mic-ld9600/7.jpg","/images/mic-ld9600/8.jpg","/images/mic-ld9600/9.jpg","/images/mic-ld9600/10.jpg","/images/mic-ld9600/11.jpg","/images/mic-ld9600/12.jpg"] },
+            { id: 3, name: "LD-9800 Wireless 1-to-8 Microphone", params: ["10 Preset Frequencies", "Fast Clean Frequency Search", "Rechargeable Conference Base"], desc: "Desktop installation, stable design, suitable for formal government meetings.", images: ["/images/mic-ld9800/1.jpg","/images/mic-ld9800/2.jpg","/images/mic-ld9800/3.jpg","/images/mic-ld9800/4.jpg","/images/mic-ld9800/5.jpg","/images/mic-ld9800/6.jpg","/images/mic-ld9800/7.jpg","/images/mic-ld9800/8.jpg","/images/mic-ld9800/9.jpg","/images/mic-ld9800/10.jpg"] },
+            { id: 4, name: "M-2000 Wireless All-Metal 1-to-4 Microphone", params: ["True Diversity Long-Distance Circuit", "Rechargeable Conference Base", "Working Range up to 100m"], desc: "Desktop installation, stable design, suitable for formal government meetings.", images: ["/images/mic-m2200/m2200.jpg","/images/mic-m2200/m2200-1.jpg"] },
+            { id: 5, name: "UR-880 Interconnection Tuning Wireless 1-to-2 True Diversity", params: ["RJ45 Network Connection for Tuning System", "Group Frequency, Sweep, Spectrum, EQ, SQ, ID", "Handheld with Gain, Power, Language, Mute, Reset, Lock"], desc: "Multi-control markers, super strong reception, range up to 300 meters.", images: ["/images/mic-ur880/ur880-1.jpg","/images/mic-ur880/ur880-2.jpg","/images/mic-ur880/ur880-3.jpg"] },
+            { id: 6, name: "UR-910 Wireless 1-to-1 True Diversity", params: ["True Diversity PLL Phase-Locked Loop", "Handheld & Bodypack Switch", "Working Range up to 200m"], desc: "High-end circuitry with dedicated dynamic capsule for clear, transparent sound quality.", images: ["/images/mic-ur910/1.jpg","/images/mic-ur910/2.jpg","/images/mic-ur910/3.jpg","/images/mic-ur910/4.jpg"] },
+            { id: 7, name: "UR-990 Wireless 1-to-2 True Diversity", params: ["True Diversity PLL Phase-Locked Loop", "Handheld & Bodypack Switch", "Working Range up to 200m"], desc: "High-brightness full-view display, performance-grade phase-locked circuitry, 4-antenna super reception.", images: ["/images/mic-ur990/1.jpg","/images/mic-ur990/2.jpg","/images/mic-ur990/3.jpg","/images/mic-ur990/4.jpg","/images/mic-ur990/5.jpg"] },
+            { id: 8, name: "UR-1000 Wireless 1-to-2 True Diversity", params: ["True Diversity PLL Phase-Locked Loop", "Handheld & Bodypack Switch", "Working Range up to 200m"], desc: "High-end circuitry with dedicated dynamic capsule for clear, transparent sound quality.", images: ["/images/mic-ur1000/1.jpg","/images/mic-ur1000/2.jpg","/images/mic-ur1000/3.jpg"] },
+            { id: 9, name: "UR-2400 Wireless 1-to-4 True Diversity", params: ["True Diversity PLL Phase-Locked Loop", "Handheld & Bodypack Switch", "Working Range up to 200m"], desc: "High-brightness full-view display, performance-grade phase-locked circuitry, 4-antenna super reception.", images: ["/images/mic-ur2400/1.jpg","/images/mic-ur2400/2.jpg","/images/mic-ur2400/3.jpg","/images/mic-ur2400/4.jpg","/images/mic-ur2400/5.jpg","/images/mic-ur2400/6.jpg","/images/mic-ur2400/7.jpg","/images/mic-ur2400/8.jpg"] },
+            { id: 10, name: "CT Frequency-Hopping Series Wireless 1-to-2/4/8 Microphone", params: ["Frequency UHF600-690 MHz (Optional)", "Conference/Handheld/Lavalier Mixable", "Independent Volume Control"], desc: "Professional phase-locked circuitry with noise-lock squelch control for effective interference rejection.", images: ["/images/mic-ct/1.jpg","/images/mic-ct/2.jpg","/images/mic-ct/3.jpg","/images/mic-ct/4.jpg","/images/mic-ct/5.jpg","/images/mic-ct/6.jpg","/images/mic-ct/7.jpg","/images/mic-ct/8.jpg","/images/mic-ct/9.jpg"] },
+            { id: 11, name: "CT-128 High Cost-Effective Wireless 1-to-2 Microphone", params: ["PLL Frequency Synthesis", "80m Transmission Range", "Dedicated Dynamic Capsule for Clean Sound"], desc: "Strong anti-interference capability, effectively suppresses external noise and co-channel interference.", images: ["/images/mic-ct128/mic-ct128-1.jpg","/images/mic-ct128/mic-ct128-2.jpg"] },
+            { id: 12, name: "FG Rechargeable Series Wireless 2/4/8-Channel Microphone", params: ["PLL Frequency Synthesis", "80m Transmission Range", "12-Hour Rechargeable Battery Life"], desc: "Professional phase-locked circuitry with noise-lock squelch control for effective interference rejection.", images: ["/images/mic-fc/fc-1.jpg","/images/mic-fc/fc-2.jpg","/images/mic-fc/fc-3.jpg"] },
+            { id: 13, name: "D90 Wired Microphone", params: ["Condenser Capsule", "Multiple Power Options", "Customizable Cable Length & Configuration"], desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.", images: ["/images/mic-wried/1.jpg","/images/mic-wried/2.jpg","/images/mic-wried/3.jpg"] },
+            { id: 14, name: "D80 Wired Microphone", params: ["Condenser Capsule", "Power: 48V Phantom/Battery", "Customizable Cable Length & Configuration"], desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.", images: ["/images/mic-wried/4.jpg","/images/mic-wried/5.jpg","/images/mic-wried/6.jpg"] },
+            { id: 15, name: "BM-38 Wired Microphone", params: ["Condenser Capsule", "Multiple Power Options", "Customizable Cable Length & Configuration"], desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.", images: ["/images/mic-wried/7.jpg","/images/mic-wried/8.jpg"] },
+            { id: 16, name: "BM-960 Wired Microphone", params: ["Condenser Capsule", "Multiple Power Options", "Customizable Cable Length & Configuration"], desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.", images: ["/images/mic-wried/9.jpg"] },
+            { id: 17, name: "BM Series Wired Microphone", params: ["Condenser Capsule", "Multiple Power Options", "Customizable Cable Length & Configuration"], desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.", images: ["/images/mic-wried/10.jpg","/images/mic-wried/11.jpg","/images/mic-wried/12.jpg","/images/mic-wried/13.jpg","/images/mic-wried/14.jpg","/images/mic-wried/15.jpg"] },
+            { id: 18, name: "BM Series with Display Wired Microphone", params: ["Condenser Capsule", "Multiple Power Options", "Customizable Cable Length & Configuration"], desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.", images: ["/images/mic-wried/17.jpg","/images/mic-wried/18.jpg","/images/mic-wried/19.jpg","/images/mic-wried/20.jpg","/images/mic-wried/21.jpg","/images/mic-wried/22.jpg"] },
+            { id: 19, name: "Condenser Wired Microphone", params: ["Condenser Capsule", "Multiple Power Options", "Customizable Cable Length & Configuration"], desc: "High-fidelity wired microphone, stable anti-interference, clear vocal, suitable for conferences, presentations, and live streaming.", images: ["/images/mic-wried/A1.jpg"] }
+        ],
+        es: [
+            { id: 1, name: "LD-9200 Micrófono Inalámbrico 1 a 2", params: ["10 Frecuencias Preestablecidas", "Búsqueda Rápida de Frecuencia Limpia", "Base de Conferencia Recargable"], desc: "Captación clara y estable, fuerte anti-interferencia, adecuado para salas de reuniones pequeñas y medianas.", images: ["/images/mic-ld9200/1.jpg","/images/mic-ld9200/2.jpg","/images/mic-ld9200/3.jpg","/images/mic-ld9200/4.jpg","/images/mic-ld9200/5.jpg","/images/mic-ld9200/6.jpg","/images/mic-ld9200/7.jpg","/images/mic-ld9200/8.jpg","/images/mic-ld9200/9.jpg","/images/mic-ld9200/10.jpg"] },
+            { id: 2, name: "LD-9600 Micrófono Inalámbrico 1 a 4", params: ["10 Frecuencias Preestablecidas", "Búsqueda Rápida de Frecuencia Limpia", "Base de Conferencia Recargable"], desc: "Configuración inalámbrica más sencilla, fácil instalación, adecuado para grandes salas de reuniones.", images: ["/images/mic-ld9600/1.jpg","/images/mic-ld9600/2.jpg","/images/mic-ld9600/3.jpg","/images/mic-ld9600/4.jpg","/images/mic-ld9600/5.jpg","/images/mic-ld9600/6.jpg","/images/mic-ld9600/7.jpg","/images/mic-ld9600/8.jpg","/images/mic-ld9600/9.jpg","/images/mic-ld9600/10.jpg","/images/mic-ld9600/11.jpg","/images/mic-ld9600/12.jpg"] },
+            { id: 3, name: "LD-9800 Micrófono Inalámbrico 1 a 8", params: ["10 Frecuencias Preestablecidas", "Búsqueda Rápida de Frecuencia Limpia", "Base de Conferencia Recargable"], desc: "Instalación de escritorio, diseño estable, adecuado para reuniones gubernamentales formales.", images: ["/images/mic-ld9800/1.jpg","/images/mic-ld9800/2.jpg","/images/mic-ld9800/3.jpg","/images/mic-ld9800/4.jpg","/images/mic-ld9800/5.jpg","/images/mic-ld9800/6.jpg","/images/mic-ld9800/7.jpg","/images/mic-ld9800/8.jpg","/images/mic-ld9800/9.jpg","/images/mic-ld9800/10.jpg"] },
+            { id: 4, name: "M-2000 Micrófono Inalámbrico Totalmente Metálico 1 a 4", params: ["Circuito de Larga Distancia True Diversity", "Base de Conferencia Recargable", "Alcance de 100m"], desc: "Instalación de escritorio, diseño estable, adecuado para reuniones gubernamentales formales.", images: ["/images/mic-m2200/m2200.jpg","/images/mic-m2200/m2200-1.jpg"] },
+            { id: 5, name: "UR-880 True Diversity Inalámbrico 1 a 2 con Ajuste Interconectado", params: ["Conexión RJ45 para Sistema de Ajuste", "Frecuencia de Grupo, Barrido, Espectro, EQ, SQ, ID", "Handheld con Ganancia, Potencia, Idioma, Silencio, Reinicio, Bloqueo"], desc: "Múltiples puntos de control, recepción súper fuerte, alcance de hasta 300 metros.", images: ["/images/mic-ur880/ur880-1.jpg","/images/mic-ur880/ur880-2.jpg","/images/mic-ur880/ur880-3.jpg"] },
+            { id: 6, name: "UR-910 True Diversity Inalámbrico 1 a 1", params: ["True Diversity PLL Phase-Locked Loop", "Cambio Handheld/Bodypack", "Alcance de Trabajo hasta 200m"], desc: "Circuito de alta gama con cápsula dinámica dedicada para un sonido claro y transparente.", images: ["/images/mic-ur910/1.jpg","/images/mic-ur910/2.jpg","/images/mic-ur910/3.jpg","/images/mic-ur910/4.jpg"] },
+            { id: 7, name: "UR-990 True Diversity Inalámbrico 1 a 2", params: ["True Diversity PLL Phase-Locked Loop", "Cambio Handheld/Bodypack", "Alcance de Trabajo hasta 200m"], desc: "Pantalla de alto brillo, circuito de fase de nivel profesional, recepción súper con 4 antenas.", images: ["/images/mic-ur990/1.jpg","/images/mic-ur990/2.jpg","/images/mic-ur990/3.jpg","/images/mic-ur990/4.jpg","/images/mic-ur990/5.jpg"] },
+            { id: 8, name: "UR-1000 True Diversity Inalámbrico 1 a 2", params: ["True Diversity PLL Phase-Locked Loop", "Cambio Handheld/Bodypack", "Alcance de Trabajo hasta 200m"], desc: "Circuito de alta gama con cápsula dinámica dedicada para un sonido claro y transparente.", images: ["/images/mic-ur1000/1.jpg","/images/mic-ur1000/2.jpg","/images/mic-ur1000/3.jpg"] },
+            { id: 9, name: "UR-2400 True Diversity Inalámbrico 1 a 4", params: ["True Diversity PLL Phase-Locked Loop", "Cambio Handheld/Bodypack", "Alcance de Trabajo hasta 200m"], desc: "Pantalla de alto brillo, circuito de fase de nivel profesional, recepción súper con 4 antenas.", images: ["/images/mic-ur2400/1.jpg","/images/mic-ur2400/2.jpg","/images/mic-ur2400/3.jpg","/images/mic-ur2400/4.jpg","/images/mic-ur2400/5.jpg","/images/mic-ur2400/6.jpg","/images/mic-ur2400/7.jpg","/images/mic-ur2400/8.jpg"] },
+            { id: 10, name: "CT Salto de Frecuencia Inalámbrico 1 a 2/4/8", params: ["Frecuencia UHF600-690 MHz (Opcional)", "Mezcla de Conferencia/Handheld/Lavalier", "Control de Volumen Independiente"], desc: "Circuito de fase bloqueada profesional con control de silencio por bloqueo de ruido para un rechazo efectivo de interferencias.", images: ["/images/mic-ct/1.jpg","/images/mic-ct/2.jpg","/images/mic-ct/3.jpg","/images/mic-ct/4.jpg","/images/mic-ct/5.jpg","/images/mic-ct/6.jpg","/images/mic-ct/7.jpg","/images/mic-ct/8.jpg","/images/mic-ct/9.jpg"] },
+            { id: 11, name: "CT-128 Micrófono Inalámbrico 1 a 2 de Alta Relación Calidad-Precio", params: ["Síntesis de Frecuencia PLL", "Alcance de Transmisión 80m", "Cápsula Dinámica Dedicada para Sonido Limpio"], desc: "Fuerte capacidad anti-interferencia, suprime eficazmente el ruido externo y la interferencia de co-canal.", images: ["/images/mic-ct128/mic-ct128-1.jpg","/images/mic-ct128/mic-ct128-2.jpg"] },
+            { id: 12, name: "FG Serie Recargable Inalámbrico 2/4/8 Canales", params: ["Síntesis de Frecuencia PLL", "Alcance de Transmisión 80m", "Batería Recargable 12 Horas"], desc: "Circuito de fase bloqueada profesional con control de silencio por bloqueo de ruido para un rechazo efectivo de interferencias.", images: ["/images/mic-fc/fc-1.jpg","/images/mic-fc/fc-2.jpg","/images/mic-fc/fc-3.jpg"] },
+            { id: 13, name: "D90 Micrófono con Cable", params: ["Cápsula de Condensador", "Múltiples Opciones de Alimentación", "Longitud de Cable y Configuración Personalizables"], desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.", images: ["/images/mic-wried/1.jpg","/images/mic-wried/2.jpg","/images/mic-wried/3.jpg"] },
+            { id: 14, name: "D80 Micrófono con Cable", params: ["Cápsula de Condensador", "Alimentación: 48V Phantom/Batería", "Longitud de Cable y Configuración Personalizables"], desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.", images: ["/images/mic-wried/4.jpg","/images/mic-wried/5.jpg","/images/mic-wried/6.jpg"] },
+            { id: 15, name: "BM-38 Micrófono con Cable", params: ["Cápsula de Condensador", "Múltiples Opciones de Alimentación", "Longitud de Cable y Configuración Personalizables"], desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.", images: ["/images/mic-wried/7.jpg","/images/mic-wried/8.jpg"] },
+            { id: 16, name: "BM-960 Micrófono con Cable", params: ["Cápsula de Condensador", "Múltiples Opciones de Alimentación", "Longitud de Cable y Configuración Personalizables"], desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.", images: ["/images/mic-wried/9.jpg"] },
+            { id: 17, name: "Serie BM Micrófono con Cable", params: ["Cápsula de Condensador", "Múltiples Opciones de Alimentación", "Longitud de Cable y Configuración Personalizables"], desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.", images: ["/images/mic-wried/10.jpg","/images/mic-wried/11.jpg","/images/mic-wried/12.jpg","/images/mic-wried/13.jpg","/images/mic-wried/14.jpg","/images/mic-wried/15.jpg"] },
+            { id: 18, name: "Serie BM con Pantalla Micrófono con Cable", params: ["Cápsula de Condensador", "Múltiples Opciones de Alimentación", "Longitud de Cable y Configuración Personalizables"], desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.", images: ["/images/mic-wried/17.jpg","/images/mic-wried/18.jpg","/images/mic-wried/19.jpg","/images/mic-wried/20.jpg","/images/mic-wried/21.jpg","/images/mic-wried/22.jpg"] },
+            { id: 19, name: "Micrófono de Condensador con Cable", params: ["Cápsula de Condensador", "Múltiples Opciones de Alimentación", "Longitud de Cable y Configuración Personalizables"], desc: "Micrófono con cable de alta fidelidad, anti-interferencia estable, voz clara, adecuado para conferencias, presentaciones y transmisiones en vivo.", images: ["/images/mic-wried/A1.jpg"] }
+        ],
+        ru: [
+            { id: 1, name: "LD-9200 Беспроводной 1-на-2 Микрофон", params: ["10 Предустановленных Частот", "Быстрый Поиск Чистых Частот", "Перезаряжаемая База для Конференций"], desc: "Четкий и стабильный звук, высокая помехозащищенность, подходит для малых и средних конференц-залов.", images: ["/images/mic-ld9200/1.jpg","/images/mic-ld9200/2.jpg","/images/mic-ld9200/3.jpg","/images/mic-ld9200/4.jpg","/images/mic-ld9200/5.jpg","/images/mic-ld9200/6.jpg","/images/mic-ld9200/7.jpg","/images/mic-ld9200/8.jpg","/images/mic-ld9200/9.jpg","/images/mic-ld9200/10.jpg"] },
+            { id: 2, name: "LD-9600 Беспроводной 1-на-4 Микрофон", params: ["10 Предустановленных Частот", "Быстрый Поиск Чистых Частот", "Перезаряжаемая База для Конференций"], desc: "Беспроводная установка проще, легкий монтаж, подходит для больших конференц-залов.", images: ["/images/mic-ld9600/1.jpg","/images/mic-ld9600/2.jpg","/images/mic-ld9600/3.jpg","/images/mic-ld9600/4.jpg","/images/mic-ld9600/5.jpg","/images/mic-ld9600/6.jpg","/images/mic-ld9600/7.jpg","/images/mic-ld9600/8.jpg","/images/mic-ld9600/9.jpg","/images/mic-ld9600/10.jpg","/images/mic-ld9600/11.jpg","/images/mic-ld9600/12.jpg"] },
+            { id: 3, name: "LD-9800 Беспроводной 1-на-8 Микрофон", params: ["10 Предустановленных Частот", "Быстрый Поиск Чистых Частот", "Перезаряжаемая База для Конференций"], desc: "Настольная установка, стабильный дизайн, подходит для официальных государственных встреч.", images: ["/images/mic-ld9800/1.jpg","/images/mic-ld9800/2.jpg","/images/mic-ld9800/3.jpg","/images/mic-ld9800/4.jpg","/images/mic-ld9800/5.jpg","/images/mic-ld9800/6.jpg","/images/mic-ld9800/7.jpg","/images/mic-ld9800/8.jpg","/images/mic-ld9800/9.jpg","/images/mic-ld9800/10.jpg"] },
+            { id: 4, name: "M-2000 Беспроводной Цельнометаллический 1-на-4 Микрофон", params: ["Схема True Diversity для Дальних Расстояний", "Перезаряжаемая База для Конференций", "Рабочее Расстояние до 100м"], desc: "Настольная установка, стабильный дизайн, подходит для официальных государственных встреч.", images: ["/images/mic-m2200/m2200.jpg","/images/mic-m2200/m2200-1.jpg"] },
+            { id: 5, name: "UR-880 Взаимосвязанная Настройка Беспроводной 1-на-2 True Diversity", params: ["Подключение через RJ45 для Системы Настройки", "Групповая Частота, Развертка, Спектр, EQ, SQ, ID", "Ручной с Усилением, Мощностью, Языком, Отключением, Сбросом, Блокировкой"], desc: "Многоточечное управление, суперприем, дальность до 300 метров.", images: ["/images/mic-ur880/ur880-1.jpg","/images/mic-ur880/ur880-2.jpg","/images/mic-ur880/ur880-3.jpg"] },
+            { id: 6, name: "UR-910 Беспроводной 1-на-1 True Diversity", params: ["True Diversity PLL Фазовая Автоподстройка", "Переключение Ручной/Поясной", "Рабочее Расстояние до 200м"], desc: "Высококачественная схема с динамическим капсюлем для чистого и прозрачного звука.", images: ["/images/mic-ur910/1.jpg","/images/mic-ur910/2.jpg","/images/mic-ur910/3.jpg","/images/mic-ur910/4.jpg"] },
+            { id: 7, name: "UR-990 Беспроводной 1-на-2 True Diversity", params: ["True Diversity PLL Фазовая Автоподстройка", "Переключение Ручной/Поясной", "Рабочее Расстояние до 200м"], desc: "Яркий полноэкранный дисплей, профессиональная фазовая схема, суперприем с 4 антеннами.", images: ["/images/mic-ur990/1.jpg","/images/mic-ur990/2.jpg","/images/mic-ur990/3.jpg","/images/mic-ur990/4.jpg","/images/mic-ur990/5.jpg"] },
+            { id: 8, name: "UR-1000 Беспроводной 1-на-2 True Diversity", params: ["True Diversity PLL Фазовая Автоподстройка", "Переключение Ручной/Поясной", "Рабочее Расстояние до 200м"], desc: "Высококачественная схема с динамическим капсюлем для чистого и прозрачного звука.", images: ["/images/mic-ur1000/1.jpg","/images/mic-ur1000/2.jpg","/images/mic-ur1000/3.jpg"] },
+            { id: 9, name: "UR-2400 Беспроводной 1-на-4 True Diversity", params: ["True Diversity PLL Фазовая Автоподстройка", "Переключение Ручной/Поясной", "Рабочее Расстояние до 200м"], desc: "Яркий полноэкранный дисплей, профессиональная фазовая схема, суперприем с 4 антеннами.", images: ["/images/mic-ur2400/1.jpg","/images/mic-ur2400/2.jpg","/images/mic-ur2400/3.jpg","/images/mic-ur2400/4.jpg","/images/mic-ur2400/5.jpg","/images/mic-ur2400/6.jpg","/images/mic-ur2400/7.jpg","/images/mic-ur2400/8.jpg"] },
+            { id: 10, name: "CT Беспроводной 1-на-2/4/8 Микрофон с Переключением Частот", params: ["Частота UHF600-690 МГц (Опционально)", "Смешивание Конференция/Ручной/Петличный", "Независимая Регулировка Громкости"], desc: "Профессиональная фазовая схема с шумоподавлением для эффективного подавления помех.", images: ["/images/mic-ct/1.jpg","/images/mic-ct/2.jpg","/images/mic-ct/3.jpg","/images/mic-ct/4.jpg","/images/mic-ct/5.jpg","/images/mic-ct/6.jpg","/images/mic-ct/7.jpg","/images/mic-ct/8.jpg","/images/mic-ct/9.jpg"] },
+            { id: 11, name: "CT-128 Высокорентабельный Беспроводной 1-на-2 Микрофон", params: ["Синтез Частот PLL", "Дальность Передачи 80м", "Динамический Капсюль для Чистого Звука"], desc: "Высокая помехоустойчивость, эффективно подавляет внешние шумы и помехи от соседних каналов.", images: ["/images/mic-ct128/mic-ct128-1.jpg","/images/mic-ct128/mic-ct128-2.jpg"] },
+            { id: 12, name: "FG Перезаряжаемая Серия Беспроводной 2/4/8-Канальный Микрофон", params: ["Синтез Частот PLL", "Дальность Передачи 80м", "12-Часовая Перезаряжаемая Батарея"], desc: "Профессиональная фазовая схема с шумоподавлением для эффективного подавления помех.", images: ["/images/mic-fc/fc-1.jpg","/images/mic-fc/fc-2.jpg","/images/mic-fc/fc-3.jpg"] },
+            { id: 13, name: "D90 Проводной Микрофон", params: ["Конденсаторный Капсюль", "Несколько Вариантов Питания", "Настраиваемая Длина Кабеля и Конфигурация"], desc: "Высококачественный проводной микрофон, стабильная помехозащита, четкий звук, подходит для конференций, презентаций и трансляций.", images: ["/images/mic-wried/1.jpg","/images/mic-wried/2.jpg","/images/mic-wried/3.jpg"] },
+            { id: 14, name: "D80 Проводной Микрофон", params: ["Конденсаторный Капсюль", "Питание: 48V Phantom/Батарея", "Настраиваемая Длина Кабеля и Конфигурация"], desc: "Высококачественный проводной микрофон, стабильная помехозащита, четкий звук, подходит для конференций, презентаций и трансляций.", images: ["/images/mic-wried/4.jpg","/images/mic-wried/5.jpg","/images/mic-wried/6.jpg"] },
+            { id: 15, name: "BM-38 Проводной Микрофон", params: ["Конденсаторный Капсюль", "Несколько Вариантов Питания", "Настраиваемая Длина Кабеля и Конфигурация"], desc: "Высококачественный проводной микрофон, стабильная помехозащита, четкий звук, подходит для конференций, презентаций и трансляций.", images: ["/images/mic-wried/7.jpg","/images/mic-wried/8.jpg"] },
+            { id: 16, name: "BM-960 Проводной Микрофон", params: ["Конденсаторный Капсюль", "Несколько Вариантов Питания", "Настраиваемая Длина Кабеля и Конфигурация"], desc: "Высококачественный проводной микрофон, стабильная помехозащита, четкий звук, подходит для конференций, презентаций и трансляций.", images: ["/images/mic-wried/9.jpg"] },
+            { id: 17, name: "Серия BM Проводной Микрофон", params: ["Конденсаторный Капсюль", "Несколько Вариантов Питания", "Настраиваемая Длина Кабеля и Конфигурация"], desc: "Высококачественный проводной микрофон, стабильная помехозащита, четкий звук, подходит для конференций, презентаций и трансляций.", images: ["/images/mic-wried/10.jpg","/images/mic-wried/11.jpg","/images/mic-wried/12.jpg","/images/mic-wried/13.jpg","/images/mic-wried/14.jpg","/images/mic-wried/15.jpg"] },
+            { id: 18, name: "Серия BM с Дисплеем Проводной Микрофон", params: ["Конденсаторный Капсюль", "Несколько Вариантов Питания", "Настраиваемая Длина Кабеля и Конфигурация"], desc: "Высококачественный проводной микрофон, стабильная помехозащита, четкий звук, подходит для конференций, презентаций и трансляций.", images: ["/images/mic-wried/17.jpg","/images/mic-wried/18.jpg","/images/mic-wried/19.jpg","/images/mic-wried/20.jpg","/images/mic-wried/21.jpg","/images/mic-wried/22.jpg"] },
+            { id: 19, name: "Конденсаторный Проводной Микрофон", params: ["Конденсаторный Капсюль", "Несколько Вариантов Питания", "Настраиваемая Длина Кабеля и Конфигурация"], desc: "Высококачественный проводной микрофон, стабильная помехозащита, четкий звук, подходит для конференций, презентаций и трансляций.", images: ["/images/mic-wried/A1.jpg"] }
+        ]
+    };
+
+    const navTranslations = {
+        zh: { nav_home: "返回首页", nav_profile: "公司介绍", nav_products: "产品中心", nav_articles: "企业资讯", nav_contact: "联系方式", bread_home: "首页", bread_products: "产品中心", bread_current: "麦克风系列", page_title: "麦克风系列", footer_copyright: "© 2005-2026 LDMETING 恩平市凌动电子科技有限公司 保留所有权利。" },
+        en: { nav_home: "Home", nav_profile: "About Us", nav_products: "Products", nav_articles: "News", nav_contact: "Contact", bread_home: "Home", bread_products: "Products", bread_current: "Microphone Series", page_title: "Microphone Series", footer_copyright: "© 2005-2026 LDMETING Enping Lingdong Electronic Technology Co., Ltd. All rights reserved." },
+        es: { nav_home: "Inicio", nav_profile: "Sobre Nosotros", nav_products: "Productos", nav_articles: "Noticias", nav_contact: "Contacto", bread_home: "Inicio", bread_products: "Productos", bread_current: "Serie de Micrófonos", page_title: "Serie de Micrófonos", footer_copyright: "© 2005-2026 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Todos los derechos reservados." },
+        ru: { nav_home: "Главная", nav_profile: "О нас", nav_products: "Продукты", nav_articles: "Новости", nav_contact: "Контакты", bread_home: "Главная", bread_products: "Продукты", bread_current: "Микрофоны", page_title: "Микрофоны", footer_copyright: "© 2005-2026 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Все права защищены." }
+    };
+
+    function renderProducts(lang) {
+        const grid = document.getElementById('productGrid');
+        const products = productData[lang] || productData.zh;
+        grid.innerHTML = '';
+
+        products.forEach(function(product) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+
+            const slider = document.createElement('div');
+            slider.className = 'product-img-slider';
+            slider.dataset.sliderId = product.id;
+
+            const wrapper = document.createElement('div');
+            wrapper.className = 'slider-wrapper';
+
+            product.images.forEach(function(img) {
+                const item = document.createElement('div');
+                item.className = 'slider-item';
+                item.style.backgroundImage = 'url(' + encodeURI(img) + ')';
+                wrapper.appendChild(item);
+            });
+
+            slider.appendChild(wrapper);
+
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'slider-btn prev-btn';
+            prevBtn.textContent = '‹';
+            slider.appendChild(prevBtn);
+
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'slider-btn next-btn';
+            nextBtn.textContent = '›';
+            slider.appendChild(nextBtn);
+
+            const indicators = document.createElement('div');
+            indicators.className = 'slider-indicators';
+            product.images.forEach(function(img, idx) {
+                const dot = document.createElement('span');
+                dot.className = 'indicator-dot' + (idx === 0 ? ' active' : '');
+                dot.dataset.index = idx;
+                indicators.appendChild(dot);
+            });
+            slider.appendChild(indicators);
+
+            const info = document.createElement('div');
+            info.className = 'product-info';
+
+            const title = document.createElement('h3');
+            title.textContent = product.name;
+
+            const paramsDiv = document.createElement('div');
+            paramsDiv.className = 'product-params';
+            product.params.forEach(function(p) {
+                const pTag = document.createElement('p');
+                pTag.textContent = p;
+                paramsDiv.appendChild(pTag);
+            });
+
+            const desc = document.createElement('p');
+            desc.className = 'desc';
+            desc.textContent = product.desc;
+
+            info.appendChild(title);
+            info.appendChild(paramsDiv);
+            info.appendChild(desc);
+
+            card.appendChild(slider);
+            card.appendChild(info);
+            grid.appendChild(card);
+
+            initSlider(slider);
+        });
+    }
+
+    function initSlider(slider) {
+        const wrapper = slider.querySelector('.slider-wrapper');
+        const items = slider.querySelectorAll('.slider-item');
+        const prevBtn = slider.querySelector('.prev-btn');
+        const nextBtn = slider.querySelector('.next-btn');
+        const indicators = slider.querySelectorAll('.indicator-dot');
+        const totalItems = items.length;
+        let currentIndex = 0;
+
+        if (totalItems <= 1) {
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+            return;
+        }
+
+        function updateSlider() {
+            wrapper.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+            indicators.forEach(function(dot, idx) {
+                dot.classList.toggle('active', idx === currentIndex);
+            });
+        }
+
+        prevBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateSlider();
+        });
+
+        indicators.forEach(function(dot, idx) {
+            dot.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentIndex = idx;
+                updateSlider();
+            });
+        });
+    }
+
+    let currentLang = localStorage.getItem('ldmeting-lang') || 'zh';
+
+    function switchLanguage(lang) {
+        if (!navTranslations[lang]) return;
+        currentLang = lang;
+
+        document.querySelectorAll('[data-key]').forEach(function(el) {
+            const key = el.getAttribute('data-key');
+            if (navTranslations[lang] && navTranslations[lang][key]) {
+                el.textContent = navTranslations[lang][key];
+            }
+        });
+
+        document.querySelectorAll('.lang-switcher a').forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('data-lang') === lang) {
+                link.classList.add('active');
+            }
+        });
+
+        renderProducts(lang);
+        localStorage.setItem('ldmeting-lang', lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.lang-switcher a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchLanguage(this.getAttribute('data-lang'));
+            });
+        });
+        switchLanguage(currentLang);
+    });
+</script>
+</body>
+</html>
