@@ -3,288 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dante智造，音传无界｜专业音频设备研发生产厂家，打造全场景会议与拾音解决方案 - LDMETING</title>
+
+    <!-- ===== SEO 基础标签 ===== -->
+    <link rel="canonical" href="https://www.ldmeting.com/article-detail-7.html" />
+    <meta name="description" content="LDMETING 专业音频设备研发生产厂家，打造涵盖Dante协议麦克风、有线麦克风、无线麦克风、数字会议系统、音频处理器的全品类产品矩阵，提供全场景会议与拾音解决方案。" />
+    <meta name="keywords" content="Dante麦克风,Dante协议,专业音频设备,会议系统,无线麦克风,音频处理器,LDMETING" />
+    <meta name="google-site-verification" content="iPeL4d5MSvNHtI0my8gCsQvVTQ1eyYuKUrq1rhNLzIA" />
+
+    <!-- ===== 多语言 hreflang ===== -->
+    <link rel="alternate" hreflang="zh" href="https://www.ldmeting.com/article-detail-7.html" />
+    <link rel="alternate" hreflang="en" href="https://www.ldmeting.com/en/article-detail-7.html" />
+    <link rel="alternate" hreflang="es" href="https://www.ldmeting.com/es/article-detail-7.html" />
+    <link rel="alternate" hreflang="ru" href="https://www.ldmeting.com/ru/article-detail-7.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.ldmeting.com/article-detail-7.html" />
+
+    <title>Dante智造，音传无界｜LDMETING 专业音频设备研发生产厂家</title>
     <style>
-        /* 基础样式复用 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft Yahei", sans-serif;
-        }
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.8;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* 导航栏样式 */
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem 5%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 2rem;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #3498db;
-        }
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 101;
-        }
-
-        /* 语言切换器 */
-        .lang-switcher {
-            display: flex;
-            align-items: center;
-            margin-left: 2rem;
-            gap: 0.2rem;
-        }
-        .lang-switcher a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.85rem;
-            padding: 0.2rem 0.4rem;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-        .lang-switcher a:hover {
-            color: white;
-        }
-        .lang-switcher a.active {
-            color: #3498db;
-            font-weight: bold;
-        }
-        .lang-switcher .sep {
-            color: #555;
-            font-size: 0.8rem;
-        }
-
-        /* 面包屑导航 */
-        .breadcrumb {
-            padding: 1rem 5%;
-            background-color: white;
-            font-size: 0.9rem;
-        }
-        .breadcrumb a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-        .breadcrumb span {
-            margin: 0 0.5rem;
-            color: #999;
-        }
-
-        /* 文章详情样式 */
-        .article-detail {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 3rem 5%;
-        }
-        .article-header {
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #eee;
-        }
-        .article-title {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-        .article-meta {
-            color: #999;
-            font-size: 0.9rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-        .article-content {
-            background-color: white;
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .article-content p {
-            margin-bottom: 1.5rem;
-            text-align: justify;
-        }
-        .article-content h3 {
-            color: #2c3e50;
-            margin: 2rem 0 1rem;
-            font-size: 1.4rem;
-        }
-        .article-content img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-        }
-
-        /* 相关推荐 */
-        .related-articles {
-            margin-top: 3rem;
-        }
-        .related-title {
-            font-size: 1.4rem;
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #eee;
-        }
-        .related-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .related-item {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .related-item h4 {
-            margin-bottom: 0.8rem;
-        }
-        .related-item h4 a {
-            color: #2c3e50;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .related-item h4 a:hover {
-            color: #3498db;
-        }
-        .related-date {
-            color: #999;
-            font-size: 0.8rem;
-        }
-
-        /* 返回列表按钮 */
-        .back-to-list {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 0.8rem 2rem;
-            background-color: #2c3e50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .back-to-list:hover {
-            background-color: #1a252f;
-        }
-
-        /* 页脚样式 */
-        footer {
-            background-color: #1a252f;
-            color: white;
-            text-align: center;
-            padding: 2rem 5%;
-            margin-top: 3rem;
-        }
-
-        /* 响应式样式 */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft Yahei", "PingFang SC", sans-serif; }
+        body { background-color: #f5f7fa; color: #333; line-height: 1.8; }
+        html { scroll-behavior: smooth; }
+        header { background-color: #2c3e50; color: white; padding: 1rem 5%; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .logo a { color: white; text-decoration: none; }
+        .nav-links { display: flex; align-items: center; flex-wrap: wrap; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 2rem; transition: color 0.3s; }
+        .nav-links a:hover { color: #3498db; }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; z-index: 101; }
+        .lang-switcher { display: flex; align-items: center; margin-left: 2rem; gap: 0.2rem; flex-wrap: wrap; }
+        .lang-switcher a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.8rem; padding: 0.2rem 0.4rem; transition: color 0.3s; }
+        .lang-switcher a:hover { color: white; }
+        .lang-switcher a.active { color: #3498db; font-weight: bold; }
+        .lang-switcher .sep { color: #555; font-size: 0.7rem; }
+        .breadcrumb { padding: 1rem 5%; background-color: white; font-size: 0.9rem; border-bottom: 1px solid #eee; }
+        .breadcrumb a { color: #3498db; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { color: #999; margin: 0 0.5rem; }
+        .article-detail { max-width: 1000px; margin: 0 auto; padding: 3rem 5%; }
+        .article-header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
+        .article-title { font-size: 2rem; color: #2c3e50; margin-bottom: 1rem; }
+        .article-meta { color: #999; font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 1.5rem; }
+        .article-content { background-color: white; padding: 3rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .article-content p { margin-bottom: 1.5rem; text-align: justify; }
+        .article-content h3 { color: #2c3e50; margin: 2rem 0 1rem; font-size: 1.4rem; }
+        .article-content h4 { color: #2c3e50; margin: 1.8rem 0 0.8rem; font-size: 1.2rem; }
+        .article-content h5 { color: #2c3e50; margin: 1.8rem 0 0.8rem; font-size: 1.15rem; }
+        .article-content h6 { color: #2c3e50; margin: 1.8rem 0 0.8rem; font-size: 1.1rem; }
+        .article-content h7 { color: #2c3e50; margin: 1.8rem 0 0.8rem; font-size: 1.1rem; }
+        .article-content img { max-width: 100%; border-radius: 8px; margin: 1.5rem 0; }
+        .article-content strong { color: #2c3e50; }
+        .related-articles { margin-top: 3rem; }
+        .related-title { font-size: 1.4rem; color: #2c3e50; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #eee; }
+        .related-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .related-item { background-color: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .related-item h4 { margin-bottom: 0.8rem; font-size: 1rem; }
+        .related-item h4 a { color: #2c3e50; text-decoration: none; transition: color 0.3s; }
+        .related-item h4 a:hover { color: #3498db; }
+        .related-date { color: #999; font-size: 0.8rem; }
+        .back-to-list { display: inline-block; margin-top: 2rem; padding: 0.8rem 2rem; background-color: #2c3e50; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s; }
+        .back-to-list:hover { background-color: #1a252f; }
+        footer { background-color: #1a252f; color: white; text-align: center; padding: 2rem 5%; margin-top: 3rem; }
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .nav-links.mobile-open {
-                display: flex;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: #2c3e50;
-                padding: 1rem 5%;
-                flex-direction: column;
-                gap: 1rem;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            }
-            .nav-links.mobile-open .lang-switcher {
-                margin-left: 0;
-                justify-content: flex-start;
-            }
-            .article-detail {
-                padding: 2rem 5%;
-            }
-            .article-title {
-                font-size: 1.6rem;
-            }
-            .article-content {
-                padding: 1.5rem;
-            }
-            .article-meta {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .nav-links.mobile-open { display: flex; position: absolute; top: 100%; left: 0; width: 100%; background-color: #2c3e50; padding: 1rem 5%; flex-direction: column; gap: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+            .nav-links.mobile-open .lang-switcher { margin-left: 0; justify-content: flex-start; }
+            .article-detail { padding: 2rem 5%; }
+            .article-title { font-size: 1.6rem; }
+            .article-content { padding: 1.5rem; }
+            .article-meta { flex-direction: column; gap: 0.5rem; }
         }
     </style>
 </head>
 <body>
+
 <header>
     <div class="nav-container">
-        <div class="logo">LDMETING</div>
+        <div class="logo"><a href="/">LDMETING</a></div>
         <nav class="nav-links" aria-label="主导航">
-            <a href="index.html#profile" data-key="nav_profile">公司介绍</a>
-            <a href="index.html#products" data-key="nav_products">产品中心</a>
-            <a href="articles-list.html" data-key="nav_articles">企业资讯</a>
-            <a href="index.html#contact" data-key="nav_contact">联系方式</a>
-            <!-- 语言切换器 -->
+            <a href="/#profile" data-key="nav_profile">公司介绍</a>
+            <a href="/#products" data-key="nav_products">产品中心</a>
+            <a href="/articles-list.html" data-key="nav_articles">企业资讯</a>
+            <a href="/#contact" data-key="nav_contact">联系方式</a>
             <div class="lang-switcher">
-                <a href="#" data-lang="zh" class="active">中文</a>
+                <a href="/article-detail-7.html" data-lang="zh" class="active">中文</a>
                 <span class="sep">|</span>
-                <a href="#" data-lang="en">English</a>
+                <a href="/en/article-detail-7.html" data-lang="en">English</a>
                 <span class="sep">|</span>
-                <a href="#" data-lang="es">Español</a>
+                <a href="/es/article-detail-7.html" data-lang="es">Español</a>
+                <span class="sep">|</span>
+                <a href="/ru/article-detail-7.html" data-lang="ru">Русский</a>
             </div>
         </nav>
         <div class="menu-toggle" aria-label="切换菜单">☰</div>
     </div>
 </header>
 
-<!-- 面包屑导航 -->
 <div class="breadcrumb">
-    <a href="index.html" data-key="bread_home">首页</a>
+    <a href="/" data-key="bread_home">首页</a>
     <span>></span>
-    <a href="articles-list.html" data-key="bread_articles">企业资讯</a>
+    <a href="/articles-list.html" data-key="bread_articles">企业资讯</a>
     <span>></span>
     <span data-key="bread_current">Dante智造，音传无界｜专业音频设备研发生产厂家，打造全场景会议与拾音解决方案</span>
 </div>
 
-<!-- 文章详情主体 -->
 <div class="article-detail">
     <div class="article-header">
         <h1 class="article-title" data-key="article_title">Dante智造，音传无界｜专业音频设备研发生产厂家，打造全场景会议与拾音解决方案</h1>
@@ -316,65 +138,63 @@
         <h3 data-key="h3">全品类麦克风矩阵：有线+无线，满足全场景拾音需求</h3>
         <p data-key="p7">除核心Dante协议麦克风外，我们同步打造高品质有线麦克风、无线麦克风产品线，依托自研声学技术与精密生产工艺，兼顾稳定性、耐用性与音质表现，覆盖会议发言、舞台演出、教育培训、直播录音、公共广播等全场景应用。</p>
 
-        <p data-key="p8"><strong>有线麦克风：稳定耐用，专业拾音</strong></p>
-        <p data-key="p9">主打鹅颈会议麦、手持动圈麦、电容录音麦等品类，采用高保真驻极体咪芯与金属精工材质，抗干扰能力强、底噪极低，支持幻象供电，适配固定工位会议、演播室录音、舞台固定拾音等场景，长期使用稳定性拉满，无惧频繁插拔与长时间工作。</p>
+        <h4 data-key="h4">有线麦克风：稳定耐用，专业拾音</h4>
+        <p data-key="p8">主打鹅颈会议麦、手持动圈麦、电容录音麦等品类，采用高保真驻极体咪芯与金属精工材质，抗干扰能力强、底噪极低，支持幻象供电，适配固定工位会议、演播室录音、舞台固定拾音等场景，长期使用稳定性拉满，无惧频繁插拔与长时间工作。</p>
 
-        <p data-key="p10"><strong>无线麦克风：自由便捷，信号稳定</strong></p>
-        <p data-key="p11">研发U段变频、真分集等多款无线麦克风产品，采用专业射频技术，有效规避信号干扰、断频、串频问题，传输距离远、续航持久，涵盖手持麦、领夹麦、头戴麦等类型，适配舞台演出、移动发言、教育培训、直播带货等需要灵活移动的场景，摆脱线缆束缚，拾音更自由。</p>
+        <h4 data-key="h5">无线麦克风：自由便捷，信号稳定</h4>
+        <p data-key="p9">研发U段变频、真分集等多款无线麦克风产品，采用专业射频技术，有效规避信号干扰、断频、串频问题，传输距离远、续航持久，涵盖手持麦、领夹麦、头戴麦等类型，适配舞台演出、移动发言、教育培训、直播带货等需要灵活移动的场景，摆脱线缆束缚，拾音更自由。</p>
 
-        <h3 data-key="h4">一站式会议系统+音频处理器：构建完整智能音频生态</h3>
-        <p data-key="p12">我们并非单一设备生产商，更专注打造一体化智能会议音频解决方案，将麦克风、数字会议系统、音频处理器深度融合，实现从拾音、传输、处理到扩声的全流程优化，解决传统会议系统杂音多、调试难、管控乱、兼容性差等痛点。</p>
+        <h3 data-key="h6">一站式会议系统+音频处理器：构建完整智能音频生态</h3>
+        <p data-key="p10">我们并非单一设备生产商，更专注打造一体化智能会议音频解决方案，将麦克风、数字会议系统、音频处理器深度融合，实现从拾音、传输、处理到扩声的全流程优化，解决传统会议系统杂音多、调试难、管控乱、兼容性差等痛点。</p>
 
-        <p data-key="p13"><strong>数字会议系统：智能管控，高效协同</strong></p>
-        <p data-key="p14">自主研发手拉手数字会议系统、无线会议系统、Dante网络会议系统，支持发言排队、主席优先、摄像跟踪、一键静音、同声传译等多功能拓展，单元之间采用网线或无线连接，安装便捷、扩容灵活，适配董事会会议室、政务会议厅、多功能报告厅、远程视频会议等场景，实现会议音频的智能化集中管控，提升会议效率与专业性。</p>
+        <h4 data-key="h7">数字会议系统：智能管控，高效协同</h4>
+        <p data-key="p11">自主研发手拉手数字会议系统、无线会议系统、Dante网络会议系统，支持发言排队、主席优先、摄像跟踪、一键静音、同声传译等多功能拓展，单元之间采用网线或无线连接，安装便捷、扩容灵活，适配董事会会议室、政务会议厅、多功能报告厅、远程视频会议等场景，实现会议音频的智能化集中管控，提升会议效率与专业性。</p>
 
-        <p data-key="p15"><strong>专业音频处理器：硬核处理，音质优化</strong></p>
-        <p data-key="p16">配套研发生产Dante协议音频处理器、数字混音器、降噪处理器、回声消除器等核心处理设备，内置高性能DSP芯片，具备自动混音、智能降噪、回声消除、均衡调节、增益控制、信号分配等强大功能，可对麦克风拾取的原始音频信号进行精细化优化处理，过滤环境噪音、抑制啸叫、优化人声清晰度，同时完美兼容Dante网络、有线、无线等全类型麦克风设备，实现整套音频系统的稳定运行与音质升级。</p>
+        <h4 data-key="h8">专业音频处理器：硬核处理，音质优化</h4>
+        <p data-key="p12">配套研发生产Dante协议音频处理器、数字混音器、降噪处理器、回声消除器等核心处理设备，内置高性能DSP芯片，具备自动混音、智能降噪、回声消除、均衡调节、增益控制、信号分配等强大功能，可对麦克风拾取的原始音频信号进行精细化优化处理，过滤环境噪音、抑制啸叫、优化人声清晰度，同时完美兼容Dante网络、有线、无线等全类型麦克风设备，实现整套音频系统的稳定运行与音质升级。</p>
 
-        <h3 data-key="h5">研发+生产双轮驱动：硬核实力铸就品质标杆</h3>
+        <h3 data-key="h9">研发+生产双轮驱动：硬核实力铸就品质标杆</h3>
 
-        <p data-key="p17"><strong>自主研发，技术持续迭代</strong></p>
-        <p data-key="p18">拥有专业音频研发团队，深耕声学技术、网络传输技术、数字信号处理技术多年，专注攻克Dante协议适配、抗干扰技术、降噪算法、低功耗设计等核心难题，拥有多项自主研发专利与技术成果。可根据客户特殊场景需求，提供产品功能定制、外观定制、接口定制、系统方案定制等个性化服务，精准匹配政企、教育、广电、工业等不同行业的专属音频需求。</p>
+        <h4 data-key="h10">自主研发，技术持续迭代</h4>
+        <p data-key="p13">拥有专业音频研发团队，深耕声学技术、网络传输技术、数字信号处理技术多年，专注攻克Dante协议适配、抗干扰技术、降噪算法、低功耗设计等核心难题，拥有多项自主研发专利与技术成果。可根据客户特殊场景需求，提供产品功能定制、外观定制、接口定制、系统方案定制等个性化服务，精准匹配政企、教育、广电、工业等不同行业的专属音频需求。</p>
 
-        <p data-key="p19"><strong>规模化生产，品质严苛把控</strong></p>
-        <p data-key="p20">自建标准化生产车间，配备精密生产、检测、老化测试设备，从原材料采购、元器件筛选、生产组装到成品检测，执行全流程严苛品控标准。每一款麦克风、会议系统及处理器，均经过多轮音质测试、信号稳定性测试、耐用性测试、兼容性测试，确保产品出厂即达标，长期使用稳定可靠，兼顾大批量量产能力与精细化品质管控，支持OEM/ODM合作，为客户提供高效、靠谱的生产代工服务。</p>
+        <h4 data-key="h11">规模化生产，品质严苛把控</h4>
+        <p data-key="p14">自建标准化生产车间，配备精密生产、检测、老化测试设备，从原材料采购、元器件筛选、生产组装到成品检测，执行全流程严苛品控标准。每一款麦克风、会议系统及处理器，均经过多轮音质测试、信号稳定性测试、耐用性测试、兼容性测试，确保产品出厂即达标，长期使用稳定可靠，兼顾大批量量产能力与精细化品质管控，支持OEM/ODM合作，为客户提供高效、靠谱的生产代工服务。</p>
 
-        <h3 data-key="h6">全场景应用落地，赋能各行各业音频升级</h3>
-        <p data-key="p21">凭借全品类产品、硬核技术与稳定品质，我们的音频设备已广泛应用于：</p>
+        <h3 data-key="h12">全场景应用落地，赋能各行各业音频升级</h3>
+        <p data-key="p15">凭借全品类产品、硬核技术与稳定品质，我们的音频设备已广泛应用于：</p>
 
-        <p data-key="p22"><strong>政企领域：</strong>政府机关会议室、董事会厅、政务服务中心、指挥调度中心</p>
-        <p data-key="p23"><strong>教育领域：</strong>学校阶梯教室、报告厅、录播教室、多媒体会议室</p>
-        <p data-key="p24"><strong>商用领域：</strong>企业多功能厅、酒店会议室、商务洽谈室、远程视频会议中心</p>
-        <p data-key="p25"><strong>专业领域：</strong>广电演播室、舞台演出场馆、体育场馆、广播电视台</p>
-        <p data-key="p26"><strong>公共领域：</strong>机场、车站、商场、医院等公共广播与应急指挥场景</p>
+        <p data-key="p16"><strong>政企领域：</strong>政府机关会议室、董事会厅、政务服务中心、指挥调度中心</p>
+        <p data-key="p17"><strong>教育领域：</strong>学校阶梯教室、报告厅、录播教室、多媒体会议室</p>
+        <p data-key="p18"><strong>商用领域：</strong>企业多功能厅、酒店会议室、商务洽谈室、远程视频会议中心</p>
+        <p data-key="p19"><strong>专业领域：</strong>广电演播室、舞台演出场馆、体育场馆、广播电视台</p>
+        <p data-key="p20"><strong>公共领域：</strong>机场、车站、商场、医院等公共广播与应急指挥场景</p>
 
-        <h3 data-key="h7">匠心铸音，合作共赢</h3>
+        <h3 data-key="h13">匠心铸音，合作共赢</h3>
 
-        <p data-key="p27">以技术为核心，以品质为根本，以客户需求为导向，我们始终专注音频设备领域，持续优化产品性能、丰富产品矩阵、提升服务质量。无论是标准化Dante协议麦克风、有线无线麦克风，还是定制化会议系统与音频处理器，我们都坚持用自研实力与精工智造，为客户提供高品质、高适配、高性价比的音频产品与一站式解决方案。</p>
-        <p data-key="p28">未来，我们将继续深耕音频技术创新，助力各行各业实现音频系统数字化、网络化、智能化升级，用清晰纯净的声音，传递每一份重要信息，携手合作伙伴共拓音频市场新蓝海！</p>
+        <p data-key="p21">以技术为核心，以品质为根本，以客户需求为导向，我们始终专注音频设备领域，持续优化产品性能、丰富产品矩阵、提升服务质量。无论是标准化Dante协议麦克风、有线无线麦克风，还是定制化会议系统与音频处理器，我们都坚持用自研实力与精工智造，为客户提供高品质、高适配、高性价比的音频产品与一站式解决方案。</p>
+        <p data-key="p22">未来，我们将继续深耕音频技术创新，助力各行各业实现音频系统数字化、网络化、智能化升级，用清晰纯净的声音，传递每一份重要信息，携手合作伙伴共拓音频市场新蓝海！</p>
     </div>
 
-    <!-- 相关推荐 -->
     <div class="related-articles">
         <h3 class="related-title" data-key="related_title">相关推荐</h3>
         <div class="related-list">
             <div class="related-item">
-                <h4><a href="article-detail-1.html" data-key="related1_title">赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会</a></h4>
+                <h4><a href="/article-detail-1.html" data-key="related1_title">赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会</a></h4>
                 <div class="related-date">2026-01-10</div>
             </div>
             <div class="related-item">
-                <h4><a href="article-detail-2.html" data-key="related2_title">无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务</a></h4>
+                <h4><a href="/article-detail-2.html" data-key="related2_title">无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务</a></h4>
                 <div class="related-date">2025-10-15</div>
             </div>
             <div class="related-item">
-                <h4><a href="article-detail-4.html" data-key="related3_title">凌动邀您共聚羊城｜2025广州国际专业灯光音响展，2.1馆G50展位静待莅临</a></h4>
+                <h4><a href="/article-detail-4.html" data-key="related3_title">凌动邀您共聚羊城｜2025广州国际专业灯光音响展，2.1馆G50展位静待莅临</a></h4>
                 <div class="related-date">2025-02-05</div>
             </div>
         </div>
     </div>
 
-    <!-- 返回列表按钮 -->
-    <a href="articles-list.html" class="back-to-list" data-key="back_btn">返回资讯列表</a>
+    <a href="/articles-list.html" class="back-to-list" data-key="back_btn">返回资讯列表</a>
 </div>
 
 <footer>
@@ -382,17 +202,12 @@
 </footer>
 
 <script>
-    // ============================================================
-    // 1. 移动端菜单切换
-    // ============================================================
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
+    var menuToggle = document.querySelector('.menu-toggle');
+    var navLinks = document.querySelector('.nav-links');
     menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('mobile-open');
         menuToggle.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
     });
-
     document.querySelectorAll('.nav-links a').forEach(function(link) {
         link.addEventListener('click', function() {
             navLinks.classList.remove('mobile-open');
@@ -400,10 +215,7 @@
         });
     });
 
-    // ============================================================
-    // 2. 多语言数据
-    // ============================================================
-    const translations = {
+    var translations = {
         zh: {
             nav_profile: "公司介绍",
             nav_products: "产品中心",
@@ -426,31 +238,31 @@
             p6: "全类型覆盖，适配多元场景：研发生产Dante鹅颈会议麦、边界界面麦、吊顶阵列麦、手持无线Dante麦等全类型产品，心形、超心形、全指向等多种拾音模式可选，兼顾桌面安装、嵌入式安装、吊顶吊装等多种安装方式，满足不同场景的拾音角度、距离与隐蔽性需求。",
             h3: "全品类麦克风矩阵：有线+无线，满足全场景拾音需求",
             p7: "除核心Dante协议麦克风外，我们同步打造高品质有线麦克风、无线麦克风产品线，依托自研声学技术与精密生产工艺，兼顾稳定性、耐用性与音质表现，覆盖会议发言、舞台演出、教育培训、直播录音、公共广播等全场景应用。",
-            p8: "有线麦克风：稳定耐用，专业拾音",
-            p9: "主打鹅颈会议麦、手持动圈麦、电容录音麦等品类，采用高保真驻极体咪芯与金属精工材质，抗干扰能力强、底噪极低，支持幻象供电，适配固定工位会议、演播室录音、舞台固定拾音等场景，长期使用稳定性拉满，无惧频繁插拔与长时间工作。",
-            p10: "无线麦克风：自由便捷，信号稳定",
-            p11: "研发U段变频、真分集等多款无线麦克风产品，采用专业射频技术，有效规避信号干扰、断频、串频问题，传输距离远、续航持久，涵盖手持麦、领夹麦、头戴麦等类型，适配舞台演出、移动发言、教育培训、直播带货等需要灵活移动的场景，摆脱线缆束缚，拾音更自由。",
-            h4: "一站式会议系统+音频处理器：构建完整智能音频生态",
-            p12: "我们并非单一设备生产商，更专注打造一体化智能会议音频解决方案，将麦克风、数字会议系统、音频处理器深度融合，实现从拾音、传输、处理到扩声的全流程优化，解决传统会议系统杂音多、调试难、管控乱、兼容性差等痛点。",
-            p13: "数字会议系统：智能管控，高效协同",
-            p14: "自主研发手拉手数字会议系统、无线会议系统、Dante网络会议系统，支持发言排队、主席优先、摄像跟踪、一键静音、同声传译等多功能拓展，单元之间采用网线或无线连接，安装便捷、扩容灵活，适配董事会会议室、政务会议厅、多功能报告厅、远程视频会议等场景，实现会议音频的智能化集中管控，提升会议效率与专业性。",
-            p15: "专业音频处理器：硬核处理，音质优化",
-            p16: "配套研发生产Dante协议音频处理器、数字混音器、降噪处理器、回声消除器等核心处理设备，内置高性能DSP芯片，具备自动混音、智能降噪、回声消除、均衡调节、增益控制、信号分配等强大功能，可对麦克风拾取的原始音频信号进行精细化优化处理，过滤环境噪音、抑制啸叫、优化人声清晰度，同时完美兼容Dante网络、有线、无线等全类型麦克风设备，实现整套音频系统的稳定运行与音质升级。",
-            h5: "研发+生产双轮驱动：硬核实力铸就品质标杆",
-            p17: "自主研发，技术持续迭代",
-            p18: "拥有专业音频研发团队，深耕声学技术、网络传输技术、数字信号处理技术多年，专注攻克Dante协议适配、抗干扰技术、降噪算法、低功耗设计等核心难题，拥有多项自主研发专利与技术成果。可根据客户特殊场景需求，提供产品功能定制、外观定制、接口定制、系统方案定制等个性化服务，精准匹配政企、教育、广电、工业等不同行业的专属音频需求。",
-            p19: "规模化生产，品质严苛把控",
-            p20: "自建标准化生产车间，配备精密生产、检测、老化测试设备，从原材料采购、元器件筛选、生产组装到成品检测，执行全流程严苛品控标准。每一款麦克风、会议系统及处理器，均经过多轮音质测试、信号稳定性测试、耐用性测试、兼容性测试，确保产品出厂即达标，长期使用稳定可靠，兼顾大批量量产能力与精细化品质管控，支持OEM/ODM合作，为客户提供高效、靠谱的生产代工服务。",
-            h6: "全场景应用落地，赋能各行各业音频升级",
-            p21: "凭借全品类产品、硬核技术与稳定品质，我们的音频设备已广泛应用于：",
-            p22: "政企领域：政府机关会议室、董事会厅、政务服务中心、指挥调度中心",
-            p23: "教育领域：学校阶梯教室、报告厅、录播教室、多媒体会议室",
-            p24: "商用领域：企业多功能厅、酒店会议室、商务洽谈室、远程视频会议中心",
-            p25: "专业领域：广电演播室、舞台演出场馆、体育场馆、广播电视台",
-            p26: "公共领域：机场、车站、商场、医院等公共广播与应急指挥场景",
-            h7: "匠心铸音，合作共赢",
-            p27: "以技术为核心，以品质为根本，以客户需求为导向，我们始终专注音频设备领域，持续优化产品性能、丰富产品矩阵、提升服务质量。无论是标准化Dante协议麦克风、有线无线麦克风，还是定制化会议系统与音频处理器，我们都坚持用自研实力与精工智造，为客户提供高品质、高适配、高性价比的音频产品与一站式解决方案。",
-            p28: "未来，我们将继续深耕音频技术创新，助力各行各业实现音频系统数字化、网络化、智能化升级，用清晰纯净的声音，传递每一份重要信息，携手合作伙伴共拓音频市场新蓝海！",
+            h4: "有线麦克风：稳定耐用，专业拾音",
+            p8: "主打鹅颈会议麦、手持动圈麦、电容录音麦等品类，采用高保真驻极体咪芯与金属精工材质，抗干扰能力强、底噪极低，支持幻象供电，适配固定工位会议、演播室录音、舞台固定拾音等场景，长期使用稳定性拉满，无惧频繁插拔与长时间工作。",
+            h5: "无线麦克风：自由便捷，信号稳定",
+            p9: "研发U段变频、真分集等多款无线麦克风产品，采用专业射频技术，有效规避信号干扰、断频、串频问题，传输距离远、续航持久，涵盖手持麦、领夹麦、头戴麦等类型，适配舞台演出、移动发言、教育培训、直播带货等需要灵活移动的场景，摆脱线缆束缚，拾音更自由。",
+            h6: "一站式会议系统+音频处理器：构建完整智能音频生态",
+            p10: "我们并非单一设备生产商，更专注打造一体化智能会议音频解决方案，将麦克风、数字会议系统、音频处理器深度融合，实现从拾音、传输、处理到扩声的全流程优化，解决传统会议系统杂音多、调试难、管控乱、兼容性差等痛点。",
+            h7: "数字会议系统：智能管控，高效协同",
+            p11: "自主研发手拉手数字会议系统、无线会议系统、Dante网络会议系统，支持发言排队、主席优先、摄像跟踪、一键静音、同声传译等多功能拓展，单元之间采用网线或无线连接，安装便捷、扩容灵活，适配董事会会议室、政务会议厅、多功能报告厅、远程视频会议等场景，实现会议音频的智能化集中管控，提升会议效率与专业性。",
+            h8: "专业音频处理器：硬核处理，音质优化",
+            p12: "配套研发生产Dante协议音频处理器、数字混音器、降噪处理器、回声消除器等核心处理设备，内置高性能DSP芯片，具备自动混音、智能降噪、回声消除、均衡调节、增益控制、信号分配等强大功能，可对麦克风拾取的原始音频信号进行精细化优化处理，过滤环境噪音、抑制啸叫、优化人声清晰度，同时完美兼容Dante网络、有线、无线等全类型麦克风设备，实现整套音频系统的稳定运行与音质升级。",
+            h9: "研发+生产双轮驱动：硬核实力铸就品质标杆",
+            h10: "自主研发，技术持续迭代",
+            p13: "拥有专业音频研发团队，深耕声学技术、网络传输技术、数字信号处理技术多年，专注攻克Dante协议适配、抗干扰技术、降噪算法、低功耗设计等核心难题，拥有多项自主研发专利与技术成果。可根据客户特殊场景需求，提供产品功能定制、外观定制、接口定制、系统方案定制等个性化服务，精准匹配政企、教育、广电、工业等不同行业的专属音频需求。",
+            h11: "规模化生产，品质严苛把控",
+            p14: "自建标准化生产车间，配备精密生产、检测、老化测试设备，从原材料采购、元器件筛选、生产组装到成品检测，执行全流程严苛品控标准。每一款麦克风、会议系统及处理器，均经过多轮音质测试、信号稳定性测试、耐用性测试、兼容性测试，确保产品出厂即达标，长期使用稳定可靠，兼顾大批量量产能力与精细化品质管控，支持OEM/ODM合作，为客户提供高效、靠谱的生产代工服务。",
+            h12: "全场景应用落地，赋能各行各业音频升级",
+            p15: "凭借全品类产品、硬核技术与稳定品质，我们的音频设备已广泛应用于：",
+            p16: "政企领域：政府机关会议室、董事会厅、政务服务中心、指挥调度中心",
+            p17: "教育领域：学校阶梯教室、报告厅、录播教室、多媒体会议室",
+            p18: "商用领域：企业多功能厅、酒店会议室、商务洽谈室、远程视频会议中心",
+            p19: "专业领域：广电演播室、舞台演出场馆、体育场馆、广播电视台",
+            p20: "公共领域：机场、车站、商场、医院等公共广播与应急指挥场景",
+            h13: "匠心铸音，合作共赢",
+            p21: "以技术为核心，以品质为根本，以客户需求为导向，我们始终专注音频设备领域，持续优化产品性能、丰富产品矩阵、提升服务质量。无论是标准化Dante协议麦克风、有线无线麦克风，还是定制化会议系统与音频处理器，我们都坚持用自研实力与精工智造，为客户提供高品质、高适配、高性价比的音频产品与一站式解决方案。",
+            p22: "未来，我们将继续深耕音频技术创新，助力各行各业实现音频系统数字化、网络化、智能化升级，用清晰纯净的声音，传递每一份重要信息，携手合作伙伴共拓音频市场新蓝海！",
             related_title: "相关推荐",
             related1_title: "赴约羊城 声动未来｜我司重磅官宣参展2026广州国际专业灯光、音响展览会",
             related2_title: "无线六通道带表决带服务会议系统｜重构高效会议生态，赋能全场景智慧会务",
@@ -480,31 +292,31 @@
             p6: "Full-Type Coverage, Adapting to Diverse Scenarios: R&D and production of full-range Dante products including gooseneck conference microphones, boundary microphones, ceiling array microphones, and handheld wireless Dante microphones.",
             h3: "Full-Range Microphone Matrix: Wired + Wireless, Meeting All-Scenario Pickup Needs",
             p7: "Beyond our core Dante protocol microphones, we have also developed high-quality wired and wireless microphone product lines, leveraging our proprietary acoustic technology and precision manufacturing processes.",
-            p8: "Wired Microphones: Stable, Durable, Professional Pickup",
-            p9: "Featuring gooseneck conference microphones, handheld dynamic microphones, and condenser recording microphones, using high-fidelity electret capsules and precision metal materials with strong anti-interference capability and extremely low noise floor.",
-            p10: "Wireless Microphones: Free, Convenient, Stable Signal",
-            p11: "We have developed multiple wireless microphone products including U-band frequency-hopping and true diversity models, using professional RF technology to effectively avoid signal interference, frequency dropouts, and crosstalk.",
-            h4: "One-Stop Conference System + Audio Processors: Building a Complete Smart Audio Ecosystem",
-            p12: "We are not just a single-device manufacturer – we focus on creating integrated smart conference audio solutions, deeply integrating microphones, digital conference systems, and audio processors.",
-            p13: "Digital Conference Systems: Smart Control, Efficient Collaboration",
-            p14: "Independently developed daisy-chain digital conference systems, wireless conference systems, and Dante network conference systems, supporting multiple functions including speech queuing, chairman priority, camera tracking, one-touch mute, and simultaneous interpretation.",
-            p15: "Professional Audio Processors: Powerful Processing, Audio Quality Optimization",
-            p16: "We have developed and produced Dante protocol audio processors, digital mixers, noise reduction processors, echo cancellers, and other core processing devices, featuring high-performance DSP chips with auto-mixing, intelligent noise reduction, echo cancellation, EQ adjustment, gain control, and signal distribution.",
-            h5: "R&D + Production Dual-Drive: Solid Strength Creates Quality Benchmark",
-            p17: "Independent R&D, Continuous Technology Iteration",
-            p18: "We have a professional audio R&D team with years of expertise in acoustic technology, network transmission, and digital signal processing, focusing on Dante protocol adaptation, anti-interference technology, noise reduction algorithms, and low-power design.",
-            p19: "Large-Scale Production, Strict Quality Control",
-            p20: "We have built standardized production facilities equipped with precision production, testing, and aging equipment. From raw material procurement and component selection to assembly and finished product testing, we implement strict quality control throughout the entire process.",
-            h6: "Full-Scenario Application Implementation – Empowering Audio Upgrades Across Industries",
-            p21: "With our full-range products, solid technology, and stable quality, our audio equipment has been widely applied in:",
-            p22: "Government & Enterprise: Government meeting rooms, boardrooms, administrative service centers, command and dispatch centers",
-            p23: "Education: School lecture halls, auditoriums, recording classrooms, multimedia meeting rooms",
-            p24: "Commercial: Corporate multi-function halls, hotel conference rooms, business negotiation rooms, remote video conference centers",
-            p25: "Professional: Broadcasting studios, stage performance venues, sports venues, radio and television stations",
-            p26: "Public: Airports, stations, shopping malls, hospitals – public broadcasting and emergency command scenarios",
-            h7: "Craftsmanship in Sound, Win-Win Cooperation",
-            p27: "With technology at the core, quality as the foundation, and customer needs as our guide, we remain focused on the audio equipment field, continuously optimizing product performance, enriching our product portfolio, and improving service quality.",
-            p28: "Looking ahead, we will continue to deepen audio technology innovation, helping industries achieve digital, networked, and intelligent upgrades in their audio systems, delivering every important message with clear and pure sound!",
+            h4: "Wired Microphones: Stable, Durable, Professional Pickup",
+            p8: "Featuring gooseneck conference microphones, handheld dynamic microphones, and condenser recording microphones, using high-fidelity electret capsules and precision metal materials with strong anti-interference capability and extremely low noise floor.",
+            h5: "Wireless Microphones: Free, Convenient, Stable Signal",
+            p9: "We have developed multiple wireless microphone products including U-band frequency-hopping and true diversity models, using professional RF technology to effectively avoid signal interference, frequency dropouts, and crosstalk.",
+            h6: "One-Stop Conference System + Audio Processors: Building a Complete Smart Audio Ecosystem",
+            p10: "We are not just a single-device manufacturer – we focus on creating integrated smart conference audio solutions, deeply integrating microphones, digital conference systems, and audio processors.",
+            h7: "Digital Conference Systems: Smart Control, Efficient Collaboration",
+            p11: "Independently developed daisy-chain digital conference systems, wireless conference systems, and Dante network conference systems, supporting multiple functions including speech queuing, chairman priority, camera tracking, one-touch mute, and simultaneous interpretation.",
+            h8: "Professional Audio Processors: Powerful Processing, Audio Quality Optimization",
+            p12: "We have developed and produced Dante protocol audio processors, digital mixers, noise reduction processors, echo cancellers, and other core processing devices, featuring high-performance DSP chips with auto-mixing, intelligent noise reduction, echo cancellation, EQ adjustment, gain control, and signal distribution.",
+            h9: "R&D + Production Dual-Drive: Solid Strength Creates Quality Benchmark",
+            h10: "Independent R&D, Continuous Technology Iteration",
+            p13: "We have a professional audio R&D team with years of expertise in acoustic technology, network transmission, and digital signal processing, focusing on Dante protocol adaptation, anti-interference technology, noise reduction algorithms, and low-power design.",
+            h11: "Large-Scale Production, Strict Quality Control",
+            p14: "We have built standardized production facilities equipped with precision production, testing, and aging equipment. From raw material procurement and component selection to assembly and finished product testing, we implement strict quality control throughout the entire process.",
+            h12: "Full-Scenario Application Implementation – Empowering Audio Upgrades Across Industries",
+            p15: "With our full-range products, solid technology, and stable quality, our audio equipment has been widely applied in:",
+            p16: "Government & Enterprise: Government meeting rooms, boardrooms, administrative service centers, command and dispatch centers",
+            p17: "Education: School lecture halls, auditoriums, recording classrooms, multimedia meeting rooms",
+            p18: "Commercial: Corporate multi-function halls, hotel conference rooms, business negotiation rooms, remote video conference centers",
+            p19: "Professional: Broadcasting studios, stage performance venues, sports venues, radio and television stations",
+            p20: "Public: Airports, stations, shopping malls, hospitals – public broadcasting and emergency command scenarios",
+            h13: "Craftsmanship in Sound, Win-Win Cooperation",
+            p21: "With technology at the core, quality as the foundation, and customer needs as our guide, we remain focused on the audio equipment field, continuously optimizing product performance, enriching our product portfolio, and improving service quality.",
+            p22: "Looking ahead, we will continue to deepen audio technology innovation, helping industries achieve digital, networked, and intelligent upgrades in their audio systems, delivering every important message with clear and pure sound!",
             related_title: "Related Articles",
             related1_title: "Meet in Guangzhou, Sound of the Future｜Our Participation in the 2026 Guangzhou Exhibition",
             related2_title: "Wireless 6-Channel Voting & Service Conference System｜Reconstructing Efficient Meeting Ecosystems",
@@ -534,50 +346,100 @@
             p6: "Cobertura Completa, Adaptación a Diversos Escenarios: Desarrollo y producción de micrófonos Dante de cuello de cisne, micrófonos de borde, micrófonos de matriz de techo y micrófonos inalámbricos de mano.",
             h3: "Matriz Completa de Micrófonos: Con Cable + Inalámbricos, Satisfaciendo Todas las Necesidades",
             p7: "Además de nuestros micrófonos Dante, hemos desarrollado líneas de productos de micrófonos con cable e inalámbricos de alta calidad, aprovechando nuestra tecnología acústica y procesos de fabricación de precisión.",
-            p8: "Micrófonos con Cable: Estables, Duraderos, Captación Profesional",
-            p9: "Incluyendo micrófonos de cuello de cisne, dinámicos de mano y de condensador para grabación, con cápsulas electret de alta fidelidad y materiales metálicos de precisión.",
-            p10: "Micrófonos Inalámbricos: Libres, Convenientes, Señal Estable",
-            p11: "Hemos desarrollado múltiples productos de micrófonos inalámbricos incluyendo modelos de salto de frecuencia en banda U y diversidad verdadera, con tecnología RF profesional.",
-            h4: "Sistema de Conferencia Integral + Procesadores de Audio: Construyendo un Ecosistema de Audio Inteligente Completo",
-            p12: "No somos solo un fabricante de dispositivos individuales – nos enfocamos en crear soluciones integradas de audio para conferencias inteligentes.",
-            p13: "Sistemas de Conferencia Digitales: Control Inteligente, Colaboración Eficiente",
-            p14: "Sistemas de conferencia digital con conexión en cadena, sistemas inalámbricos y sistemas de red Dante, con múltiples funciones como cola de intervenciones, prioridad de presidente, seguimiento de cámara, silencio con un toque y traducción simultánea.",
-            p15: "Procesadores de Audio Profesionales: Procesamiento Potente, Optimización de Calidad",
-            p16: "Hemos desarrollado procesadores de audio Dante, mezcladores digitales, procesadores de reducción de ruido y canceladores de eco, con chips DSP de alto rendimiento.",
-            h5: "I+D + Producción: Fortaleza Sólida para un Referente de Calidad",
-            p17: "I+D Independiente, Iteración Tecnológica Continua",
-            p18: "Contamos con un equipo profesional de I+D en audio con años de experiencia en tecnología acústica, transmisión en red y procesamiento digital de señales.",
-            p19: "Producción a Gran Escala, Control de Calidad Estricto",
-            p20: "Contamos con instalaciones de producción estandarizadas equipadas con equipos de producción, prueba y envejecimiento de precisión.",
-            h6: "Implementación en Todos los Escenarios – Potenciando la Actualización de Audio en Todas las Industrias",
-            p21: "Con nuestra gama completa de productos, tecnología sólida y calidad estable, nuestros equipos de audio se han aplicado ampliamente en:",
-            p22: "Gobierno y Empresas: Salas de reuniones gubernamentales, salas de juntas, centros de servicios administrativos, centros de comando",
-            p23: "Educación: Aulas escalonadas, auditorios, aulas de grabación, salas de reuniones multimedia",
-            p24: "Comercial: Salones multifuncionales corporativos, salas de conferencias de hoteles, salas de negocios, centros de videoconferencia remota",
-            p25: "Profesional: Estudios de radiodifusión, recintos para espectáculos, instalaciones deportivas, estaciones de radio y televisión",
-            p26: "Público: Aeropuertos, estaciones, centros comerciales, hospitales – escenarios de radiodifusión pública y comando de emergencia",
-            h7: "Artesanía en Sonido, Cooperación Ganar-Ganar",
-            p27: "Con la tecnología como núcleo, la calidad como fundamento y las necesidades del cliente como guía, nos mantenemos enfocados en el campo de los equipos de audio.",
-            p28: "De cara al futuro, continuaremos profundizando en la innovación tecnológica de audio, ayudando a las industrias a lograr actualizaciones digitales, en red e inteligentes en sus sistemas de audio.",
+            h4: "Micrófonos con Cable: Estables, Duraderos, Captación Profesional",
+            p8: "Incluyendo micrófonos de cuello de cisne, dinámicos de mano y de condensador para grabación, con cápsulas electret de alta fidelidad y materiales metálicos de precisión.",
+            h5: "Micrófonos Inalámbricos: Libres, Convenientes, Señal Estable",
+            p9: "Hemos desarrollado múltiples productos de micrófonos inalámbricos incluyendo modelos de salto de frecuencia en banda U y diversidad verdadera, con tecnología RF profesional.",
+            h6: "Sistema de Conferencia Integral + Procesadores de Audio: Construyendo un Ecosistema de Audio Inteligente Completo",
+            p10: "No somos solo un fabricante de dispositivos individuales – nos enfocamos en crear soluciones integradas de audio para conferencias inteligentes.",
+            h7: "Sistemas de Conferencia Digitales: Control Inteligente, Colaboración Eficiente",
+            p11: "Sistemas de conferencia digital con conexión en cadena, sistemas inalámbricos y sistemas de red Dante, con múltiples funciones como cola de intervenciones, prioridad de presidente, seguimiento de cámara, silencio con un toque y traducción simultánea.",
+            h8: "Procesadores de Audio Profesionales: Procesamiento Potente, Optimización de Calidad",
+            p12: "Hemos desarrollado procesadores de audio Dante, mezcladores digitales, procesadores de reducción de ruido y canceladores de eco, con chips DSP de alto rendimiento.",
+            h9: "I+D + Producción: Fortaleza Sólida para un Referente de Calidad",
+            h10: "I+D Independiente, Iteración Tecnológica Continua",
+            p13: "Contamos con un equipo profesional de I+D en audio con años de experiencia en tecnología acústica, transmisión en red y procesamiento digital de señales.",
+            h11: "Producción a Gran Escala, Control de Calidad Estricto",
+            p14: "Contamos con instalaciones de producción estandarizadas equipadas con equipos de producción, prueba y envejecimiento de precisión.",
+            h12: "Implementación en Todos los Escenarios – Potenciando la Actualización de Audio en Todas las Industrias",
+            p15: "Con nuestra gama completa de productos, tecnología sólida y calidad estable, nuestros equipos de audio se han aplicado ampliamente en:",
+            p16: "Gobierno y Empresas: Salas de reuniones gubernamentales, salas de juntas, centros de servicios administrativos, centros de comando",
+            p17: "Educación: Aulas escalonadas, auditorios, aulas de grabación, salas de reuniones multimedia",
+            p18: "Comercial: Salones multifuncionales corporativos, salas de conferencias de hoteles, salas de negocios, centros de videoconferencia remota",
+            p19: "Profesional: Estudios de radiodifusión, recintos para espectáculos, instalaciones deportivas, estaciones de radio y televisión",
+            p20: "Público: Aeropuertos, estaciones, centros comerciales, hospitales – escenarios de radiodifusión pública y comando de emergencia",
+            h13: "Artesanía en Sonido, Cooperación Ganar-Ganar",
+            p21: "Con la tecnología como núcleo, la calidad como fundamento y las necesidades del cliente como guía, nos mantenemos enfocados en el campo de los equipos de audio.",
+            p22: "De cara al futuro, continuaremos profundizando en la innovación tecnológica de audio, ayudando a las industrias a lograr actualizaciones digitales, en red e inteligentes en sus sistemas de audio.",
             related_title: "Artículos Relacionados",
             related1_title: "Encuentro en Guangzhou, Sonido del Futuro｜Participación en la Exposición de Guangzhou 2026",
             related2_title: "Sistema Inalámbrico de 6 Canales con Votación y Servicios",
             related3_title: "Lingdong te Invita a Guangzhou｜Exposición de Guangzhou 2025, Pabellón 2.1 Stand G50",
             back_btn: "Volver a la Lista de Noticias",
             footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Todos los derechos reservados."
+        },
+        ru: {
+            nav_profile: "О нас",
+            nav_products: "Продукты",
+            nav_articles: "Новости",
+            nav_contact: "Контакты",
+            bread_home: "Главная",
+            bread_articles: "Новости",
+            bread_current: "Умное Производство Dante, Звук Без Границ｜Производитель Профессионального Аудиооборудования, Создающий Решения для Конференций и Звукозаписи",
+            article_title: "Умное Производство Dante, Звук Без Границ｜Производитель Профессионального Аудиооборудования, Создающий Решения для Конференций и Звукозаписи",
+            meta_date: "Дата: 2024-03-07",
+            meta_category: "Категория: Новости Продуктов",
+            meta_views: "Просмотров: 4858",
+            p1: "В различных сценариях, таких как государственные и корпоративные встречи, бизнес-офисы, образование, трансляции, выступления и промышленное управление, четкие и стабильные аудиосистемы являются основой эффективной коммуникации.",
+            h1: "Технологическое Преимущество: Микрофоны с Протоколом Dante – Новая Эра Сетевого Аудио",
+            p2: "Следуя тенденциям сетевого, цифрового и интеллектуального развития аудиосистем, мы разработали и производим микрофоны серии Dante, преодолевая ограничения традиционной аналоговой передачи.",
+            h2: "Ключевые Преимущества Микрофонов Dante – От Наших Собственных Разработок",
+            p3: "Передача без Потерь и Низкой Задержкой: Встроенный профессиональный чип обработки аудио Dante, поддержка преобразования 24bit/48-96кГц и синхронизация IEEE 1588 PTP.",
+            p4: "PoE Все-в-Одном, Простая Установка: Поддержка питания PoE – один сетевой кабель обеспечивает передачу аудио, питание и управление.",
+            p5: "Визуальное Управление, Гибкое Развертывание: Совместимость с профессиональным ПО Dante Controller – устройства автоматически обнаруживаются в сети.",
+            p6: "Полный Охват, Адаптация к Различным Сценариям: Разработка микрофонов Dante различных типов.",
+            h3: "Полный Ассортимент Микрофонов: Проводные + Беспроводные",
+            p7: "Помимо микрофонов Dante, мы разработали высококачественные проводные и беспроводные модели.",
+            h4: "Проводные Микрофоны: Надежные, Долговечные",
+            p8: "Включая микрофоны на гибкой ножке, ручные динамические и конденсаторные модели с капсюлями electret высокой точности.",
+            h5: "Беспроводные Микрофоны: Свободные, Удобные",
+            p9: "Разработаны модели с частотными прыжками и истинным разносом, использующие профессиональную RF-технологию.",
+            h6: "Комплексная Система Конференций + Аудиопроцессоры",
+            p10: "Мы не просто производитель устройств – мы создаем интегрированные интеллектуальные решения для конференц-аудио.",
+            h7: "Цифровые Системы Конференций: Умное Управление",
+            p11: "Разработаны цифровые системы с цепочечным соединением, беспроводные и сетевые Dante с множеством функций.",
+            h8: "Профессиональные Аудиопроцессоры: Мощная Обработка",
+            p12: "Разработаны процессоры Dante, цифровые микшеры, системы шумоподавления и подавления эха с DSP-чипами.",
+            h9: "I+D + Производство: Качество и Надежность",
+            h10: "Собственные Разработки, Постоянное Совершенствование",
+            p13: "Наша команда имеет многолетний опыт в акустике, сетевых технологиях и цифровой обработке сигналов.",
+            h11: "Крупносерийное Производство, Строгий Контроль Качества",
+            p14: "Мы имеем стандартизированные производственные мощности с прецизионным оборудованием для тестирования.",
+            h12: "Применение во Всех Сценариях",
+            p15: "Наше оборудование широко применяется:",
+            p16: "Государство и Бизнес: Правительственные залы, залы заседаний",
+            p17: "Образование: Лекционные залы, аудитории",
+            p18: "Коммерция: Конференц-залы, переговорные",
+            p19: "Профессиональное: Студии, сцены, стадионы",
+            p20: "Общественное: Аэропорты, вокзалы, больницы",
+            h13: "Качество Звука, Взаимовыгодное Сотрудничество",
+            p21: "С технологиями в основе, качеством как фундаментом и потребностями клиентов как ориентиром, мы остаемся лидерами в области аудиооборудования.",
+            p22: "В будущем мы продолжим развивать аудиотехнологии, помогая отраслям внедрять цифровые, сетевые и интеллектуальные решения.",
+            related_title: "Похожие Статьи",
+            related1_title: "Встреча в Гуанчжоу, Звук Будущего｜Участие в Выставке в Гуанчжоу 2026",
+            related2_title: "Беспроводная 6-канальная Система Голосования и Услуг",
+            related3_title: "Lingdong Приглашает Вас в Гуанчжоу｜Выставка в Гуанчжоу 2025, Павильон 2.1 Стенд G50",
+            back_btn: "Вернуться к Списку Новостей",
+            footer_copyright: "© 2005 LDMETING Enping Lingdong Electronic Technology Co., Ltd. Все права защищены."
         }
     };
 
-    // ============================================================
-    // 3. 多语言核心逻辑
-    // ============================================================
-    let currentLang = localStorage.getItem('ldmeting-lang') || 'zh';
-
-    const translatableElements = document.querySelectorAll('[data-key]');
+    var currentLang = localStorage.getItem('ldmeting-lang') || 'zh';
+    var translatableElements = document.querySelectorAll('[data-key]');
 
     function updateTexts(lang) {
         translatableElements.forEach(function(el) {
-            const key = el.getAttribute('data-key');
+            var key = el.getAttribute('data-key');
             if (translations[lang] && translations[lang][key]) {
                 el.textContent = translations[lang][key];
             }
@@ -588,20 +450,15 @@
         if (!translations[lang]) return;
         currentLang = lang;
         updateTexts(lang);
-
         document.querySelectorAll('.lang-switcher a').forEach(function(link) {
             link.classList.remove('active');
             if (link.getAttribute('data-lang') === lang) {
                 link.classList.add('active');
             }
         });
-
         localStorage.setItem('ldmeting-lang', lang);
     }
 
-    // ============================================================
-    // 4. 初始化
-    // ============================================================
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.lang-switcher a').forEach(function(link) {
             link.addEventListener('click', function(e) {
@@ -609,7 +466,6 @@
                 switchLanguage(this.getAttribute('data-lang'));
             });
         });
-
         switchLanguage(currentLang);
     });
 </script>
